@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="87FCD99A-C60F-289A-CEF4-62F73BC28721" mainViewID="A6BD0D55-FCB1-A6A1-1AFA-CB0A61815960">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-12 21:46:38 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

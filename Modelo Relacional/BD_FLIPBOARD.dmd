@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="BD_FLIPBOARD" id="C65C8795-98EE-F181-2DD7-0AFD502D2342" version="3.5">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-12 21:46:37 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>C65C8795-98EE-F181-2DD7-0AFD502D2342</designId>
+</OSDM_Design>

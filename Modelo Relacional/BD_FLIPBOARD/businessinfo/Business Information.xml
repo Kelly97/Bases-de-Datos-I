@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="836A9A1A-A29F-A7E9-EAF9-89543E2CE829">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-12 21:46:40 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</BusinessInfoDesign>

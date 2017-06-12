@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProcessModel class="oracle.dbtools.crest.model.design.process.ProcessModel" name="Process Model" id="3FADCE75-95B5-ACF3-5733-C0266A13CF0F">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-12 21:46:40 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</ProcessModel>
