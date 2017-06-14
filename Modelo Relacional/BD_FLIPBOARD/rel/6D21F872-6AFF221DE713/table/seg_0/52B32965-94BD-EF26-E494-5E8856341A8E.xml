@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="52B32965-94BD-EF26-E494-5E8856341A8E" name="TBL_USUARIOS">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 12:24:07 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODGIO_USUARIO" id="FDD3B9CC-4839-336D-7AB4-A56E98199C40">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 12:25:43 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE_USUARIO" id="2263BCCA-8E39-AE51-25F7-747CADD026E6">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 12:25:43 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>600</dataTypeSize>
+<ownDataTypeParameters>600,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CORREO" id="EA062311-9AC5-A699-4C54-B4EE30F0BBDA">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 12:25:43 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CONTRASEÑA" id="9CE2B56A-5E6C-A162-8AA9-838D2E91D2A0">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 12:25:43 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9484BB6D-4B8B-7C1B-4DDA-C7B9A77634B4" name="TBL_USUARIOS_PK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 12:25:43 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
