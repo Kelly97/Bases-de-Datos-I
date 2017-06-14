@@ -1,0 +1,120 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5889FBD3-C9FD-8D77-BF33-5D22D333D83B" name="TBL_LUGARES">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 12:30:30 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_LUGAR" id="B6161D4C-34D7-513F-0E8E-9827BA32E940">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 12:31:14 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CODIGO_LUGAR_PADRE" id="1360855A-72D5-AB16-6931-C5173B7CA123">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 12:36:10 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DDD81637-6D01-02D1-46CC-D709E91C1DC6" referredColumn="B6161D4C-34D7-513F-0E8E-9827BA32E940"/>
+</associations>
+</Column>
+<Column name="CODIGO_TIPO_LUGAR" id="B58515C5-F925-8A46-40E0-D8196F84DA5E">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 12:37:47 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7E856794-2104-0877-0262-937A9D8AEE30" referredColumn="BCA5080F-DB69-7A7D-39D4-759594F92739"/>
+</associations>
+</Column>
+<Column name="NOMBRE_LUGAR" id="7E1F4589-B57B-FEDB-400F-1F2346235765">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 12:31:14 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+<ownDataTypeParameters>300,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LATITUD" id="0C389C6B-3CC8-31E6-3BA3-2554D6898F8D">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 12:32:27 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LONGITUD" id="737C207A-D31C-36EB-56FF-BE6F1CD5FE1E">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 12:36:06 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="46265333-D0CE-4EE3-6E66-A8D31CD1BE9D" name="TBL_LUGARES_PK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 12:31:14 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6161D4C-34D7-513F-0E8E-9827BA32E940"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AAB5BCD2-BBD4-6B12-4551-10F6F83D5F6F" name="TBL_LUGARES_TBL_LUGARES_FK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 12:36:10 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1360855A-72D5-AB16-6931-C5173B7CA123"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2FA0A755-47CC-FC75-AD3A-0B27C0A4B0B6" name="TBL_LUGARES_TBL_TIPO_LUGAR_FK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 12:37:47 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B58515C5-F925-8A46-40E0-D8196F84DA5E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
