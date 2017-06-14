@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A0EBE2C4-A861-BC3C-99C0-03D6312249BA" name="TBL_CATEGORIA">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:01:25 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_CATEGORIA" id="6715E8E5-247D-9A79-6638-77A638B410D3">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:02:04 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CATEGORIA" id="B4481A28-7E3D-DE63-1CEC-FFF3B4A3A234">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:02:04 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E433C58A-C839-EECB-0E7F-82366ACA54F1" name="TBL_INTERESES_PK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:02:04 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6715E8E5-247D-9A79-6638-77A638B410D3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

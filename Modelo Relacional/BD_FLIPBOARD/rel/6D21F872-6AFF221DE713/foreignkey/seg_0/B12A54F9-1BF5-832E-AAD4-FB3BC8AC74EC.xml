@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="B12A54F9-1BF5-832E-AAD4-FB3BC8AC74EC" containerWithKeyObject="35687553-E047-2F6C-6C56-ADB3E7D82A11" localFKIndex="1A3EC078-7B1C-ED85-D7A8-FA2EE2959410" name="TBL_INTERESES_X_USUARIO_TBL_CATEGORIA_FK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:07:01 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<referredTableLongName>TBL_CATEGORIA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>A0EBE2C4-A861-BC3C-99C0-03D6312249BA</referredTableID>
+<keyObject>E433C58A-C839-EECB-0E7F-82366ACA54F1</keyObject>
+<referredKeyID>E433C58A-C839-EECB-0E7F-82366ACA54F1</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CODIGO_CATEGORIA</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

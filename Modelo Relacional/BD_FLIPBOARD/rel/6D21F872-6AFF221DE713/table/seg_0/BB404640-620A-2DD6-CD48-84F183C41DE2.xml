@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BB404640-620A-2DD6-CD48-84F183C41DE2" name="TBL_FOTOGRAFIAS_NOTICIA">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:34:20 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<ordsAlias>table_8</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_FOTOGRAFIA" id="D9505491-CE5B-054F-E2BC-ED609FC2B0BD">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:35:09 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CODIGO_NOTICIA" id="18C0B9FA-501A-2481-B92A-F8DA2FD72007">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:35:16 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EB7BAF5A-42F2-4836-C9EF-FBA9F8991C2C" referredColumn="4C02DAF3-16D2-77A6-0B93-17FEDFB5B4C4"/>
+</associations>
+</Column>
+<Column name="FOTOGRAFIA" id="FA16792B-D64F-495F-2F83-0514597BE4AD">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:35:09 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AFC278DA-2F7F-CAC8-46EA-CAC69FBBDD67" name="TBL_FOTOGRAFIAS_NOTICIA_PK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:35:09 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D9505491-CE5B-054F-E2BC-ED609FC2B0BD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CD338594-EFA6-5AEB-4694-D6F490166AD3" name="TBL_FOTOGRAFIAS_NOTICIA_TBL_NOTICIAS_FK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:35:16 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="18C0B9FA-501A-2481-B92A-F8DA2FD72007"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

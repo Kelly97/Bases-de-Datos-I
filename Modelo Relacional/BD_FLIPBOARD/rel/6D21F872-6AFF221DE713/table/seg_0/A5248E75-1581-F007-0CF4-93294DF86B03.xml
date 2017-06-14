@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A5248E75-1581-F007-0CF4-93294DF86B03" name="TBL_TIPOS_USUARIO">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:02:32 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_TIPO_USUARIO" id="73604F28-F0C9-5820-FF6D-FD79B9B9325D">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:03:38 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TIPO_USUARIO" id="EFC8A725-75E9-D604-BE36-77495055A360">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:03:38 UTC</createdTime>
+<commentInRDBMS>Por ejemplo: usuario normal, administrador, proveedor de noticias, etc.</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9C281CA9-45A0-6EE7-35BD-339920F83EC9" name="TBL_TIPOS_USUARIO_PK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:03:38 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="73604F28-F0C9-5820-FF6D-FD79B9B9325D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

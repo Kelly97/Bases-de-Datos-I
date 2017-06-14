@@ -18,6 +18,34 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="CODIGO_TIPO_USUARIO" id="5ACE151A-7A08-D47B-06EE-1A0724127200">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:04:09 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9B169F81-4497-9491-C124-A4CBCA0C5615" referredColumn="73604F28-F0C9-5820-FF6D-FD79B9B9325D"/>
+</associations>
+</Column>
+<Column name="CODIGO_LUGAR_RESIDENCIA" id="187929BB-E23C-42B9-6DE2-6DF7C7621033">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:04:42 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1C25C7B6-EF3C-67A3-57E4-D2A5F354A6AA" referredColumn="B6161D4C-34D7-513F-0E8E-9827BA32E940"/>
+</associations>
+</Column>
 <Column name="NOMBRE_USUARIO" id="2263BCCA-8E39-AE51-25F7-747CADD026E6">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-14 12:25:43 UTC</createdTime>
@@ -65,6 +93,26 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EA6DE097-6F4D-6E69-9083-B540C800B421" name="TBL_USUARIOS_TBL_TIPOS_USUARIO_FK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:04:09 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5ACE151A-7A08-D47B-06EE-1A0724127200"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="733F6E75-604F-E0CB-2EE7-FA7328B92C4F" name="TBL_USUARIOS_TBL_LUGARES_FK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:04:42 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="187929BB-E23C-42B9-6DE2-6DF7C7621033"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

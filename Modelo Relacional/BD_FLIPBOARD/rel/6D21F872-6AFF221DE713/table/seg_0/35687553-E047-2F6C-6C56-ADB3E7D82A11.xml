@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="35687553-E047-2F6C-6C56-ADB3E7D82A11" name="TBL_INTERESES_X_USUARIO">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:06:40 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODGIO_USUARIO" id="2B5E6694-11AB-8F33-A1F4-47BA35A8310F">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:06:57 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4C3AAAD1-BCED-F521-4187-EEC3C764A58D" referredColumn="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
+</associations>
+</Column>
+<Column name="CODIGO_CATEGORIA_INTERES" id="7B219E40-C416-15FD-CFF1-265D8F901628">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:07:01 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B12A54F9-1BF5-832E-AAD4-FB3BC8AC74EC" referredColumn="6715E8E5-247D-9A79-6638-77A638B410D3"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D1D1C695-3490-01B5-E5C4-3B03DE1CAEA5" name="TBL_INTERESES_X_USUARIO_PK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:07:19 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2B5E6694-11AB-8F33-A1F4-47BA35A8310F"/>
+<colUsage columnID="7B219E40-C416-15FD-CFF1-265D8F901628"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="531A3BF7-15C4-4803-7E5B-7DDE6BB706BF" name="TBL_INTERESES_X_USUARIO_TBL_USUARIOS_FK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:06:57 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2B5E6694-11AB-8F33-A1F4-47BA35A8310F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1A3EC078-7B1C-ED85-D7A8-FA2EE2959410" name="TBL_INTERESES_X_USUARIO_TBL_CATEGORIA_FK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-14 13:07:01 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7B219E40-C416-15FD-CFF1-265D8F901628"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
