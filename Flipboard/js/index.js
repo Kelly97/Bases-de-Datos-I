@@ -3,7 +3,13 @@ $(document).ready(function() {
 		abrirPerfil();
 	});*/
 	cargarNoticias(0);//El cero será reservado para las noticias de portada, del 1 en adelante hará referencia a los intereses.
+	ajustarContenedorNoticias();
 });
+
+function ajustarContenedorNoticias(){
+	var altoNavbar = $(navbar).height() + 15;
+	$('#contenido-principal').css("margin-top",altoNavbar+"px");
+}
 
 function cargarNoticias(codigo){
 	data = "codigo="+codigo;
