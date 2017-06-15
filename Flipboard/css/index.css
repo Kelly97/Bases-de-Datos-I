@@ -1,5 +1,5 @@
-#contenido-principal{
-	font-family: Georgia,serif;
+body{
+	font-family: 'Open Sans', sans-serif;
 }
 .thumbnail .caption h5{
 	color: #999;
@@ -29,4 +29,12 @@
 
 .thumbnail:hover .botones-noticia{
 	display: block;
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: none;
 }

@@ -4,6 +4,7 @@ $(document).ready(function() {
 	});*/
 	cargarNoticias(0);//El cero será reservado para las noticias de portada, del 1 en adelante hará referencia a los intereses.
 	ajustarContenedorNoticias();
+
 });
 
 function ajustarContenedorNoticias(){
@@ -23,6 +24,9 @@ function cargarNoticias(codigo){
         },
         success: function(datos){       
             $('#contenido-principal').html(datos);
+            $(function () {
+			  $('[data-toggle="popover"]').popover()
+			})
         }
     });	
 }
