@@ -38,3 +38,9 @@ body{
 .btn.active.focus {
   outline: none;
 }
+
+.your-class{
+	margin-left: 30px;
+	margin-right: 30px;
+	padding: 5px;
+}
