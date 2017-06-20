@@ -26,10 +26,10 @@ $(document).ready(function() {
 		      }
 		    },
 		    {
-		      breakpoint: 480,
+		      breakpoint: 900,
 		      settings: {
-		        slidesToShow: 1,
-		        slidesToScroll: 1
+		        slidesToShow: 3,
+		        slidesToScroll: 3
 		      }
 		    }
 		    // You can unslick at a given breakpoint now by adding:
