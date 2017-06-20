@@ -82,6 +82,30 @@
 <ownDataTypeParameters>200,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="FOTO" id="06A59DCB-77E7-3FEE-88F6-147553BCDEB0">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:24:09 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRIPCION" id="DF5DB34B-5789-CF0A-619C-657FE04C6E14">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:24:09 UTC</createdTime>
+<commentInRDBMS>Espacio nombrado &quot;Escribe algo sobre ti&quot;</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="9484BB6D-4B8B-7C1B-4DDA-C7B9A77634B4" name="TBL_USUARIOS_PK">

@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2D49BECD-D517-1392-FECB-07986FCE7687" name="TLB_SEGUIDORES">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:36:56 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<ordsAlias>table_15</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODGIO_USUARIO_SEGUIDOR" id="F19610AB-0EBA-005E-FF33-3466E39C13D0">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:37:46 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="15F4DF06-7EA1-AA48-0656-DD4ED0F81CF2" referredColumn="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
+</associations>
+</Column>
+<Column name="CODGIO_USUARIO_SEGUIDO" id="63BBD739-3E9A-BCFE-7A35-EF24260AE2AC">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:37:58 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="85F34679-96EA-2E84-4583-C1423993F6C2" referredColumn="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="02F92F17-F9C4-4A6E-F821-943E2D0E714D" name="TLB_SEGUIDORES_PK">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:38:29 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F19610AB-0EBA-005E-FF33-3466E39C13D0"/>
+<colUsage columnID="63BBD739-3E9A-BCFE-7A35-EF24260AE2AC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="37FFC3FC-119F-DC5D-12BE-AC2110A3B8FC" name="TBL_USUARIOS_FKv2">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:37:46 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F19610AB-0EBA-005E-FF33-3466E39C13D0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="97F49B71-6221-27F7-E6EB-1C2A0FE208FB" name="TBL_USUARIOS_FKv3">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:37:58 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="63BBD739-3E9A-BCFE-7A35-EF24260AE2AC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

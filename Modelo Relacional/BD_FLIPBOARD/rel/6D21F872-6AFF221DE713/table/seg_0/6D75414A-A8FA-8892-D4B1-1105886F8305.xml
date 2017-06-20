@@ -1,0 +1,130 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6D75414A-A8FA-8892-D4B1-1105886F8305" name="TBL_REVISTAS">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:24:37 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<ordsAlias>table_10</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_REVISTA" id="B705BF36-0175-9D86-FB96-12635CE6CF30">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:25:48 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CODGIO_USUARIO" id="0A4A98DC-D3DF-B165-B8FE-8BD0593D5B49">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:30:41 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="44B2F6E4-6064-B619-F0FA-6FD39270D065" referredColumn="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
+</associations>
+</Column>
+<Column name="NOMBRE_REVISTA" id="B7298DA5-F527-3030-51AC-EBDBB8153100">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:25:48 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRIPCION" id="C941183C-0FF6-7AC5-27FD-99EADB88D56B">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:25:48 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CODIGO_TIPO_REVISTA" id="4605685C-E6C7-A3BA-41E4-81825D9407EF">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:28:19 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="77E43403-4683-3762-40A8-A56A32487A89" referredColumn="44A3571D-7F24-5958-DD79-809C8D382D56"/>
+</associations>
+</Column>
+<Column name="FECHA_DE_CREACION" id="BF0D0F4C-3017-D0F9-BD69-5D4ADC88727F">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:30:32 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="URL_REVISTA" id="D8735DD2-F081-1478-1AE8-AC844E6EB608">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:31:33 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4EFEBC8E-0E52-BB42-00FF-6670B51A59D1" name="TBL_REVISTAS_PK">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:25:48 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B705BF36-0175-9D86-FB96-12635CE6CF30"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="84E25CF8-B6BC-E9FD-7D1B-EF33B51CF4A0" name="TBL_TIPO_REVISTAS_FK">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:28:19 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4605685C-E6C7-A3BA-41E4-81825D9407EF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0B5B28EE-D6F0-017D-2707-FBD1835FDDCD" name="TBL_USUARIOS_FK">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:30:41 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0A4A98DC-D3DF-B165-B8FE-8BD0593D5B49"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

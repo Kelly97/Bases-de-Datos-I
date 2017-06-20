@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="311622BB-D84E-23DA-51CF-CA6BA3CDC464" name="TBL_ME_GUSTA">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:32:36 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<ordsAlias>table_14</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODGIO_USUARIO" id="5097EDF2-6F7C-8320-7B34-952B6B07E39C">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:33:07 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8745043B-64AF-C7F8-D1FA-AA6551196A54" referredColumn="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
+</associations>
+</Column>
+<Column name="CODIGO_NOTICIA" id="BEC95FA3-D6AC-1041-00FC-BA1A3DBC93B7">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:33:30 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="391E8D1D-D71D-A8C6-05D0-5C3F2398A681" referredColumn="4C02DAF3-16D2-77A6-0B93-17FEDFB5B4C4"/>
+</associations>
+</Column>
+<Column name="FECHA" id="D18D9E6E-CF93-645C-8250-C75001F9BD15">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:34:14 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="60454816-9122-35E9-D890-2ED9685B2D24" name="TBL_ME_GUSTA_PK">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:33:43 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5097EDF2-6F7C-8320-7B34-952B6B07E39C"/>
+<colUsage columnID="BEC95FA3-D6AC-1041-00FC-BA1A3DBC93B7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E30F4708-50CE-9884-F4A2-9B91CF86187C" name="ME_GUSTA_USUARIOS_FK">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:33:07 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5097EDF2-6F7C-8320-7B34-952B6B07E39C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F95AB7F9-6A2F-74E7-D278-180C3CB9F773" name="TBL_ME_GUSTA_TBL_NOTICIAS_FK">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:33:30 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BEC95FA3-D6AC-1041-00FC-BA1A3DBC93B7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,45 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C667AF10-86FB-C2EE-6CEA-C0AD8476FE7B" name="TBL_TIPO_REVISTAS">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:25:53 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<ordsAlias>table_11</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_TIPO_REVISTA" id="44A3571D-7F24-5958-DD79-809C8D382D56">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:26:40 UTC</createdTime>
+<commentInRDBMS>Se define si es revista publica o privada&lt;br/&gt;</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TIPO_REVISTA" id="3845CDDE-E1C2-482D-D772-3E721DB79034">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:26:40 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4D49CE64-3942-7AF8-7BEE-092CDB6DE649" name="TBL_TIPO_REVISTAS_PK">
+<createdBy>dilve_000</createdBy>
+<createdTime>2017-06-20 17:26:40 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="44A3571D-7F24-5958-DD79-809C8D382D56"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
