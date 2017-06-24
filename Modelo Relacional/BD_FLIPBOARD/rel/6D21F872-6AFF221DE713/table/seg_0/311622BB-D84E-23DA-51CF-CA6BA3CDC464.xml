@@ -8,7 +8,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="CODGIO_USUARIO" id="5097EDF2-6F7C-8320-7B34-952B6B07E39C">
+<Column name="CODIGO_USUARIO" id="5097EDF2-6F7C-8320-7B34-952B6B07E39C">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:33:07 UTC</createdTime>
 <commentInRDBMS>Código de usuario.</commentInRDBMS>
@@ -30,7 +30,7 @@
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>

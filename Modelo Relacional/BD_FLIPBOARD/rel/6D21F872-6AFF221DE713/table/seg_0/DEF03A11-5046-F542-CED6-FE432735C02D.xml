@@ -15,7 +15,7 @@
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
@@ -23,7 +23,7 @@
 <colAssociation fkAssociation="7C7819C3-793E-9A33-A441-A95A3396E9E8" referredColumn="4C02DAF3-16D2-77A6-0B93-17FEDFB5B4C4"/>
 </associations>
 </Column>
-<Column name="CODGIO_USUARIO" id="ECBEA3B5-73CC-1D55-07A3-30F36FE64ADD">
+<Column name="CODIGO_USUARIO" id="ECBEA3B5-73CC-1D55-07A3-30F36FE64ADD">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:43:01 UTC</createdTime>
 <commentInRDBMS>Código de usuario</commentInRDBMS>

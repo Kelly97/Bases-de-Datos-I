@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5CEADC37-CAF5-A2CB-8F1E-A52C1EF56C84" containerWithKeyObject="0DF2C0D3-6C8D-BCAD-0C54-D8E2A0996A6E" localFKIndex="C5A0E706-199E-2D82-3B0E-5C20930A3D30" name="TBL_NOTICIAS_TBL_CATEGORIA_FK">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-24 22:56:11 UTC</createdTime>
+<comment>Debe haber una relacion entre categoria y noticias ya que pueden haber muchas noticias para una sola categoria.</comment>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<referredTableLongName>TBL_CATEGORIA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>A0EBE2C4-A861-BC3C-99C0-03D6312249BA</referredTableID>
+<keyObject>E433C58A-C839-EECB-0E7F-82366ACA54F1</keyObject>
+<referredKeyID>E433C58A-C839-EECB-0E7F-82366ACA54F1</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CODIGO_CATEGORIA</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

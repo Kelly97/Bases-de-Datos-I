@@ -8,7 +8,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="CODGIO_USUARIO_SEGUIDOR" id="F19610AB-0EBA-005E-FF33-3466E39C13D0">
+<Column name="CODIGO_USUARIO_SEGUIDOR" id="F19610AB-0EBA-005E-FF33-3466E39C13D0">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:37:46 UTC</createdTime>
 <commentInRDBMS>Código del usuario que sigue.</commentInRDBMS>
@@ -23,7 +23,7 @@
 <colAssociation fkAssociation="15F4DF06-7EA1-AA48-0656-DD4ED0F81CF2" referredColumn="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
 </associations>
 </Column>
-<Column name="CODGIO_USUARIO_SEGUIDO" id="63BBD739-3E9A-BCFE-7A35-EF24260AE2AC">
+<Column name="CODIGO_USUARIO_SEGUIDO" id="63BBD739-3E9A-BCFE-7A35-EF24260AE2AC">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:37:58 UTC</createdTime>
 <commentInRDBMS>Código del usuario que es seguido.</commentInRDBMS>

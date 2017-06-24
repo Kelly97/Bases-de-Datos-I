@@ -19,7 +19,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="CODGIO_USUARIO" id="0A4A98DC-D3DF-B165-B8FE-8BD0593D5B49">
+<Column name="CODIGO_USUARIO" id="0A4A98DC-D3DF-B165-B8FE-8BD0593D5B49">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:30:41 UTC</createdTime>
 <commentInRDBMS>Código usuario al que pertenece la revista.</commentInRDBMS>

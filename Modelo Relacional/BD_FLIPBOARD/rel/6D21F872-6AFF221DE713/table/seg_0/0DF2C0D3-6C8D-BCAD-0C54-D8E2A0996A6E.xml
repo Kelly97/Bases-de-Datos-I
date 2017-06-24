@@ -15,7 +15,7 @@
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -28,8 +28,8 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
-<dataTypeSize>500</dataTypeSize>
-<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<dataTypeSize>250</dataTypeSize>
+<ownDataTypeParameters>250,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="DESCRIPCION_NOTICIA" id="2E447D26-308F-BAAC-9C75-F9FD70587DF6">
@@ -81,6 +81,20 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="TBL_CATEGORIA_CODIGO_CATEGORIA" id="4B84C961-6564-1947-5AA1-79EC87A41CE0">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-24 22:56:11 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5CEADC37-CAF5-A2CB-8F1E-A52C1EF56C84" referredColumn="6715E8E5-247D-9A79-6638-77A638B410D3"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="C16B4D13-3598-BEBE-9E33-0218AA4FF323" name="TBL_NOTICIAS_PK">
@@ -92,6 +106,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="4C02DAF3-16D2-77A6-0B93-17FEDFB5B4C4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C5A0E706-199E-2D82-3B0E-5C20930A3D30" name="TBL_NOTICIAS_TBL_CATEGORIA_FK">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-24 22:56:11 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4B84C961-6564-1947-5AA1-79EC87A41CE0"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

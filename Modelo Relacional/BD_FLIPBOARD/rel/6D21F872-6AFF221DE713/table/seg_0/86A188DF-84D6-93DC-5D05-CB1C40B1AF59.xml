@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="86A188DF-84D6-93DC-5D05-CB1C40B1AF59" name="TBL_COMENTARIOS_X_USUARIO">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-24 23:10:36 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<ordsAlias>table_15</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_USUARIO" id="13A0E8BC-9A5F-092E-4AA0-0D133DD9F5E5">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-24 23:24:32 UTC</createdTime>
+<commentInRDBMS>El código del usuario que comentó.</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E16B1441-9ED9-0544-7731-D109E9D30FE8" referredColumn="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
+</associations>
+</Column>
+<Column name="CODIGO_COMENTARIO" id="E3141A1A-905C-6436-3A09-6703931ECF52">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-24 23:24:32 UTC</createdTime>
+<commentInRDBMS>El código del comentario que comentó el usuario respectivo.</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1A362BF2-31B9-1124-F39E-6557527C0098" referredColumn="84BB8FDF-6E47-9899-9F96-72AC20900F71"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="12FB5402-0034-2BE7-21C6-6DAE1311C2FA" name="CODIGO_COMENTARIO">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-24 23:24:32 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E3141A1A-905C-6436-3A09-6703931ECF52"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EF2EA784-AEC6-9E33-9F5C-C3514B46DC9C" name="CODIGO_USUARIO">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-24 23:24:32 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="13A0E8BC-9A5F-092E-4AA0-0D133DD9F5E5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
