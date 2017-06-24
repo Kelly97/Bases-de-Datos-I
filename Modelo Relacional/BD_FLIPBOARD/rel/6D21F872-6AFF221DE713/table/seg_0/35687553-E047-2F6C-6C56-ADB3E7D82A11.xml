@@ -11,6 +11,7 @@
 <Column name="CODGIO_USUARIO" id="2B5E6694-11AB-8F33-A1F4-47BA35A8310F">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-14 13:06:57 UTC</createdTime>
+<commentInRDBMS>Código de usuario.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -25,6 +26,7 @@
 <Column name="CODIGO_CATEGORIA_INTERES" id="7B219E40-C416-15FD-CFF1-265D8F901628">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-14 13:07:01 UTC</createdTime>
+<commentInRDBMS>Código de la categoría que le interesa, es por ello que es un interés como tal en la tabla.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>

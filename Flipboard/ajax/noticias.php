@@ -27,10 +27,17 @@ switch ($_POST["codigo"]) {
 		        <h3>Titulo Noticia</h3>
 		        <h5>Autor o propietario de noticia</h5>
 		        <p style="text-align: justify;">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó en. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicostware de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
-		        <p><a class="btn btn-default" role="button">
-		        	<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 13px;padding-right: 8px;"></i>
-		        	Añadir Comentario
-		        </a></p>
+		        <p>
+		        	5 
+		        	<i class="fa fa-heart" aria-hidden="true" style="font-size: 13px;padding-right: 8px;">
+			        </i>
+		        	<a class="btn btn-default" role="button">
+			        	<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 13px;padding-right: 8px;">
+			        		
+			        	</i>
+			        	Añadir Comentario
+		        	</a>
+		        </p>
 		      </div>
 		    </div>
 		  </div>	

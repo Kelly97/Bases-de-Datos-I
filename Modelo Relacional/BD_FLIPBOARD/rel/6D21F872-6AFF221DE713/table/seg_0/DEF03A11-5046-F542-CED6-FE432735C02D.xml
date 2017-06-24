@@ -11,6 +11,7 @@
 <Column name="CODIGO_NOTICIA" id="5C976B9D-85D7-8022-8CF5-EF02CBB06B0E">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:42:29 UTC</createdTime>
+<commentInRDBMS>Código de noticia.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -25,6 +26,7 @@
 <Column name="CODGIO_USUARIO" id="ECBEA3B5-73CC-1D55-07A3-30F36FE64ADD">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:43:01 UTC</createdTime>
+<commentInRDBMS>Código de usuario</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -39,6 +41,7 @@
 <Column name="FECHA" id="11AB6D78-D800-102F-18D0-B17824C9F9C6">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:43:32 UTC</createdTime>
+<commentInRDBMS>Fecha en la que se hizo el Flip.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>

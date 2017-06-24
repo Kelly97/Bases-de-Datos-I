@@ -11,7 +11,7 @@
 <Column name="CODIGO_TIPO_REVISTA" id="44A3571D-7F24-5958-DD79-809C8D382D56">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:26:40 UTC</createdTime>
-<commentInRDBMS>Se define si es revista publica o privada&lt;br/&gt;</commentInRDBMS>
+<commentInRDBMS>Código tipo de revista.&lt;br/&gt;</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -22,6 +22,7 @@
 <Column name="TIPO_REVISTA" id="3845CDDE-E1C2-482D-D772-3E721DB79034">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:26:40 UTC</createdTime>
+<commentInRDBMS>Puede ser:  revista publica o privada</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <use>0</use>

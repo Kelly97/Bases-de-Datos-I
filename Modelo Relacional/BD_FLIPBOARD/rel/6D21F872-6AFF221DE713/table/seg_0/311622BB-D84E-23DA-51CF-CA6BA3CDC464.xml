@@ -11,6 +11,7 @@
 <Column name="CODGIO_USUARIO" id="5097EDF2-6F7C-8320-7B34-952B6B07E39C">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:33:07 UTC</createdTime>
+<commentInRDBMS>Código de usuario.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -25,6 +26,7 @@
 <Column name="CODIGO_NOTICIA" id="BEC95FA3-D6AC-1041-00FC-BA1A3DBC93B7">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:33:30 UTC</createdTime>
+<commentInRDBMS>Código de Noticia.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -39,6 +41,7 @@
 <Column name="FECHA" id="D18D9E6E-CF93-645C-8250-C75001F9BD15">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:34:14 UTC</createdTime>
+<commentInRDBMS>Fecha en la que se realizo la acción &quot; Me gusta&quot;.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>

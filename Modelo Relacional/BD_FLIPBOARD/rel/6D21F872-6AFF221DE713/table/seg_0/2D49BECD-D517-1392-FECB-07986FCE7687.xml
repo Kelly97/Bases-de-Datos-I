@@ -11,6 +11,7 @@
 <Column name="CODGIO_USUARIO_SEGUIDOR" id="F19610AB-0EBA-005E-FF33-3466E39C13D0">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:37:46 UTC</createdTime>
+<commentInRDBMS>Código del usuario que sigue.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -25,6 +26,7 @@
 <Column name="CODGIO_USUARIO_SEGUIDO" id="63BBD739-3E9A-BCFE-7A35-EF24260AE2AC">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:37:58 UTC</createdTime>
+<commentInRDBMS>Código del usuario que es seguido.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>

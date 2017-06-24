@@ -11,6 +11,7 @@
 <Column name="CODIGO_TIPO_LUGAR" id="BCA5080F-DB69-7A7D-39D4-759594F92739">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-14 12:37:43 UTC</createdTime>
+<commentInRDBMS>Código tipo de lugar.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -21,6 +22,7 @@
 <Column name="TIPO_LUGAR" id="DEAAD99B-95A1-246C-2D23-254B50A6C960">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-14 12:37:43 UTC</createdTime>
+<commentInRDBMS>Tipo de lugar, como ser: país, municipio, aldea, estado, etc.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>

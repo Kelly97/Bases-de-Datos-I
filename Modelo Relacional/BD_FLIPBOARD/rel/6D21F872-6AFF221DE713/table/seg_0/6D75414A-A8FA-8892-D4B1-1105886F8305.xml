@@ -11,6 +11,7 @@
 <Column name="CODIGO_REVISTA" id="B705BF36-0175-9D86-FB96-12635CE6CF30">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:25:48 UTC</createdTime>
+<commentInRDBMS>Código revista.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -21,6 +22,7 @@
 <Column name="CODGIO_USUARIO" id="0A4A98DC-D3DF-B165-B8FE-8BD0593D5B49">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:30:41 UTC</createdTime>
+<commentInRDBMS>Código usuario al que pertenece la revista.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -35,6 +37,7 @@
 <Column name="NOMBRE_REVISTA" id="B7298DA5-F527-3030-51AC-EBDBB8153100">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:25:48 UTC</createdTime>
+<commentInRDBMS>Nombre de la revista.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -47,6 +50,7 @@
 <Column name="DESCRIPCION" id="C941183C-0FF6-7AC5-27FD-99EADB88D56B">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:25:48 UTC</createdTime>
+<commentInRDBMS>Descripción de revista.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -59,6 +63,7 @@
 <Column name="CODIGO_TIPO_REVISTA" id="4605685C-E6C7-A3BA-41E4-81825D9407EF">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:28:19 UTC</createdTime>
+<commentInRDBMS>Código del tipo de revista</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -73,6 +78,7 @@
 <Column name="FECHA_DE_CREACION" id="BF0D0F4C-3017-D0F9-BD69-5D4ADC88727F">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:30:32 UTC</createdTime>
+<commentInRDBMS>Fecha de creación de la revista.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -84,6 +90,7 @@
 <Column name="URL_REVISTA" id="D8735DD2-F081-1478-1AE8-AC844E6EB608">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:31:33 UTC</createdTime>
+<commentInRDBMS>Dirección de la revista.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>

@@ -11,6 +11,7 @@
 <Column name="CODGIO_USUARIO" id="FDD3B9CC-4839-336D-7AB4-A56E98199C40">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-14 12:25:43 UTC</createdTime>
+<commentInRDBMS>Código de usuario.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -21,6 +22,7 @@
 <Column name="CODIGO_TIPO_USUARIO" id="5ACE151A-7A08-D47B-06EE-1A0724127200">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-14 13:04:09 UTC</createdTime>
+<commentInRDBMS>Código del tipo de usuario, éste podría ser un usuario normal, administrador o source.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -35,6 +37,7 @@
 <Column name="CODIGO_LUGAR_RESIDENCIA" id="187929BB-E23C-42B9-6DE2-6DF7C7621033">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-14 13:04:42 UTC</createdTime>
+<commentInRDBMS>Lugar de residencia, específicamente podría ser el país para hacer un mejor filtrado de noticias.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -49,6 +52,7 @@
 <Column name="NOMBRE_USUARIO" id="2263BCCA-8E39-AE51-25F7-747CADD026E6">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-14 12:25:43 UTC</createdTime>
+<commentInRDBMS>Nombre, alias o nombre corporativo del usuario.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -61,6 +65,7 @@
 <Column name="CORREO" id="EA062311-9AC5-A699-4C54-B4EE30F0BBDA">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-14 12:25:43 UTC</createdTime>
+<commentInRDBMS>Correo del usuario</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -73,6 +78,7 @@
 <Column name="CONTRASEÑA" id="9CE2B56A-5E6C-A162-8AA9-838D2E91D2A0">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-14 12:25:43 UTC</createdTime>
+<commentInRDBMS>Contraseña del usuario.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -85,6 +91,7 @@
 <Column name="FOTO" id="06A59DCB-77E7-3FEE-88F6-147553BCDEB0">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:24:09 UTC</createdTime>
+<commentInRDBMS>Foto de perfil que el usuario selecciona.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -96,7 +103,7 @@
 <Column name="DESCRIPCION" id="DF5DB34B-5789-CF0A-619C-657FE04C6E14">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:24:09 UTC</createdTime>
-<commentInRDBMS>Espacio nombrado &quot;Escribe algo sobre ti&quot;</commentInRDBMS>
+<commentInRDBMS>Espacio nombrado &quot;Escribe algo sobre ti&quot;.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
