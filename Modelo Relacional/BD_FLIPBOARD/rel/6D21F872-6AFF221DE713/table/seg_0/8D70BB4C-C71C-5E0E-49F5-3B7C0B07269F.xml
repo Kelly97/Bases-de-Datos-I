@@ -36,6 +36,20 @@
 <colAssociation fkAssociation="B9A8E7C9-FBC9-D916-E2C8-C86C06180030" referredColumn="84BB8FDF-6E47-9899-9F96-72AC20900F71"/>
 </associations>
 </Column>
+<Column name="TBL_COMENTARIOS_CODIGO_USUARIO" id="43FFB2FC-7494-8F12-B447-8482AE6AC309">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-25 00:10:31 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B9A8E7C9-FBC9-D916-E2C8-C86C06180030" referredColumn="5689EFC6-8C17-2B68-E1F4-1E032C912BD0"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="DEF69DA3-D9BB-BFB6-8DFF-347858B82688" name="CODIGO_COMENTARIOv1">
@@ -46,6 +60,7 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="4A7BA8ED-776D-32D9-6E83-6145881E9794"/>
+<colUsage columnID="43FFB2FC-7494-8F12-B447-8482AE6AC309"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="50C99285-588A-B44D-3060-8C564CB24C33" name="CODIGO_NOTICIA">

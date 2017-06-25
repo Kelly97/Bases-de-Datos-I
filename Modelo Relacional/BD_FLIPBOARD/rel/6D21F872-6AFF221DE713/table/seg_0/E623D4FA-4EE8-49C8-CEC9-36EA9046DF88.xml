@@ -1,17 +1,17 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FDC863D9-BC47-95EF-9A00-861FB69DCC76" name="TBL_COMENTARIOS">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E623D4FA-4EE8-49C8-CEC9-36EA9046DF88" name="TBL_NOTIFICACIONES">
 <createdBy>Allan</createdBy>
-<createdTime>2017-06-24 23:05:35 UTC</createdTime>
+<createdTime>2017-06-24 23:54:47 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
-<ordsAlias>table_13</ordsAlias>
+<ordsAlias>table_16</ordsAlias>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="CODIGO_COMENTARIO" id="84BB8FDF-6E47-9899-9F96-72AC20900F71">
+<Column name="CODIGO_NOTIFICACION" id="CE619851-EF3F-53B4-51B7-3CCC5C85987E">
 <createdBy>Allan</createdBy>
-<createdTime>2017-06-24 23:06:09 UTC</createdTime>
-<commentInRDBMS>Código comentario</commentInRDBMS>
+<createdTime>2017-06-24 23:56:11 UTC</createdTime>
+<commentInRDBMS>El código de cada notificación.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -19,9 +19,10 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="CODIGO_USUARIO" id="5689EFC6-8C17-2B68-E1F4-1E032C912BD0">
+<Column name="CODIGO_USUARIO" id="3E2A2469-5B9B-3577-3018-413E3BEB8584">
 <createdBy>Allan</createdBy>
-<createdTime>2017-06-25 00:09:50 UTC</createdTime>
+<createdTime>2017-06-25 00:09:01 UTC</createdTime>
+<commentInRDBMS>El código del usuario de la notificación respectiva.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -29,13 +30,13 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="30BE1E55-3243-3FA8-082A-331B4C161D3D" referredColumn="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
+<colAssociation fkAssociation="ADAA5058-39C3-E06B-13BE-B72669F2BC1F" referredColumn="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
 </associations>
 </Column>
-<Column name="CONTENIDO" id="2FB92668-DA32-1543-1E45-D86D3D6DFFC9">
+<Column name="DESCRIPCION_NOTIFICACION" id="613F5BE4-7A1C-08B9-0829-CFDF0B5BC4E9">
 <createdBy>Allan</createdBy>
-<createdTime>2017-06-24 23:09:15 UTC</createdTime>
-<commentInRDBMS>El comentario como tal.</commentInRDBMS>
+<createdTime>2017-06-24 23:56:11 UTC</createdTime>
+<commentInRDBMS>Lo que dirá la notificación respectiva.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -45,39 +46,40 @@
 <ownDataTypeParameters>200,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="FECHA" id="BF41F8B7-684E-EAF9-659D-5E924586E01F">
+<Column name="ESTADO_NOTIFICACION" id="512B08E6-072F-1333-D657-3F1C8356843E">
 <createdBy>Allan</createdBy>
-<createdTime>2017-06-25 00:11:25 UTC</createdTime>
+<createdTime>2017-06-25 00:54:28 UTC</createdTime>
+<commentInRDBMS>El estado para saber si la notificación fue vista o no por el usuario correspondiente.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="B0EE6F02-2131-D47E-B893-CE761137E729" name="TBL_COMENTARIOS_PK">
+<ind_PK_UK id="52D20578-D073-F5E5-C3EE-0AED7485B56C" name="TBL_NOTIFICACIONES_PK">
 <createdBy>Allan</createdBy>
-<createdTime>2017-06-24 23:06:09 UTC</createdTime>
+<createdTime>2017-06-25 00:02:35 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="84BB8FDF-6E47-9899-9F96-72AC20900F71"/>
-<colUsage columnID="5689EFC6-8C17-2B68-E1F4-1E032C912BD0"/>
+<colUsage columnID="CE619851-EF3F-53B4-51B7-3CCC5C85987E"/>
+<colUsage columnID="3E2A2469-5B9B-3577-3018-413E3BEB8584"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="F96E6172-E31A-B01D-7D65-D2CC89184D53" name="TBL_COMENTARIOS_TBL_USUARIOS_FK">
+<ind_PK_UK id="7EB4DFAB-EABD-B2B4-4F6E-8EDB78D1F3B5" name="TBL_NOTIFICACIONES_TBL_USUARIOS_FK">
 <createdBy>Allan</createdBy>
-<createdTime>2017-06-25 00:09:50 UTC</createdTime>
+<createdTime>2017-06-25 00:09:01 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="5689EFC6-8C17-2B68-E1F4-1E032C912BD0"/>
+<colUsage columnID="3E2A2469-5B9B-3577-3018-413E3BEB8584"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

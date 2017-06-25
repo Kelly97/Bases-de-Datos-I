@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7CC9DD6A-BBCE-62A2-15E2-E23958C865EB" name="TBL_COLABORADORES">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-25 00:57:15 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<ordsAlias>table_22</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_COLABORADOR" id="702135B2-AF55-300E-A531-6B4CFD5AF20C">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-25 00:58:31 UTC</createdTime>
+<commentInRDBMS>El código del usuario que esta colaborando en la revista.</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7C6144EC-ECBB-3006-8131-6BC4AD7D6C97" referredColumn="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
+</associations>
+</Column>
+<Column name="CODIGO_REVISTA" id="AF99844A-53A4-DEDA-20A4-C509C08A46E0">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-25 00:58:31 UTC</createdTime>
+<commentInRDBMS>El código de la revista en la que esta colaborando el usuario.</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D44D5C08-7DAB-767D-81E2-CA682A801A78" referredColumn="B705BF36-0175-9D86-FB96-12635CE6CF30"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="401A6CD1-201A-7603-B69F-9369F04E8B23" name="TBL_COLABORADORES_PK">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-25 00:58:31 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="702135B2-AF55-300E-A531-6B4CFD5AF20C"/>
+<colUsage columnID="AF99844A-53A4-DEDA-20A4-C509C08A46E0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7C4066AF-44D3-0E39-B169-8636FB2C60C5" name="TBL_COLABORADORES_TBL_REVISTAS_FK">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-25 00:58:31 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AF99844A-53A4-DEDA-20A4-C509C08A46E0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F3198342-92E3-70AD-CD47-4012E586AD32" name="TBL_COLABORADORES_TBL_USUARIOS_FK">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-25 00:58:31 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="702135B2-AF55-300E-A531-6B4CFD5AF20C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

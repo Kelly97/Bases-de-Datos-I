@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A3F2CD2A-30B8-AA34-6DDF-EEDB3F7052C0" name="TBL_REVISTAS_SEGUIDAS">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-25 01:05:07 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<ordsAlias>table_24</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_SEGUIDOR" id="EC786429-35F6-01CE-9C8F-C841B42A8988">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-25 01:06:26 UTC</createdTime>
+<commentInRDBMS>El código del usuario que sigue la revista.</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="011F1C0B-718E-7E46-8488-69F9DED588C3" referredColumn="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
+</associations>
+</Column>
+<Column name="CODIGO_REVISTA" id="51F9A0EB-D4CA-B898-8555-6E00F961842F">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-25 01:06:26 UTC</createdTime>
+<commentInRDBMS>El código de la revista que esta siendo seguida.</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="668CECE0-74E5-F3F4-3427-750FAE26BB3E" referredColumn="B705BF36-0175-9D86-FB96-12635CE6CF30"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="33263CBD-2A10-B616-BB3A-ABC9BC253BDF" name="TBL_REVISTAS_SEGUIDAS_PK">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-25 01:07:34 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EC786429-35F6-01CE-9C8F-C841B42A8988"/>
+<colUsage columnID="51F9A0EB-D4CA-B898-8555-6E00F961842F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9E704D74-AB80-84F2-D174-94B6E0BBA9A6" name="TABLE_24_TBL_REVISTAS_FK">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-25 01:06:26 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="51F9A0EB-D4CA-B898-8555-6E00F961842F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B26F304A-70FB-5404-AF60-21E05684FE19" name="TABLE_24_TBL_USUARIOS_FK">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-25 01:06:26 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EC786429-35F6-01CE-9C8F-C841B42A8988"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
