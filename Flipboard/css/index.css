@@ -9,7 +9,7 @@ body{
 	font-size: 10px;
 	border: none;
 }
-.botones-noticia{
+.botones-noticia-general{
 	position: absolute;
 	right: 13px;
 	top: 13px;
@@ -26,7 +26,9 @@ body{
   border-radius: 15px;
   margin-bottom: 5px;
 }
-
+.thumbnail:hover .botones-noticia-general{
+	display: block;
+}
 .thumbnail:hover .botones-noticia{
 	display: block;
 }
@@ -59,4 +61,17 @@ body{
 }
 .navbar-nav li:hover{
 	cursor: pointer;
+}
+.thumbnail a{
+	color: black;
+	text-decoration: none;
+}
+
+.btn-seguir{
+	border-radius: 30px;
+	border-color: black;
+}
+.btn-seguir:hover{
+	background-color: black;
+	color: white;
 }
