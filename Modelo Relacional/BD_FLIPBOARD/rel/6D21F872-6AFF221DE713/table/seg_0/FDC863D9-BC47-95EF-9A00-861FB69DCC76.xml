@@ -67,7 +67,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="84BB8FDF-6E47-9899-9F96-72AC20900F71"/>
-<colUsage columnID="5689EFC6-8C17-2B68-E1F4-1E032C912BD0"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="F96E6172-E31A-B01D-7D65-D2CC89184D53" name="TBL_COMENTARIOS_TBL_USUARIOS_FK">

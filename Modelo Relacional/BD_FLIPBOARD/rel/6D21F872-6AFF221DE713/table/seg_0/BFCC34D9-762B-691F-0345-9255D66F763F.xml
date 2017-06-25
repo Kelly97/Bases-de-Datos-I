@@ -1,17 +1,17 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8D70BB4C-C71C-5E0E-49F5-3B7C0B07269F" name="TBL_COMENTARIOS_X_NOTICIAS">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BFCC34D9-762B-691F-0345-9255D66F763F" name="TBL_REACCIONES_X_NOTICIAS">
 <createdBy>Allan</createdBy>
-<createdTime>2017-06-24 23:25:16 UTC</createdTime>
+<createdTime>2017-06-25 03:50:13 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
-<ordsAlias>table_16</ordsAlias>
+<ordsAlias>table_28</ordsAlias>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="CODIGO_NOTICIA" id="1E35541E-B577-3021-D8FA-D59A6BBEB0CD">
+<Column name="CODIGO_REACCION" id="62915DE8-635F-E750-1692-272E80A0E6EF">
 <createdBy>Allan</createdBy>
-<createdTime>2017-06-24 23:26:25 UTC</createdTime>
-<commentInRDBMS>El código de la noticia donde esta el comentario respectivo.</commentInRDBMS>
+<createdTime>2017-06-25 03:51:28 UTC</createdTime>
+<commentInRDBMS>El código de la reaccion de la noticia respectiva.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -19,13 +19,13 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="5FCF1DD4-9C7B-D62D-E069-F1E57C311DA7" referredColumn="4C02DAF3-16D2-77A6-0B93-17FEDFB5B4C4"/>
+<colAssociation fkAssociation="08BCF2C2-D4CA-0682-4F85-954B4433126C" referredColumn="D62DE8B3-B85B-B0B7-C277-6585E79B4B62"/>
 </associations>
 </Column>
-<Column name="CODIGO_COMENTARIO" id="4A7BA8ED-776D-32D9-6E83-6145881E9794">
+<Column name="CODIGO_NOTICIA" id="EC13B79A-9879-8956-6270-F111CD7AE166">
 <createdBy>Allan</createdBy>
-<createdTime>2017-06-24 23:26:25 UTC</createdTime>
-<commentInRDBMS>El código del comentario de la noticia respectiva.</commentInRDBMS>
+<createdTime>2017-06-25 03:51:28 UTC</createdTime>
+<commentInRDBMS>El código de la noticia de la reacción respectiva.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -33,29 +33,29 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="B9A8E7C9-FBC9-D916-E2C8-C86C06180030" referredColumn="84BB8FDF-6E47-9899-9F96-72AC20900F71"/>
+<colAssociation fkAssociation="F13DBB04-47B6-EF40-C37D-44FD08310739" referredColumn="4C02DAF3-16D2-77A6-0B93-17FEDFB5B4C4"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="DEF69DA3-D9BB-BFB6-8DFF-347858B82688" name="CODIGO_COMENTARIOv1">
+<ind_PK_UK id="5415B977-85E6-8271-73A8-6DCB10292EBD" name="TABLE_28_TBL_REACCIONES_FK">
 <createdBy>Allan</createdBy>
-<createdTime>2017-06-24 23:26:25 UTC</createdTime>
+<createdTime>2017-06-25 03:51:28 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="4A7BA8ED-776D-32D9-6E83-6145881E9794"/>
+<colUsage columnID="62915DE8-635F-E750-1692-272E80A0E6EF"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="50C99285-588A-B44D-3060-8C564CB24C33" name="CODIGO_NOTICIA">
+<ind_PK_UK id="36E52E76-00FA-1D3D-9FFB-B993D90A07FB" name="TABLE_28_TBL_NOTICIAS_FK">
 <createdBy>Allan</createdBy>
-<createdTime>2017-06-24 23:26:25 UTC</createdTime>
+<createdTime>2017-06-25 03:51:28 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="1E35541E-B577-3021-D8FA-D59A6BBEB0CD"/>
+<colUsage columnID="EC13B79A-9879-8956-6270-F111CD7AE166"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
