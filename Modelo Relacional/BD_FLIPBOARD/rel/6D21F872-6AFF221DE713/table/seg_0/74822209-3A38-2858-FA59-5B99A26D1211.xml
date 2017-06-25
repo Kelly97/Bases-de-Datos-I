@@ -8,6 +8,20 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_REACCION" id="8197BD58-0598-AE97-262D-1C27C0F7A4B3">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-25 03:49:59 UTC</createdTime>
+<commentInRDBMS>El código de la reacción del comentario respectivo.</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3E15954A-FE29-8C28-2703-5EF6A902C718" referredColumn="D62DE8B3-B85B-B0B7-C277-6585E79B4B62"/>
+</associations>
+</Column>
 <Column name="CODIGO_COMENTARIO" id="BB3F44DB-5C8F-AEDB-E432-3E08CF6EC268">
 <createdBy>Allan</createdBy>
 <createdTime>2017-06-25 03:49:59 UTC</createdTime>
@@ -22,18 +36,19 @@
 <colAssociation fkAssociation="149E8104-43AE-A674-F321-0308C54A1A77" referredColumn="84BB8FDF-6E47-9899-9F96-72AC20900F71"/>
 </associations>
 </Column>
-<Column name="CODIGO_REACCION" id="8197BD58-0598-AE97-262D-1C27C0F7A4B3">
-<createdBy>Allan</createdBy>
-<createdTime>2017-06-25 03:49:59 UTC</createdTime>
-<commentInRDBMS>El código de la reacción del comentario respectivo.</commentInRDBMS>
+<Column name="CODIGO_USUARIO" id="8E2705FD-0DA1-B2CD-4318-6FB04ADE0482">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-25 12:34:14 UTC</createdTime>
+<commentInRDBMS>Código del usuario que realizó la acción, por ejemplo le dio me gusta al comentario.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="3E15954A-FE29-8C28-2703-5EF6A902C718" referredColumn="D62DE8B3-B85B-B0B7-C277-6585E79B4B62"/>
+<colAssociation fkAssociation="F510DD8D-7E25-D8BE-0103-821790059611" referredColumn="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
 </associations>
 </Column>
 </columns>
@@ -56,6 +71,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="8197BD58-0598-AE97-262D-1C27C0F7A4B3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D309B4A8-7BE6-6A61-36CE-FD40259C2C79" name="TBL_REACCIONES_X_COMENTARIOS_TBL_USUARIOS_FK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-25 12:34:14 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8E2705FD-0DA1-B2CD-4318-6FB04ADE0482"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

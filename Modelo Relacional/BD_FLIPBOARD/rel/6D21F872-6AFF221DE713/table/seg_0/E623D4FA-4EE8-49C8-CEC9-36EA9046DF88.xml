@@ -46,17 +46,20 @@
 <ownDataTypeParameters>200,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="ESTADO_NOTIFICACION" id="512B08E6-072F-1333-D657-3F1C8356843E">
-<createdBy>Allan</createdBy>
-<createdTime>2017-06-25 00:54:28 UTC</createdTime>
-<commentInRDBMS>El estado para saber si la notificación fue vista o no por el usuario correspondiente.</commentInRDBMS>
+<Column name="CODGIO_ESTADO_NOTI" id="72AF469B-9D36-F84A-FFD3-E60BE1F8E7D6">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-25 12:12:15 UTC</createdTime>
+<commentInRDBMS>Código del estado de la notificación.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="72946883-FC80-0776-1173-6BE01FD5AE07" referredColumn="C6C83F49-8526-BBEA-99C6-A621AC1A5833"/>
+</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
@@ -80,6 +83,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="3E2A2469-5B9B-3577-3018-413E3BEB8584"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="392A1D39-F561-C44A-2812-7E5E373582A1" name="TBL_NOTIFICACIONES_TBL_ESTADO_NOTIFICACION_FK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-25 12:12:15 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="72AF469B-9D36-F84A-FFD3-E60BE1F8E7D6"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

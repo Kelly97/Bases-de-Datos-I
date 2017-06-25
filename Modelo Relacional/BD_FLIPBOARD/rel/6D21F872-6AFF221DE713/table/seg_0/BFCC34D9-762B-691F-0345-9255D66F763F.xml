@@ -8,20 +8,6 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="CODIGO_REACCION" id="62915DE8-635F-E750-1692-272E80A0E6EF">
-<createdBy>Allan</createdBy>
-<createdTime>2017-06-25 03:51:28 UTC</createdTime>
-<commentInRDBMS>El código de la reaccion de la noticia respectiva.</commentInRDBMS>
-<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="08BCF2C2-D4CA-0682-4F85-954B4433126C" referredColumn="D62DE8B3-B85B-B0B7-C277-6585E79B4B62"/>
-</associations>
-</Column>
 <Column name="CODIGO_NOTICIA" id="EC13B79A-9879-8956-6270-F111CD7AE166">
 <createdBy>Allan</createdBy>
 <createdTime>2017-06-25 03:51:28 UTC</createdTime>
@@ -34,6 +20,35 @@
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="F13DBB04-47B6-EF40-C37D-44FD08310739" referredColumn="4C02DAF3-16D2-77A6-0B93-17FEDFB5B4C4"/>
+</associations>
+</Column>
+<Column name="CODIGO_USUARIO" id="B086B1CB-9954-270F-67E7-FB0B5CB5E21B">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-25 12:35:53 UTC</createdTime>
+<commentInRDBMS>Código del usuario que realiza la reacción, por ejemplo, que le da me gusta a una noticia.</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="005A6186-333B-62C3-6E18-35F3C5828931" referredColumn="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
+</associations>
+</Column>
+<Column name="CODIGO_REACCION" id="62915DE8-635F-E750-1692-272E80A0E6EF">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-25 03:51:28 UTC</createdTime>
+<commentInRDBMS>El código de la reaccion de la noticia respectiva.</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="08BCF2C2-D4CA-0682-4F85-954B4433126C" referredColumn="D62DE8B3-B85B-B0B7-C277-6585E79B4B62"/>
 </associations>
 </Column>
 </columns>
@@ -56,6 +71,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="EC13B79A-9879-8956-6270-F111CD7AE166"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="00DC3498-5FEE-E6CA-FC93-09695CBC55A6" name="TBL_REACCIONES_X_NOTICIAS_TBL_USUARIOS_FK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-25 12:35:53 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B086B1CB-9954-270F-67E7-FB0B5CB5E21B"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F4739337-981E-0287-F675-DEB7163A647B" name="TBL_ESTADO_NOTIFICACION">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-25 12:10:25 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<ordsAlias>table_22</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODGIO_ESTADO_NOTI" id="C6C83F49-8526-BBEA-99C6-A621AC1A5833">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-25 12:11:47 UTC</createdTime>
+<commentInRDBMS>Código del estado de la notificación.</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ESTADO_NOTIFICACION" id="CEA84C8A-5A02-DFA2-71AD-660B5890ABF0">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-25 12:11:47 UTC</createdTime>
+<commentInRDBMS>Estado de la notificación, por ejemplo: leída, no leída, etc.</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="157C7E4F-B88E-7656-7719-FBE2AB2367FF" name="TBL_ESTADO_NOTIFICACION_PK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-25 12:11:47 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C6C83F49-8526-BBEA-99C6-A621AC1A5833"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

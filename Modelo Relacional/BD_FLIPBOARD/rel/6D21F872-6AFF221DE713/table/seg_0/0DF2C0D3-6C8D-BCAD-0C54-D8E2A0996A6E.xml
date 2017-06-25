@@ -81,9 +81,10 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="TBL_CATEGORIA_CODIGO_CATEGORIA" id="4B84C961-6564-1947-5AA1-79EC87A41CE0">
+<Column name="CODIGO_CATEGORIA" id="4B84C961-6564-1947-5AA1-79EC87A41CE0">
 <createdBy>Allan</createdBy>
 <createdTime>2017-06-24 22:56:11 UTC</createdTime>
+<commentInRDBMS>Código de la categoría a la que pertenece la noticia.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>

@@ -38,6 +38,21 @@
 <colAssociation fkAssociation="28FE13DB-A42A-BCED-7ED9-8D7B50432A61" referredColumn="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
 </associations>
 </Column>
+<Column name="CODIGO_REVISTA" id="75CA4E9B-E9D1-C81A-9E73-DDDD4ED4AE38">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-25 12:14:21 UTC</createdTime>
+<commentInRDBMS>Código de la revista en la que fue flipeada la noticia.</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F1D961C2-289B-CF40-9882-287C246D4589" referredColumn="B705BF36-0175-9D86-FB96-12635CE6CF30"/>
+</associations>
+</Column>
 <Column name="FECHA" id="11AB6D78-D800-102F-18D0-B17824C9F9C6">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:43:32 UTC</createdTime>
@@ -62,6 +77,7 @@
 <indexColumnUsage>
 <colUsage columnID="ECBEA3B5-73CC-1D55-07A3-30F36FE64ADD"/>
 <colUsage columnID="5C976B9D-85D7-8022-8CF5-EF02CBB06B0E"/>
+<colUsage columnID="75CA4E9B-E9D1-C81A-9E73-DDDD4ED4AE38"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="38B96FAB-ACD8-36F7-148C-091FCCB8CCBF" name="TBL_NOTICIAS_FK">
@@ -82,6 +98,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="ECBEA3B5-73CC-1D55-07A3-30F36FE64ADD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="777BFDED-1499-A57A-87C3-7BA9B9B988BA" name="TBL_FLIPS_X_USUARIO_TBL_REVISTAS_FK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-25 12:14:21 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="75CA4E9B-E9D1-C81A-9E73-DDDD4ED4AE38"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
