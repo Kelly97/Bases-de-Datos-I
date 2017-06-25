@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flipboard</title>
+    <link rel="icon" href="images/favicon.jpg">
+    <link href="css/bootstrap.min.css" rel="stylesheet">  
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- EDITOR DE TEXTO -->
+    <script src="//cdn.ckeditor.com/4.7.0/standard/ckeditor.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
+    <!-- FIN EDITOR TEXTO -->
+
+    <!-- SUBIR IMAGEN -->
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- FIN SUBIR IMAGEN -->
+
+  </head>
+  
+  <body>    
+    <div>
+	    <nav id="navbar" class="navbar navbar-default navbar-fixed-top">
+	      <div id="navbar-sup" class="container-fluid" style="padding-left: 0px;">
+	        <!-- Brand and toggle get grouped for better mobile display -->
+	        <div class="navbar-header">
+	        	<img id="myimage" src="images/logo.png" style="max-height: 55px;">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	        </div>
+	         
+	        </div><!-- /.navbar-collapse -->      
+	      </div><!-- /.container-fluid -->
+	    </nav>
+	</div>      
+	<!-- FIN NAV -->
+	<br><br><br>
+    
+    <div class="container" style="width: 700px; ">
+    	<div class="row">
+    		<label><strong><h4>Título Noticia:</h4></strong></label>
+    		<input type="text" name="titulo" id="titulo" class="form-control" required autofocus><br><hr>
+    		
+    		<label><strong><h4>Categoría Noticia:</h4></strong></label>
+    		<select id="categoria_noticia" name="categoria_noticia" class="form-control" required>
+    			<option>Seleccione una opción</option>
+    			<option value="1">ARTE</option>
+	            <option value="2">ANIME</option>
+	            <option value="3">DEPORTES</option>
+	            <option value="4">CULTURA</option>
+	            <option value="5">MODA</option>
+	            <option value="6">INGENIERIA</option>
+	            <option value="7">BRICOLAGE</option>
+	            <option value="8">MUNDO</option>
+	            <option value="9">FARANDULA</option>
+	            <option value="10">JARDINERIA</option>
+	            <option value="11">COCINA</option>
+	            <option value="12">HOGAR</option>
+	            <option value="13">NIÑOS</option>
+    		</select><br><hr>
+    	
+    		 <!-- Subir imagen -->
+    		<label><strong><h4>Imagen portada:</h4></strong></label>	 
+    		<div>
+    		 	<form method="post" id="formulario" enctype="multipart/form-data">
+				    <input type="file" name="file" id="file" required>
+				</form>
+			    <div id="respuesta"></div>
+    		</div><br><hr>
+    		<!-- Fin subir imagen -->
+
+    		<label><strong><h4>Descripción Breve:</h4></strong></label>
+    		<textarea id="descripcion" class="form-control" rows="5" name="descripcion" required></textarea><br><hr>
+    		
+			<label><strong><h4>Autor:</h4></strong></label>
+			<input type="text" name="autor" id="autor" class="form-control" required><br><hr><br>
+    		
+    		<!-- Inicio editor texto -->
+    		<form>
+		        <textarea name="editor1" id="editor1" rows="30" cols="80">
+		            Esta es el área para redactar la noticia.
+		        </textarea>
+		        <script>
+		            // Replace the <textarea id="editor1"> with a CKEditor
+		            // instance, using default configuration.
+		            CKEDITOR.replace( 'editor1' );
+		        </script>
+		    </form><br><hr>
+		    <!-- Fin edicion texto -->
+
+		    <div style="text-align: right;">
+		    	<button class="btn btn-primary btn-lg" id="btn-guardar_noticia" name="btn-guardar_noticia" style="border-radius: 0px; background-color: #0099cc;">Guardar Noticia</button><br><br>
+		    </div>
+
+    	</div> <!-- fin div row -->
+    </div>  <!-- fin div container -->
+   
+
+      <!--Scripts-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/redactador.js"></script> 
+      <script src="js/slick.min.js"></script>
+      <!--FIN Scripts-->
+
+
+
+  </body>
+</html>
+
+
+
+           
