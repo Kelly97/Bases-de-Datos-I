@@ -18,3 +18,10 @@ $("#btn-inicio").click(function(){
 		});
 	$("#btn-inicio").button("reset");
 });
+
+
+
+
+
+
+

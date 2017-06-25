@@ -68,3 +68,9 @@ function cargarNoticias(codigo){
         }
     });	
 }
+
+function perfilUsuario(){
+	$('#contenido-principal').load('ajax/perfil.html', function(data) {
+			$(this).html(data);
+		});
+}
