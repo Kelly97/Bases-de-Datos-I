@@ -24,7 +24,6 @@
 <createdTime>2017-06-14 12:37:43 UTC</createdTime>
 <commentInRDBMS>Tipo de lugar, como ser: país, municipio, aldea, estado, etc.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>

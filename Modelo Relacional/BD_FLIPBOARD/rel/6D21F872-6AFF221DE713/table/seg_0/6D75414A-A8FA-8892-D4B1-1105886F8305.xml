@@ -39,7 +39,6 @@
 <createdTime>2017-06-20 17:25:48 UTC</createdTime>
 <commentInRDBMS>Nombre de la revista.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -80,7 +79,6 @@
 <createdTime>2017-06-20 17:30:32 UTC</createdTime>
 <commentInRDBMS>Fecha de creación de la revista.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>

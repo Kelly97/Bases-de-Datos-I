@@ -24,7 +24,6 @@
 <createdTime>2017-06-14 13:02:04 UTC</createdTime>
 <commentInRDBMS>Nombre de la categoría, como ser: deportes, arte, ingeniería, etc.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>

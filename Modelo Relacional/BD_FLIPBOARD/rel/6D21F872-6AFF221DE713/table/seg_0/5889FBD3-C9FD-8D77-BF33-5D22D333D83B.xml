@@ -55,7 +55,6 @@
 <createdTime>2017-06-14 12:31:14 UTC</createdTime>
 <commentInRDBMS>Nombre del lugar.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>

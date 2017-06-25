@@ -58,7 +58,6 @@
 <createdTime>2017-06-20 17:43:32 UTC</createdTime>
 <commentInRDBMS>Fecha en la que se hizo el Flip.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>

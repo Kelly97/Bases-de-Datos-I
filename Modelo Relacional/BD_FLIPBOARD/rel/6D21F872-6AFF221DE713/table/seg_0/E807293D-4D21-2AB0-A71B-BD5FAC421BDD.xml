@@ -24,7 +24,6 @@
 <createdTime>2017-06-25 03:45:42 UTC</createdTime>
 <commentInRDBMS>El tipo de reacción.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>

@@ -68,12 +68,11 @@
 <createdTime>2017-06-24 23:09:15 UTC</createdTime>
 <commentInRDBMS>El comentario como tal.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>200</dataTypeSize>
-<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="FECHA" id="BF41F8B7-684E-EAF9-659D-5E924586E01F">
@@ -81,7 +80,6 @@
 <createdTime>2017-06-25 00:11:25 UTC</createdTime>
 <commentInRDBMS>Fecha en la que se realizó el comentario.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>

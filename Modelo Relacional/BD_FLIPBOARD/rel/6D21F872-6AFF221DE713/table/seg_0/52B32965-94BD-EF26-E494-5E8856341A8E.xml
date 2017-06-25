@@ -54,7 +54,6 @@
 <createdTime>2017-06-14 12:25:43 UTC</createdTime>
 <commentInRDBMS>Nombre, alias o nombre corporativo del usuario.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
@@ -67,7 +66,6 @@
 <createdTime>2017-06-14 12:25:43 UTC</createdTime>
 <commentInRDBMS>Correo del usuario</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
@@ -80,7 +78,6 @@
 <createdTime>2017-06-14 12:25:43 UTC</createdTime>
 <commentInRDBMS>Contraseña del usuario.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
