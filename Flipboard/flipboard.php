@@ -58,6 +58,11 @@
                 <i class="fa fa-search fa-lg" aria-hidden="true"></i>
               </a>
             </li>
+            <li data-toggle="popover" data-placement="left" data-content="Redactar Noticia" data-trigger="hover">
+              <a href="redactador_noticias.html" target="blank">
+                <i class="fa fa-newspaper-o fa-lg" aria-hidden="true"></i>
+              </a>
+            </li>
             <li data-toggle="popover" data-placement="left" data-content="Mis revistas" data-trigger="hover">
               <a data-toggle="modal" data-target="#modal-002">
                 <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>

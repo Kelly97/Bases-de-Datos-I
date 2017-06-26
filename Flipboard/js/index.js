@@ -46,7 +46,7 @@ $(window).resize(function(){
 function ajustarContenedorNoticias(){
 	var altoNavbar = $(".iconos-derecha").height() + 40;
 	$('#contenido-principal').css("margin-top",altoNavbar+"px");
-	var anchoIntereses = $(window).width() - $(".iconos-derecha").width()-170;
+	var anchoIntereses = $(window).width() - $(".iconos-derecha").width() - $("#myimage").width() - 100;
 	$('.your-class').css("width",anchoIntereses+"px");
 }
 
@@ -74,3 +74,4 @@ function perfilUsuario(){
 			$(this).html(data);
 		});
 }
+
