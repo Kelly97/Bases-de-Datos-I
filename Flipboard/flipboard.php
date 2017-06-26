@@ -92,149 +92,27 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-            <div class="search-passion" data-reactid=".0.3.$=1$0.1.0.0.$=10.0">
-              <div class="text-input-intl" data-reactid=".0.3.$=1$0.1.0.0.$=10.0.1">
-                <span data-reactid=".0.3.$=1$0.1.0.0.$=10.0.1.0"></span>
-                <span data-reactid=".0.3.$=1$0.1.0.0.$=10.0.1.1">Elige un interés</span>
-                <span data-reactid=".0.3.$=1$0.1.0.0.$=10.0.1.2"></span>
-              </div>
+            <div class="search-passion">
+                <span>Elige un interés</span>
             </div>
           </div>
-          <div class="modal-body">
-            <div class="add-favorite-view" data-red=acti".0.3.$=1$0.1.0">
-              <span data-reactid=".0.3.$=1$0.1.0.0">
-              <div class="add-favorites" data-reactid=".0.3.$=1$0.1.0.0.$=10">
-                <div class="all-favorites" data-reactid=".0.3.$=1$0.1.0.0.$=10.1">
-                  <div class="recommended" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1">
-                    <div class="favorites" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1">
-                      <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.0"></span>
-                      <div class="favorite" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:0">
-                        <div class="name" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:0.0">
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:0.0.0"></span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:0.0.1">Noticias</span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:0.0.2"></span>
-                        </div>
-                      </div>
-                      <div class="favorite" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:1">
-                        <div class="name" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:1.0">
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:1.0.0"></span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:1.0.1">Tecnología</span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:1.0.2"></span>
-                        </div>
-                      </div>
-                      <div class="favorite" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:2">
-                        <div class="name" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:2.0">
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:2.0.0"></span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:2.0.1">Diseño</span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:2.0.2"></span>
-                        </div>
-                      </div>
-                      <div class="favorite" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:3">
-                        <div class="name" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:3.0">
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:3.0.0"></span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:3.0.1">Fotografía</span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:3.0.2"></span>
-                        </div>
-                      </div>
-                      <div class="favorite" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:4">
-                        <div class="name" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:4.0">
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:4.0.0"></span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:4.0.1">Negocios</span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:4.0.2"></span>
-                        </div>
-                      </div>
-                      <div class="favorite" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:5">
-                        <div class="name" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:5.0">
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:5.0.0"></span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:5.0.1">Deportes</span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:5.0.2"></span>
-                        </div>
-                      </div>
-                      <div class="favorite" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:6">
-                        <div class="name" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:6.0">
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:6.0.0"></span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:6.0.1">Estilo</span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:6.0.2"></span>
-                        </div>
-                      </div>
-                      <div class="favorite" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:7">
-                        <div class="name" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:7.0">
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:7.0.0"></span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:7.0.1">Viajes</span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:7.0.2"></span>
-                        </div>
-                      </div>
-                      <div class="favorite" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:8">
-                        <div class="name" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:8.0">
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:8.0.0"></span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:8.0.1">Política</span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:8.0.2"></span>
-                        </div>
-                      </div>
-                      <div class="favorite" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:9">
-                        <div class="name" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:9.0">
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:9.0.0"></span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:9.0.1">Gastronomía</span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:9.0.2"></span>
-                        </div>
-                      </div>
-                      <div class="favorite" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:a">
-                        <div class="name" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:a.0">
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:a.0.0"></span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:a.0.1">Música</span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:a.0.2"></span>
-                        </div>
-                      </div>
-                      <div class="favorite" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:b">
-                        <div class="name" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:b.0">
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:b.0.0"></span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:b.0.1">Cine</span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:b.0.2"></span>
-                        </div>
-                      </div>
-                      <div class="favorite" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:c">
-                        <div class="name" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:c.0">
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:c.0.0"></span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:c.0.1">Videojuegos</span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:c.0.2"></span>
-                        </div>
-                      </div>
-                      <div class="favorite" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:d">
-                        <div class="name" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:d.0">
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:d.0.0"></span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:d.0.1">Automotriz</span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:d.0.2"></span>
-                        </div>
-                      </div>
-                      <div class="favorite" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:e">
-                        <div class="name" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:e.0">
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:e.0.0"></span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:e.0.1">Ciencias</span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:e.0.2"></span>
-                        </div>
-                      </div>
-                      <div class="favorite" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:f">
-                        <div class="name" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:f.0">
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:f.0.0"></span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:f.0.1">Hogar</span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:f.0.2"></span>
-                        </div>
-                      </div>
-                      <div class="favorite" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:g">
-                        <div class="name" data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:g.0">
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:g.0.0"></span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:g.0.1">Celebridades</span>
-                          <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.1:g.0.2"></span>
-                        </div>
-                      </div>
-                      <span data-reactid=".0.3.$=1$0.1.0.0.$=10.1.1.1.2"></span>
-                    </div>
-                  </div>
+          <div class="modal-body">               
+              <div class="favorite">
+                <div class="name">
+                  <span>Noticias</span>
                 </div>
               </div>
-              </span>
-              <div class="sub-message nodisplay" data-reactid=".0.3.$=1$0.1.0.1"></div>
-            </div>
+              <div class="favorite">
+                <div class="name">
+                  <span>Automotriz</span>
+                </div>
+              </div>
+              <div class="favorite">
+                <div class="name">
+                  <span>Jardinería</span>
+                </div>
+              </div>
+                      
           </div><!-- /.modal-body -->
         </div><!--/.modal-content-->
       </div><!--/.modal-dialog-->
