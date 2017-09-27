@@ -54,7 +54,7 @@
               </a>
             </li>
           	<li data-toggle="popover" data-placement="left" data-content="Buscar" data-trigger="hover">
-              <a>
+              <a data-toggle="modal" data-target="#modal-004">
                 <i class="fa fa-search fa-lg" aria-hidden="true"></i>
               </a>
             </li>
@@ -70,7 +70,7 @@
             </li>
             <li data-toggle="popover" data-placement="left" data-content="Notificaciones" data-trigger="hover">
               <a>
-                <i class="fa fa-bell fa-lg" aria-hidden="true"><span class="badge">50</span></i>
+                <i class="fa fa-bell fa-lg" aria-hidden="true"><span class="badge">1</span></i>
               </a>
             </li>
             <li onclick="perfilUsuario()" data-toggle="popover" data-placement="left" data-content="Perfil" data-trigger="hover">
@@ -172,6 +172,31 @@
       </div><!--/.modal-dialog-->
     </div><!-- /.modal003 -->
     <!--FIN modal 003-->
+
+    <!--Modal 004: Agregar Revista -->
+    <div class="modal fade" id="modal-004" tabindex="-1" role="dialog" aria-hidden="true"><!--/.modal003-->
+      <div class="modal-dialog" role="document"><!--/.modal-dialog-->
+        <div class="modal-content"><!--/.modal-content-->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Buscar</h4>
+          </div>
+          <div class="modal-body">
+            <input type="text" class="form-control" id="busqueda" placeholder="¿Qué buscas?"><br>
+            <label>
+              <input type="radio" name="filtro" id="btn-filtro" value="1">
+              <span>Persona</span>
+            </label>
+            <label>
+              <input type="radio" name="filtro" id="btn-filtro" value="2">
+              <span>Noticia</span>
+            </label><br>
+            <button type="button" class="btn">Buscar</button>
+          </div><!--/.modal-body-->
+        </div><!--/.modal-content-->
+      </div><!--/.modal-dialog-->
+    </div><!-- /.modal004 -->
+    <!--FIN modal 004-->
 
     <!--FIN Modals-->
     
