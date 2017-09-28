@@ -35,7 +35,7 @@
             <li onclick="cargarNoticias(0)">PORTADA</li>
             <li onclick="cargarNoticias(2)">ARTE</li>
             <li onclick="cargarNoticias(3)">ANIME</li>
-            <li onclick="cargarNoticias(4)">DEPORTES</li>
+            <!--<li onclick="cargarNoticias(4)">DEPORTES</li>
             <li onclick="cargarNoticias(5)">CULTURA</li>
             <li onclick="cargarNoticias(6)">MODA</li>
             <li onclick="cargarNoticias(7)">INGENIERIA</li>
@@ -45,8 +45,8 @@
             <li onclick="cargarNoticias(11)">JARDINERIA</li>
             <li onclick="cargarNoticias(12)">COCINA</li>
             <li onclick="cargarNoticias(13)">HOGAR</li>
-            <li onclick="cargarNoticias(14)">NIÑOS</li>
-            <!--<li data-toggle="modal" data-target="#modal-001"><i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i></li>-->
+            <li onclick="cargarNoticias(14)">NIÑOS</li>-->
+            <li data-toggle="modal" data-target="#modal-001">AGREGAR <i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i></li>
           </ul>                    
           <ul class="nav navbar-nav iconos-derecha" style="border-left: 1px solid #E0E0E0;margin-top: 2px;">
             <!--<li data-toggle="popover" data-placement="left" data-content="Agregar nuevo interés" data-trigger="hover">
@@ -77,11 +77,6 @@
                   </div>
                 </div>
                 <!-- FIN Dropdown 001 -->
-            </li>
-            
-            <li data-toggle="popover" data-placement="left" data-content="Redactar Noticia" data-trigger="hover">
-              <a href="redactador_noticias.html" target="blank">
-                <i class="fa fa-newspaper-o fa-lg" aria-hidden="true"></i>
               </a>
             </li>
             <li data-toggle="popover" data-placement="left" data-content="Mis revistas" data-trigger="hover">
@@ -90,8 +85,20 @@
               </a>
             </li>
             <li data-toggle="popover" data-placement="left" data-content="Notificaciones" data-trigger="hover">
-              <a>
-                <i class="fa fa-bell fa-lg" aria-hidden="true"><span class="badge">1</span></i>
+              <a data-toggle="dropdown" data-target="#dropdown-002">
+                <i class="fa fa-bell fa-lg" aria-hidden="true"><span class="badge">*</span></i>
+                <!-- Dropdown 002: Notificaciones -->
+                <div class="dropdown" id="dropdown-002" role="menu" aria-hidden="true">
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <b>No hay notificaciones a mostrar.</b>
+                  </div>
+                </div>
+                <!-- FIN Dropdown 002 -->
+              </a>
+            </li>
+            <li data-toggle="popover" data-placement="left" data-content="Redactar Noticia" data-trigger="hover">
+              <a href="redactador_noticias.html" target="blank">
+                <i class="fa fa-newspaper-o fa-lg" aria-hidden="true"></i>
               </a>
             </li>
             <li onclick="perfilUsuario()" data-toggle="popover" data-placement="left" data-content="Perfil" data-trigger="hover">
