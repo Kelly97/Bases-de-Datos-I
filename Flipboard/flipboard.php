@@ -46,18 +46,39 @@
             <li onclick="cargarNoticias(12)">COCINA</li>
             <li onclick="cargarNoticias(13)">HOGAR</li>
             <li onclick="cargarNoticias(14)">NIÑOS</li>
+            <!--<li data-toggle="modal" data-target="#modal-001"><i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i></li>-->
           </ul>                    
           <ul class="nav navbar-nav iconos-derecha" style="border-left: 1px solid #E0E0E0;margin-top: 2px;">
-            <li data-toggle="popover" data-placement="left" data-content="Agregar nuevo interés" data-trigger="hover">
+            <!--<li data-toggle="popover" data-placement="left" data-content="Agregar nuevo interés" data-trigger="hover">
               <a data-toggle="modal" data-target="#modal-001">
                 <i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i>
               </a>
-            </li>
+            </li>--> <!--Ahora en el carrusel -->
           	<li data-toggle="popover" data-placement="left" data-content="Buscar" data-trigger="hover">
-              <a data-toggle="modal" data-target="#modal-004">
+              <a data-toggle="dropdown" data-target="#dropdown-001">
                 <i class="fa fa-search fa-lg" aria-hidden="true"></i>
-              </a>
+                <!-- Dropdown 001: Buscar -->
+                <div class="dropdown" id="dropdown-001" role="menu" aria-hidden="true">
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <input type="text" class="form-control" id="busqueda" placeholder="¿Qué buscas?"><br>
+                        <label>
+                          <input type="radio" name="filtro" id="btn-filtro" value="1">
+                          <span>Usuario</span>
+                        </label><br>
+                        <label>
+                          <input type="radio" name="filtro" id="btn-filtro" value="2">
+                          <span>Revista</span>
+                        </label><br>
+                        <label>
+                          <input type="radio" name="filtro" id="btn-filtro" value="3">
+                          <span>Noticia</span>
+                        </label><br>
+                        <button type="button" class="btn">Buscar</button>
+                  </div>
+                </div>
+                <!-- FIN Dropdown 001 -->
             </li>
+            
             <li data-toggle="popover" data-placement="left" data-content="Redactar Noticia" data-trigger="hover">
               <a href="redactador_noticias.html" target="blank">
                 <i class="fa fa-newspaper-o fa-lg" aria-hidden="true"></i>
@@ -172,32 +193,6 @@
       </div><!--/.modal-dialog-->
     </div><!-- /.modal003 -->
     <!--FIN modal 003-->
-
-    <!--Modal 004: Agregar Revista -->
-    <div class="modal fade" id="modal-004" tabindex="-1" role="dialog" aria-hidden="true"><!--/.modal003-->
-      <div class="modal-dialog" role="document"><!--/.modal-dialog-->
-        <div class="modal-content"><!--/.modal-content-->
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Buscar</h4>
-          </div>
-          <div class="modal-body">
-            <input type="text" class="form-control" id="busqueda" placeholder="¿Qué buscas?"><br>
-            <label>
-              <input type="radio" name="filtro" id="btn-filtro" value="1">
-              <span>Persona</span>
-            </label>
-            <label>
-              <input type="radio" name="filtro" id="btn-filtro" value="2">
-              <span>Noticia</span>
-            </label><br>
-            <button type="button" class="btn">Buscar</button>
-          </div><!--/.modal-body-->
-        </div><!--/.modal-content-->
-      </div><!--/.modal-dialog-->
-    </div><!-- /.modal004 -->
-    <!--FIN modal 004-->
-
     <!--FIN Modals-->
     
     <!--Scripts-->
