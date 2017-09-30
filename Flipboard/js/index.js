@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(window).load(function() {
 	/*$("#btn-perfil").click(function() {
 		abrirPerfil();
 	});*/
@@ -65,15 +65,15 @@ function cargarNoticias(codigo){
             $(function () {
 			  $('[data-toggle="popover"]').popover();
 			})
-			var grid = $('.grid').isotope({
+			var $grid = $('.grid').isotope({
 				  itemSelector: '.thumbnail',
 				  percentPosition: true,
 				  masonry: {
 				    columnWidth: '.thumbnail'
 				  }
 				});
-			grid.imagesLoaded().progress( function() {
-			  grid.isotope('layout');
+			$(window).load(function() {
+			  $grid.isotope('layout');
 			});
         }
     });	
