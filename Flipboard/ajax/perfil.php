@@ -11,9 +11,9 @@
 
 
 
- <div  align="center" style="padding-top: 100px;">
+ <div  align="center" style="padding-top: 100px;text-align: center;">
 	<div class="row">
-      <div >
+      <div class="col-lg-12">
         
           
           <div class="circle-badge" style="background:#3E3F41">

@@ -48,60 +48,61 @@
     
     <div class="container" style="width: 700px; ">
     	<div class="row">
-    		<label><strong><h4>Título Noticia:</h4></strong></label>
-    		<input type="text" name="titulo" id="titulo" class="form-control" required autofocus><br><hr>
-    		
-    		<label><strong><h4>Categoría Noticia:</h4></strong></label>
-    		<select id="categoria_noticia" name="categoria_noticia" class="form-control" required>
-    			<option>Seleccione una opción</option>
-    			<option value="1">ARTE</option>
-	            <option value="2">ANIME</option>
-	            <option value="3">DEPORTES</option>
-	            <option value="4">CULTURA</option>
-	            <option value="5">MODA</option>
-	            <option value="6">INGENIERIA</option>
-	            <option value="7">BRICOLAGE</option>
-	            <option value="8">MUNDO</option>
-	            <option value="9">FARANDULA</option>
-	            <option value="10">JARDINERIA</option>
-	            <option value="11">COCINA</option>
-	            <option value="12">HOGAR</option>
-	            <option value="13">NIÑOS</option>
-    		</select><br><hr>
-    	
-    		 <!-- Subir imagen -->
-    		<label><strong><h4>Imagen portada:</h4></strong></label>	 
-    		<div>
-    		 	<form method="post" id="formulario" enctype="multipart/form-data">
-				    <input type="file" name="file" id="file" required>
-				</form>
-			    <div id="respuesta"></div>
-    		</div><br><hr>
-    		<!-- Fin subir imagen -->
+            <div class="col-lg-12">
+        		<label><strong><h4>Título Noticia:</h4></strong></label>
+        		<input type="text" name="titulo" id="titulo" class="form-control" required autofocus><br><hr>
+        		
+        		<label><strong><h4>Categoría Noticia:</h4></strong></label>
+        		<select id="categoria_noticia" name="categoria_noticia" class="form-control" required>
+        			<option>Seleccione una opción</option>
+        			<option value="1">ARTE</option>
+    	            <option value="2">ANIME</option>
+    	            <option value="3">DEPORTES</option>
+    	            <option value="4">CULTURA</option>
+    	            <option value="5">MODA</option>
+    	            <option value="6">INGENIERIA</option>
+    	            <option value="7">BRICOLAGE</option>
+    	            <option value="8">MUNDO</option>
+    	            <option value="9">FARANDULA</option>
+    	            <option value="10">JARDINERIA</option>
+    	            <option value="11">COCINA</option>
+    	            <option value="12">HOGAR</option>
+    	            <option value="13">NIÑOS</option>
+        		</select><br><hr>
+        	
+        		 <!-- Subir imagen -->
+        		<label><strong><h4>Imagen portada:</h4></strong></label>	 
+        		<div>
+        		 	<form method="post" id="formulario" enctype="multipart/form-data">
+    				    <input type="file" name="file" id="file" required>
+    				</form>
+    			    <div id="respuesta"></div>
+        		</div><br><hr>
+        		<!-- Fin subir imagen -->
 
-    		<label><strong><h4>Descripción Breve:</h4></strong></label>
-    		<textarea id="descripcion" class="form-control" rows="5" name="descripcion" required></textarea><br><hr>
-    		
-			<label><strong><h4>Autor:</h4></strong></label>
-			<input type="text" name="autor" id="autor" class="form-control" required><br><hr><br>
-    		
-    		<!-- Inicio editor texto -->
-    		<form>
-		        <textarea name="editor1" id="editor1" rows="30" cols="80">
-		            Esta es el área para redactar la noticia.
-		        </textarea>
-		        <script>
-		            // Replace the <textarea id="editor1"> with a CKEditor
-		            // instance, using default configuration.
-		            CKEDITOR.replace( 'editor1' );
-		        </script>
-		    </form><br><hr>
-		    <!-- Fin edicion texto -->
+        		<label><strong><h4>Descripción Breve:</h4></strong></label>
+        		<textarea id="descripcion" class="form-control" rows="5" name="descripcion" required></textarea><br><hr>
+        		
+    			<label><strong><h4>Autor:</h4></strong></label>
+    			<input type="text" name="autor" id="autor" class="form-control" required><br><hr><br>
+        		
+        		<!-- Inicio editor texto -->
+        		<form>
+    		        <textarea name="editor1" id="editor1" rows="30" cols="80">
+    		            Esta es el área para redactar la noticia.
+    		        </textarea>
+    		        <script>
+    		            // Replace the <textarea id="editor1"> with a CKEditor
+    		            // instance, using default configuration.
+    		            CKEDITOR.replace( 'editor1' );
+    		        </script>
+    		    </form><br><hr>
+    		    <!-- Fin edicion texto -->
 
-		    <div style="text-align: right;">
-		    	<button class="btn btn-primary btn-lg" id="btn-guardar_noticia" name="btn-guardar_noticia" style="border-radius: 0px; background-color: #0099cc;">Guardar Noticia</button><br><br>
-		    </div>
-
+    		    <div style="text-align: right;">
+    		    	<button class="btn btn-primary btn-lg" id="btn-guardar_noticia" name="btn-guardar_noticia" style="border-radius: 0px; background-color: #0099cc;">Guardar Noticia</button><br><br>
+    		    </div>
+            </div>
     	</div> <!-- fin div row -->
     </div>  <!-- fin div container -->
    

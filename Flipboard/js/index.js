@@ -1,4 +1,4 @@
-$(window).load(function() {
+$(document).ready(function() {
 	/*$("#btn-perfil").click(function() {
 		abrirPerfil();
 	});*/
@@ -38,6 +38,26 @@ $(window).load(function() {
 		  ]
 	  });
 	$('[data-toggle="popover"]').popover();
+	$('#btn-buscar').webuiPopover({
+		url:'#btn-buscar-content',
+		animation:'pop'
+	});
+	$('#btn-buscar').click(function(){
+		if($('#txt-buscar').css("display")=="block"){
+			$('#txt-buscar').focus();
+		}
+	});
+	$('#btn-notificaciones').webuiPopover({
+	   type:'async',
+	   url:'ajax/notificaciones.php',
+	   animation:'pop',
+	   height:300
+	});
+
+
+});
+$(document).scroll(function(){
+	//WebuiPopovers.hideAll();
 });
 $(window).resize(function(){
 	ajustarContenedorNoticias();
@@ -46,6 +66,7 @@ $(window).resize(function(){
 function ajustarContenedorNoticias(){
 	var altoNavbar = $(".iconos-derecha").height() + 40;
 	$('#contenido-principal').css("margin-top",altoNavbar+"px");
+	$('#contenido-principal').css("height",$(window).height()-altoNavbar);
 	var anchoIntereses = $(window).width() - $(".iconos-derecha").width() - $("#myimage").width() - 100;
 	$('.your-class').css("width",anchoIntereses+"px");
 }
@@ -58,22 +79,23 @@ function cargarNoticias(codigo){
         data: data,
         method: "POST",
         beforeSend: function() {
-        	$('#contenido-principal').html('Loading');//buscar un loading decente!!!!           
+        	$('#contenido-principal').html('<div id="loading"><div id="loading-center-absolute"><div class="object" id="object_one"></div><div class="object" id="object_two"></div><div class="object" id="object_three"></div><div class="object" id="object_four"></div></div>');         
         },
         success: function(datos){       
             $('#contenido-principal').html(datos);
             $(function () {
 			  $('[data-toggle="popover"]').popover();
 			})
-			var $grid = $('.grid').isotope({
-				  itemSelector: '.thumbnail',
+			
+			var $grid = $('.grid').imagesLoaded( function() {
+			  // init Isotope after all images have loaded
+			  $grid.isotope({
+			      itemSelector: '.noti-card',
 				  percentPosition: true,
 				  masonry: {
-				    columnWidth: '.thumbnail'
+				    columnWidth: '.noti-card'
 				  }
-				});
-			$(window).load(function() {
-			  $grid.isotope('layout');
+			  });
 			});
         }
     });	
