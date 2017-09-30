@@ -15,7 +15,14 @@ body{
 	top: 13px;
 	display: none;
 }
-
+.thumbnail img{
+	width: 100%;
+}
+.grid .thumbnail{
+	width: 33%;
+	float: left;
+	margin: 1px;
+}
 .btn-circle {
   width: 30px;
   height: 30px;

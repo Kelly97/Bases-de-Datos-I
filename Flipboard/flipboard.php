@@ -1,3 +1,19 @@
+<?php
+/*Conexion: PARA QUE ESTA CONEXION FUNCIONE, SE DEBE CREAR UN USUARIO
+LLAMADO DB_FLIPBOARD(mayúsculas) Y SU CONTRASEÑA DEBE SER oracle(en minúsculas).
+include_once("class/class-conexion.php");
+$conexion = new Conexion();
+$codigoUsuario = 1;
+$sql = "SELECT nombre,cod_prueba
+        FROM tbl_prueba
+        WHERE cod_prueba = 1";
+$resultadoUsuario = $conexion->ejecutarInstruccion($sql);
+while($row = $conexion->obtenerFila($resultadoUsuario)){
+  echo $row['NOMBRE'];
+}
+$conexion->liberarResultado($resultadoUsuario);
+*/ 
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -111,7 +127,7 @@
       </div><!-- /.container-fluid -->
     </nav>      
 
-    <div id="contenido-principal" class="container">
+    <div id="contenido-principal">
       
     </div>
 
@@ -208,6 +224,7 @@
     <script src="js/index.js"></script> 
     <script src="js/slick.min.js"></script>
     <script src="js/perfil.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
     <!--FIN Scripts-->
 
   </body>

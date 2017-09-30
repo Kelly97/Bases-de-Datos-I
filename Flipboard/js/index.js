@@ -65,6 +65,16 @@ function cargarNoticias(codigo){
             $(function () {
 			  $('[data-toggle="popover"]').popover();
 			})
+			var grid = $('.grid').isotope({
+				  itemSelector: '.thumbnail',
+				  percentPosition: true,
+				  masonry: {
+				    columnWidth: '.thumbnail'
+				  }
+				});
+			grid.imagesLoaded().progress( function() {
+			  grid.isotope('layout');
+			});
         }
     });	
 }
@@ -74,4 +84,6 @@ function perfilUsuario(){
 			$(this).html(data);
 		});
 }
+
+
 

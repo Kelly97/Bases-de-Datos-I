@@ -2,11 +2,9 @@
 
 	class Conexion{
 
-		private $usuario="root";
-		private $contrasena="";
-		private $host="127.0.0.1";
-		private $baseDatos="spotifly_db";
-		private $puerto="3306";
+		private $usuario="DB_FLIPBOARD";
+		private $contrasena="oracle";
+		private $host="localhost/XE";
 		private $link;
 
 		public function __construct(){
@@ -14,36 +12,48 @@
 		}
 
 		public function establecerConexion(){
-			$this->link = mysqli_connect($this->host, $this->usuario, $this->contrasena, $this->baseDatos, $this->puerto);
+			/*$conn = oci_connect('hr', 'welcome', 'localhost/XE');
+				if (!$conn) {
+				    $e = oci_error();
+				    trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+				}*/
+			$this->link = oci_connect($this->usuario, $this->contrasena, $this->host);
 
 			if (!$this->link){
-				echo "No se pudo conectar con mysql";
+				echo "No se pudo conectar con oracle";
 				exit;
 			}
 		}
 
 		public function cerrarConexion(){
-			mysqli_close($this->link);
+			oci_close($this->link);
 		}
-
+		public function commit(){
+			oci_commit($this->link);
+		}
+		public function rollback(){
+			oci_rollback($this->link);
+		}
 		public function ejecutarInstruccion($sql){
-			return mysqli_query($this->link, $sql);
+			$instruccion = oci_parse($this->link, $sql);
+			oci_execute($instruccion);
+			return $instruccion;
 		}
 
 		public function obtenerFila($resultado){
-			return mysqli_fetch_array($resultado);
+			return oci_fetch_array($resultado);
 		}
 
 		public function obtenerArregloAsociativo($resultado){
-			return mysqli_fetch_assoc($resultado);
+			return oci_fetch_assoc($resultado);
 		}
 
 		public function cantidadRegistros($resultado){
-			return mysqli_num_rows($resultado);
+			return oci_num_rows($resultado);
 		}
 
 		public function liberarResultado($resultado){
-			mysqli_free_result($resultado);
+			oci_free_statement($resultado);
 		}
 		public function getUsuario(){
 			return $this->usuario;
@@ -62,19 +72,7 @@
 		}
 		public function setHost($host){
 			$this->host = $host;
-		}
-		public function getBaseDatos(){
-			return $this->baseDatos;
-		}
-		public function setBaseDatos($baseDatos){
-			$this->baseDatos = $baseDatos;
-		}
-		public function getPuerto(){
-			return $this->puerto;
-		}
-		public function setPuerto($puerto){
-			$this->puerto = $puerto;
-		}
+		}		
 		public function getLink(){
 			return $this->link;
 		}
