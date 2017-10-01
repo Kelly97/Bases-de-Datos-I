@@ -48,12 +48,19 @@ $(document).ready(function() {
 		}
 	});
 	$('#btn-notificaciones').webuiPopover({
-	   type:'async',
-	   url:'ajax/notificaciones.php',
-	   animation:'pop',
-	   height:300
-	});
+		   type:'async',
+		   url:'ajax/notificaciones.php',
+		   animation:'pop',
+		   height:300
+		});
+	$('#btn-notificaciones').click(function(){
+		WebuiPopovers.updateContentAsync('#btn-notificaciones','ajax/notificaciones.php');
+		
+	});		
 
+	
+
+	
 
 });
 $(document).scroll(function(){
@@ -61,20 +68,20 @@ $(document).scroll(function(){
 });
 $(window).resize(function(){
 	ajustarContenedorNoticias();
+
 });
 
 function ajustarContenedorNoticias(){
-	var altoNavbar = $(".iconos-derecha").height() + 40;
-	$('#contenido-principal').css("margin-top",altoNavbar+"px");
+	var anchoNavbar= $("#iconos_derecha").width()+$('.navbar-brand').width()+$('.navbar-toggler').width()+60;
+	var altoNavbar = $("#iconos_derecha").height();
 	$('#contenido-principal').css("height",$(window).height()-altoNavbar);
-	var anchoIntereses = $(window).width() - $(".iconos-derecha").width() - $("#myimage").width() - 100;
-	$('.your-class').css("width",anchoIntereses+"px");
+	$('#pnProductNav').css("width",($(window).width()-anchoNavbar) +"px");
 }
 
 function cargarNoticias(codigo){
+
 	data = "codigo="+codigo;
-	$.ajax({ 
-		//url que recibe para ser visualizada en el div de contenido principal         
+	$.ajax({       
         url : "ajax/noticias.php",
         data: data,
         method: "POST",
@@ -83,21 +90,45 @@ function cargarNoticias(codigo){
         },
         success: function(datos){       
             $('#contenido-principal').html(datos);
+
             $(function () {
 			  $('[data-toggle="popover"]').popover();
 			})
-			
-			var $grid = $('.grid').imagesLoaded( function() {
-			  // init Isotope after all images have loaded
+
+			// init Isotope
+			var $grid = $('.grid').isotope({
+			  itemSelector: '.noti-card',
+			  percentPosition: true,			  
+			  masonry: {
+			    columnWidth: '.noti-card',
+			    gutter: 15
+			  }
+			});
+			// layout Isotope after each image loads
+			$grid.imagesLoaded().progress( function() {
+			  $grid.isotope('layout');
+			});	
+			$(window).resize(function(){
+				var anchoGrid = $('.grid').width();
+				var anchoNoticia = 0;
+				if(anchoGrid < 576){
+					anchoNoticia = 99;
+				} else if(anchoGrid < 768){
+					anchoNoticia = 99;
+				} else if(anchoGrid < 992){
+					anchoNoticia = 49;
+				} else if(anchoGrid < 1200 || anchoGrid > 1200){
+					anchoNoticia = 32;
+				}
+				$('.noti-card').css("width", anchoNoticia + "%" );
 			  $grid.isotope({
-			      itemSelector: '.noti-card',
-				  percentPosition: true,
-				  masonry: {
-				    columnWidth: '.noti-card'
-				  }
+			    // update columnWidth to a percentage of container width
+			    masonry: { 
+			    	columnWidth:  '.noti-card' 
+			    }
 			  });
 			});
-        }
+        }        
     });	
 }
 

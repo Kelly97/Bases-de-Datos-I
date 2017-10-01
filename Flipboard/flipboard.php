@@ -30,6 +30,7 @@ $conexion->liberarResultado($resultadoUsuario);
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/text-scrolling.css">
   </head>
   
   <body> 
@@ -37,13 +38,40 @@ $conexion->liberarResultado($resultadoUsuario);
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">
         <img src="images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-        Flipboard
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+
+        <div style="position: relative;">
+          <div id="pnProductNav" class="pn-ProductNav" style="margin-right: 15px;margin-left: 15px;width: 400px;">
+              <div id="pnProductNavContents" class="pn-ProductNav_Contents">
+                  <a onclick="cargarNoticias(0)" class="pn-ProductNav_Link" aria-selected="true">NOTICIAS DE PORTADA</a>
+                  <a onclick="cargarNoticias(1);return false;" class="pn-ProductNav_Link ">COMEDIA</a>
+                  <a onclick="cargarNoticias(2)" class="pn-ProductNav_Link">DEPORTES</a>
+                  <a onclick="cargarNoticias(3)" class="pn-ProductNav_Link">INGENIERIA</a>
+                  <a onclick="cargarNoticias(4)" class="pn-ProductNav_Link">JARDINERIA</a>
+                  <a onclick="cargarNoticias(7)" class="pn-ProductNav_Link">ENERGÍA SOLAR</a>
+                  <a onclick="cargarNoticias(8)" class="pn-ProductNav_Link">LITERATURA</a>
+                  <a onclick="cargarNoticias(9)" class="pn-ProductNav_Link">ANIME</a>
+                  <a onclick="cargarNoticias(10)" class="pn-ProductNav_Link">CRAFTS</a>   
+                  <a onclick="cargarNoticias(11)" class="pn-ProductNav_Link">ARTE ABSTRACTO</a>
+
+                  <a class="pn-ProductNav_Link" data-toggle="modal" data-target="#modal-001">AGREGAR INTERÉS</a>
+                  <span id="pnIndicator" class="pn-ProductNav_Indicator"></span>
+              </div>            
+          </div>
+          <button id="pnAdvancerLeft" class="pn-Advancer pn-Advancer_Left" type="button">
+            <i class="fa fa-angle-left" aria-hidden="true" style="font-size: 30px;padding-top: 8px;"></i>
+          </button>
+          <button id="pnAdvancerRight" class="pn-Advancer pn-Advancer_Right" type="button">
+            <i class="fa fa-angle-right" aria-hidden="true" style="font-size: 30px;padding-top: 8px;"></i>
+          </button>
+        </div>
+
+        <ul class="navbar-nav" id="iconos_derecha">
           <li class="nav-item" data-toggle="popover" data-placement="left" data-content="Buscar" data-trigger="hover">
             <a class="nav-item" id="btn-buscar">
               <i class="fa fa-search fa-lg nav-item" aria-hidden="true"></i>
@@ -76,7 +104,11 @@ $conexion->liberarResultado($resultadoUsuario);
         </ul>
       </div>
     </nav>
+    
 
+      
+          
+     
 
    <!--<nav id="navbar" class="navbar navbar-default navbar-fixed-top">
       <div id="navbar-sup" class="container-fluid" style="padding-left: 0px;">
@@ -243,6 +275,9 @@ $conexion->liberarResultado($resultadoUsuario);
     <script src="js/slick.min.js"></script>
     <script src="js/perfil.js"></script>
     <script src="js/jquery.webui-popover.js"></script>
+    <script src="js/text-scrolling.js"></script>    
+    <script src="js/imagesloaded.pkgd.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
     <script src="js/index.js"></script> 
     <!--FIN Scripts-->
 

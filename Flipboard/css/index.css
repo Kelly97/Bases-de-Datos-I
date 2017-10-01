@@ -1,22 +1,12 @@
 body{
 	font-family: 'Open Sans', sans-serif;
 }
-.card-columns {
-  @include media-breakpoint-only(lg) {
-    column-count: 3;
-  }
-  @include media-breakpoint-only(md) {
-    column-count: 3;
-  }
-  @include media-breakpoint-only(sm) {
-    column-count: 1;
-  }
-  @include media-breakpoint-only(xs) {
-    column-count: 1;
-  }
-  @include media-breakpoint-only(xl) {
-    column-count: 4;
-  }
+
+
+.noti-card{
+	padding: 5px;
+	margin-bottom: 15px;
+	width: 32%;
 }
 .noti-card-autor{
 	color: #999;
@@ -27,11 +17,7 @@ body{
 	font-size: 10px;
 	border: none;
 }
-.noti-card{
-	padding: 0px;
-	margin-left: 0px;
-	width: 100%;
-}
+
 .noti-card img{
 	width: 100%;
 }
@@ -106,8 +92,8 @@ body{
  #loading{
  	background-color:#fff;
  	height:100%;
- 	width:100%;
- 	position:fixed;z-index:1;
+ 	width:100%; 	
+ 	z-index:1;
  	margin-top:0;
  	top:0;
  	left: 0px;
