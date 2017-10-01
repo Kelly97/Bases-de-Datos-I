@@ -1,3 +1,6 @@
+<?php
+
+?>
 <div class="card border-secondary mb-3" style="max-width: 20rem; text-align: center;">
   <div class="card-body text-secondary">
     <h4 class="card-title"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i></h4>
