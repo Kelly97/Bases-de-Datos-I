@@ -168,14 +168,30 @@ $conexion->liberarResultado($resultadoUsuario);
         <div class="modal-content"><!--/.modal-content-->
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Crea tu pensamiento en una revista</h4>
+            <h4 class="modal-title">Añade tu punto de vista a una revista</h4>
           </div>
           <div class="modal-body">
-            <textarea class="form-control" type="text" placeholder="Escribe un comentario o agrega un sitio web a tu revista"></textarea><br>
+            <table>
+              <tr>
+                <td>
+                  <canvas style="background-color: #F00; width: 5px; height: 75px"></canvas>
+                </td>
+                <td>
+                  <input class="form-control" type="text" style="width: 400px; height: 75px" placeholder="Escribe un comentario o agrega un sitio web">
+                <td>
+              </tr>
+            </table>
             <!--Revistas-->
             <div id="revistas" style="background-color:#E5E5E5; padding: 0px; margin:0px">
               <!--Llamado a la BD sobre "Mis Revistas"-->
-              <button type="button" class="btn" id="nueva-revista" data-toggle="modal" data-target="#modal-003"><i>Agregar nueva revista</i></button>
+              <div id="revistas-flip" width="500" height="144">
+                <img src="images/selecciones.jpg" widht="117.75" height="144">
+                <img src="images/leer_mas_tarde.jpg" widht="117.75" height="144">
+                <button type="button" class="btn" id="nueva-revista" data-toggle="modal" data-target="#modal-003" style="width: 115.75px; height:144px">
+                  <span>Nueva</span><br>
+                  <span>Revista</span>
+                </button>
+              </div>
             </div><br>
             <!--FIN Revistas-->
             <button type="button" class="btn">POST</button>
