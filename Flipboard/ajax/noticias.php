@@ -93,10 +93,10 @@ switch ($_POST["codigo"]) {
 		  <div class="col-lg-12 col-md-12" style="text-align: center;padding-bottom: 40px;padding-top: 40px;">
 	        <h2>Interés</h2>
 	        <h5 style="color: #999;">Código: <?php echo $_POST["codigo"] ?></h5>
-	        <a class="btn btn-default btn-seguir" role="button">Seguir</a>
-	        <a class="btn btn-default btn-seguir" role="button" style="border:none;" data-container="body" data-toggle="popover" data-placement="left" data-content="Eliminar Interés" data-trigger="hover">
+	        <button class="btn btn-default btn-seguir" role="button">Seguir</button>
+	        <button class="btn btn-default btn-seguir" role="button" style="border:none;" data-container="body" data-toggle="popover" data-placement="left" data-content="Eliminar Interés" data-trigger="hover">
 	        	<i class="fa fa-times" aria-hidden="true"></i>
-	        </a>
+	        </button>
 		  </div>
 		  
 		  <div class="grid">

@@ -52,6 +52,7 @@ $(document).ready(function() {
 		}
 	});
 
+	
 	$('#btn-notificaciones').webuiPopover({
 		   type:'async',
 		   url:'ajax/notificaciones.php',
@@ -81,6 +82,7 @@ $(document).scroll(function(e){
 $(window).resize(function(){
 	ajustarContenedorNoticias();
 });
+
 
 function buscar(){
 	var buscar = $('#txt-buscar').val();

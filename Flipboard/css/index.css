@@ -83,10 +83,12 @@ body{
 .btn-seguir{
 	border-radius: 30px;
 	border-color: black;
+	background-color: transparent;
 }
-.btn-seguir:hover{
+.btn-seguir:hover {
 	background-color: black;
 	color: white;
+	cursor: pointer;
 }
 
 /*Loading*/
@@ -157,8 +159,8 @@ body{
 	padding: 12px;
 }
 .miniatura-revista{
-	width: 170px;
-	height: 250px;
+	width: 200px;
+	height: 300px;
 	background-color: gray;
 	color: white;
 	text-align: center;
@@ -184,4 +186,7 @@ body{
 }
 .navbar-nav li a{
 	text-decoration: none;
+}
+.miniatura-usuario:hover, .miniatura-revista:hover{
+	cursor: pointer;
 }
