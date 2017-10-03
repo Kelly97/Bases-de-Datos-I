@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="40251FFF-0B6A-D6AE-8881-EBA6A181FD3E" name="TBL_ESTADO_USUARIO">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-03 00:56:28 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<ordsAlias>table_21</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_ESTADO" id="D1172401-E994-C407-66F5-B3BEC0415EF8">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-03 00:57:41 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ESTADO" id="05A939EE-8F22-F425-5FE7-122259A892F8">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-03 00:57:41 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9FCC1A47-8B8C-C6D1-EAE2-F9F9445ECC45" name="TBL_ESTADO_USUARIO_PK">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-03 00:57:41 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D1172401-E994-C407-66F5-B3BEC0415EF8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
