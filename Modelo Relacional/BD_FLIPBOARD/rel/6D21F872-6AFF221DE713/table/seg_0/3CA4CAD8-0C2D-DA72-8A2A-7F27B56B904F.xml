@@ -48,7 +48,7 @@
 <colUsage columnID="4C2B335A-423C-873F-B2CF-C54B7A8D2A7B"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="F5359F4D-34EB-17D0-89B5-42A7BE8D587A" name="TABLE_23_TBL_NOTICIAS_FK">
+<ind_PK_UK id="F5359F4D-34EB-17D0-89B5-42A7BE8D587A" name="TABLE_23_NOT_FK">
 <createdBy>Allan</createdBy>
 <createdTime>2017-06-25 01:02:07 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>

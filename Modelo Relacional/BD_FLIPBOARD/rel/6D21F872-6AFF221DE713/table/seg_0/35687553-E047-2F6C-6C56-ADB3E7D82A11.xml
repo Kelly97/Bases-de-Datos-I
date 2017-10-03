@@ -52,7 +52,7 @@
 <colUsage columnID="7B219E40-C416-15FD-CFF1-265D8F901628"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="531A3BF7-15C4-4803-7E5B-7DDE6BB706BF" name="TBL_INTERESES_X_USUARIO_TBL_USUARIOS_FK">
+<ind_PK_UK id="531A3BF7-15C4-4803-7E5B-7DDE6BB706BF" name="INT_X_USU_USU_FK">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-14 13:06:57 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
@@ -62,7 +62,7 @@
 <colUsage columnID="2B5E6694-11AB-8F33-A1F4-47BA35A8310F"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="1A3EC078-7B1C-ED85-D7A8-FA2EE2959410" name="TBL_INTERESES_X_USUARIO_TBL_CATEGORIA_FK">
+<ind_PK_UK id="1A3EC078-7B1C-ED85-D7A8-FA2EE2959410" name="INT_X_USU_CAT_FK">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-14 13:07:01 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>

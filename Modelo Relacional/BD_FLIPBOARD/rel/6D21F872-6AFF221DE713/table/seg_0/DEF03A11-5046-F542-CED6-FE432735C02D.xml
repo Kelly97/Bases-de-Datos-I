@@ -99,7 +99,7 @@
 <colUsage columnID="ECBEA3B5-73CC-1D55-07A3-30F36FE64ADD"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="777BFDED-1499-A57A-87C3-7BA9B9B988BA" name="TBL_FLIPS_X_USUARIO_TBL_REVISTAS_FK">
+<ind_PK_UK id="777BFDED-1499-A57A-87C3-7BA9B9B988BA" name="FLI_X_USU_REV_FK">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-25 12:14:21 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>

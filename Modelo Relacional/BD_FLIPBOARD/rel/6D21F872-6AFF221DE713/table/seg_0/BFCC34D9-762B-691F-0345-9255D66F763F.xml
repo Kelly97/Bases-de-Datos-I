@@ -53,7 +53,7 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="5415B977-85E6-8271-73A8-6DCB10292EBD" name="TABLE_28_TBL_REACCIONES_FK">
+<ind_PK_UK id="5415B977-85E6-8271-73A8-6DCB10292EBD" name="TABLE_28_REA_FK">
 <createdBy>Allan</createdBy>
 <createdTime>2017-06-25 03:51:28 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
@@ -73,7 +73,7 @@
 <colUsage columnID="EC13B79A-9879-8956-6270-F111CD7AE166"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="00DC3498-5FEE-E6CA-FC93-09695CBC55A6" name="TBL_REACCIONES_X_NOTICIAS_TBL_USUARIOS_FK">
+<ind_PK_UK id="00DC3498-5FEE-E6CA-FC93-09695CBC55A6" name="REAC_X_NOT_USU_FK">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-25 12:35:53 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>

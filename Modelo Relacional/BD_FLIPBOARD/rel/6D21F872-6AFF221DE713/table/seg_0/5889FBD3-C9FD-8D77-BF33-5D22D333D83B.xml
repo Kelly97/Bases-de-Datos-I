@@ -101,7 +101,7 @@
 <colUsage columnID="B6161D4C-34D7-513F-0E8E-9827BA32E940"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="AAB5BCD2-BBD4-6B12-4551-10F6F83D5F6F" name="TBL_LUGARES_TBL_LUGARES_FK">
+<ind_PK_UK id="AAB5BCD2-BBD4-6B12-4551-10F6F83D5F6F" name="LUG_LUG_FK">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-14 12:36:10 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
@@ -111,7 +111,7 @@
 <colUsage columnID="1360855A-72D5-AB16-6931-C5173B7CA123"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="2FA0A755-47CC-FC75-AD3A-0B27C0A4B0B6" name="TBL_LUGARES_TBL_TIPO_LUGAR_FK">
+<ind_PK_UK id="2FA0A755-47CC-FC75-AD3A-0B27C0A4B0B6" name="LUG_TIP_LUG_FK">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-14 12:37:47 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>

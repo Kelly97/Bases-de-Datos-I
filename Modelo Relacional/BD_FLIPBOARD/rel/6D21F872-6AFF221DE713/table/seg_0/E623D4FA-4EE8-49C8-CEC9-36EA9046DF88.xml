@@ -75,7 +75,7 @@
 <colUsage columnID="3E2A2469-5B9B-3577-3018-413E3BEB8584"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="7EB4DFAB-EABD-B2B4-4F6E-8EDB78D1F3B5" name="TBL_NOTIFICACIONES_TBL_USUARIOS_FK">
+<ind_PK_UK id="7EB4DFAB-EABD-B2B4-4F6E-8EDB78D1F3B5" name="NOT_USU_FK">
 <createdBy>Allan</createdBy>
 <createdTime>2017-06-25 00:09:01 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
@@ -85,7 +85,7 @@
 <colUsage columnID="3E2A2469-5B9B-3577-3018-413E3BEB8584"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="392A1D39-F561-C44A-2812-7E5E373582A1" name="TBL_NOTIFICACIONES_TBL_ESTADO_NOTIFICACION_FK">
+<ind_PK_UK id="392A1D39-F561-C44A-2812-7E5E373582A1" name="NOT_EST_NOT_FK">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-25 12:12:15 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>

@@ -50,7 +50,7 @@
 <colUsage columnID="AF99844A-53A4-DEDA-20A4-C509C08A46E0"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="7C4066AF-44D3-0E39-B169-8636FB2C60C5" name="TBL_COLABORADORES_TBL_REVISTAS_FK">
+<ind_PK_UK id="7C4066AF-44D3-0E39-B169-8636FB2C60C5" name="COL_REV_FK">
 <createdBy>Allan</createdBy>
 <createdTime>2017-06-25 00:58:31 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
@@ -60,7 +60,7 @@
 <colUsage columnID="AF99844A-53A4-DEDA-20A4-C509C08A46E0"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="F3198342-92E3-70AD-CD47-4012E586AD32" name="TBL_COLABORADORES_TBL_USUARIOS_FK">
+<ind_PK_UK id="F3198342-92E3-70AD-CD47-4012E586AD32" name="COL_USU_FK">
 <createdBy>Allan</createdBy>
 <createdTime>2017-06-25 00:58:31 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>

@@ -53,7 +53,7 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="7C27F62F-8FA8-BDBF-AD9C-237762005633" name="TABLE_27_TBL_COMENTARIOS_FK">
+<ind_PK_UK id="7C27F62F-8FA8-BDBF-AD9C-237762005633" name="TABLE_27_COM_FK">
 <createdBy>Allan</createdBy>
 <createdTime>2017-06-25 03:49:59 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
@@ -63,7 +63,7 @@
 <colUsage columnID="BB3F44DB-5C8F-AEDB-E432-3E08CF6EC268"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="1A4848DF-B213-3AA1-E10B-FA385F289E24" name="TABLE_27_TBL_REACCIONES_FK">
+<ind_PK_UK id="1A4848DF-B213-3AA1-E10B-FA385F289E24" name="TABLE_27_REA_FK">
 <createdBy>Allan</createdBy>
 <createdTime>2017-06-25 03:49:59 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
@@ -73,7 +73,7 @@
 <colUsage columnID="8197BD58-0598-AE97-262D-1C27C0F7A4B3"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="D309B4A8-7BE6-6A61-36CE-FD40259C2C79" name="TBL_REACCIONES_X_COMENTARIOS_TBL_USUARIOS_FK">
+<ind_PK_UK id="D309B4A8-7BE6-6A61-36CE-FD40259C2C79" name="REA_X_COM_USU_FK">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-25 12:34:14 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>

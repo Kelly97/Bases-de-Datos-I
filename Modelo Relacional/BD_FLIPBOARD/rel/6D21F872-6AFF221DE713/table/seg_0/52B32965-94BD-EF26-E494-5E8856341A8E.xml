@@ -123,7 +123,7 @@
 <colUsage columnID="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="EA6DE097-6F4D-6E69-9083-B540C800B421" name="TBL_USUARIOS_TBL_TIPOS_USUARIO_FK">
+<ind_PK_UK id="EA6DE097-6F4D-6E69-9083-B540C800B421" name="USU_TIP_USU_FK">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-14 13:04:09 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
@@ -133,7 +133,7 @@
 <colUsage columnID="5ACE151A-7A08-D47B-06EE-1A0724127200"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="733F6E75-604F-E0CB-2EE7-FA7328B92C4F" name="TBL_USUARIOS_TBL_LUGARES_FK">
+<ind_PK_UK id="733F6E75-604F-E0CB-2EE7-FA7328B92C4F" name="USU_LUG_FK">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-14 13:04:42 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>

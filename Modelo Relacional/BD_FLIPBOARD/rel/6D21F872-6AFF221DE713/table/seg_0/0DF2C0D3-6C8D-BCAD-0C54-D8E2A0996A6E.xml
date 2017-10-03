@@ -106,7 +106,7 @@
 <colUsage columnID="4C02DAF3-16D2-77A6-0B93-17FEDFB5B4C4"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="C5A0E706-199E-2D82-3B0E-5C20930A3D30" name="TBL_NOTICIAS_TBL_CATEGORIA_FK">
+<ind_PK_UK id="C5A0E706-199E-2D82-3B0E-5C20930A3D30" name="NOT_CAT_FK">
 <createdBy>Allan</createdBy>
 <createdTime>2017-06-24 22:56:11 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
