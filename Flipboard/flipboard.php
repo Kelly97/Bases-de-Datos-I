@@ -97,8 +97,20 @@ $conexion->liberarResultado($resultadoUsuario);
             </a>
           </li>
           <li class="nav-item" onclick="perfilUsuario()" data-toggle="popover" data-placement="left" data-content="Perfil" data-trigger="hover">
-            <a class="nav-item" href="#perfil">
-              <i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>
+            <a class="nav-item" href="#perfil" >
+              <div style="padding-top: 5px;">
+                <div class="miniatura-usuario" style="margin: auto;background-image: url('images/noticias/img_prueba_2.jpeg');width: 30px;height: 30px;padding: 0px;">
+                  <table style="height: 100%;width: 100%;font-size: 15px;font-weight: bold;">
+                    <tbody>
+                      <tr>
+                        <td class="align-middle text-center">
+                          A
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div> 
+              </div>
             </a>
           </li>
         </ul>
@@ -106,77 +118,9 @@ $conexion->liberarResultado($resultadoUsuario);
     </nav>
     
 
-      
-          
-     
-
-   <!--<nav id="navbar" class="navbar navbar-default navbar-fixed-top">
-      <div id="navbar-sup" class="container-fluid" style="padding-left: 0px;">
-        <div class="navbar-header">
-        	<img id="myimage" src="images/logo.png" style="max-height: 55px;">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="your-class">
-            <li onclick="cargarNoticias(0)">PORTADA</li>
-            <li onclick="cargarNoticias(2)">ARTE</li>
-            <li onclick="cargarNoticias(3)">ANIME</li>
-            <li onclick="cargarNoticias(4)">DEPORTES</li>
-            <li onclick="cargarNoticias(5)">CULTURA</li>
-            <li onclick="cargarNoticias(6)">MODA</li>
-            <li onclick="cargarNoticias(7)">INGENIERIA</li>
-            <li onclick="cargarNoticias(8)">BRICOLAGE</li>
-            <li onclick="cargarNoticias(9)">MUNDO</li>
-            <li onclick="cargarNoticias(10)">FARANDULA</li>
-            <li onclick="cargarNoticias(11)">JARDINERIA</li>
-            <li onclick="cargarNoticias(12)">COCINA</li>
-            <li onclick="cargarNoticias(13)">HOGAR</li>
-            <li onclick="cargarNoticias(14)">NIÑOS</li>
-            <li data-toggle="modal" data-target="#modal-001">AGREGAR <i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i></li>
-          </ul>                    
-          <ul class="nav navbar-nav iconos-derecha" style="border-left: 1px solid #E0E0E0;margin-top: 2px;">
-          	<li data-toggle="popover" data-placement="left" data-content="Buscar" data-trigger="hover">              
-              <a id="btn-buscar">
-                <i class="fa fa-search fa-lg" aria-hidden="true"></i>
-                <div id="btn-buscar-content"  class="webui-popover-content">
-                   <input id="txt-buscar" type="text" class="form-control" id="busqueda" placeholder="¿Qué buscas?" style="border-color: transparent;box-shadow: none;" autofocus="true">
-                </div>
-              </a>
-            </li>
-            <li data-toggle="popover" data-placement="left" data-content="Mis revistas" data-trigger="hover">
-              <a data-toggle="modal" data-target="#modal-002">
-                <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li data-toggle="popover" data-placement="left" data-content="Notificaciones" data-trigger="hover">
-              <a id="btn-notificaciones">
-                <i class="fa fa-bell fa-lg" aria-hidden="true"><span class="badge">0</span></i> 
-
-              </a>
-            </li>
-            <li data-toggle="popover" data-placement="left" data-content="Redactar Noticia" data-trigger="hover">
-              <a href="redactador_noticias.html" target="blank">
-                <i class="fa fa-newspaper-o fa-lg" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li onclick="perfilUsuario()" data-toggle="popover" data-placement="left" data-content="Perfil" data-trigger="hover">
-              <a>
-                <i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>
-              </a>
-            </li>
-          </ul>          
-        </div>        
-      </div>
-    </nav> --> 
 
     <div class="container-fluid">  
-      <div id="contenido-principal" class="col-lg-12">
+      <div id="contenido-principal" class="col-lg-12" style="padding: 0px;">
         
       </div>    
     </div>
@@ -224,14 +168,30 @@ $conexion->liberarResultado($resultadoUsuario);
         <div class="modal-content"><!--/.modal-content-->
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Crea tu pensamiento en una revista</h4>
+            <h4 class="modal-title">Añade tu punto de vista a una revista</h4>
           </div>
           <div class="modal-body">
-            <textarea class="form-control" type="text" placeholder="Escribe un comentario o agrega un sitio web a tu revista"></textarea><br>
+            <table>
+              <tr>
+                <td>
+                  <canvas style="background-color: #F00; width: 5px; height: 75px"></canvas>
+                </td>
+                <td>
+                  <input class="form-control" type="text" style="width: 400px; height: 75px" placeholder="Escribe un comentario o agrega un sitio web">
+                <td>
+              </tr>
+            </table>
             <!--Revistas-->
             <div id="revistas" style="background-color:#E5E5E5; padding: 0px; margin:0px">
               <!--Llamado a la BD sobre "Mis Revistas"-->
-              <button type="button" class="btn" id="nueva-revista" data-toggle="modal" data-target="#modal-003"><i>Agregar nueva revista</i></button>
+              <div id="revistas-flip" width="500" height="144">
+                <img src="images/selecciones.jpg" widht="117.75" height="144">
+                <img src="images/leer_mas_tarde.jpg" widht="117.75" height="144">
+                <button type="button" class="btn" id="nueva-revista" data-toggle="modal" data-target="#modal-003" style="width: 115.75px; height:144px">
+                  <span>Nueva</span><br>
+                  <span>Revista</span>
+                </button>
+              </div>
             </div><br>
             <!--FIN Revistas-->
             <button type="button" class="btn">POST</button>

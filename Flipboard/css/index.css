@@ -37,6 +37,7 @@ body{
 	position: absolute;
 	right: 10px;
 	top: 10px;
+	z-index: 10000;
 }
 .noti-card:hover .botones-noticia-general{
 	display: block;
@@ -82,10 +83,12 @@ body{
 .btn-seguir{
 	border-radius: 30px;
 	border-color: black;
+	background-color: transparent;
 }
-.btn-seguir:hover{
+.btn-seguir:hover {
 	background-color: black;
 	color: white;
+	cursor: pointer;
 }
 
 /*Loading*/
@@ -154,4 +157,36 @@ body{
 .nav-item i{
 	color: gray;
 	padding: 12px;
+}
+.miniatura-revista{
+	width: 200px;
+	height: 300px;
+	background-color: gray;
+	color: white;
+	text-align: center;
+	padding: 15px;
+	font-size: 1.3em;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top;
+	margin-bottom: 10px;
+}
+.miniatura-usuario{
+	width: 110px;
+	height: 110px;
+	background-color: gray;
+	color: white;
+	text-align: center;
+	padding: 15px;
+	font-size: 1.3em;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top;
+	border-radius: 5000px;
+}
+.navbar-nav li a{
+	text-decoration: none;
+}
+.miniatura-usuario:hover, .miniatura-revista:hover{
+	cursor: pointer;
 }
