@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="11CFF2AE-ED85-23C0-149A-CA006B90C701" containerWithKeyObject="E623D4FA-4EE8-49C8-CEC9-36EA9046DF88" localFKIndex="3BA60BAC-0E71-A25A-128D-714B7FF60062" name="TBL_NOTI_TBL_NOTI_FK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-10-16 15:29:01 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<referredTableLongName>TBL_NOTICIAS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>0DF2C0D3-6C8D-BCAD-0C54-D8E2A0996A6E</referredTableID>
+<keyObject>C16B4D13-3598-BEBE-9E33-0218AA4FF323</keyObject>
+<referredKeyID>C16B4D13-3598-BEBE-9E33-0218AA4FF323</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>CODIGO_NOTICIA</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

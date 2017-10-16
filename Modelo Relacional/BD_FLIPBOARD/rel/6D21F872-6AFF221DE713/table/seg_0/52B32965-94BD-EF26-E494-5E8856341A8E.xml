@@ -17,6 +17,8 @@
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="CODIGO_TIPO_USUARIO" id="5ACE151A-7A08-D47B-06EE-1A0724127200">
@@ -63,17 +65,6 @@
 <colAssociation fkAssociation="E22299BE-0A3E-D8FC-5284-F7AB1D042CB8" referredColumn="D1172401-E994-C407-66F5-B3BEC0415EF8"/>
 </associations>
 </Column>
-<Column name="ALIAS" id="5E695E9B-F437-2540-C0C4-3EEAF06D6F87">
-<createdBy>diazn</createdBy>
-<createdTime>2017-10-03 00:59:16 UTC</createdTime>
-<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
-<dataTypeSize>100</dataTypeSize>
-<ownDataTypeParameters>100,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="NOMBRE_USUARIO" id="2263BCCA-8E39-AE51-25F7-747CADD026E6">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-14 12:25:43 UTC</createdTime>
@@ -82,6 +73,17 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ALIAS_USUARIO" id="84783E4B-5C85-ADCC-45F1-23A715162841">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-10-16 13:46:43 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>200</dataTypeSize>
 <ownDataTypeParameters>200,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
@@ -146,16 +148,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="F7CCC753-B06B-589B-3BFF-6FE622FE6EE5" name="TBL_USUARIOS__UN">
-<createdBy>diazn</createdBy>
-<createdTime>2017-10-03 01:00:18 UTC</createdTime>
-<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
-<indexState>Unique Constraint</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="5E695E9B-F437-2540-C0C4-3EEAF06D6F87"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="EA6DE097-6F4D-6E69-9083-B540C800B421" name="USU_TIP_USU_FK">
