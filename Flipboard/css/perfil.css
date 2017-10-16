@@ -21,6 +21,23 @@ line-height: 0px;
 
 
 }
+
+    #imagen {
+      width:500px;
+      height:375px;
+      position:relative;
+    }
+    #imagen>div
+    {
+      position: relative;
+      bottom:25px;
+      color:#fff;
+      background-color:#000;
+      padding:2px 10px;
+      opacity:0.5;
+      font-weight:bold;
+    }
+  
 #vertical-bar {
         border-left: 1px solid #ccc;
         width:20px;
