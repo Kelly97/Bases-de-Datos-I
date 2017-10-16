@@ -21,6 +21,62 @@
 <identityColumn>true</identityColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="CODIGO_USUARIO_PROP" id="AD5AB546-E9D9-4E79-2EF0-8F4247FB8732">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-10-16 22:13:15 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6C886DA8-CB80-08D1-182D-0763C6634339" referredColumn="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
+</associations>
+</Column>
+<Column name="CODIGO_REVISTA" id="FCCFA3AF-0697-E0B9-FF37-B401C91F9BA0">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-10-16 22:15:35 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="705F3F2A-68AD-5F95-F051-FCEB2EF74818" referredColumn="B705BF36-0175-9D86-FB96-12635CE6CF30"/>
+</associations>
+</Column>
+<Column name="CODIGO_CATEGORIA" id="4B84C961-6564-1947-5AA1-79EC87A41CE0">
+<createdBy>Allan</createdBy>
+<createdTime>2017-06-24 22:56:11 UTC</createdTime>
+<commentInRDBMS>Código de la categoría a la que pertenece la noticia.</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5CEADC37-CAF5-A2CB-8F1E-A52C1EF56C84" referredColumn="6715E8E5-247D-9A79-6638-77A638B410D3"/>
+</associations>
+</Column>
+<Column name="AUTOR_NOTICIA" id="24B1A9CE-7B9F-BACE-D630-69B7B15B687B">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-10-16 21:54:06 UTC</createdTime>
+<commentInRDBMS>En caso de que exista la necesidad de ingresar el nombre de un autor externo, se utilizará este campo. Ej: El usuario verificado National Geographic publicó una noticia, pero el autor de dicha noticia es Mark Black.</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+<ownDataTypeParameters>300,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="TITULO_NOTICIA" id="7E53AC27-EF9C-EF3F-A294-31B8499D6294">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-14 13:13:34 UTC</createdTime>
@@ -51,6 +107,7 @@
 <createdTime>2017-06-14 13:13:34 UTC</createdTime>
 <commentInRDBMS>Cuerpo de la noticia.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT028</logicalDatatype>
@@ -68,7 +125,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="CARATULA" id="3A903186-C63D-F400-A6E0-DF0E5901265D">
+<Column name="URL_PORTADA_NOTI" id="3A903186-C63D-F400-A6E0-DF0E5901265D">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-24 22:36:47 UTC</createdTime>
 <commentInRDBMS>Fotografía que servirá de carátula para la noticia.</commentInRDBMS>
@@ -76,24 +133,10 @@
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT029</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+<ownDataTypeParameters>300,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="CODIGO_CATEGORIA" id="4B84C961-6564-1947-5AA1-79EC87A41CE0">
-<createdBy>Allan</createdBy>
-<createdTime>2017-06-24 22:56:11 UTC</createdTime>
-<commentInRDBMS>Código de la categoría a la que pertenece la noticia.</commentInRDBMS>
-<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="5CEADC37-CAF5-A2CB-8F1E-A52C1EF56C84" referredColumn="6715E8E5-247D-9A79-6638-77A638B410D3"/>
-</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
@@ -116,6 +159,26 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="4B84C961-6564-1947-5AA1-79EC87A41CE0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="88BD02FE-993D-5C09-9102-11FF5E3CC40E" name="TBL_NOTI_TBL_USUA_FK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-10-16 22:13:15 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AD5AB546-E9D9-4E79-2EF0-8F4247FB8732"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3AE03178-45FE-3F1D-C44D-315B26628DA2" name="TBL_NOTI_TBL_REVI_FK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-10-16 22:15:35 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FCCFA3AF-0697-E0B9-FF37-B401C91F9BA0"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

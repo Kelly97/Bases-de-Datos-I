@@ -51,9 +51,10 @@
 <colAssociation fkAssociation="1C25C7B6-EF3C-67A3-57E4-D2A5F354A6AA" referredColumn="B6161D4C-34D7-513F-0E8E-9827BA32E940"/>
 </associations>
 </Column>
-<Column name="CODIGO_ESTADO" id="CA801BC5-DDB0-19E8-A501-EE02CC2B6D80">
+<Column name="CODIGO_ESTADO_USUARIO" id="CA801BC5-DDB0-19E8-A501-EE02CC2B6D80">
 <createdBy>diazn</createdBy>
 <createdTime>2017-10-03 00:57:57 UTC</createdTime>
+<commentInRDBMS>Indica si el usuario es una cuenta verificada.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -112,7 +113,7 @@
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="FOTO" id="06A59DCB-77E7-3FEE-88F6-147553BCDEB0">
+<Column name="URL_FOTO_PERFIL" id="06A59DCB-77E7-3FEE-88F6-147553BCDEB0">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:24:09 UTC</createdTime>
 <commentInRDBMS>Foto de perfil que el usuario selecciona.</commentInRDBMS>
@@ -120,8 +121,9 @@
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT010</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+<ownDataTypeParameters>300,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="DESCRIPCION" id="DF5DB34B-5789-CF0A-619C-657FE04C6E14">
