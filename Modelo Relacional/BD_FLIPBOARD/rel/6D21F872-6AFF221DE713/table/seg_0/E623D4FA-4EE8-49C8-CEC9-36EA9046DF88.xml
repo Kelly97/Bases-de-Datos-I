@@ -21,6 +21,35 @@
 <identityColumn>true</identityColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="CODIGO_TIPO_NOTIFICACION" id="925C79A3-9F68-EA98-6A42-86AA2021CF5E">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-16 17:21:22 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="75B0F90B-D594-5C88-64DF-E09DB9B15A2C" referredColumn="DA9C9FD8-71F5-288D-13D5-7F47B6FF3FA1"/>
+</associations>
+</Column>
+<Column name="CODGIO_ESTADO_NOTIFICACION" id="72AF469B-9D36-F84A-FFD3-E60BE1F8E7D6">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-06-25 12:12:15 UTC</createdTime>
+<commentInRDBMS>Código del estado de la notificación.</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="72946883-FC80-0776-1173-6BE01FD5AE07" referredColumn="C6C83F49-8526-BBEA-99C6-A621AC1A5833"/>
+</associations>
+</Column>
 <Column name="CODIGO_USUARIO_RECEPTOR" id="3E2A2469-5B9B-3577-3018-413E3BEB8584">
 <createdBy>Allan</createdBy>
 <createdTime>2017-06-25 00:09:01 UTC</createdTime>
@@ -64,21 +93,6 @@
 <colAssociation fkAssociation="83BD501B-1FF0-C23D-08C9-5381EBDED3FF" referredColumn="B705BF36-0175-9D86-FB96-12635CE6CF30"/>
 </associations>
 </Column>
-<Column name="CODGIO_ESTADO_NOTI" id="72AF469B-9D36-F84A-FFD3-E60BE1F8E7D6">
-<createdBy>Kelly Aguilar</createdBy>
-<createdTime>2017-06-25 12:12:15 UTC</createdTime>
-<commentInRDBMS>Código del estado de la notificación.</commentInRDBMS>
-<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="72946883-FC80-0776-1173-6BE01FD5AE07" referredColumn="C6C83F49-8526-BBEA-99C6-A621AC1A5833"/>
-</associations>
-</Column>
 <Column name="CODIGO_NOTICIA" id="D1CA7D96-CD17-2D14-01B5-0CC8F53F3DAE">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-10-16 15:29:01 UTC</createdTime>
@@ -94,17 +108,29 @@
 <colAssociation fkAssociation="11CFF2AE-ED85-23C0-149A-CA006B90C701" referredColumn="4C02DAF3-16D2-77A6-0B93-17FEDFB5B4C4"/>
 </associations>
 </Column>
-<Column name="DESCRIPCION_NOTIFICACION" id="613F5BE4-7A1C-08B9-0829-CFDF0B5BC4E9">
-<createdBy>Allan</createdBy>
-<createdTime>2017-06-24 23:56:11 UTC</createdTime>
-<commentInRDBMS>Lo que dirá la notificación respectiva.</commentInRDBMS>
+<Column name="CODIGO_REACCION" id="01084E41-D69C-486E-CF85-EDDC11323A25">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-16 17:33:53 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>200</dataTypeSize>
-<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="86CBA885-1BBF-36E4-C199-71C26291DD3B" referredColumn="D62DE8B3-B85B-B0B7-C277-6585E79B4B62"/>
+</associations>
+</Column>
+<Column name="HORA_NOTIFICACION" id="330CF824-1A8F-2D09-F466-D9E9C51E39C1">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-16 17:29:16 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
@@ -118,7 +144,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="CE619851-EF3F-53B4-51B7-3CCC5C85987E"/>
-<colUsage columnID="3E2A2469-5B9B-3577-3018-413E3BEB8584"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="7EB4DFAB-EABD-B2B4-4F6E-8EDB78D1F3B5" name="NOT_USU_FK">
@@ -169,6 +194,26 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="D1CA7D96-CD17-2D14-01B5-0CC8F53F3DAE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="55BCF0E9-3EF4-34AE-052B-1D3698F4DC36" name="NOT_TIP_NOT_FK">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-16 17:21:22 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="925C79A3-9F68-EA98-6A42-86AA2021CF5E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9ACED7AA-70A5-D520-AF69-2C79A163194B" name="NOT_REA_FK">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-16 17:33:53 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="01084E41-D69C-486E-CF85-EDDC11323A25"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
