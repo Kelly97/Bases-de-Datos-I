@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="03EDCC2B-BBED-B52E-FD09-6D8AEC2A503E" containerWithKeyObject="BDAFF4ED-00AB-7C0A-7624-9A03650D50DC" localFKIndex="48AC233E-732F-312E-4875-EB9C17F56720" name="COM_FLI_COM_FLI_FK">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-18 02:55:46 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<referredTableLongName>TBL_COMENTARIOS_FLIP</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>BDAFF4ED-00AB-7C0A-7624-9A03650D50DC</referredTableID>
+<keyObject>9FEAC5DF-023F-6DC4-3456-C1EE547D41E2</keyObject>
+<referredKeyID>9FEAC5DF-023F-6DC4-3456-C1EE547D41E2</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>CODIGO_COMENTARIO</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

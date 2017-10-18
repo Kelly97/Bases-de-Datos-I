@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DEF03A11-5046-F542-CED6-FE432735C02D" name="TBL_FLIPS_X_USUARIO">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DEF03A11-5046-F542-CED6-FE432735C02D" name="TBL_FLIPS">
 <createdBy>dilve_000</createdBy>
 <createdTime>2017-06-20 17:42:13 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
@@ -8,10 +8,19 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="CODIGO_NOTICIA" id="5C976B9D-85D7-8022-8CF5-EF02CBB06B0E">
-<createdBy>dilve_000</createdBy>
-<createdTime>2017-06-20 17:42:29 UTC</createdTime>
-<commentInRDBMS>Código de noticia.</commentInRDBMS>
+<Column name="CODIGO_FLIP" id="440C6681-38FC-6813-AB49-989724DC492C">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-18 03:12:26 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CODIGO_NOTICIA" id="4BEC7256-A21B-0764-6245-C3CE62663350">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-18 02:48:13 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -20,13 +29,12 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="7C7819C3-793E-9A33-A441-A95A3396E9E8" referredColumn="4C02DAF3-16D2-77A6-0B93-17FEDFB5B4C4"/>
+<colAssociation fkAssociation="0C35E2AE-7EA5-9CDA-7B1C-9BC8E5F1E35D" referredColumn="4C02DAF3-16D2-77A6-0B93-17FEDFB5B4C4"/>
 </associations>
 </Column>
-<Column name="CODIGO_USUARIO" id="ECBEA3B5-73CC-1D55-07A3-30F36FE64ADD">
-<createdBy>dilve_000</createdBy>
-<createdTime>2017-06-20 17:43:01 UTC</createdTime>
-<commentInRDBMS>Código de usuario</commentInRDBMS>
+<Column name="CODIGO_USUARIO_FLIP" id="7396AB55-4FC1-AF70-302D-8EDC789A17FB">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-18 02:49:11 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -35,13 +43,12 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="28FE13DB-A42A-BCED-7ED9-8D7B50432A61" referredColumn="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
+<colAssociation fkAssociation="5205A393-314B-4766-E73D-9804FBC77493" referredColumn="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
 </associations>
 </Column>
-<Column name="CODIGO_REVISTA" id="75CA4E9B-E9D1-C81A-9E73-DDDD4ED4AE38">
-<createdBy>Kelly Aguilar</createdBy>
-<createdTime>2017-06-25 12:14:21 UTC</createdTime>
-<commentInRDBMS>Código de la revista en la que fue flipeada la noticia.</commentInRDBMS>
+<Column name="CODIGO_REVISTA" id="B1669616-B165-F443-8F2B-CF98D2CF7C58">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-18 02:51:54 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -50,13 +57,12 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="F1D961C2-289B-CF40-9882-287C246D4589" referredColumn="B705BF36-0175-9D86-FB96-12635CE6CF30"/>
+<colAssociation fkAssociation="90BF468E-D02C-8A39-D896-8B3701D673DD" referredColumn="B705BF36-0175-9D86-FB96-12635CE6CF30"/>
 </associations>
 </Column>
-<Column name="FECHA" id="11AB6D78-D800-102F-18D0-B17824C9F9C6">
-<createdBy>dilve_000</createdBy>
-<createdTime>2017-06-20 17:43:32 UTC</createdTime>
-<commentInRDBMS>Fecha en la que se hizo el Flip.</commentInRDBMS>
+<Column name="FECHA" id="D09121CA-CC02-0E73-F966-D7E5DF956711">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-18 02:55:27 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -74,39 +80,49 @@
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="ECBEA3B5-73CC-1D55-07A3-30F36FE64ADD"/>
-<colUsage columnID="5C976B9D-85D7-8022-8CF5-EF02CBB06B0E"/>
-<colUsage columnID="75CA4E9B-E9D1-C81A-9E73-DDDD4ED4AE38"/>
+<colUsage columnID="440C6681-38FC-6813-AB49-989724DC492C"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="38B96FAB-ACD8-36F7-148C-091FCCB8CCBF" name="TBL_NOTICIAS_FK">
-<createdBy>dilve_000</createdBy>
-<createdTime>2017-06-20 17:42:29 UTC</createdTime>
+<ind_PK_UK id="6BC9318A-DA51-D1F4-C74C-6EA2C95B6E52" name="TBL_FLIPS__UN">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-18 03:13:45 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4BEC7256-A21B-0764-6245-C3CE62663350"/>
+<colUsage columnID="7396AB55-4FC1-AF70-302D-8EDC789A17FB"/>
+<colUsage columnID="B1669616-B165-F443-8F2B-CF98D2CF7C58"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="53227342-6A27-D768-0F3D-39530376DE9A" name="FLI_X_USU_NOT_FK">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-18 02:48:13 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="5C976B9D-85D7-8022-8CF5-EF02CBB06B0E"/>
+<colUsage columnID="4BEC7256-A21B-0764-6245-C3CE62663350"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="747EE793-217D-A273-9B03-9CC6930AA4B1" name="TBL_USUARIOS_FKv4">
-<createdBy>dilve_000</createdBy>
-<createdTime>2017-06-20 17:43:01 UTC</createdTime>
+<ind_PK_UK id="1D6861A6-11E3-28B4-A031-D6F3A74E20CE" name="FLI_X_USU_USU_FK">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-18 02:49:11 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="ECBEA3B5-73CC-1D55-07A3-30F36FE64ADD"/>
+<colUsage columnID="7396AB55-4FC1-AF70-302D-8EDC789A17FB"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="777BFDED-1499-A57A-87C3-7BA9B9B988BA" name="FLI_X_USU_REV_FK">
-<createdBy>Kelly Aguilar</createdBy>
-<createdTime>2017-06-25 12:14:21 UTC</createdTime>
+<ind_PK_UK id="8230E94D-8DD4-BEFD-B558-EABEDA1E4B50" name="TBL_FLIPS_TBL_REVISTAS_FK">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-18 02:51:54 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="75CA4E9B-E9D1-C81A-9E73-DDDD4ED4AE38"/>
+<colUsage columnID="B1669616-B165-F443-8F2B-CF98D2CF7C58"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

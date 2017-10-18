@@ -8,7 +8,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="CODGIO_ESTADO_NOTIFICACION" id="C6C83F49-8526-BBEA-99C6-A621AC1A5833">
+<Column name="CODIGO_ESTADO_NOTIFICACION" id="C6C83F49-8526-BBEA-99C6-A621AC1A5833">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-25 12:11:47 UTC</createdTime>
 <commentInRDBMS>Código del estado de la notificación.</commentInRDBMS>

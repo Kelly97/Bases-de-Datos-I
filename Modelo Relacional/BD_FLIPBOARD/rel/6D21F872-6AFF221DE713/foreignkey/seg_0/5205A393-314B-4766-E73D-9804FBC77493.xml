@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="28FE13DB-A42A-BCED-7ED9-8D7B50432A61" containerWithKeyObject="DEF03A11-5046-F542-CED6-FE432735C02D" localFKIndex="747EE793-217D-A273-9B03-9CC6930AA4B1" name="TBL_USUARIOS_FKv4">
-<createdBy>dilve_000</createdBy>
-<createdTime>2017-06-20 17:43:01 UTC</createdTime>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5205A393-314B-4766-E73D-9804FBC77493" containerWithKeyObject="DEF03A11-5046-F542-CED6-FE432735C02D" localFKIndex="1D6861A6-11E3-28B4-A031-D6F3A74E20CE" name="FLI_X_USU_USU_FK">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-18 02:49:11 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <referredTableLongName>TBL_USUARIOS</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>
@@ -9,7 +9,7 @@
 <keyObject>9484BB6D-4B8B-7C1B-4DDA-C7B9A77634B4</keyObject>
 <referredKeyID>9484BB6D-4B8B-7C1B-4DDA-C7B9A77634B4</referredKeyID>
 <mandatory>true</mandatory>
-<refColNames>CODGIO_USUARIO</refColNames>
+<refColNames>CODIGO_USUARIO</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>
 <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>

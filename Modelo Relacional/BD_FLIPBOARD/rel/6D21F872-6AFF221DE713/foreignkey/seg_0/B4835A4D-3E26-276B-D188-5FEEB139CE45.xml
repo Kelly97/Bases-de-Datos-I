@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="B4835A4D-3E26-276B-D188-5FEEB139CE45" containerWithKeyObject="ACF9063E-7CEF-65EB-E709-81902FB9B0AE" localFKIndex="773B80A0-CBFC-7187-603D-D660A427DA2F" name="REA_X_COM_FLI_REA_FK">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-18 03:03:12 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<referredTableLongName>TBL_REACCIONES</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E807293D-4D21-2AB0-A71B-BD5FAC421BDD</referredTableID>
+<keyObject>7B276DEE-C380-2872-4BF9-9CE2F5A45811</keyObject>
+<referredKeyID>7B276DEE-C380-2872-4BF9-9CE2F5A45811</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CODIGO_REACCION</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7C7819C3-793E-9A33-A441-A95A3396E9E8" containerWithKeyObject="DEF03A11-5046-F542-CED6-FE432735C02D" localFKIndex="38B96FAB-ACD8-36F7-148C-091FCCB8CCBF" name="TBL_NOTICIAS_FK">
-<createdBy>dilve_000</createdBy>
-<createdTime>2017-06-20 17:42:29 UTC</createdTime>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="0C35E2AE-7EA5-9CDA-7B1C-9BC8E5F1E35D" containerWithKeyObject="DEF03A11-5046-F542-CED6-FE432735C02D" localFKIndex="53227342-6A27-D768-0F3D-39530376DE9A" name="FLI_X_USU_NOT_FK">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-18 02:48:13 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <referredTableLongName>TBL_NOTICIAS</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>
