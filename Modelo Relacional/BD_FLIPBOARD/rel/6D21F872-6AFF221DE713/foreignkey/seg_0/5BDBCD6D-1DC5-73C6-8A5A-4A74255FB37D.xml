@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="2CBAE7C6-1D4D-1369-EDE4-0E72D13EB74E" containerWithKeyObject="BDAFF4ED-00AB-7C0A-7624-9A03650D50DC" localFKIndex="D04D3846-F29F-DE3C-6F58-FC35EBCE59BF" name="COM_FLI_FLI_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5BDBCD6D-1DC5-73C6-8A5A-4A74255FB37D" containerWithKeyObject="FDC863D9-BC47-95EF-9A00-861FB69DCC76" localFKIndex="97B062CB-BFAF-A468-035E-3C5BE1F81520" name="COM_FLI_FK">
 <createdBy>diazn</createdBy>
-<createdTime>2017-10-18 02:53:46 UTC</createdTime>
+<createdTime>2017-10-19 00:56:30 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <referredTableLongName>TBL_FLIPS</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>

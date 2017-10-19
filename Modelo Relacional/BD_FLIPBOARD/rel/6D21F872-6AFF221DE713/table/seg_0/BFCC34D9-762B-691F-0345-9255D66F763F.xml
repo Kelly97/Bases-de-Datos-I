@@ -22,6 +22,20 @@
 <colAssociation fkAssociation="F13DBB04-47B6-EF40-C37D-44FD08310739" referredColumn="4C02DAF3-16D2-77A6-0B93-17FEDFB5B4C4"/>
 </associations>
 </Column>
+<Column name="CODIGO_FLIP" id="673DC07B-2990-BE64-BCBB-CA0C9DF0DD6B">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-19 00:58:14 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A96F7212-AF18-4DC2-D280-225102B340F7" referredColumn="440C6681-38FC-6813-AB49-989724DC492C"/>
+</associations>
+</Column>
 <Column name="CODIGO_USUARIO" id="B086B1CB-9954-270F-67E7-FB0B5CB5E21B">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-06-25 12:35:53 UTC</createdTime>
@@ -81,6 +95,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="B086B1CB-9954-270F-67E7-FB0B5CB5E21B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B25CC66C-2725-75EB-11B6-78F645D7150F" name="REA_X_NOT_FLI_FK">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-19 00:58:14 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="673DC07B-2990-BE64-BCBB-CA0C9DF0DD6B"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
