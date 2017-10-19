@@ -1,4 +1,4 @@
---INSERT Registros Tipo Notificacion
+﻿--INSERT Registros Tipo Notificacion
 INSERT INTO TBL_TIPO_NOTIFICACION (TIPO_NOTIFICACION)
 VALUES ('Seguimiento');
 INSERT INTO TBL_TIPO_NOTIFICACION (TIPO_NOTIFICACION)
@@ -107,19 +107,19 @@ INSERT INTO tbl_usuarios (codigo_tipo_usuario,codigo_lugar_residencia,codigo_est
 VALUES (1,6,2,'Abdel Hadi','abdelhadi_43','abdel_43@yahoo.com','asd.456','images/foto_perfiles/Mokona.Modoki.full.35354 (1).jpg');
 
 --INSERT Registros Seguidores
-INSERT INTO tlb_seguidores (codigo_usuario_seguidor,codigo_usuario_seguido) 
+INSERT INTO tbl_seguidores (codigo_usuario_seguidor,codigo_usuario_seguido) 
 VALUES (1,3);
-INSERT INTO tlb_seguidores (codigo_usuario_seguidor,codigo_usuario_seguido) 
+INSERT INTO tbl_seguidores (codigo_usuario_seguidor,codigo_usuario_seguido) 
 VALUES (2,3);
-INSERT INTO tlb_seguidores (codigo_usuario_seguidor,codigo_usuario_seguido) 
+INSERT INTO tbl_seguidores (codigo_usuario_seguidor,codigo_usuario_seguido) 
 VALUES (4,1);
-INSERT INTO tlb_seguidores (codigo_usuario_seguidor,codigo_usuario_seguido) 
+INSERT INTO tbl_seguidores (codigo_usuario_seguidor,codigo_usuario_seguido) 
 VALUES (1,4);
-INSERT INTO tlb_seguidores (codigo_usuario_seguidor,codigo_usuario_seguido) 
+INSERT INTO tbl_seguidores (codigo_usuario_seguidor,codigo_usuario_seguido) 
 VALUES (5,1);
-INSERT INTO tlb_seguidores (codigo_usuario_seguidor,codigo_usuario_seguido) 
+INSERT INTO tbl_seguidores (codigo_usuario_seguidor,codigo_usuario_seguido) 
 VALUES (5,3);
-INSERT INTO tlb_seguidores (codigo_usuario_seguidor,codigo_usuario_seguido) 
+INSERT INTO tbl_seguidores (codigo_usuario_seguidor,codigo_usuario_seguido) 
 VALUES (1,5);
 
 --INSERT Registros Intereses por Usuario
@@ -164,12 +164,38 @@ VALUES (5,13);
 INSERT INTO tbl_intereses_x_usuario (codigo_usuario,codigo_categoria_interes) 
 VALUES (5,7);
 
---INSERT Registros Notificaciones
 --INSERT Registros Revistas
+INSERT INTO TBL_REVISTAS (CODIGO_TIPO_REVISTA, CODIGO_USUARIO, NOMBRE_REVISTA, DESCRIPCION, FECHA_DE_CREACION)
+VALUES (1, 1, 'Entretenimiento de Marco', 'Entretenimiento para todos!', TO_DATE('18/10/2017', 'DD/MM/YYYY'));
+INSERT INTO TBL_REVISTAS (CODIGO_TIPO_REVISTA, CODIGO_USUARIO, NOMBRE_REVISTA, DESCRIPCION, FECHA_DE_CREACION)
+VALUES (1, 3, 'África Salvaje', '¡Descubre África de la manera mas autentica!', TO_DATE('6/5/2015', 'DD/MM/YYYY'));
+INSERT INTO TBL_REVISTAS (CODIGO_TIPO_REVISTA, CODIGO_USUARIO, NOMBRE_REVISTA, DESCRIPCION, FECHA_DE_CREACION)
+VALUES (1, 4, 'Noticias de España', 'Mantente al día de lo que sucede en España.', TO_DATE('28/4/2016', 'DD/MM/YYYY'));
+INSERT INTO TBL_REVISTAS (CODIGO_TIPO_REVISTA, CODIGO_USUARIO, NOMBRE_REVISTA, DESCRIPCION, FECHA_DE_CREACION)
+VALUES (1, 5, 'Economía en los EAU', 'Descubre como marcha la economía en los Emiratos Árabes Unidos.', TO_DATE('17/01/2017', 'DD/MM/YYYY'));
+
 --INSERT Registros Revistas Seguidas
+INSERT INTO TBL_REVISTAS_SEGUIDAS (CODIGO_SEGUIDOR, CODIGO_REVISTA)
+VALUES (1,2);
+INSERT INTO TBL_REVISTAS_SEGUIDAS (CODIGO_SEGUIDOR, CODIGO_REVISTA)
+VALUES (4,2);
+INSERT INTO TBL_REVISTAS_SEGUIDAS (CODIGO_SEGUIDOR, CODIGO_REVISTA)
+VALUES (5,2);
+INSERT INTO TBL_REVISTAS_SEGUIDAS (CODIGO_SEGUIDOR, CODIGO_REVISTA)
+VALUES (4,1);
+INSERT INTO TBL_REVISTAS_SEGUIDAS (CODIGO_SEGUIDOR, CODIGO_REVISTA)
+VALUES (1,4);
+INSERT INTO TBL_REVISTAS_SEGUIDAS (CODIGO_SEGUIDOR, CODIGO_REVISTA)
+VALUES (4,4);
+INSERT INTO TBL_REVISTAS_SEGUIDAS (CODIGO_SEGUIDOR, CODIGO_REVISTA)
+VALUES (1,3);
+INSERT INTO TBL_REVISTAS_SEGUIDAS (CODIGO_SEGUIDOR, CODIGO_REVISTA)
+VALUES (5,3);
+
+--INSERT Registros Notificaciones
 --INSERT Registros Noticias
 --INSERT Registros Reacciones por Noticia
 --INSERT Registros Colaboradores
 --INSERT Registros Comentarios
 --INSERT Registros Reacciones por Comentario
---INSERT Registros Flips por Usuario
+--INSERT Registros Flips
