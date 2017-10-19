@@ -1,31 +1,5 @@
 <style type="text/css">
-		#imagen {
-			width:305px;
-			height:50px;
-			position:relative;
-		}
-		#imagen>div
-		{
-			background-color: #000;
-			position: absolute;
-			bottom:25px;
-			color:#fff;
-			padding:2px 10px;
-			font-weight:bold;
-		}
-
-		#inicio {
-			position:relative;
-		}
-		#inicio>div
-		{
-			position: absolute;
-			bottom:25px;
-			color:#fff;
-			padding:2px 10px;
-			font-weight:bold;
-			text-align: center;
-		}
+		
 	</style>
 
 
@@ -89,7 +63,7 @@ switch ($_GET["accion"]) {
  
 
 	<?php 
-	for ($i=0; $i <2 ; $i++) { 
+	for ($i=0; $i <6 ; $i++) { 
 		
 	
 		?>
@@ -129,75 +103,58 @@ switch ($_GET["accion"]) {
 ?><div> <?php
 	break;
 
+
 case "2":
 	?>
-	 <div class="row">
-		  <div class="col-lg-12 col-md-12" style="text-align: center;padding-bottom: 40px;">
+	  <div class="row" style="padding-left: 50px;" >
+		  <div class="col-lg-12 col-md-12" style="text-align: center;padding-bottom: 40px;" align="center">
 			 
 		  </div>
-
-	<?php 
-	for ($i=0; $i <6 ; $i++) { 
-		
-	
-		?>
-
-
-		
-	<div class="col-lg-4 col-md-6" style="width: 170px; height: 225px; cursor: pointer;">
-		    <div class="thumbnail" style="position: relative; width: 170px; height: 225px;">		
-            <div style="width: 170px; height: 225px; cursor: pointer;" align="center">
-		    <div class="thumbnail" style="position: relative; width: 170px; height: 225px;">	   
-		    <div class="botones-noticia">
-		      	    <i style="color: #fff; font-size: 25px;" class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;&nbsp;
-		      	    <button class="transparente">Editar</button>&nbsp;&nbsp;
-		      		<i style="color: #fff; font-size: 25px;" class="fa fa-envelope-o" aria-hidden="true"></i>
-		    </div>
-		    <img style="width: 170px; height: 225px;" src="images/revista.jpg" alt="...">
-		    </div>
-		
- 		</div>
-		     
-		    </div>
-    </div>	
-
-	<?php
-}
-	break;
-
-	case "4":
-	?>
-	 <div class="row">
-		  <div class="col-lg-12 col-md-12" style="text-align: center;padding-bottom: 40px;">
-			 
-		  </div>
-
 	<?php 
 	for ($i=0; $i <3 ; $i++) { 	
 	
 		?>
-		<div class="col-lg-4 col-md-4" style="width: 170px; height: 225px; cursor: pointer;">
-		<div class="thumbnail" style="position: relative; width: 170px; height: 225px;">  <div style="width: 170px; height: 225px; cursor: pointer;" align="center">
-		    <div class="thumbnail" style="position: relative; width: 170px; height: 225px;">
-			    <div id="imagen">
-					<img src="images/perfil.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236">
-					<div>Nombre Seguidor</div>
-	           </div>  
-		  </div>
- 		 </div>     
-	    </div>
-       </div>	
+		    
+	    
+	   
+		
 
-
-
+	           <div class="container" style="padding-bottom: 270px;">
+	           	<div class="container2">
+					  <img src="images/inicio/fotos.jpg" alt="Avatar" class="image">
+					  <div class="text-down">Nombre Categoria</div>
+				</div>
+				  <div class="middle">
+				   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+				 </div> 
+			</div>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  
+				
+						
 
 	<?php
 }
 	break;
 
-case "5":
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	case "4":
 	?>
-	  <div class="row" style="padding-left: 200px;">
+	  <div class="row" style="padding-left: 50px;">
 		  <div class="col-lg-12 col-md-12" style="text-align: center;padding-bottom: 40px;" align="center">
 			 
 		  </div>
@@ -205,16 +162,65 @@ case "5":
 	for ($i=0; $i <4 ; $i++) { 	
 	
 		?>
-		  <div style=" width:181; height:237 cursor: pointer; ">
-		  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-			    <div id="inicio">
-					<img src="images/inicio/fotos.jpg" class="img-rounded" alt="Cinque Terre" width="181" height="237">
-					<div>Nombre Categoria</div>
-
-	           </div>  
- 		 </div>     
+		    
 	    
-	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	   
+		
+
+	           <div class="container" style="padding-bottom: 270px;">
+	           	<div class="container2">
+					  <img src="images/inicio/fotos.jpg" alt="Avatar" class="image">
+					  <div class="text-down">Nombre Categoria</div>
+				</div>
+				  <div class="middle">
+				   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+				 </div> 
+			</div>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  
+				
+						
+
+	<?php
+}
+	break;
+
+
+
+
+
+
+
+
+case "5":
+	?>
+	  <div class="row" style="padding-left: 50px;" >
+		  <div class="col-lg-12 col-md-12" style="text-align: center;padding-bottom: 40px;" align="center">
+			 
+		  </div>
+	<?php 
+	for ($i=0; $i <10 ; $i++) { 	
+	
+		?>
+		    
+	    
+	   
+		
+
+	           <div class="container" style="padding-bottom: 270px;">
+	           	<div class="container2">
+					  <img src="images/inicio/fotos.jpg" alt="Avatar" class="image">
+					  <div class="text-down">Nombre Categoria</div>
+				</div>
+				  <div class="middle">
+				   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+				 </div> 
+			</div>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  
+				
+						
+
 	<?php
 }
 	break;

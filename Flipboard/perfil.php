@@ -1,19 +1,59 @@
-<link rel="stylesheet" type="text/css" href="../css/perfil.css">
-<link rel="icon" href="../images/favicon.jpg">
-<link href="../css/bootstrap.min.css" rel="stylesheet">  
-<link href="../css/font-awesome.css" rel="stylesheet">
-
-<link rel="../stylesheet" href="../css/slick.css">
-<link rel="../stylesheet" type="text/css" href="../css/slick-theme.css">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
- 
 
 
+<head>
+  <script type="text/javascript" src="js/perfil.js"></script>
+  <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+
+  <meta charset="utf-8">
+  <title>Flipboard|Perfil</title>
+
+  <link rel="icon" href="images/favicon.jpg">
+  <link href="css/bootstrap.min.css" rel="stylesheet">  
+
+  <link href="css/perfil.css" rel="stylesheet">
 
 
- <div  align="center" style="padding-top: 100px;text-align: center;">
-	<div class="row">
-      <div class="col-lg-12">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+</head>
+
+<div class="dropdown top-right">
+    <h1 style="font-size: 14px; " class="dropdown-toggle" data-toggle="dropdown">Iniciaste sesión como 
+    <span class="caret"></span></h1>
+    <ul class="dropdown-menu" >
+    <li><a style="font-size: 12px; color: black; font-family: inherit" href="#">Perfil Publico</a></li>
+          <li class="divider"></li>
+
+    <li><a style="font-size: 12px; color: black; font-family: inherit" href="#">Estadisticas</a></li>
+          <li class="divider"></li>
+
+    <li><a style="font-size: 12px; color: black; font-family: inherit" href="#">Configuración</a></li>
+          <li class="divider"></li>
+
+    <li><a style="font-size: 12px; color: black; font-family: inherit" href="#">Ayuda y Sugerencias</a></li>
+          <li class="divider"></li>
+
+    <li><a style="font-size: 12px; color: black; font-family: inherit" href="#">Politica de Privacidad</a></li>
+          <li class="divider"></li>
+
+    <li><a style="font-size: 12px; color: black; font-family: inherit" href="#">Conviertete en editor</a></li>
+          <li class="divider"></li>
+
+    <li><a style="font-size: 12px; color: black; font-family: inherit" href="#">Cerrar sesión</a></li>
+    </ul>
+  </div>
+
+
+
+
+
+
+
+
+ <div  align="center" style="padding-top: 100px;">
+
+      <div >
         
           
           <div class="circle-badge" style="background:#3E3F41">
@@ -25,7 +65,7 @@
            
            <input  class="letras-nombre" type="text" hidden="true" value="NOMBRE DE USUARIO" id="txt-nombre-mod" >
     	<div id="div-imagen-editar-nombre" onclick="editarNombre()" onmousemove="mostrarIcono(1)" onmouseout="ocultarIcono(1)"> 
-    	<img id="img-icono-nombre" style="visibility: hidden; cursor: pointer;"  src="../images/editar.png">
+    	<img id="img-icono-nombre" style="visibility: hidden; cursor: pointer;"  src="images/editar.png">
         </div>
     	
 
@@ -33,7 +73,7 @@
 
 	         <input hidden="true" class="letras-descripcion" type="text" id="txt-descripcion-mod" value="Escribe algo sobre ti">
 	    
-      <div id="div-imagen-editar-descripcion" onmousemove="mostrarIcono(2)" onmouseout="ocultarIcono(2)"><img id="img-icono-descripcion" onclick="editarDescripcion()" style="visibility: hidden; cursor: pointer;"  src="../images/editar.png">
+      <div id="div-imagen-editar-descripcion" onmousemove="mostrarIcono(2)" onmouseout="ocultarIcono(2)"><img id="img-icono-descripcion" onclick="editarDescripcion()" style="visibility: hidden; cursor: pointer;"  src="images/editar.png">
         </div>
 
 	        
@@ -43,7 +83,7 @@
            <!-- Menu inferior -->
 
 
-           <table class="menu-inferior">
+          <table class="menu-inferior" align="center">
            	<tr>
            	    <td onclick="cargarDetalles(1 )" id="1">
 	           		<div style="padding-right: 20px;">
@@ -90,19 +130,16 @@
            		
            	</tr>
            </table>
-           	<div id="div-contenido-principal" align="center" style="padding: 30px;"></div>
+           	<div id="div-contenido-principal" align="center" style="padding: 20px; align-content: center;"></div>
 
           </div>
       
 
       </div>
-    </div>
+ 
 </div>
 
 
-
- <script src="../js/bootstrap.min.js"></script>
- <script src="../js/perfil.js"></script>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
- <script src="../js/slick.min.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js"></script>
