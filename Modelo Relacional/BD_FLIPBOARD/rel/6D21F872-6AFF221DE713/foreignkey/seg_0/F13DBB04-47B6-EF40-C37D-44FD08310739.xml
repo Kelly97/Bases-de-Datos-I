@@ -8,7 +8,7 @@
 <referredTableID>0DF2C0D3-6C8D-BCAD-0C54-D8E2A0996A6E</referredTableID>
 <keyObject>C16B4D13-3598-BEBE-9E33-0218AA4FF323</keyObject>
 <referredKeyID>C16B4D13-3598-BEBE-9E33-0218AA4FF323</referredKeyID>
-<mandatory>true</mandatory>
+<mandatory>false</mandatory>
 <refColNames>CODIGO_NOTICIA</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>

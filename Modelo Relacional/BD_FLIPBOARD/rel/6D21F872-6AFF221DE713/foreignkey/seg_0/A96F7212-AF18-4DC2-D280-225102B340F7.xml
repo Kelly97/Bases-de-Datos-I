@@ -8,7 +8,7 @@
 <referredTableID>DEF03A11-5046-F542-CED6-FE432735C02D</referredTableID>
 <keyObject>AD463D19-5102-865F-00B6-F7E5BCAD3201</keyObject>
 <referredKeyID>AD463D19-5102-865F-00B6-F7E5BCAD3201</referredKeyID>
-<mandatory>true</mandatory>
+<mandatory>false</mandatory>
 <refColNames>CODIGO_FLIP</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>

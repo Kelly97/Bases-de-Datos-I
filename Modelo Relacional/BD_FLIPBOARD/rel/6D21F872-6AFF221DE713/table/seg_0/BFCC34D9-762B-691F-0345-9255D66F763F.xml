@@ -13,6 +13,7 @@
 <createdTime>2017-06-25 03:51:28 UTC</createdTime>
 <commentInRDBMS>El código de la noticia de la reacción respectiva.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -26,6 +27,7 @@
 <createdBy>diazn</createdBy>
 <createdTime>2017-10-19 00:58:14 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>

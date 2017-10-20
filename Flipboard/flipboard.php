@@ -1,15 +1,14 @@
 <?php
-/*Conexion: PARA QUE ESTA CONEXION FUNCIONE, SE DEBE CREAR UN USUARIO
-LLAMADO DB_FLIPBOARD(mayúsculas) Y SU CONTRASEÑA DEBE SER oracle(en minúsculas).
+/* Buscar los scripts para la base en la carpeta con el mismo nombre
 include_once("class/class-conexion.php");
 $conexion = new Conexion();
-$codigoUsuario = 1;
+$codigoUsuario = 1; //ESTA ASIGNACION ES DE PRUEBA, SE TOMARÁ EL VALOR DE SESIÓN 
 $sql = "SELECT nombre,cod_prueba
         FROM tbl_prueba
-        WHERE cod_prueba = 1";
+        WHERE cod_prueba = 1"; //Cuando realicemos la consulta, se debe omitir el punto y coma al final de esta
 $resultadoUsuario = $conexion->ejecutarInstruccion($sql);
 while($row = $conexion->obtenerFila($resultadoUsuario)){
-  echo $row['NOMBRE'];
+  echo $row['NOMBRE']; //Para obtener algún valor del arreglo que hemos generado, utilizar como índice el nombre del campo que necesitamos, obligatorio escribirlo en mayúscula para que funcione
 }
 $conexion->liberarResultado($resultadoUsuario);
 */ 

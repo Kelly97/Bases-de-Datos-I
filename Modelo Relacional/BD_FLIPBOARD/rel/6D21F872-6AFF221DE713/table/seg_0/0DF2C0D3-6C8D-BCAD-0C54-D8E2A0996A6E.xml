@@ -21,20 +21,6 @@
 <identityColumn>true</identityColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="CODIGO_USUARIO_PROP" id="AD5AB546-E9D9-4E79-2EF0-8F4247FB8732">
-<createdBy>Kelly Aguilar</createdBy>
-<createdTime>2017-10-16 22:13:15 UTC</createdTime>
-<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="6C886DA8-CB80-08D1-182D-0763C6634339" referredColumn="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
-</associations>
-</Column>
 <Column name="CODIGO_REVISTA" id="FCCFA3AF-0697-E0B9-FF37-B401C91F9BA0">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-10-16 22:15:35 UTC</createdTime>
@@ -159,16 +145,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="4B84C961-6564-1947-5AA1-79EC87A41CE0"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="88BD02FE-993D-5C09-9102-11FF5E3CC40E" name="TBL_NOTI_TBL_USUA_FK">
-<createdBy>Kelly Aguilar</createdBy>
-<createdTime>2017-10-16 22:13:15 UTC</createdTime>
-<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="AD5AB546-E9D9-4E79-2EF0-8F4247FB8732"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="3AE03178-45FE-3F1D-C44D-315B26628DA2" name="TBL_NOTI_TBL_REVI_FK">
