@@ -62,15 +62,19 @@ line-height: 0px;
 	font-size: 20px; 
 	font-family: verdana;
 	border: 0px;
-	width: auto;
-    font-weight: bold;
+	width: 250px;
+  font-weight: bold;
+  text-align: center;
 
 }
 
 .letras-descripcion{
 	font-family: verdana;
 	border: 0px;
-    font-weight: bold;
+  width: 250px;
+  font-weight: bold;
+  text-align: center;
+
 
 }
 
@@ -152,7 +156,7 @@ body{
 .container2 {
     position: absolute;
     text-align: center;
-    color: white;
+    color: black;
     font-weight:bold;
 
 
@@ -250,6 +254,7 @@ body{
 
 
 
+
 .dropdown-menu .divider {
   height: 1px;
   margin: 9px 0;
@@ -261,7 +266,9 @@ body{
   padding: 3px 20px;
   clear: both;
   font-weight: normal;
-  line-height: 1.42857143;
+  lin
+
+e-height: 1.42857143;
   color: #333;
   white-space: nowrap;
 }
@@ -294,4 +301,22 @@ body{
 }
 .open > .dropdown-menu {
   display: block;
+}
+
+
+.edt{
+  color: rgb(188, 179, 179);
+  cursor: pointer;
+}
+
+
+.texto-editable{
+border: 1px;
+cursor: auto;
+
+}
+
+.texto-no-editable{
+ border: 0px;
+ cursor:default;
 }

@@ -16,6 +16,7 @@ function ocultarIcono(parametro) {
 	  document.getElementById('img-icono-descripcion').style.visibility = "hidden";
 }
 
+
 function cargarDetalles(parametro){
 
 if (seleccionado!=null) 
@@ -52,4 +53,48 @@ document.getElementById("txt-descripcion-mod").hidden="";
 document.getElementById("txt-descripcion-mod").autofocus="true"
 document.getElementById("txt-descripcion-mod").selected="true"
 
+}
+
+
+
+function editarConfiguracion(id){
+ 	$("#"+id).removeClass("texto-no-editable");	 
+ 	$("#"+id).addClass("texto-editable");
+	$("#"+id).select();    
+}
+
+
+
+function enter(e,id) {
+    if (e.keyCode == 13) {
+         	$("#"+id).addClass("texto-no-editable");	 
+		 	$("#"+id).removeClass("texto-editable");
+			$("#"+id).blur();   	 
+
+    }
+}
+
+
+function cambiarContrasena(){
+	if ($("#edt-contrasena").text()=="Editar") {
+		$("#edt-contrasena").text("Cancelar");
+		$("#menu-cambiar-contrasena").show();
+		$("#menu-cambiar-correo").hide();
+	}else{
+		$("#edt-contrasena").text("Editar");
+		$("#menu-cambiar-contrasena").hide();
+	}
+
+}
+
+
+function cambiarCorreo(){
+	if ($("#edt-correo").text()=="Editar") {
+		$("#edt-correo").text("Cancelar");
+		$("#menu-cambiar-correo").show();
+		$("#menu-cambiar-contrasena").hide();
+	}else{
+		$("#edt-correo").text("Editar");
+		$("#menu-cambiar-correo").hide();
+	}
 }
