@@ -21,6 +21,20 @@
 <identityColumn>true</identityColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="CODIGO_USUARIO" id="482A8A54-F707-0571-BB61-3852D4B8C41F">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-23 01:13:49 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E89A39DE-6887-BF53-AFC1-0769446BFEE2" referredColumn="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
+</associations>
+</Column>
 <Column name="CODIGO_REVISTA" id="FCCFA3AF-0697-E0B9-FF37-B401C91F9BA0">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-10-16 22:15:35 UTC</createdTime>
@@ -155,6 +169,16 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="FCCFA3AF-0697-E0B9-FF37-B401C91F9BA0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B38B8B7F-27A2-DB3E-2417-20F51190BE58" name="NOT_USU_FKv2">
+<createdBy>diazn</createdBy>
+<createdTime>2017-10-23 01:13:48 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="482A8A54-F707-0571-BB61-3852D4B8C41F"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
