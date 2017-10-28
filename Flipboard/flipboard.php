@@ -47,7 +47,7 @@ $conexion->liberarResultado($resultadoUsuario);
         <div style="position: relative;">
           <div id="pnProductNav" class="pn-ProductNav" style="margin-right: 15px;margin-left: 15px;width: 400px;">
               <div id="pnProductNavContents" class="pn-ProductNav_Contents">
-                  <a onclick="cargarNoticias(0)" class="pn-ProductNav_Link" aria-selected="true">NOTICIAS DE PORTADA</a>
+                  <a onclick="cargarNoticias(0)" class="pn-ProductNav_Link" aria-selected="true">PARA TI</a>
                   <a onclick="cargarNoticias(1);return false;" class="pn-ProductNav_Link ">COMEDIA</a>
                   <a onclick="cargarNoticias(2)" class="pn-ProductNav_Link">DEPORTES</a>
                   <a onclick="cargarNoticias(3)" class="pn-ProductNav_Link">INGENIERIA</a>
