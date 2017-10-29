@@ -13,7 +13,7 @@ switch ($_POST["codigo"]) {
 
 			<div class="card noti-card" style="position: relative;">
 				<div class="botones-noticia-general">
-			      	<button type="button" class="btn btn-danger btn-circle" data-container="body" data-toggle="popover" data-placement="left" data-content="Flipear" data-trigger="hover">
+			      	<button type="button" class="btn btn-danger btn-circle" data-toggle="modal" data-target="#md-flipear" data-container="body" data-toggle="popover" data-placement="left" data-content="Flipear" data-trigger="hover">
 			      		<i class="fa fa-plus" aria-hidden="true"></i>
 			      	</button><br>
 			      	<button type="button" class="btn btn-default btn-circle" data-container="body" data-toggle="popover" data-placement="left" data-content="Me gusta" data-trigger="hover">

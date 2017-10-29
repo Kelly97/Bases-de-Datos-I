@@ -247,6 +247,7 @@ CREATE TABLE tbl_revistas (
     descripcion           VARCHAR2(200),
     codigo_tipo_revista   INTEGER NOT NULL,
     fecha_de_creacion     DATE NOT NULL,
+    url_portada           VARCHAR2(300),
     url_revista           VARCHAR2(200)
 );
 
@@ -580,6 +581,17 @@ CREATE OR REPLACE TRIGGER tbl_noticias_codigo_noticia BEFORE
     )
 BEGIN
     :new.codigo_noticia := tbl_noticias_codigo_noticia.nextval;
+END;
+/
+
+CREATE OR REPLACE TRIGGER tbl_flips_codigo_flip BEFORE
+    INSERT ON tbl_flips
+    FOR EACH ROW
+    WHEN (
+        new.codigo_flip IS NULL
+    )
+BEGIN
+    :new.codigo_flip := tbl_noticias_codigo_noticia.nextval;
 END;
 /
 

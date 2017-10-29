@@ -45,7 +45,7 @@ $conexion->liberarResultado($resultadoUsuario);*/
     <link rel="stylesheet" href="css/text-scrolling.css">
   </head>
   
-  <body onload="setInterval('actualizarNotificaciones()',10000);"> 
+  <body> 
     
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">
@@ -249,6 +249,27 @@ $conexion->liberarResultado($resultadoUsuario);*/
       </div><!--/.modal-dialog-->
     </div><!-- /.modal003 -->
     <!--FIN modal 003-->
+    <!--FIN Modals-->
+
+    <!--Modal Flipear-->
+    <div class="modal fade" id="md-flipear" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute;top: 5px;left: 10px;font-size: 35px;">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h6 class="modal-title" style="text-align: center;margin-top: 20px;padding-left: 20px;padding-right: 20px;">Recopila lo que te gusta en tu propia revista para leer más tarde o compartir con otros</h6>            
+          </div>
+          <div id="md-body-flipear" class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+            <button id="btn_aniadir_flip" type="button" class="btn " disabled="TRUE">AÑADIR</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--FIN Modals-->
     
     <!--Scripts-->

@@ -4,7 +4,9 @@ $(document).ready(function() {
 	});*/
 	//buscar();
 	cargarNoticias(0);//El cero será reservado para las noticias de portada, del 1 en adelante hará referencia a los intereses.
-	ajustarContenedorNoticias();		
+	ajustarContenedorNoticias();
+	actualizarNotificaciones();
+	setInterval('actualizarNotificaciones()',10000);		
 	$('.your-class').slick({
 	      dots: false,
 		  infinite: false,
@@ -69,8 +71,15 @@ $(document).ready(function() {
 		WebuiPopovers.hideAll();		
 	});
 	
+	$('#md-flipear').on('show.bs.modal', function (e) {
+	  cargarRevistas();
+	  $("#btn_aniadir_flip").attr("disabled", true);
+	});
 
-	
+	$("#btn_aniadir_flip").click(function () {	 
+		alert($('input:radio[name=opt_revistas]:checked').val());//Alerta que contiene el codigo de revista
+	});
+
 
 });
 
@@ -189,4 +198,21 @@ function actualizarNotificaciones(){
             }         
         }        
     });	
+}
+
+function cargarRevistas(){
+	$.ajax({       
+        url : "ajax/tarjetas_revistas.php",
+        method: "POST",
+        beforeSend: function() {
+        	$('#md-body-flipear').html('<div style="text-align:center;"><span class="loading-sencillo">Loading</span><span class="l-1"></span><span class="l-2"></span><span class="l-3"></span><span class="l-4"></span><span class="l-5"></span><span class="l-6"></span></div>');         
+        },
+        success: function(datos){       
+            $('#md-body-flipear').html(datos);
+        }
+    });	
+}
+
+function habilitarBotonAniadirFlip(){
+	$("#btn_aniadir_flip").attr("disabled", false);
 }

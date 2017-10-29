@@ -167,14 +167,14 @@ INSERT INTO tbl_intereses_x_usuario (codigo_usuario,codigo_categoria_interes)
 VALUES (5,7);
 
 --INSERT Registros Revistas
-INSERT INTO TBL_REVISTAS (CODIGO_TIPO_REVISTA, CODIGO_USUARIO, NOMBRE_REVISTA, DESCRIPCION, FECHA_DE_CREACION)
-VALUES (1, 1, 'Entretenimiento de Marco', 'Entretenimiento para todos!', TO_DATE('18/10/2017', 'DD/MM/YYYY'));
-INSERT INTO TBL_REVISTAS (CODIGO_TIPO_REVISTA, CODIGO_USUARIO, NOMBRE_REVISTA, DESCRIPCION, FECHA_DE_CREACION)
-VALUES (1, 3, 'África Salvaje', '¡Descubre África de la manera mas autentica!', TO_DATE('6/5/2015', 'DD/MM/YYYY'));
-INSERT INTO TBL_REVISTAS (CODIGO_TIPO_REVISTA, CODIGO_USUARIO, NOMBRE_REVISTA, DESCRIPCION, FECHA_DE_CREACION)
-VALUES (1, 4, 'Noticias de España', 'Mantente al día de lo que sucede en España.', TO_DATE('28/4/2016', 'DD/MM/YYYY'));
-INSERT INTO TBL_REVISTAS (CODIGO_TIPO_REVISTA, CODIGO_USUARIO, NOMBRE_REVISTA, DESCRIPCION, FECHA_DE_CREACION)
-VALUES (1, 5, 'Economía en los EAU', 'Descubre como marcha la economía en los Emiratos Árabes Unidos.', TO_DATE('17/01/2017', 'DD/MM/YYYY'));
+INSERT INTO TBL_REVISTAS (CODIGO_TIPO_REVISTA, CODIGO_USUARIO, NOMBRE_REVISTA, DESCRIPCION, FECHA_DE_CREACION,URL_PORTADA)
+VALUES (1, 1, 'Entretenimiento de Marco', 'Entretenimiento para todos!', TO_DATE('18/10/2017', 'DD/MM/YYYY'),'http://mouse.latercera.com/wp-content/uploads/2017/10/fortnite.jpg');
+INSERT INTO TBL_REVISTAS (CODIGO_TIPO_REVISTA, CODIGO_USUARIO, NOMBRE_REVISTA, DESCRIPCION, FECHA_DE_CREACION,URL_PORTADA)
+VALUES (1, 3, 'África Salvaje', '¡Descubre África de la manera mas autentica!', TO_DATE('6/5/2015', 'DD/MM/YYYY'),'https://altonivel-impresionesaerea.netdna-ssl.com/assets/images/gourmet/entretenimiento.jpg');
+INSERT INTO TBL_REVISTAS (CODIGO_TIPO_REVISTA, CODIGO_USUARIO, NOMBRE_REVISTA, DESCRIPCION, FECHA_DE_CREACION,URL_PORTADA)
+VALUES (1, 4, 'Noticias de España', 'Mantente al día de lo que sucede en España.', TO_DATE('28/4/2016', 'DD/MM/YYYY'),'http://mouse.latercera.com/wp-content/uploads/2017/10/fortnite.jpg');
+INSERT INTO TBL_REVISTAS (CODIGO_TIPO_REVISTA, CODIGO_USUARIO, NOMBRE_REVISTA, DESCRIPCION, FECHA_DE_CREACION,URL_PORTADA)
+VALUES (1, 5, 'Economía en los EAU', 'Descubre como marcha la economía en los Emiratos Árabes Unidos.', TO_DATE('17/01/2017', 'DD/MM/YYYY'),'http://static.t13.cl/images/sizes/1200x675/1498132806-96591486gettyimages-503387922.jpg');
 
 --INSERT Registros Revistas Seguidas
 INSERT INTO TBL_REVISTAS_SEGUIDAS (CODIGO_SEGUIDOR, CODIGO_REVISTA)
