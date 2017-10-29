@@ -33,7 +33,7 @@ $conexion->liberarResultado($resultadoUsuario);*/
     <link rel="stylesheet" href="css/text-scrolling.css">
   </head>
   
-  <body> 
+  <body onload="setInterval('actualizarNotificaciones()',10000);"> 
     
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">
@@ -94,7 +94,7 @@ $conexion->liberarResultado($resultadoUsuario);*/
           <li class="nav-item" data-toggle="popover" data-placement="left" data-content="Notificaciones" data-trigger="hover">
             <a class="nav-item" id="btn-notificaciones">
               <i class="fa fa-bell fa-lg" aria-hidden="true" style="margin-right: -22px;"></i>
-              <span class="badge badge-secondary" style="font-size: 9px;">0</span>
+              <span id="cantidad_notificaciones" class="badge badge-secondary" style="font-size: 9px;">0</span>
             </a>
           </li>
           <li class="nav-item" data-toggle="popover" data-placement="left" data-content="Redactar Noticia" data-trigger="hover">

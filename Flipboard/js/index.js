@@ -4,7 +4,7 @@ $(document).ready(function() {
 	});*/
 	//buscar();
 	cargarNoticias(0);//El cero será reservado para las noticias de portada, del 1 en adelante hará referencia a los intereses.
-	ajustarContenedorNoticias();
+	ajustarContenedorNoticias();		
 	$('.your-class').slick({
 	      dots: false,
 		  infinite: false,
@@ -176,5 +176,17 @@ function isotopeNotiCard(){
 	  });
 }
 
-
-
+function actualizarNotificaciones(){
+	$.ajax({       
+        url : "ajax/campana-notificaciones.php",
+        method: "POST",
+        success: function(datos){       
+            $('#cantidad_notificaciones').html(datos); 
+            if(datos == 0){
+            	$('#cantidad_notificaciones').css('background-color','gray');
+            }else{
+            	$('#cantidad_notificaciones').css('background-color','red');
+            }         
+        }        
+    });	
+}
