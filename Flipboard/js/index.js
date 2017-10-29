@@ -137,7 +137,7 @@ function cargarNoticias(codigo){
 }
 
 function perfilUsuario(){
-	$('#contenido-principal').load('ajax/perfil.html', function(data) {
+	$('#contenido-principal').load('perfil.php', function(data) {
 			$(this).html(data);
 		});
 }

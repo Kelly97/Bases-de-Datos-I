@@ -1,5 +1,5 @@
 <?php
-$codigo_usuario=1;
+$codigo_usuario=1;//SESION
 include_once("../class/class-conexion.php");
 $conexion = new Conexion();
 $sql =  '

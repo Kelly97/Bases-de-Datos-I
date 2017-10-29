@@ -2,7 +2,19 @@
 //Buscar los scripts para la base en la carpeta con el mismo nombre
 include_once("class/class-conexion.php");
 $conexion = new Conexion();
-$codigoUsuario = 1; //ESTA ASIGNACION ES DE PRUEBA, SE TOMARÁ EL VALOR DE SESIÓN 
+$codigoUsuario = 1;//SESION
+$sql = "  SELECT  CODIGO_TIPO_USUARIO,
+                  CODIGO_TIPO_USUARIO,
+                  CODIGO_ESTADO_USUARIO,
+                  substr(NOMBRE_USUARIO,1,1) AS INICIAL,
+                  NOMBRE_USUARIO,ALIAS_USUARIO,
+                  URL_FOTO_PERFIL,
+                  DESCRIPCION
+          FROM TBL_USUARIOS
+          WHERE CODIGO_USUARIO =".$codigoUsuario; //Cuando realicemos la consulta, se debe omitir el punto y coma al final de esta
+$resultadoUsuario = $conexion->ejecutarInstruccion($sql);
+$rowUsuario = $conexion->obtenerFila($resultadoUsuario);
+ //ESTA ASIGNACION ES DE PRUEBA, SE TOMARÁ EL VALOR DE SESIÓN 
 /*$sql = "SELECT B.CATEGORIA
         FROM TBL_INTERESES_X_USUARIO A
         LEFT JOIN TBL_CATEGORIA B
@@ -105,17 +117,23 @@ $conexion->liberarResultado($resultadoUsuario);*/
           <li class="nav-item" onclick="perfilUsuario()" data-toggle="popover" data-placement="left" data-content="Perfil" data-trigger="hover">
             <a class="nav-item" href="#perfil" >
               <div style="padding-top: 5px;">
-                <div class="miniatura-usuario" style="margin: auto;background-image: url('images/noticias/img_prueba_2.jpeg');width: 30px;height: 30px;padding: 0px;">
-                  <table style="height: 100%;width: 100%;font-size: 15px;font-weight: bold;">
-                    <tbody>
-                      <tr>
-                        <td class="align-middle text-center">
-                          A
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div> 
+                <div class="miniatura-usuario" style="margin: auto;background-image: url('<?php echo $rowUsuario["URL_FOTO_PERFIL"]; ?>');width: 30px;height: 30px;padding: 0px;">
+                      <?php
+                      if(is_null($rowUsuario["URL_FOTO_PERFIL"])){
+                        ?>
+                          <table style="height: 100%;width: 100%;font-size: 20px;font-weight: bold;">
+                            <tbody>
+                              <tr>
+                                <td class="align-middle text-center">
+                                  <?php echo utf8_encode($rowUsuario['INICIAL']); ?>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>   
+                      <?php
+                      }
+                      ?>
+                </div>
               </div>
             </a>
           </li>
