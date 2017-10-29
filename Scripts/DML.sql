@@ -273,3 +273,20 @@ INSERT INTO TBL_NOTIFICACIONES (CODIGO_TIPO_NOTIFICACION, CODGIO_ESTADO_NOTIFICA
 VALUES(4, 2, 1, 4, 3, 3, 1, TO_DATE('20/10/2017', 'DD/MM/YYYY'));
 
 --INSERT Registros Colaboradores
+INSERT INTO tbl_colaboradores (codigo_colaborador,codigo_revista) 
+VALUES (1,2);
+INSERT INTO tbl_colaboradores (codigo_colaborador,codigo_revista) 
+VALUES (1,4);
+INSERT INTO tbl_colaboradores (codigo_colaborador,codigo_revista) 
+VALUES (2,2);
+INSERT INTO tbl_colaboradores (codigo_colaborador,codigo_revista) 
+VALUES (3,3);
+INSERT INTO tbl_colaboradores (codigo_colaborador,codigo_revista) 
+VALUES (4,2);
+INSERT INTO tbl_colaboradores (codigo_colaborador,codigo_revista) 
+VALUES (5,3);
+INSERT INTO tbl_colaboradores (codigo_colaborador,codigo_revista) 
+VALUES (5,1);
+
+
+COMMIT;

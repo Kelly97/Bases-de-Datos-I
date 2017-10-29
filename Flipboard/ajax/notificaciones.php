@@ -7,7 +7,7 @@ $conexion = new Conexion();
 $tiempo = new Tiempo();
 $codigoUsuario = 1;
 $sql =  '
-	SELECT A.CODIGO_NOTIFICACION, A.CODIGO_TIPO_NOTIFICACION, B.NOMBRE_USUARIO, B.URL_FOTO_PERFIL, C.NOMBRE_REVISTA, D.TITULO_NOTICIA, LOWER(E.TIPO_REACCION) TIPO_REACCION, ((SYSDATE - A.HORA_NOTIFICACION)*1440) TIEMPO
+	SELECT A.CODIGO_NOTIFICACION, A.CODIGO_TIPO_NOTIFICACION, substr(B.NOMBRE_USUARIO,1,1) AS INICIAL ,B.NOMBRE_USUARIO, B.URL_FOTO_PERFIL, C.NOMBRE_REVISTA, D.TITULO_NOTICIA, LOWER(E.TIPO_REACCION) TIPO_REACCION, ((SYSDATE - A.HORA_NOTIFICACION)*1440) TIEMPO
 	FROM TBL_NOTIFICACIONES A
 	LEFT JOIN TBL_USUARIOS B
 	ON (A.CODIGO_USUARIO_EMISOR = B.CODIGO_USUARIO)
@@ -44,7 +44,7 @@ while (true) {
 		              <div class="col-lg-3" style="padding-right: 0px;">
 		                <img src="'.$registro['URL_FOTO_PERFIL'].'" style="width: 100%;border-radius: 30px;">
 		              </div>
-		              <div class="col-lg-9">
+		              <div class="col-lg-9" style="margin-bottom:10px;">
 		                <p class="card-text">      
 		                <strong>'.$registro['NOMBRE_USUARIO'].'</strong> ha comenzado a seguirte.
 		                </p>       
@@ -64,7 +64,7 @@ while (true) {
 		              <div class="col-lg-3" style="padding-right: 0px;">
 		                <img src="'.$registro['URL_FOTO_PERFIL'].'" style="width: 100%;border-radius: 30px;">
 		              </div>
-		              <div class="col-lg-9">
+		              <div class="col-lg-9" style="margin-bottom:10px;">
 		                <p class="card-text">      
 		                '.$registro['NOMBRE_USUARIO'].' ha comentado en tu noticia <strong>'.$registro['TITULO_NOTICIA'].'</strong> añadida a la revista <strong>'.$registro['NOMBRE_REVISTA'].'</strong>
 		                </p>       
@@ -77,36 +77,69 @@ while (true) {
 		        </div>';
 		      break;
 		    case 3://reaccion noticia
-		      echo '
+		      ?>
 		        <div class="card border-info mb-3" style="max-width: 20rem;text-align: left;cursor: pointer;">  
 		          <div class="card-body text-info container">
 		            <div class="row">
 		              <div class="col-lg-3" style="padding-right: 0px;">
-		                <img src="'.$registro['URL_FOTO_PERFIL'].'" style="width: 100%;border-radius: 30px;">
-		              </div>
-		              <div class="col-lg-9">
+		              	<!--Miniatura de la imagen-->
+		                	<div class="miniatura-usuario" style="margin: auto;background-image: url('<?php echo $registro["URL_FOTO_PERFIL"]; ?>');width: 60px;height: 60px;padding: 0px;">
+		                		<?php
+		                		if(is_null($registro["URL_FOTO_PERFIL"])){
+		                			?>
+		                				<table style="height: 100%;width: 100%;font-size: 20px;font-weight: bold;">
+											<tbody>
+												<tr>
+													<td class="align-middle text-center">
+														<?php echo utf8_encode($registro['INICIAL']); ?>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+		                			<?php
+		                		}
+		                		?>								
+						  </div>
+						  <!--FIN Miniatura de la imagen-->
+		              </div>		              
+		              <div class="col-lg-9" style="margin-bottom:10px;">
 		                <p class="card-text">      
-		                '.$registro['NOMBRE_USUARIO'].' reacciono con un '.$registro['TIPO_REACCION'].' a tu noticia <strong>'.$registro['TITULO_NOTICIA'].'</strong> añadida a la revista <strong>'.$registro['NOMBRE_REVISTA'].'</strong>
+		                <?php echo utf8_encode($registro['NOMBRE_USUARIO']); ?> reaccionó con un 
+		                <?php echo utf8_encode($registro['TIPO_REACCION']); ?> a tu noticia <strong>
+		                <?php echo utf8_encode($registro['TITULO_NOTICIA']); ?></strong> añadida a la revista <strong><?php echo utf8_encode($registro['NOMBRE_REVISTA']); ?></strong>
 		                </p>       
 		              </div> 
 		              <div class="col-lg-12">
-		                <h6 style="color: gray;font-size: 14px;">'.$tiempo->calcularTiempoTranscurrido($registro['TIEMPO']).'</h6>   
+		                <h6 style="color: gray;font-size: 14px;">
+		                	<?php echo $tiempo->calcularTiempoTranscurrido($registro['TIEMPO']);?>
+		                </h6>   
 		              </div>
 		            </div>    
 		          </div>
-		        </div>';
+		        </div>'
+		        <?php
 		      break;
 		    case 4://reaccion comentario
 		      echo '
 		        <div class="card border-info mb-3" style="max-width: 20rem;text-align: left;cursor: pointer;">  
 		          <div class="card-body text-info container">
 		            <div class="row">
-		              <div class="col-lg-3" style="padding-right: 0px;">
-		                <img src="'.$registro['URL_FOTO_PERFIL'].'" style="width: 100%;border-radius: 30px;">
+		              <div class="col-lg-3" style="padding-right: 0px;">		                
+		                <div class="miniatura-usuario" style="margin: auto;background-image: url('.$registro['URL_FOTO_PERFIL'].');width: 60px;height: 60px;padding: 0px;">
+								<table style="height: 100%;width: 100%;font-size: 20px;font-weight: bold;">
+									<tbody>
+										<tr>
+											<td class="align-middle text-center">
+												'.$registro['INICIAL'].'
+											</td>
+										</tr>
+									</tbody>
+								</table>
+						  </div>  
 		              </div>
-		              <div class="col-lg-9">
+		              <div class="col-lg-9" style="margin-bottom:10px;">
 		                <p class="card-text">      
-		                '.$registro['NOMBRE_USUARIO'].' reacciono con un '.$registro['TIPO_REACCION'].' a tu comentario en la noticia <strong>'.$registro['TITULO_NOTICIA'].'</strong> añadida a la revista <strong>'.$registro['NOMBRE_REVISTA'].'</strong>
+		                '.$registro['NOMBRE_USUARIO'].' reacciono con un '.$registro['TIPO_REACCION'].' a tu comentario en la noticia <strong>'.utf8_encode($registro['TITULO_NOTICIA']).'</strong> añadida a la revista <strong>'.utf8_encode($registro['NOMBRE_REVISTA']).'</strong>
 		                </p>       
 		              </div> 
 		              <div class="col-lg-12">
@@ -124,7 +157,7 @@ while (true) {
 		              <div class="col-lg-3" style="padding-right: 0px;">
 		                <img src="'.$registro['URL_FOTO_PERFIL'].'" style="width: 100%;border-radius: 30px;">
 		              </div>
-		              <div class="col-lg-9">
+		              <div class="col-lg-9" style="margin-bottom:10px;">
 		                <p class="card-text">      
 		                '.$registro['NOMBRE_USUARIO'].' flipeo tu noticia <strong>'.$registro['TITULO_NOTICIA'].'</strong> a la revista <strong>'.$registro['NOMBRE_REVISTA'].'</strong>
 		                </p>       

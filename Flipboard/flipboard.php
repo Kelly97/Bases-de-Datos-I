@@ -1,17 +1,18 @@
 <?php
-/* Buscar los scripts para la base en la carpeta con el mismo nombre
+//Buscar los scripts para la base en la carpeta con el mismo nombre
 include_once("class/class-conexion.php");
 $conexion = new Conexion();
 $codigoUsuario = 1; //ESTA ASIGNACION ES DE PRUEBA, SE TOMARÁ EL VALOR DE SESIÓN 
-$sql = "SELECT nombre,cod_prueba
-        FROM tbl_prueba
-        WHERE cod_prueba = 1"; //Cuando realicemos la consulta, se debe omitir el punto y coma al final de esta
+/*$sql = "SELECT B.CATEGORIA
+        FROM TBL_INTERESES_X_USUARIO A
+        LEFT JOIN TBL_CATEGORIA B
+        ON (A.CODIGO_CATEGORIA_INTERES = B.CODIGO_CATEGORIA)
+        WHERE CODIGO_USUARIO = ".$codigoUsuario; //Cuando realicemos la consulta, se debe omitir el punto y coma al final de esta
 $resultadoUsuario = $conexion->ejecutarInstruccion($sql);
 while($row = $conexion->obtenerFila($resultadoUsuario)){
-  echo $row['NOMBRE']; //Para obtener algún valor del arreglo que hemos generado, utilizar como índice el nombre del campo que necesitamos, obligatorio escribirlo en mayúscula para que funcione
+  echo utf8_encode($row['CATEGORIA']).'<br>'; //Para obtener algún valor del arreglo que hemos generado, utilizar como índice el nombre del campo que necesitamos, obligatorio escribirlo en mayúscula para que funcione
 }
-$conexion->liberarResultado($resultadoUsuario);
-*/ 
+$conexion->liberarResultado($resultadoUsuario);*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,24 +41,30 @@ $conexion->liberarResultado($resultadoUsuario);
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
-
+      </button>      
       <div class="collapse navbar-collapse" id="navbarNav">
 
         <div style="position: relative;">
           <div id="pnProductNav" class="pn-ProductNav" style="margin-right: 15px;margin-left: 15px;width: 400px;">
               <div id="pnProductNavContents" class="pn-ProductNav_Contents">
                   <a onclick="cargarNoticias(0)" class="pn-ProductNav_Link" aria-selected="true">PARA TI</a>
-                  <a onclick="cargarNoticias(1);return false;" class="pn-ProductNav_Link ">COMEDIA</a>
-                  <a onclick="cargarNoticias(2)" class="pn-ProductNav_Link">DEPORTES</a>
-                  <a onclick="cargarNoticias(3)" class="pn-ProductNav_Link">INGENIERIA</a>
-                  <a onclick="cargarNoticias(4)" class="pn-ProductNav_Link">JARDINERIA</a>
-                  <a onclick="cargarNoticias(7)" class="pn-ProductNav_Link">ENERGÍA SOLAR</a>
-                  <a onclick="cargarNoticias(8)" class="pn-ProductNav_Link">LITERATURA</a>
-                  <a onclick="cargarNoticias(9)" class="pn-ProductNav_Link">ANIME</a>
-                  <a onclick="cargarNoticias(10)" class="pn-ProductNav_Link">CRAFTS</a>   
-                  <a onclick="cargarNoticias(11)" class="pn-ProductNav_Link">ARTE ABSTRACTO</a>
-
+                  <?php
+                    $sql = "SELECT  B.CODIGO_CATEGORIA,
+                                    UPPER(B.CATEGORIA) AS CATEGORIA
+                            FROM TBL_INTERESES_X_USUARIO A
+                            LEFT JOIN TBL_CATEGORIA B
+                            ON (A.CODIGO_CATEGORIA_INTERES = B.CODIGO_CATEGORIA)
+                            WHERE A.CODIGO_USUARIO = ".$codigoUsuario;
+                    $resultadoUsuario = $conexion->ejecutarInstruccion($sql);
+                    while($row = $conexion->obtenerFila($resultadoUsuario)){
+                      ?>
+                        <a onclick="cargarNoticias(<?php echo $row['CODIGO_CATEGORIA']; ?>);return false;" class="pn-ProductNav_Link ">
+                          <?php echo utf8_encode($row['CATEGORIA']) ?>
+                        </a>
+                      <?php
+                    }
+                    $conexion->liberarResultado($resultadoUsuario);
+                  ?>   
                   <a class="pn-ProductNav_Link" data-toggle="modal" data-target="#modal-001">AGREGAR INTERÉS</a>
                   <span id="pnIndicator" class="pn-ProductNav_Indicator"></span>
               </div>            
@@ -116,7 +123,6 @@ $conexion->liberarResultado($resultadoUsuario);
       </div>
     </nav>
     
-
 
     <div class="container-fluid">  
       <div id="contenido-principal" class="col-lg-12" style="padding: 0px;">
