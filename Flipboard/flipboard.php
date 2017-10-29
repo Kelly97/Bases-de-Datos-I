@@ -77,7 +77,7 @@ $conexion->liberarResultado($resultadoUsuario);*/
                     }
                     $conexion->liberarResultado($resultadoUsuario);
                   ?>   
-                  <a class="pn-ProductNav_Link" data-toggle="modal" data-target="#modal-001">AGREGAR INTERÉS</a>
+                  <a class="pn-ProductNav_Link" data-toggle="modal" data-target="#modal-001" onclick="obtenerIntereses(<?php echo $codigoUsuario; ?>)">AGREGAR INTERÉS</a>
                   <span id="pnIndicator" class="pn-ProductNav_Indicator"></span>
               </div>            
           </div>
@@ -155,29 +155,15 @@ $conexion->liberarResultado($resultadoUsuario);*/
       <div class="modal-dialog" role="document"><!--/.modal-dialog-->
         <div class="modal-content"><!--/.modal-content-->
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
             <div class="search-passion">
-                <span>Elige un interés</span>
+                <span><strong>ELIGE UN INTERES</strong></span>
             </div>
           </div>
-          <div class="modal-body">               
-              <div class="favorite">
-                <div class="name">
-                  <span>Noticias</span>
-                </div>
-              </div>
-              <div class="favorite">
-                <div class="name">
-                  <span>Automotriz</span>
-                </div>
-              </div>
-              <div class="favorite">
-                <div class="name">
-                  <span>Jardinería</span>
-                </div>
-              </div>
+          <div class="modal-body">
+
+              <div id="div-intereses">
+
+              </div>             
                       
           </div><!-- /.modal-body -->
         </div><!--/.modal-content-->
@@ -190,8 +176,7 @@ $conexion->liberarResultado($resultadoUsuario);*/
       <div class="modal-dialog" role="document"><!--/.modal-dialog-->
         <div class="modal-content"><!--/.modal-content-->
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Añade tu punto de vista a una revista</h4>
+            <h4 class="modal-title"><strong>AGREGA TU PERSPECTIVA A UNA REVISTA</strong></h4>
           </div>
           <div class="modal-body">
             <table>
@@ -282,7 +267,8 @@ $conexion->liberarResultado($resultadoUsuario);*/
     <script src="js/text-scrolling.js"></script>    
     <script src="js/imagesloaded.pkgd.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/index.js"></script> 
+    <script src="js/index.js"></script>
+    <script src="js/intereses.js"></script>
     <!--FIN Scripts-->
 
   </body>
