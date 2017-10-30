@@ -4,10 +4,10 @@ include_once("class/class-conexion.php");
 $conexion = new Conexion();
 $codigoUsuario = 1;//SESION
 $sql = "  SELECT  CODIGO_TIPO_USUARIO,
-                  CODIGO_TIPO_USUARIO,
                   CODIGO_ESTADO_USUARIO,
                   substr(NOMBRE_USUARIO,1,1) AS INICIAL,
-                  NOMBRE_USUARIO,ALIAS_USUARIO,
+                  NOMBRE_USUARIO,
+                  ALIAS_USUARIO,
                   URL_FOTO_PERFIL,
                   DESCRIPCION
           FROM TBL_USUARIOS
@@ -60,6 +60,7 @@ $conexion->liberarResultado($resultadoUsuario);*/
           <div id="pnProductNav" class="pn-ProductNav" style="margin-right: 15px;margin-left: 15px;width: 400px;">
               <div id="pnProductNavContents" class="pn-ProductNav_Contents">
                   <a onclick="cargarNoticias(0)" class="pn-ProductNav_Link" aria-selected="true">PARA TI</a>
+                  <span id="lista_intereses">
                   <?php
                     $sql = "SELECT  B.CODIGO_CATEGORIA,
                                     UPPER(B.CATEGORIA) AS CATEGORIA
@@ -77,6 +78,7 @@ $conexion->liberarResultado($resultadoUsuario);*/
                     }
                     $conexion->liberarResultado($resultadoUsuario);
                   ?>   
+                </span>
                   <a class="pn-ProductNav_Link" data-toggle="modal" data-target="#modal-001" onclick="obtenerIntereses(<?php echo $codigoUsuario; ?>)">AGREGAR INTERÉS</a>
                   <span id="pnIndicator" class="pn-ProductNav_Indicator"></span>
               </div>            
@@ -146,6 +148,10 @@ $conexion->liberarResultado($resultadoUsuario);*/
       <div id="contenido-principal" class="col-lg-12" style="padding: 0px;">
         
       </div>    
+    </div>
+
+    <div id="alerta_inferior" class="alert alerta-inferior" role="alert">      
+      
     </div>
 
     <!--Modals-->

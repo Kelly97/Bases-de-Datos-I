@@ -277,3 +277,16 @@ input[type=radio]:checked + label div{
 .btn:hover{
 	cursor: pointer;
 }
+
+.alerta-inferior{
+	position: fixed;
+	z-index: 1000;
+	bottom: 0px;
+	margin-bottom: 0px;
+	width: 100%;
+	text-align: center;
+	background-color: rgb(0, 0, 0);
+	color: white;	
+	border-radius: 0px;
+	display: none;
+}

@@ -19,9 +19,18 @@ function agregarInteres(codigoInteres, codigoUsuario){
         url : "ajax/intereses.php",
         data: data,
         method: "POST",
-        success: function(){       
-            alert("Interés agregado exitosamente");
+        success: function(datos){       
+            //alert(datos);
             obtenerIntereses(codigoUsuario);
+            $('#modal-001').modal('hide');
+            $('#lista_intereses').append(datos);
+            $('#alerta_inferior').html('Interés agregado exitosamente.');
+            $('#alerta_inferior').show();
+            setTimeout(ocultarAlert,3000);
         }
     });	
+}
+
+function ocultarAlert(){
+	$('#alerta_inferior').hide();
 }
