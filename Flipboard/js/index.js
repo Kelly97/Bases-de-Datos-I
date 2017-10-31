@@ -3,6 +3,7 @@ $(document).ready(function() {
 		abrirPerfil();
 	});*/
 	//buscar();
+
 	cargarNoticias(0);//El cero será reservado para las noticias de portada, del 1 en adelante hará referencia a los intereses.
 	ajustarContenedorNoticias();
 	actualizarNotificaciones();
@@ -216,3 +217,4 @@ function cargarRevistas(){
 function habilitarBotonAniadirFlip(){
 	$("#btn_aniadir_flip").attr("disabled", false);
 }
+

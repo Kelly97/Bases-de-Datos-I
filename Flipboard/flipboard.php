@@ -59,7 +59,7 @@ $conexion->liberarResultado($resultadoUsuario);*/
         <div style="position: relative;">
           <div id="pnProductNav" class="pn-ProductNav" style="margin-right: 15px;margin-left: 15px;width: 400px;">
               <div id="pnProductNavContents" class="pn-ProductNav_Contents">
-                  <a onclick="cargarNoticias(0)" class="pn-ProductNav_Link" aria-selected="true">PARA TI</a>
+                  <a id="li_para_ti" onclick="cargarNoticias(0)" class="pn-ProductNav_Link" aria-selected="true">PARA TI</a>                  
                   <span id="lista_intereses">
                   <?php
                     $sql = "SELECT  B.CODIGO_CATEGORIA,
@@ -274,6 +274,7 @@ $conexion->liberarResultado($resultadoUsuario);*/
     <script src="js/imagesloaded.pkgd.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/tarjetasNoticias.js"></script>
     <script src="js/intereses.js"></script>
     <!--FIN Scripts-->
 
