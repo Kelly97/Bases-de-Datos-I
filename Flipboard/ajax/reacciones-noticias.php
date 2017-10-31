@@ -1,11 +1,11 @@
 <?php
-$codigoNoticia=$_POST["codigoNoticia"];
 $codigoUsuario=1;//sesion
 include_once("../class/class-conexion.php");
 $conexion = new Conexion();
 
 switch ($_POST["codigo"]) {
 		case '1'://evento Like
+			$codigoNoticia=$_POST["codigoNoticia"];
 			$sql="SELECT CODIGO_NOTICIA
 				FROM TBL_REACCIONES_X_NOTICIAS
 				WHERE CODIGO_USUARIO=".$codigoUsuario."
@@ -38,7 +38,22 @@ switch ($_POST["codigo"]) {
 			break;
 		
 		case '2'://Evento flipear
-
+			$codRevista=$_POST["codRevista"];
+			$codNoticia=$_POST["codNoticia"];
+			$sql="SELECT
+					    codigo_flip,
+					    codigo_noticia,
+					    codigo_usuario_flip,
+					    codigo_revista,
+					    fecha
+					FROM tbl_flips
+					WHERE CODIGO_NOTICIA=".$codNoticia."
+					AND CODIGO_REVISTA=".$codRevista;
+			$respuesta=$conexion->ejecutarInstruccion($sql);
+			$row = $conexion->obtenerFila($respuesta);
+			if($row["codigo_flip"]==""){
+				echo "no registrado".$codNoticia." ".$codRevista;
+			}
 			break;
 }
 ?>

@@ -258,7 +258,7 @@ $conexion->liberarResultado($resultadoUsuario);*/
 
           <div class="modal-footer">
             <button id="btn_aniadir_flip" type="button" class="btn " disabled="TRUE">AÑADIR</button>
-            <div id="noticia"></div>
+            <div id="noticia" style="display: none;"></div>
           </div>
         </div>
       </div>

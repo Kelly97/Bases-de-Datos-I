@@ -81,7 +81,20 @@ $(document).ready(function() {
 		//alert($('input:radio[name=opt_revistas]:checked').val());//Alerta que contiene el codigo de revista
 		codRevista = $('input:radio[name=opt_revistas]:checked').val();
 		codNoticia = $("#noticia").html();
-		alert(codNoticia+" "+codRevista);
+		//alert(codNoticia+" "+codRevista);
+		data = "codigo="+2+"&"+
+		   "codRevista="+codRevista+"&"+
+		   "codNoticia="+codNoticia;
+		$.ajax({         
+	        url : "ajax/reacciones-noticias.php",
+	        data: data,
+	        method: "POST",
+	        success: function(datos){       
+	            $('#alerta_inferior').html(datos);
+	            $('#alerta_inferior').show();
+	            setTimeout(ocultarAlert,3000);
+	        }
+	    });	
 	});
 
 	$("#btn-perfil").click(function () {	 
