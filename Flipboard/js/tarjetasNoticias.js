@@ -49,4 +49,5 @@ function darLike(codigoNoticia){
 
 function flipear(codigoNoticia){
     //alert(codigoNoticia);
+    $("#noticia").html(codigoNoticia);
 }

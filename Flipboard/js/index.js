@@ -78,9 +78,15 @@ $(document).ready(function() {
 	});
 
 	$("#btn_aniadir_flip").click(function () {	 
-		alert($('input:radio[name=opt_revistas]:checked').val());//Alerta que contiene el codigo de revista
+		//alert($('input:radio[name=opt_revistas]:checked').val());//Alerta que contiene el codigo de revista
+		codRevista = $('input:radio[name=opt_revistas]:checked').val();
+		codNoticia = $("#noticia").html();
+		alert(codNoticia+" "+codRevista);
 	});
 
+	$("#btn-perfil").click(function () {	 
+		perfilUsuario();
+	});
 
 });
 
@@ -146,10 +152,20 @@ function cargarNoticias(codigo){
     });	
 }
 
-function perfilUsuario(){
-	$('#contenido-principal').load('perfil.php', function(data) {
-			$(this).html(data);
-		});
+function perfilUsuario(){	
+	$.ajax({       
+        url : "perfil.php",
+        method: "POST",
+        beforeSend: function() {
+        	$('#contenido-principal').html('<div id="loading"><div id="loading-center-absolute"><div class="object" id="object_one"></div><div class="object" id="object_two"></div><div class="object" id="object_three"></div><div class="object" id="object_four"></div></div>');         
+        },
+        success: function(datos){       
+            $('#contenido-principal').html(datos);
+            $(function () {
+			  $('[data-toggle="popover"]').popover();
+			})
+        }        
+    });	
 }
 
 function isotopeNotiCard(){

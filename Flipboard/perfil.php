@@ -1,27 +1,6 @@
 
 
-<head>
-  
 
-  <meta charset="utf-8">
-  <title>Flipboard|Perfil</title>
-
-  <script type="text/javascript" src="js/perfil.js"></script>
-   <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
-    <link rel="icon" href="images/favicon.jpg">
-    <link href="css/bootstrap.min.css" rel="stylesheet">    
-    <link href="css/font-awesome.css" rel="stylesheet">    
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/slick-theme.css">
-    <link rel="stylesheet" href="css/jquery.webui-popover.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="css/text-scrolling.css">
-    <link rel="stylesheet" href="css/perfil.css">
-
-
-  
-</head>
-<body>
 <!-- menu de cierre de sesion y configuracion -->
 <div class="dropdown top-right">
     <h1  style="font-size: 14px; cursor: pointer; " class="dropdown-toggle" data-toggle="dropdown">Iniciaste sesión como 
@@ -238,12 +217,3 @@
     </div>
   </div>
   
-
-      <script src="js/jquery.min.js"></script>
-      <script src="js/slick.min.js"></script>
-      <script type="text/javascript" src="js/perfil.js"></script>
-      <script src="bootstrap3/js/bootstrap.min.js"></script>
-
-
-
-</body>

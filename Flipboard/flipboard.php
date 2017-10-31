@@ -116,7 +116,7 @@ $conexion->liberarResultado($resultadoUsuario);*/
               <i class="fa fa-newspaper-o fa-lg" aria-hidden="true"></i>
             </a>
           </li>
-          <li class="nav-item" onclick="perfilUsuario()" data-toggle="popover" data-placement="left" data-content="Perfil" data-trigger="hover">
+          <li id="btn-perfil" class="nav-item" data-toggle="popover" data-placement="left" data-content="Perfil" data-trigger="hover">
             <a class="nav-item" href="#perfil" >
               <div style="padding-top: 5px;">
                 <div class="miniatura-usuario" style="margin: auto;background-image: url('<?php echo $rowUsuario["URL_FOTO_PERFIL"]; ?>');width: 30px;height: 30px;padding: 0px;">
@@ -255,8 +255,10 @@ $conexion->liberarResultado($resultadoUsuario);*/
           <div id="md-body-flipear" class="modal-body">
             
           </div>
+
           <div class="modal-footer">
             <button id="btn_aniadir_flip" type="button" class="btn " disabled="TRUE">AÑADIR</button>
+            <div id="noticia"></div>
           </div>
         </div>
       </div>
