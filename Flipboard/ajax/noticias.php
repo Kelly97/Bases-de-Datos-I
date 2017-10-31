@@ -9,7 +9,7 @@ switch ($_POST["codigo"]) {
 	case 0:
 		$sql="WITH
 			  TBL_CANT_LIKES AS(
-			    SELECT CODIGO_NOTICIA, COUNT(CODIGO_USUARIO) AS CANT_LIKES
+			    SELECT CODIGO_NOTICIA, COUNT(DISTINCT CODIGO_USUARIO) AS CANT_LIKES
 			    FROM TBL_REACCIONES_X_NOTICIAS
 			    WHERE CODIGO_REACCION = 1
 			    GROUP BY CODIGO_NOTICIA),
@@ -88,15 +88,15 @@ switch ($_POST["codigo"]) {
 				?>		  
 				<div class="card noti-card" style="position: relative;">
 					<div class="botones-noticia-general">
-				      	<button type="button" class="btn btn-danger btn-circle" data-toggle="modal" data-target="#md-flipear" data-container="body" data-toggle="popover" data-placement="left" data-content="Flipear" data-trigger="hover">
+				      	<button onclick="flipear(<?php echo $rowNoticia['CODIGO_NOTICIA'];?>)" type="button" class="btn btn-danger btn-circle" data-toggle="modal" data-target="#md-flipear" data-container="body" data-toggle="popover" data-placement="left" data-content="Flipear" data-trigger="hover">
 				      		<i class="fa fa-plus" aria-hidden="true"></i>
 				      	</button><br>
-				      	<button type="button" class="btn btn-default btn-circle" data-container="body" data-toggle="popover" data-placement="left" data-content="Me gusta" data-trigger="hover">
+				      	<button onclick="darLike(<?php echo $rowNoticia['CODIGO_NOTICIA'];?>)" type="button" class="btn btn-default btn-circle" data-container="body" data-toggle="popover" data-placement="left" data-content="Me gusta" data-trigger="hover">
 				      		<i class="fa fa-heart-o" aria-hidden="true"></i>
 				      	</button><br>
-				      	<button type="button" class="btn btn-default btn-circle" data-container="body" data-toggle="popover" data-placement="left" data-content="Compartir" data-trigger="hover">
+				      	<!--<button type="button" class="btn btn-default btn-circle" data-container="body" data-toggle="popover" data-placement="left" data-content="Compartir" data-trigger="hover">
 				      		<i class="fa fa-envelope-o" aria-hidden="true"></i>
-				      	</button>
+				      	</button>-->
 				    </div>
 					<div class="container" style="margin-bottom: 10px;">
 						<div class="row">
@@ -180,7 +180,7 @@ switch ($_POST["codigo"]) {
 	default:
 		$sql = "WITH TBL_CANT_LIKES AS(
 			    SELECT CODIGO_NOTICIA, 
-			    COUNT(CODIGO_USUARIO) AS CANT_LIKES
+			    COUNT(DISTINCT CODIGO_USUARIO) AS CANT_LIKES
 			    FROM TBL_REACCIONES_X_NOTICIAS
 			    WHERE CODIGO_REACCION = 1
 			    GROUP BY CODIGO_NOTICIA),
@@ -226,7 +226,7 @@ switch ($_POST["codigo"]) {
 		?>
 		  <div class="col-lg-12 col-md-12" style="text-align: center;padding-bottom: 40px;padding-top: 40px;">
 	        <h2><?php echo utf8_encode($categoria['CATEGORIA']); ?></h2>
-	        <button onclick="eliminarInteres(<?php echo $_POST["codigo"]; ?>,<?php echo $codigoUsuario; ?>);" class="btn btn-default btn-seguir" role="button" style="border:none;" data-container="body" data-toggle="popover" data-placement="left" data-content="Eliminar Interés" data-trigger="hover">
+	        <button onclick="eliminarInteres(<?php echo $_POST["codigo"]; ?>,<?php echo $codigoUsuario; ?>);" class="btn btn-default btn-seguir" role="button" style="border:none;">
 	        	<i class="fa fa-times" aria-hidden="true"></i>
 	        </button>
 		  </div>
@@ -237,15 +237,15 @@ switch ($_POST["codigo"]) {
 			  ?>			  
 				<div class="card noti-card" style="position: relative;">
 					<div class="botones-noticia-general">
-				      	<button type="button" class="btn btn-danger btn-circle" data-toggle="modal" data-target="#md-flipear" data-container="body" data-toggle="popover" data-placement="left" data-content="Flipear" data-trigger="hover">
+				      	<button onclick="flipear(<?php echo $rowNoticia['CODIGO_NOTICIA'];?>)" type="button" class="btn btn-danger btn-circle" data-toggle="modal" data-target="#md-flipear" data-container="body" data-toggle="popover" data-placement="left" data-content="Flipear" data-trigger="hover">
 				      		<i class="fa fa-plus" aria-hidden="true"></i>
 				      	</button><br>
-				      	<button type="button" class="btn btn-default btn-circle" data-container="body" data-toggle="popover" data-placement="left" data-content="Me gusta" data-trigger="hover">
+				      	<button onclick="darLike(<?php echo $rowNoticia['CODIGO_NOTICIA'];?>)" type="button" class="btn btn-default btn-circle" data-container="body" data-toggle="popover" data-placement="left" data-content="Me gusta" data-trigger="hover">
 				      		<i class="fa fa-heart-o" aria-hidden="true"></i>
 				      	</button><br>
-				      	<button type="button" class="btn btn-default btn-circle" data-container="body" data-toggle="popover" data-placement="left" data-content="Compartir" data-trigger="hover">
+				      	<!--<button type="button" class="btn btn-default btn-circle" data-container="body" data-toggle="popover" data-placement="left" data-content="Compartir" data-trigger="hover">
 				      		<i class="fa fa-envelope-o" aria-hidden="true"></i>
-				      	</button>
+				      	</button>-->
 				    </div>
 					<div class="container" style="margin-bottom: 10px;">
 						<div class="row">

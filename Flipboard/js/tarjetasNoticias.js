@@ -30,3 +30,23 @@ function actualizarBarraIntereses(codigoInteres){
         }
     });	
 }
+
+function darLike(codigoNoticia){
+    //alert(codigoNoticia);
+    data = "codigo="+1+"&"+
+            "codigoNoticia="+codigoNoticia;
+    $.ajax({         
+        url : "ajax/reacciones-noticias.php",
+        data: data,
+        method: "POST",
+        success: function(datos){       
+            $('#alerta_inferior').html(datos);
+            $('#alerta_inferior').show();
+            setTimeout(ocultarAlert,3000);            
+        }
+    }); 
+}
+
+function flipear(codigoNoticia){
+    //alert(codigoNoticia);
+}
