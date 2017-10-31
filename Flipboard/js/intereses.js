@@ -23,10 +23,11 @@ function agregarInteres(codigoInteres, codigoUsuario){
             //alert(datos);
             obtenerIntereses(codigoUsuario);
             $('#modal-001').modal('hide');
-            $('#lista_intereses').append(datos);
+            actualizarBarraIntereses(codigoInteres);
             $('#alerta_inferior').html('Interés agregado exitosamente.');
             $('#alerta_inferior').show();
             setTimeout(ocultarAlert,3000);
+            cargarNoticias(codigoInteres);
         }
     });	
 }

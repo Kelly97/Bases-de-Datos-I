@@ -8,6 +8,7 @@
 			self::$minutos = 0;	
 			self::$tiempoTranscurrido = '';	
 		}
+
 		public static function calcularTiempoTranscurrido($minutos){
 			self::setMinutos($minutos);
 			if (self::$minutos < 60){//menos de 1 hora
@@ -42,15 +43,19 @@
 				self::$tiempoTranscurrido = 'Hace mucho tiempo.';
 			return self::$tiempoTranscurrido;
 		}
+
 		public static function getMinutos(){
 			return self::$minutos;
 		}
+
 		public static function setMinutos($minutos){
 			self::$minutos = $minutos;
 		}
+
 		public static function getTiempoTranscurrido(){
 			return self::$tiempoTranscurrido;
 		}
+
 		public static function setTiempoTranscurrido($tiempoTranscurrido){
 			self::$tiempoTranscurrido = $tiempoTranscurrido;
 		}
