@@ -88,7 +88,7 @@ switch ($_POST["codigo"]) {
 				?>		  
 				<div class="card noti-card" style="position: relative;">
 					<div class="botones-noticia-general">
-				      	<button onclick="flipear(<?php echo $rowNoticia['CODIGO_NOTICIA'];?>)" type="button" class="btn btn-danger btn-circle" data-toggle="modal" data-target="#md-flipear" data-container="body" data-toggle="popover" data-placement="left" data-content="Flipear" data-trigger="hover">
+				      	<button onclick="flipear(<?php echo $rowNoticia['CODIGO_NOTICIA'];?>)" type="button" class="btn btn-danger btn-circle" data-toggle="modal" data-target="#md-flipear">
 				      		<i class="fa fa-plus" aria-hidden="true"></i>
 				      	</button><br>
 				      	<button onclick="darLike(<?php echo $rowNoticia['CODIGO_NOTICIA'];?>)" type="button" class="btn btn-default btn-circle" data-container="body" data-toggle="popover" data-placement="left" data-content="Me gusta" data-trigger="hover">
@@ -216,7 +216,8 @@ switch ($_POST["codigo"]) {
 			AND D.CODIGO_ESTADO_USUARIO = 1
 			ORDER BY FECHA_PUBLICACION"; 
 	$resultadoNoticias = $conexion->ejecutarInstruccion($sql);
-
+	$varComparativa = $conexion->ejecutarInstruccion($sql);
+	$rowComparativa = $conexion->obtenerFila($varComparativa);
 
 	$sql2 = "SELECT CATEGORIA
 			FROM TBL_CATEGORIA
@@ -232,7 +233,18 @@ switch ($_POST["codigo"]) {
 		  </div>
 		  
 		  <div class="grid">		  	
-		  	<?php				
+		  	<?php	
+		  	if($rowComparativa["CATEGORIA"]==""){
+				?><br>
+					<div style="text-align: center;">
+						<i class="fa fa-sticky-note-o" aria-hidden="true" style="font-size: 10em;color: #b7b5b5;font-weight: 100;text-align: center;"></i>
+						<p style="color: #b7b5b5;font-size: 1.6em;font-weight: 100;">
+							Lo sentimos, todavía no tenemos historias en esta categoría.
+						</p>
+					</div>
+				<?php
+				exit;
+		  	}			
 			while($rowNoticia = $conexion->obtenerFila($resultadoNoticias)){				
 			  ?>			  
 				<div class="card noti-card" style="position: relative;">

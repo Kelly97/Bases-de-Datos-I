@@ -89,7 +89,8 @@ $(document).ready(function() {
 	        url : "ajax/reacciones-noticias.php",
 	        data: data,
 	        method: "POST",
-	        success: function(datos){       
+	        success: function(datos){  
+	        	$('#md-flipear').modal('hide');    
 	            $('#alerta_inferior').html(datos);
 	            $('#alerta_inferior').show();
 	            setTimeout(ocultarAlert,3000);
@@ -215,11 +216,19 @@ function isotopeNotiCard(){
 	  });
 }
 
+var cont = 0;//variable para manejar la reproduccion de sonido de notificacion
 function actualizarNotificaciones(){
+	
 	$.ajax({       
         url : "ajax/campana-notificaciones.php",
         method: "POST",
-        success: function(datos){       
+        success: function(datos){   
+        	var cantNoti=datos;
+        	if(cont!=cantNoti && cont<cantNoti){
+        		document.getElementById('player').play();
+				cont = cantNoti;  
+        	}
+        	  
             $('#cantidad_notificaciones').html(datos); 
             if(datos == 0){
             	$('#cantidad_notificaciones').css('background-color','gray');

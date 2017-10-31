@@ -26,6 +26,7 @@ function actualizarBarraIntereses(codigoInteres){
         success: function(datos){       
             //alert(datos);
             $("#lista_intereses").html(datos);
+            $("#pnProductNav #pnProductNavContents #prueba").trigger('click');
             //$('#pnProductNav #pnProductNavContents #lista_intereses #interesActual').trigger('click');
         }
     });	

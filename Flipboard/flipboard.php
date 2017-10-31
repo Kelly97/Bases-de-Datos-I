@@ -46,7 +46,8 @@ $conexion->liberarResultado($resultadoUsuario);*/
   </head>
   
   <body> 
-    
+    <audio id="player" src="audio/notification.mp3"> 
+    </audio>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">
         <img src="images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
