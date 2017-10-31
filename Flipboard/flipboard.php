@@ -221,21 +221,21 @@ $conexion->liberarResultado($resultadoUsuario);*/
       <div class="modal-dialog" role="document"><!--/.modal-dialog-->
         <div class="modal-content"><!--/.modal-content-->
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Crear una nueva revista</h4>
+            <h4 class="modal-title"><strong>CREA TU PROPIA REVISTA</strong></h4>
           </div>
           <div class="modal-body">
             <input type="text" class="form-control" id="nombre-revista" placeholder="Titulo (requerido)"><br>
-            <textarea class="form-control" placeholder="Descripcion (Opcional)"></textarea><br>
+            <textarea class="form-control" id="descripcion" placeholder="Descripcion (Opcional)"></textarea><br>
             <label>
-              <input type="radio" name="privacidad" id="btn-privacidad" value="1">
+              <input type="radio" id="privacidad" name="privacidad" id="btn-privacidad" value="1">
               <span>Pública</span>
             </label>
             <label>
-              <input type="radio" name="privacidad" id="btn-privacidad" value="2">
+              <input type="radio" id="privacidad" name="privacidad" id="btn-privacidad" value="2">
               <span>Privada</span>
             </label><br>
-            <button type="button" class="btn">Crear</button>
+            <input type="date" class="form-control" id="fecha_creacion"><br>
+            <button type="button" class="btn" onclick="agregarRevista(<?php echo $codigoUsuario; ?>);">Crear</button>
           </div><!--/.modal-body-->
         </div><!--/.modal-content-->
       </div><!--/.modal-dialog-->
@@ -279,6 +279,7 @@ $conexion->liberarResultado($resultadoUsuario);*/
     <script src="js/index.js"></script>
     <script src="js/tarjetasNoticias.js"></script>
     <script src="js/intereses.js"></script>
+    <script src="js/agregar-revista.js"></script>
     <!--FIN Scripts-->
 
   </body>
