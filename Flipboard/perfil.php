@@ -1,22 +1,27 @@
 
 
 <head>
-  <script type="text/javascript" src="js/perfil.js"></script>
-  <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+  
 
   <meta charset="utf-8">
   <title>Flipboard|Perfil</title>
 
-  <link rel="icon" href="images/favicon.jpg">
-  <link href="css/bootstrap.min.css" rel="stylesheet">  
+  <script type="text/javascript" src="js/perfil.js"></script>
+   <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+    <link rel="icon" href="images/favicon.jpg">
+    <link href="css/bootstrap.min.css" rel="stylesheet">    
+    <link href="css/font-awesome.css" rel="stylesheet">    
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/jquery.webui-popover.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/text-scrolling.css">
+    <link rel="stylesheet" href="css/perfil.css">
 
-  <link href="css/perfil.css" rel="stylesheet">
 
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
 </head>
+<body>
 <!-- menu de cierre de sesion y configuracion -->
 <div class="dropdown top-right">
     <h1  style="font-size: 14px; cursor: pointer; " class="dropdown-toggle" data-toggle="dropdown">Iniciaste sesión como 
@@ -28,7 +33,7 @@
     <li><a style="font-size: 12px; color: black; font-family: inherit" href="#">Estadisticas</a></li>
           <li class="divider"></li>
 
-    <li><a  style="font-size: 12px; color: black; font-family: inherit"  href=" javascript:$('#myModal').modal('show');">Configuración</a></li>
+    <li><a   style="font-size: 12px; color: black; font-family: inherit"  href=" javascript:$('#myModal').modal('show');">Configuración</a></li>
           <li class="divider"></li>
 
     <li><a style="font-size: 12px; color: black; font-family: inherit" href="#">Ayuda y Sugerencias</a></li>
@@ -43,8 +48,6 @@
     <li><a style="font-size: 12px; color: black; font-family: inherit" href="#">Cerrar sesión</a></li>
     </ul>
   </div>
-
-
 
  <div  align="center" style="padding-top: 100px;">
    <div >     
@@ -131,7 +134,10 @@
            		
            	</tr>
            </table>
-           	<div id="div-contenido-principal" align="center" style="padding: 20px; align-content: center;"></div>
+                  <div class="container-fluid">  
+                    <div id="div-contenido-principal" style="align-items: center" class="col-lg-12" style="padding: 0px;">
+                      </div>    
+                  </div>
 
           </div>
       
@@ -141,13 +147,9 @@
 </div>
 
 
-
-
-
-
   <!-- Modal -->
-<div  class="modal fade" id="myModal" role="dialog" style="width: 100%; height: 100%;">
-    <div class="modal-dialog">
+<div  class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="width: 100%; height: 100%;" aria-hidden="true" >
+    <div class="modal-dialog" role="document">
     
       <!-- Modal content-->
       <div class="modal-content" >
@@ -237,17 +239,11 @@
   </div>
   
 
+      <script src="js/jquery.min.js"></script>
+      <script src="js/slick.min.js"></script>
+      <script type="text/javascript" src="js/perfil.js"></script>
+      <script src="bootstrap3/js/bootstrap.min.js"></script>
 
 
 
-
-
-
-
-
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-<script src="js/bootstrap.min.js"></script>
+</body>
