@@ -26,7 +26,7 @@ $resultado = $conexion->ejecutarInstruccion($sql);
 							}
 						?>
 						">
-					<span style="font-size: 0.7em;"><?php echo $row['NOMBRE_REVISTA']; ?></span>
+					<span style="font-size: 0.7em;"><?php echo utf8_encode($row['NOMBRE_REVISTA']); ?></span>
 				</div>				
 		    </label>	    
 	    </div>

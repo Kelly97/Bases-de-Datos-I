@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Diagram class="oracle.dbtools.crest.swingui.relational.DPVRelational" name="Relational_1" id="15F01070-B1FA-D699-A2D1-7DA30C6E72F3">
+<Diagram class="oracle.dbtools.crest.swingui.relational.DPVRelational" name="RL_FLIPBOARD" id="15F01070-B1FA-D699-A2D1-7DA30C6E72F3">
 <createdBy>Kelly Aguilar</createdBy>
 <modifiedBy>Kelly Aguilar</modifiedBy>
 <createdTime>2017-06-12 21:47:23 UTC</createdTime>
@@ -48,7 +48,7 @@
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="6D75414A-A8FA-8892-D4B1-1105886F8305" otype="Table" vid="1303F79D-E7B7-78FC-0B44-9CF6BAD6E695">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="1350" y="724" width="300" height="120"/>
+<bounds x="1350" y="724" width="300" height="138"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="74822209-3A38-2858-FA59-5B99A26D1211" otype="Table" vid="04064E56-F2BF-8F97-2E20-9CAB7E6977E1">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
@@ -259,7 +259,7 @@
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
 <lineWidth>1</lineWidth>
 <points>
-<point x="1369" y="844"/>
+<point x="1369" y="862"/>
 <point x="1369" y="893"/>
 <point x="556" y="893"/>
 </points>
@@ -334,7 +334,7 @@
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
 <lineWidth>1</lineWidth>
 <points>
-<point x="1515" y="844"/>
+<point x="1515" y="862"/>
 <point x="1515" y="1087"/>
 <point x="389" y="1087"/>
 </points>

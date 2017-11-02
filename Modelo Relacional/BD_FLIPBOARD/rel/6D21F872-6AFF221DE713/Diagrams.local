@@ -1,4 +1,4 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.relational.RelationalDesign>
-   <object objectType="main_view" objectID="15F01070-B1FA-D699-A2D1-7DA30C6E72F3" name="Relational_1" visible="true"/>
+   <object objectType="main_view" objectID="15F01070-B1FA-D699-A2D1-7DA30C6E72F3" name="RL_FLIPBOARD" visible="true"/>
 </oracle.dbtools.crest.model.design.relational.RelationalDesign>

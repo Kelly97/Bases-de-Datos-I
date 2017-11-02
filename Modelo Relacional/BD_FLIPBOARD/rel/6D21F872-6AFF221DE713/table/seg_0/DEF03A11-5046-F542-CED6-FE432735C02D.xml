@@ -16,7 +16,10 @@
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementSequenceName>TBL_NOTICIAS_CODIGO_NOTICIA</autoIncrementSequenceName>
+<autoIncrementTriggerName>TBL_FLIPS_CODIGO_FLIP</autoIncrementTriggerName>
 </Column>
 <Column name="CODIGO_NOTICIA" id="4BEC7256-A21B-0764-6245-C3CE62663350">
 <createdBy>diazn</createdBy>

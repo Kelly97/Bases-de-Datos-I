@@ -51,6 +51,7 @@ switch ($_POST["codigo"]) {
 			      D.URL_FOTO_PERFIL,
 			      substr(D.NOMBRE_USUARIO,1,1) AS INICIAL_USUARIO_PUBLICA,
 			      UPPER(C.NOMBRE_REVISTA) AS NOMBRE_REVISTA,
+			      C.CODIGO_REVISTA,
 			      B.CODIGO_NOTICIA,
 			      B.AUTOR_NOTICIA,
 			      B.TITULO_NOTICIA,
@@ -129,7 +130,7 @@ switch ($_POST["codigo"]) {
 										        	<?php echo utf8_encode($rowNoticia["USUARIO_PUBLICA"]);?>      	
 										        </p> 
 										        <p style="padding: 0px;margin:0px;"> 
-										        	<span style="color: #09c;font-size: 12px;">
+										        	<span style="color: #09c;font-size: 12px;cursor: pointer;" onclick="cargarPaginaRevista(<?php echo $rowNoticia["CODIGO_REVISTA"];?>);">
 										        		<?php echo utf8_encode($rowNoticia["NOMBRE_REVISTA"]);?>
 										        	</span> 								        	
 										        </p> 
@@ -193,6 +194,7 @@ switch ($_POST["codigo"]) {
 			      D.URL_FOTO_PERFIL,
 			      substr(D.NOMBRE_USUARIO,1,1) AS INICIAL_USUARIO_PUBLICA,
 			      UPPER(C.NOMBRE_REVISTA) AS NOMBRE_REVISTA,
+			      C.CODIGO_REVISTA,
 			      B.CODIGO_NOTICIA,
 			      B.AUTOR_NOTICIA,
 			      B.TITULO_NOTICIA,
@@ -290,7 +292,7 @@ switch ($_POST["codigo"]) {
 										        	<?php echo utf8_encode($rowNoticia["USUARIO_PUBLICA"]);?>      	
 										        </p> 
 										        <p style="padding: 0px;margin:0px;"> 
-										        	<span style="color: #09c;font-size: 12px;">
+										        	<span style="color: #09c;font-size: 12px;cursor: pointer;" onclick="cargarPaginaRevista(<?php echo $rowNoticia["CODIGO_REVISTA"];?>);">
 										        		<?php echo utf8_encode($rowNoticia["NOMBRE_REVISTA"]);?>
 										        	</span> 								        	
 										        </p> 
