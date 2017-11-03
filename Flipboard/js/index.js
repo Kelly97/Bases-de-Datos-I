@@ -1,9 +1,5 @@
 $(document).ready(function() {
-	/*$("#btn-perfil").click(function() {
-		abrirPerfil();
-	});*/
-	//buscar();
-
+	
 	cargarNoticias(0);//El cero será reservado para las noticias de portada, del 1 en adelante hará referencia a los intereses.
 	ajustarContenedorNoticias();
 	actualizarNotificaciones();
@@ -36,9 +32,6 @@ $(document).ready(function() {
 		        slidesToScroll: 3
 		      }
 		    }
-		    // You can unslick at a given breakpoint now by adding:
-		    // settings: "unslick"
-		    // instead of a settings object
 		  ]
 	  });
 
@@ -101,7 +94,6 @@ $(document).ready(function() {
 	$("#btn-perfil").click(function () {	 
 		perfilUsuario();
 	});
-
 });
 
 $(document).scroll(function(e){
@@ -185,32 +177,46 @@ function perfilUsuario(){
 function isotopeNotiCard(){
 	var $grid = $('.grid').isotope({
 	  itemSelector: '.noti-card',
-	  percentPosition: true,			  
-	  masonry: {
-	    columnWidth: '.noti-card',
+	  percentPosition: true,
+	  layoutMode: 'packery',			  
+	  packery: {
+	    columnWidth: '.notisizer',
 	    gutter: 15
 	  }
 	});
 	// layout Isotope after each image loads
 	$grid.imagesLoaded().progress( function() {
-	  $grid.isotope('layout');
+	  $grid.isotope();
 	});	
 	var anchoGrid = $('.grid').width();
 	var anchoNoticia = 0;
+	var anchoNoticia2 = 0;
+	var anchoNoticia3 = 0;
 	if(anchoGrid < 576){
 		anchoNoticia = 99;
+		anchoNoticia2 = 99;
+		anchoNoticia3 = 99;
 	} else if(anchoGrid < 768){
 		anchoNoticia = 99;
+		anchoNoticia2 = 99;
+		anchoNoticia3 = 99;
 	} else if(anchoGrid < 992){
 		anchoNoticia = 49;
+		anchoNoticia2 = 49;
+		anchoNoticia3 = 99;
 	} else if(anchoGrid < 1200 || anchoGrid > 1200){
 		anchoNoticia = 32;
+		anchoNoticia2 = 65.6;
+		anchoNoticia3 = 99;
 	}
+	$('.notisizer').css("width", anchoNoticia + "%" );
 	$('.noti-card').css("width", anchoNoticia + "%" );
+	$('.noti-card-width-2').css("width", anchoNoticia2 + "%" );
+	$('.noti-card-width-3').css("width", anchoNoticia3 + "%" );
 	  $grid.isotope({
 	    // update columnWidth to a percentage of container width
-	    masonry: { 
-	    	columnWidth:  '.noti-card' ,
+	    packery: { 
+	    	columnWidth:  '.notisizer' ,
 	    	gutter: 15
 	    }
 	  });
@@ -256,3 +262,8 @@ function habilitarBotonAniadirFlip(){
 	$("#btn_aniadir_flip").attr("disabled", false);
 }
 
+function agregarNuevaRevista(){
+	$('#md-flipear').modal('hide');	
+	setTimeout(function(){$('#modal-003').modal('show');},500);
+	
+}

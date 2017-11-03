@@ -160,18 +160,17 @@ $conexion->liberarResultado($resultadoUsuario);*/
     <!-- Modal 001: Elige un interés -->
     <div class="modal fade" id="modal-001" tabindex="-1" role="dialog" aria-hidden="true"><!--/.modal001-->
       <div class="modal-dialog" role="document"><!--/.modal-dialog-->
-        <div class="modal-content"><!--/.modal-content-->
-          <div class="modal-header">
-            <div class="search-passion">
-                <span><strong>ELIGE UN INTERES</strong></span>
-            </div>
-          </div>
+        <div class="modal-content"><!--/.modal-content-->        
+          <div class="modal-header" style="text-align: center;">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute;top: 5px;left: 10px;font-size: 35px;">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <p style="text-align: center;"><h6 class="modal-title" style="margin-top: 10px;padding-left: 20px;padding-right: 20px;">ELIGE UN INTERES</h6>  </p>  
+          </div>         
           <div class="modal-body">
-
               <div id="div-intereses">
 
-              </div>             
-                      
+              </div>          
           </div><!-- /.modal-body -->
         </div><!--/.modal-content-->
       </div><!--/.modal-dialog-->
@@ -182,9 +181,12 @@ $conexion->liberarResultado($resultadoUsuario);*/
     <div class="modal fade" id="modal-002" tabindex="-1" role="dialog" aria-hidden="true"><!--/.modal002-->
       <div class="modal-dialog" role="document"><!--/.modal-dialog-->
         <div class="modal-content"><!--/.modal-content-->
-          <div class="modal-header">
-            <h4 class="modal-title"><strong>AGREGA TU PERSPECTIVA A UNA REVISTA</strong></h4>
-          </div>
+          <div class="modal-header" style="text-align: center;">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute;top: 5px;left: 10px;font-size: 35px;">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <p style="text-align: center;"><h6 class="modal-title" style="margin-top: 10px;padding-left: 20px;padding-right: 20px;">AGREGA TU PERSPECTIVA A UNA REVISTA</h6></p>  
+          </div>  
           <div class="modal-body">
             <table>
               <tr>
@@ -220,8 +222,11 @@ $conexion->liberarResultado($resultadoUsuario);*/
     <div class="modal fade" id="modal-003" tabindex="-1" role="dialog" aria-hidden="true"><!--/.modal003-->
       <div class="modal-dialog" role="document"><!--/.modal-dialog-->
         <div class="modal-content"><!--/.modal-content-->
-          <div class="modal-header">
-            <h4 class="modal-title"><strong>CREA TU PROPIA REVISTA</strong></h4>
+          <div class="modal-header" style="text-align: center;">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute;top: 5px;left: 10px;font-size: 35px;">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <p style="text-align: center;"><h6 class="modal-title" style="margin-top: 10px;padding-left: 20px;padding-right: 20px;">CREA TU PROPIA REVISTA</h6>  </p>  
           </div>
           <div class="modal-body">
             <input type="text" class="form-control" id="nombre-revista" placeholder="Titulo (requerido)"><br>
@@ -274,12 +279,13 @@ $conexion->liberarResultado($resultadoUsuario);*/
     <script src="js/perfil.js"></script>
     <script src="js/jquery.webui-popover.js"></script>
     <script src="js/text-scrolling.js"></script>    
-    <script src="js/imagesloaded.pkgd.js"></script>
+    <script src="js/imagesloaded.pkgd.js"></script>    
     <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/packery-mode.pkgd.js"></script>
     <script src="js/index.js"></script>
     <script src="js/tarjetasNoticias.js"></script>
     <script src="js/intereses.js"></script>
-    <script src="js/agregar-revista.js"></script>
+    <script src="js/agregar-revista.js"></script>    
     <!--FIN Scripts-->
 
   </body>

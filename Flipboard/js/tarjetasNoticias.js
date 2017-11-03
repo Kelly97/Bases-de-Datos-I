@@ -1,3 +1,4 @@
+//cargarPaginaRevista(2);
 function eliminarInteres(codigoInteres, codigoUsuario){//eliminar interes
 	data = "codigo="+3+"&"+
 		   "codigoInteres="+codigoInteres+"&"+

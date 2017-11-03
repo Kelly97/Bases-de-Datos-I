@@ -34,7 +34,7 @@ $resultado = $conexion->ejecutarInstruccion($sql);
 	}
 	?>
 	
-	<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12" style="margin-bottom: 0.3em;padding: 3px;">
+	<div onclick="agregarNuevaRevista();" class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12" style="margin-bottom: 0.3em;padding: 3px;">
 		<div class="miniatura-revista" style="margin: auto;width: 100%;height: 12em;">
 			<table style="height: 100%;width: 100%;">
                 <tbody>

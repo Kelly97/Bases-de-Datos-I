@@ -2,11 +2,19 @@ body{
 	font-family: 'Open Sans', sans-serif;
 }
 
-
+.notisizer{
+	width: 32%;
+}
 .noti-card{
 	padding: 5px;
 	margin-bottom: 15px;
 	width: 32%;
+}
+.noti-card-width-2{
+	width: 65.6%;
+}
+.noti-card-width-3{
+	width: 99%;
 }
 .noti-card-autor{
 	color: #999;

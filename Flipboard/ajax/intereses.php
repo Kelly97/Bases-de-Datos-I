@@ -24,7 +24,7 @@
             while($row = $conexion->obtenerFila($resultadoIntereses)){
               $respuesta = $respuesta.'<div class="favorite">
                       <div class="name">
-                        <span style="font-size: 30px;cursor:pointer;"><strong><a onclick="agregarInteres('.utf8_encode($row['CODIGO_CATEGORIA']).','.$usuario.');" class="pn-ProductNav_Link">'.utf8_encode($row['CATEGORIA']).'</a></strong></span>
+                        <span style="font-size: 20px;cursor:pointer;"><a onclick="agregarInteres('.utf8_encode($row['CODIGO_CATEGORIA']).','.$usuario.');" class="pn-ProductNav_Link">'.utf8_encode($row['CATEGORIA']).'</a></span>
                       </div>
                     </div>';
             }
