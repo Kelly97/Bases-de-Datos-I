@@ -58,7 +58,6 @@ END;
 
 
 
-
 --EJEMPLO PARA LLAMAR PROCEDIMIENTOS DESDE SQL-DEVELOPER
 --para activar consola utilizar:
 --SET serveroutput ON;
@@ -91,8 +90,8 @@ $procedure = oci_parse($conn, $sql);
 oci_bind_by_name($procedure, ':codNoticia', $codNoticia);
 oci_bind_by_name($procedure, ':codigoUsuario', $codigoUsuario);
 oci_bind_by_name($procedure, ':codRevista', $codRevista);
-oci_bind_by_name($procedure, ':codigoRespuesta', $codigoRespuesta,100);
-oci_bind_by_name($procedure, ':mensajeRespuesta', $mensajeRespuesta,100);
+oci_bind_by_name($procedure, ':codigoRespuesta', $codigoRespuesta,5);
+oci_bind_by_name($procedure, ':mensajeRespuesta', $mensajeRespuesta,200);
 oci_execute($procedure);
 echo $mensajeRespuesta;
 oci_free_statement($procedure);
