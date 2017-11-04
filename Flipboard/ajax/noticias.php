@@ -3,7 +3,7 @@
 //SOLO SE MUESTRAN LAS NOTICIAS DE USUARIOS VERIFICADOS
 $codigoUsuario=1;//sesion
 include_once("../class/class-conexion.php");
-include_once("../class/class-tiempo.php");
+include_once("../class/class-date-interval.php");
 $conexion = new Conexion();
 $resultadoNoticias = "";
 
@@ -60,7 +60,8 @@ switch ($_POST["codigo"]) {
 			      B.TITULO_NOTICIA,
 			      B.DESCRIPCION_NOTICIA,
 			      B.URL_PORTADA_NOTI,
-			      ((SYSDATE - B.FECHA_PUBLICACION)*1440) AS FECHA_PUBLICACION,
+			      TO_CHAR(B.FECHA_PUBLICACION,'YYYY-MM-DD HH24:MI:SS') AS FECHA_PUBLICACION,
+			      TO_CHAR(SYSDATE,'YYYY-MM-DD HH24:MI:SS') AS FECHA_ACTUAL, 
 			      NVL(E.CANT_LIKES,0) AS CANT_LIKES,
 			      NVL(F.CANT_COMENTARIOS,0) AS CANT_COMENTARIOS
 			FROM TBL_CATEGORIA A
@@ -77,7 +78,7 @@ switch ($_POST["codigo"]) {
 			RIGHT JOIN TBL_NOTICIAS_PORTADA G
 			ON(B.CODIGO_NOTICIA=G.CODIGO_NOTICIA)
 			WHERE D.CODIGO_ESTADO_USUARIO = 1
-			ORDER BY FECHA_PUBLICACION";
+			ORDER BY FECHA_PUBLICACION DESC";
 			$resultadoNoticias = $conexion->ejecutarInstruccion($sql);
 		?>
 		  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xl-12" style="text-align: center;padding-bottom: 40px;padding-top: 40px; width: 100%;">
@@ -110,7 +111,8 @@ switch ($_POST["codigo"]) {
 			      B.TITULO_NOTICIA,
 			      B.DESCRIPCION_NOTICIA,
 			      B.URL_PORTADA_NOTI,
-			      ((SYSDATE - B.FECHA_PUBLICACION)*1440) AS FECHA_PUBLICACION,    
+			      TO_CHAR(B.FECHA_PUBLICACION,'YYYY-MM-DD HH24:MI:SS') AS FECHA_PUBLICACION,
+			      TO_CHAR(SYSDATE,'YYYY-MM-DD HH24:MI:SS') AS FECHA_ACTUAL,  
 			      NVL(E.CANT_LIKES,0) AS CANT_LIKES,
 			      NVL(F.CANT_COMENTARIOS,0) AS CANT_COMENTARIOS
 			FROM TBL_CATEGORIA A
@@ -126,7 +128,7 @@ switch ($_POST["codigo"]) {
 			ON(B.CODIGO_NOTICIA = F.CODIGO_NOTICIA)
 			WHERE A.CODIGO_CATEGORIA = ".$_POST['codigo']."
 			AND D.CODIGO_ESTADO_USUARIO = 1
-			ORDER BY FECHA_PUBLICACION"; 
+			ORDER BY FECHA_PUBLICACION DESC"; 
 	$resultadoNoticias = $conexion->ejecutarInstruccion($sql);
 	$varComparativa = $conexion->ejecutarInstruccion($sql);
 	$rowComparativa = $conexion->obtenerFila($varComparativa);
@@ -222,6 +224,9 @@ switch ($_POST["codigo"]) {
 										        <p style="padding: 0px;margin:0px;"> 
 										        	<span style="color: #09c;font-size: 12px;cursor: pointer;" onclick="cargarPaginaRevista(<?php echo $rowNoticia["CODIGO_REVISTA"];?>);">
 										        		<?php echo utf8_encode($rowNoticia["NOMBRE_REVISTA"]);?>
+										        	</span> 
+										        	<span style="color: gray;font-size: 12px;">
+										        		<?php echo fechaIntervalo::calcularintervalo($rowNoticia['FECHA_PUBLICACION'],$rowNoticia['FECHA_ACTUAL']);?>
 										        	</span> 								        	
 										        </p> 
 									        </td> 
@@ -239,11 +244,6 @@ switch ($_POST["codigo"]) {
 				    </span>
 				    <p class="card-text">
 				    	<?php echo utf8_encode($rowNoticia["DESCRIPCION_NOTICIA"]);?>
-				    </p>
-				    <p>
-				    	<span style="color: gray;font-size: 12px;">
-			        		<?php echo Tiempo::calcularTiempoTranscurrido($rowNoticia['FECHA_PUBLICACION']);?>
-			        	</span> 
 				    </p>
 				    <p>
 			        	<?php echo $rowNoticia["CANT_LIKES"];?>
