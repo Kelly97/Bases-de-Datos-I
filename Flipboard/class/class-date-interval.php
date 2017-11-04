@@ -1,4 +1,5 @@
 <?php
+include_once("class-conexion.php");
 	//date_default_timezone_set('America/Tegucigalpa');
 	class fechaIntervalo{
 
@@ -6,9 +7,18 @@
 			
 		}
 
-		public static function calcularintervalo($fecha,$fechaActual){
+		public static function calcularintervalo($fecha){
+			//Obteniendo fecha actual
+			$conexion = new Conexion();
+			$sql="SELECT TO_CHAR(SYSDATE,'YYYY-MM-DD HH24:MI:SS') AS FECHA_ACTUAL
+					FROM DUAL";
+			$resultadoFecha = $conexion->ejecutarInstruccion($sql);
+			$fechaActualSistema = $conexion->obtenerFila($resultadoFecha);
+			$fechaActual = $fechaActualSistema['FECHA_ACTUAL'];
+			//convirtiendo en objetos de fecha
 			$fecha1 = new DateTime($fecha);//fecha inicial
 			$fecha2 = new DateTime($fechaActual);//fecha de cierre
+
 			$fecha = $fecha1->diff($fecha2);
 			if($fecha->y!=0){
 				printf('Hace %d años.',$fecha->y);
@@ -30,6 +40,8 @@
 
 
 		}
+
+
 
 	}
 ?>

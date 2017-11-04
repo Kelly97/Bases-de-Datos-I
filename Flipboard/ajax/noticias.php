@@ -61,7 +61,6 @@ switch ($_POST["codigo"]) {
 			      B.DESCRIPCION_NOTICIA,
 			      B.URL_PORTADA_NOTI,
 			      TO_CHAR(B.FECHA_PUBLICACION,'YYYY-MM-DD HH24:MI:SS') AS FECHA_PUBLICACION,
-			      TO_CHAR(SYSDATE,'YYYY-MM-DD HH24:MI:SS') AS FECHA_ACTUAL, 
 			      NVL(E.CANT_LIKES,0) AS CANT_LIKES,
 			      NVL(F.CANT_COMENTARIOS,0) AS CANT_COMENTARIOS
 			FROM TBL_CATEGORIA A
@@ -112,7 +111,6 @@ switch ($_POST["codigo"]) {
 			      B.DESCRIPCION_NOTICIA,
 			      B.URL_PORTADA_NOTI,
 			      TO_CHAR(B.FECHA_PUBLICACION,'YYYY-MM-DD HH24:MI:SS') AS FECHA_PUBLICACION,
-			      TO_CHAR(SYSDATE,'YYYY-MM-DD HH24:MI:SS') AS FECHA_ACTUAL,  
 			      NVL(E.CANT_LIKES,0) AS CANT_LIKES,
 			      NVL(F.CANT_COMENTARIOS,0) AS CANT_COMENTARIOS
 			FROM TBL_CATEGORIA A
@@ -226,7 +224,7 @@ switch ($_POST["codigo"]) {
 										        		<?php echo utf8_encode($rowNoticia["NOMBRE_REVISTA"]);?>
 										        	</span> 
 										        	<span style="color: gray;font-size: 12px;">
-										        		<?php echo fechaIntervalo::calcularintervalo($rowNoticia['FECHA_PUBLICACION'],$rowNoticia['FECHA_ACTUAL']);?>
+										        		<?php echo fechaIntervalo::calcularintervalo($rowNoticia['FECHA_PUBLICACION']);?>
 										        	</span> 								        	
 										        </p> 
 									        </td> 
