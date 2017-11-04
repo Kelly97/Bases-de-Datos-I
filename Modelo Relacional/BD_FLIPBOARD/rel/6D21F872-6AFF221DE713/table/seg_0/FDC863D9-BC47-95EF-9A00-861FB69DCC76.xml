@@ -24,6 +24,7 @@
 <Column name="CODIGO_USUARIO" id="5689EFC6-8C17-2B68-E1F4-1E032C912BD0">
 <createdBy>Allan</createdBy>
 <createdTime>2017-06-25 00:09:50 UTC</createdTime>
+<commentInRDBMS>Código usuario que comenta.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -53,6 +54,7 @@
 <Column name="CODIGO_FLIP" id="0420B43B-9302-6D61-2C80-22356F7AB7F4">
 <createdBy>diazn</createdBy>
 <createdTime>2017-10-19 00:56:30 UTC</createdTime>
+<commentInRDBMS>Código del flip sobre el que se comenta.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>

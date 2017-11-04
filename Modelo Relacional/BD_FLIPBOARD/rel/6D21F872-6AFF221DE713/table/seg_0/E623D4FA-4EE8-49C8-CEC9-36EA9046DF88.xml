@@ -24,6 +24,7 @@
 <Column name="CODIGO_TIPO_NOTIFICACION" id="925C79A3-9F68-EA98-6A42-86AA2021CF5E">
 <createdBy>diazn</createdBy>
 <createdTime>2017-10-16 17:21:22 UTC</createdTime>
+<commentInRDBMS>Código de tipo de notificación.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -53,7 +54,7 @@
 <Column name="CODIGO_USUARIO_RECEPTOR" id="3E2A2469-5B9B-3577-3018-413E3BEB8584">
 <createdBy>Allan</createdBy>
 <createdTime>2017-06-25 00:09:01 UTC</createdTime>
-<commentInRDBMS>El código del usuario de la notificación respectiva.</commentInRDBMS>
+<commentInRDBMS>El código del usuario dueño de la  notificación.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -67,6 +68,7 @@
 <Column name="CODIGO_USUARIO_EMISOR" id="5CEA087E-2D8F-60A5-84B0-29935EEA5F7D">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-10-16 15:16:04 UTC</createdTime>
+<commentInRDBMS>Código del usuario relacionado a la acción notificada.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -81,6 +83,7 @@
 <Column name="CODIGO_REVISTA" id="33E160C0-B2AB-8691-17EF-DF3AD25D9AA4">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-10-16 15:28:42 UTC</createdTime>
+<commentInRDBMS>Código de la revista sobre la que se efectua una acción.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -96,6 +99,7 @@
 <Column name="CODIGO_NOTICIA" id="D1CA7D96-CD17-2D14-01B5-0CC8F53F3DAE">
 <createdBy>Kelly Aguilar</createdBy>
 <createdTime>2017-10-16 15:29:01 UTC</createdTime>
+<commentInRDBMS>Código de la noticia  sobre la que se efectua una acción.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -111,6 +115,7 @@
 <Column name="CODIGO_REACCION" id="01084E41-D69C-486E-CF85-EDDC11323A25">
 <createdBy>diazn</createdBy>
 <createdTime>2017-10-16 17:33:53 UTC</createdTime>
+<commentInRDBMS>Código de la reacción realizada.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -126,6 +131,7 @@
 <Column name="HORA_NOTIFICACION" id="330CF824-1A8F-2D09-F466-D9E9C51E39C1">
 <createdBy>diazn</createdBy>
 <createdTime>2017-10-16 17:29:16 UTC</createdTime>
+<commentInRDBMS>Fecha y hora en la que se efectuó la acción notificada.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>

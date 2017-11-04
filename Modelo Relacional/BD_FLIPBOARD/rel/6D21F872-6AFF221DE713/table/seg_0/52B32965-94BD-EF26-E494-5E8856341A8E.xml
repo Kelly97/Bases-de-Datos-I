@@ -139,6 +139,17 @@
 <ownDataTypeParameters>200,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="FECHA_REGISTRO" id="36C13F35-492F-4635-4AD1-E1C1CC8A27A7">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 20:15:41 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="9484BB6D-4B8B-7C1B-4DDA-C7B9A77634B4" name="TBL_USUARIOS_PK">

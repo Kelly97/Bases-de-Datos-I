@@ -11,6 +11,7 @@
 <Column name="CODIGO_FLIP" id="440C6681-38FC-6813-AB49-989724DC492C">
 <createdBy>diazn</createdBy>
 <createdTime>2017-10-18 03:12:26 UTC</createdTime>
+<commentInRDBMS>Código del flip</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -24,6 +25,7 @@
 <Column name="CODIGO_NOTICIA" id="4BEC7256-A21B-0764-6245-C3CE62663350">
 <createdBy>diazn</createdBy>
 <createdTime>2017-10-18 02:48:13 UTC</createdTime>
+<commentInRDBMS>Código de la noticia sobre la que se hace flip.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -38,6 +40,7 @@
 <Column name="CODIGO_USUARIO_FLIP" id="7396AB55-4FC1-AF70-302D-8EDC789A17FB">
 <createdBy>diazn</createdBy>
 <createdTime>2017-10-18 02:49:11 UTC</createdTime>
+<commentInRDBMS>Código del usuario que flipea.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -52,6 +55,7 @@
 <Column name="CODIGO_REVISTA" id="B1669616-B165-F443-8F2B-CF98D2CF7C58">
 <createdBy>diazn</createdBy>
 <createdTime>2017-10-18 02:51:54 UTC</createdTime>
+<commentInRDBMS>Código de la revista en la que se flipea.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -66,6 +70,7 @@
 <Column name="FECHA" id="D09121CA-CC02-0E73-F966-D7E5DF956711">
 <createdBy>diazn</createdBy>
 <createdTime>2017-10-18 02:55:27 UTC</createdTime>
+<commentInRDBMS>Fecha y hora en la que se realiza el flip.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>

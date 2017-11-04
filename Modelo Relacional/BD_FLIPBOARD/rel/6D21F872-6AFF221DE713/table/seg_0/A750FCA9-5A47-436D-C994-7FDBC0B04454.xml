@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A750FCA9-5A47-436D-C994-7FDBC0B04454" name="TBL_SOLICITUDES_DE_VERIFIC">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 18:16:36 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<ordsAlias>table_24</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_SOLICITUD" id="C4812741-42B7-9595-2BF4-4DA225BA7C0D">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 18:18:26 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CODIGO_USUARIO" id="D7F42B0A-E8C5-58B0-504D-42053548AAA9">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 18:18:38 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0F158033-7D9D-E283-0DD6-59A49127767A" referredColumn="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
+</associations>
+</Column>
+<Column name="CODIGO_ESTADO_SOLICITUD" id="10675D03-AA60-A885-9A86-E2E60669053F">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 18:25:25 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5D0DC679-2EA8-87BC-B238-B088F266E506" referredColumn="02A40BBB-DC1E-F458-DD7A-0C268D692BB9"/>
+</associations>
+</Column>
+<Column name="FECHA_SOLICITUD" id="E0D50A17-A76E-517A-3350-9CE31EF44E4E">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 20:13:24 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DDFEF581-14D6-C62E-9424-1D827627B46B" name="TBL_SOLICITUDES_DE_VERIFIC_PK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 18:18:26 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C4812741-42B7-9595-2BF4-4DA225BA7C0D"/>
+<colUsage columnID="D7F42B0A-E8C5-58B0-504D-42053548AAA9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3847411F-5FC7-0B54-DF2B-4CC4AFDE5DAC" name="TBL_SOl_DE_VER_TBL_US_FK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 18:18:38 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D7F42B0A-E8C5-58B0-504D-42053548AAA9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="611DCD42-FB8B-ACBA-C8D4-6A860B058548" name="TBL_VERIC_TBL_ESTSOLID_FK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 18:25:25 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="10675D03-AA60-A885-9A86-E2E60669053F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

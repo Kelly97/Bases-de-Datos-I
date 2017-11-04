@@ -62,7 +62,7 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
                     while($row = $conexion->obtenerFila($resultadoUsuario)){
                       ?>
                         <a onclick="cargarNoticias(<?php echo $row['CODIGO_CATEGORIA']; ?>);return false;" class="pn-ProductNav_Link ">
-                          <?php echo utf8_encode($row['CATEGORIA']) ?>
+                          <?php echo ($row['CATEGORIA']) ?>
                         </a>
                       <?php
                     }
@@ -117,7 +117,7 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
                             <tbody>
                               <tr>
                                 <td class="align-middle text-center">
-                                  <?php echo utf8_encode($rowUsuario['INICIAL']); ?>
+                                  <?php echo ($rowUsuario['INICIAL']); ?>
                                 </td>
                               </tr>
                             </tbody>

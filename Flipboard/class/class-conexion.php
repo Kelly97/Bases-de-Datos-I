@@ -17,7 +17,7 @@
 				    trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
 				}*/
 			
-			$this->link = oci_connect($this->usuario, $this->contrasena, $this->host);
+			$this->link = oci_connect($this->usuario, $this->contrasena, $this->host,'AL32UTF8');
 
 			if (!$this->link){
 				echo "No se pudo conectar con oracle";

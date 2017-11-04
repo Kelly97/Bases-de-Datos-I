@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5D0DC679-2EA8-87BC-B238-B088F266E506" containerWithKeyObject="A750FCA9-5A47-436D-C994-7FDBC0B04454" localFKIndex="611DCD42-FB8B-ACBA-C8D4-6A860B058548" name="TBL_VERIC_TBL_ESTSOLID_FK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 18:25:25 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<referredTableLongName>TBL_ESTADO_SOLICITUD</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>732CA5CB-71FE-D01D-A550-97D9C1520415</referredTableID>
+<keyObject>090F71C0-308B-996D-7529-FDE17218411A</keyObject>
+<referredKeyID>090F71C0-308B-996D-7529-FDE17218411A</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CODIGO_ESTADO_SOLICITUD</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

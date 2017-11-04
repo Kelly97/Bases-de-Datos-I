@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="509E654F-71A9-85C6-C7A2-5EAEF9FBB8E1" name="TBL_CONFIG_ACTIVA_X_USUARIO">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 17:46:07 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<ordsAlias>table_23</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_CONFIGURACION" id="6B46C28F-D09C-C25E-0487-47E5178994D4">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 17:46:39 UTC</createdTime>
+<commentInRDBMS>Código configuración activa.</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D7ED80F8-3B41-A8B1-FABE-3F58DD2EBD9D" referredColumn="AB6F0137-F74A-9009-CEDB-5265255B16BB"/>
+</associations>
+</Column>
+<Column name="CODIGO_USUARIO" id="3A4BEB9F-6075-D3E7-0174-DB58EE2DA0F4">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 17:47:19 UTC</createdTime>
+<commentInRDBMS>Código de usuario dueño de la configuración.</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C229D19A-1483-302A-E3EE-F73AEA799757" referredColumn="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8F438D72-763E-9A41-5A55-A3FDCD499FAF" name="TBL_CONFIG_X_USUARIO_PK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 17:53:06 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6B46C28F-D09C-C25E-0487-47E5178994D4"/>
+<colUsage columnID="3A4BEB9F-6075-D3E7-0174-DB58EE2DA0F4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4B4E5F1D-5C79-A56C-75E2-5E8846A5E6FA" name="TBL_CONF_X_US_TBL_CONFIG_FK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 17:46:39 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6B46C28F-D09C-C25E-0487-47E5178994D4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D49E8C3B-6F88-B501-5BD0-0E28A2EE19A4" name="TBL_CONF_X_US_TBL_US_FK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 17:47:19 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3A4BEB9F-6075-D3E7-0174-DB58EE2DA0F4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

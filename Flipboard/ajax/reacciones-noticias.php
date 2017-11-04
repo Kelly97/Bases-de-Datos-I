@@ -38,7 +38,7 @@ switch ($_POST["codigo"]) {
 			break;
 		
 		case '2'://Evento flipear
-			$conn = oci_connect('DB_FLIPBOARD', 'oracle', 'localhost/XE');
+			$conn = oci_connect('DB_FLIPBOARD', 'oracle', 'localhost/XE','AL32UTF8');
 			if (!$conn) {
 			    $e = oci_error();
 			    echo "Ups. Algo anda mal con el servidor.";
@@ -65,49 +65,6 @@ switch ($_POST["codigo"]) {
 			echo $mensajeRespuesta;
 			oci_free_statement($procedure);
 			oci_close($conn);
-
-
-
-
-			//verificar si ya existe la noticia en la revista
-			/*$sql="SELECT
-					    A.CODIGO_FLIP,
-					    A.CODIGO_NOTICIA,
-					    A.CODIGO_USUARIO_FLIP,
-					    A.CODIGO_REVISTA,
-					    A.FECHA
-						FROM TBL_FLIPS A
-						WHERE A.CODIGO_NOTICIA=".$codNoticia."
-						AND A.CODIGO_USUARIO_FLIP=".$codigoUsuario."
-						AND A.CODIGO_REVISTA=".$codRevista;
-			$respuesta=$conexion->ejecutarInstruccion($sql);
-			$row = $conexion->obtenerFila($respuesta);
-			//obtener nombre revista
-			$sql2="SELECT NOMBRE_REVISTA
-					FROM TBL_REVISTAS
-					WHERE CODIGO_REVISTA=".$codRevista;
-			$respuesta2=$conexion->ejecutarInstruccion($sql2);
-			$row2 = $conexion->obtenerFila($respuesta2);
-			//decidiendo qué hacer
-			if($row["CODIGO_FLIP"]==""){				
-				$sql1 ="INSERT INTO TBL_FLIPS (
-						    CODIGO_NOTICIA,
-						    CODIGO_USUARIO_FLIP,
-						    CODIGO_REVISTA,
-						    FECHA
-						) VALUES (
-						    ".$codNoticia.",
-						    ".$codigoUsuario.",
-						    ".$codRevista.",
-						    SYSDATE
-						)"; 
-				$conexion->ejecutarInstruccion($sql1);
-				$conexion->commit();
-				echo "Flipeado en ".$row2["NOMBRE_REVISTA"];
-			}
-			else {
-				echo "La historia ya existe en ".$row2["NOMBRE_REVISTA"];
-			}*/
 			break;
 }
 $conexion->cerrarConexion();

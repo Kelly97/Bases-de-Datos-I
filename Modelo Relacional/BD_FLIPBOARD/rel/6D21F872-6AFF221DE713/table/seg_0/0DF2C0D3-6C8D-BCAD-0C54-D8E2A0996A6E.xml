@@ -24,6 +24,7 @@
 <Column name="CODIGO_USUARIO" id="482A8A54-F707-0571-BB61-3852D4B8C41F">
 <createdBy>diazn</createdBy>
 <createdTime>2017-10-23 01:13:49 UTC</createdTime>
+<commentInRDBMS>Código del usuario dueño de la noticia.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>

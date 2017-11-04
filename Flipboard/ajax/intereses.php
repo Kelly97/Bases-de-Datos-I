@@ -24,7 +24,7 @@
             while($row = $conexion->obtenerFila($resultadoIntereses)){
               $respuesta = $respuesta.'<div class="favorite">
                       <div class="name">
-                        <span style="font-size: 20px;cursor:pointer;"><a onclick="agregarInteres('.utf8_encode($row['CODIGO_CATEGORIA']).','.$usuario.');" class="pn-ProductNav_Link">'.utf8_encode($row['CATEGORIA']).'</a></span>
+                        <span style="font-size: 20px;cursor:pointer;"><a onclick="agregarInteres('.($row['CODIGO_CATEGORIA']).','.$usuario.');" class="pn-ProductNav_Link">'.($row['CATEGORIA']).'</a></span>
                       </div>
                     </div>';
             }
@@ -53,7 +53,7 @@
             $row2 = $conexion->obtenerFila($resultadoInte);
 			?>
 			<a onclick="cargarNoticias(<?php echo $row2['CODIGO_CATEGORIA']; ?>);return false;" class="pn-ProductNav_Link ">
-              <?php echo utf8_encode($row2['CATEGORIA']) ?>
+              <?php echo ($row2['CATEGORIA']) ?>
             </a>
 			<?php
 			$conexion->cerrarConexion();
@@ -91,7 +91,7 @@
 	                while($row2 = $conexion->obtenerFila($resultado)){
 	                  ?>
 	                    <a onclick="cargarNoticias(<?php echo $row2['CODIGO_CATEGORIA']; ?>);return false;" class="pn-ProductNav_Link" id="<?php if($row2['CODIGO_CATEGORIA']==$codigoInteres){ echo 'interesActual'; } ?>">
-	                      <?php echo utf8_encode($row2['CATEGORIA']) ?>
+	                      <?php echo ($row2['CATEGORIA']) ?>
 	                    </a>
 	                  <?php
 	                }

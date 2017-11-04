@@ -55,7 +55,7 @@ else{
 												<tbody>
 													<tr>
 														<td class="align-middle text-center">
-															<?php echo utf8_encode($registro['INICIAL']); ?>
+															<?php echo ($registro['INICIAL']); ?>
 														</td>
 													</tr>
 												</tbody>
@@ -68,7 +68,7 @@ else{
 			              </div>		              
 			              <div class="col-lg-9" style="margin-bottom:10px;">
 			                <p class="card-text">      
-			                <strong><?php echo utf8_encode($registro['NOMBRE_USUARIO']); ?></strong> comenzado a seguirte.
+			                <strong><?php echo ($registro['NOMBRE_USUARIO']); ?></strong> comenzado a seguirte.
 			                </p>       
 			              </div> 
 			              <div class="col-lg-12">
@@ -96,7 +96,7 @@ else{
 												<tbody>
 													<tr>
 														<td class="align-middle text-center">
-															<?php echo utf8_encode($registro['INICIAL']); ?>
+															<?php echo ($registro['INICIAL']); ?>
 														</td>
 													</tr>
 												</tbody>
@@ -109,8 +109,8 @@ else{
 			              </div>		              
 			              <div class="col-lg-9" style="margin-bottom:10px;">
 			                <p class="card-text">      
-			                <?php echo utf8_encode($registro['NOMBRE_USUARIO']); ?> ha comentado en tu noticia <strong>
-			                <?php echo utf8_encode($registro['TITULO_NOTICIA']); ?></strong> añadida a la revista <strong><?php echo utf8_encode($registro['NOMBRE_REVISTA']); ?></strong>.
+			                <?php echo ($registro['NOMBRE_USUARIO']); ?> ha comentado en tu noticia <strong>
+			                <?php echo ($registro['TITULO_NOTICIA']); ?></strong> añadida a la revista <strong><?php echo ($registro['NOMBRE_REVISTA']); ?></strong>.
 			                </p>       
 			              </div> 
 			              <div class="col-lg-12">
@@ -138,7 +138,7 @@ else{
 												<tbody>
 													<tr>
 														<td class="align-middle text-center">
-															<?php echo utf8_encode($registro['INICIAL']); ?>
+															<?php echo ($registro['INICIAL']); ?>
 														</td>
 													</tr>
 												</tbody>
@@ -151,9 +151,9 @@ else{
 			              </div>		              
 			              <div class="col-lg-9" style="margin-bottom:10px;">
 			                <p class="card-text">      
-			                <?php echo utf8_encode($registro['NOMBRE_USUARIO']); ?> reaccionó con un 
-			                <?php echo utf8_encode($registro['TIPO_REACCION']); ?> a tu noticia <strong>
-			                <?php echo utf8_encode($registro['TITULO_NOTICIA']); ?></strong> añadida a la revista <strong><?php echo utf8_encode($registro['NOMBRE_REVISTA']); ?></strong>.
+			                <?php echo ($registro['NOMBRE_USUARIO']); ?> reaccionó con un 
+			                <?php echo ($registro['TIPO_REACCION']); ?> a tu noticia <strong>
+			                <?php echo ($registro['TITULO_NOTICIA']); ?></strong> añadida a la revista <strong><?php echo ($registro['NOMBRE_REVISTA']); ?></strong>.
 			                </p>       
 			              </div> 
 			              <div class="col-lg-12">
@@ -181,7 +181,7 @@ else{
 												<tbody>
 													<tr>
 														<td class="align-middle text-center">
-															<?php echo utf8_encode($registro['INICIAL']); ?>
+															<?php echo ($registro['INICIAL']); ?>
 														</td>
 													</tr>
 												</tbody>
@@ -194,9 +194,9 @@ else{
 			              </div>		              
 			              <div class="col-lg-9" style="margin-bottom:10px;">
 			                <p class="card-text">      
-			                <?php echo utf8_encode($registro['NOMBRE_USUARIO']); ?> reaccionó con un 
-			                <?php echo utf8_encode($registro['TIPO_REACCION']); ?> a tu comentario en la noticia <strong>
-			                <?php echo utf8_encode($registro['TITULO_NOTICIA']); ?></strong> añadida a la revista <strong><?php echo utf8_encode($registro['NOMBRE_REVISTA']); ?></strong>.
+			                <?php echo ($registro['NOMBRE_USUARIO']); ?> reaccionó con un 
+			                <?php echo ($registro['TIPO_REACCION']); ?> a tu comentario en la noticia <strong>
+			                <?php echo ($registro['TITULO_NOTICIA']); ?></strong> añadida a la revista <strong><?php echo ($registro['NOMBRE_REVISTA']); ?></strong>.
 			                </p>       
 			              </div> 
 			              <div class="col-lg-12">
@@ -224,7 +224,7 @@ else{
 												<tbody>
 													<tr>
 														<td class="align-middle text-center">
-															<?php echo utf8_encode($registro['INICIAL']); ?>
+															<?php echo ($registro['INICIAL']); ?>
 														</td>
 													</tr>
 												</tbody>
@@ -237,7 +237,7 @@ else{
 			              </div>		              
 			              <div class="col-lg-9" style="margin-bottom:10px;">
 			                <p class="card-text">      
-			                <?php echo utf8_encode($registro['NOMBRE_USUARIO']); ?> flipeó tu noticia 
+			                <?php echo ($registro['NOMBRE_USUARIO']); ?> flipeó tu noticia 
 			                <strong><?php echo $registro['TITULO_NOTICIA']; ?></strong> a la revista <strong><?php echo $registro['NOMBRE_REVISTA']; ?></strong>.
 			                </p>       
 			              </div> 

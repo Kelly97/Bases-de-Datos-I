@@ -1,17 +1,17 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="00D012CA-BD66-8287-92E7-22FF2A463741" name="TBL_TIPO_NOTIFICACION">
-<createdBy>diazn</createdBy>
-<createdTime>2017-10-16 17:18:49 UTC</createdTime>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2622759E-FE41-5DB8-8256-240F899CD27A" name="TBL_CONFIGURACIONES">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 17:44:31 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <ordsAlias>table_22</ordsAlias>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="CODIGO_TIPO_NOTIFICACION" id="DA9C9FD8-71F5-288D-13D5-7F47B6FF3FA1">
-<createdBy>diazn</createdBy>
-<createdTime>2017-10-16 17:20:53 UTC</createdTime>
-<commentInRDBMS>Código tipo de notificación.</commentInRDBMS>
+<Column name="CODIGO_CONFIGURACION" id="AB6F0137-F74A-9009-CEDB-5265255B16BB">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 17:45:43 UTC</createdTime>
+<commentInRDBMS>Identificador de cada configuración.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -21,29 +21,29 @@
 <identityColumn>true</identityColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="TIPO_NOTIFICACION" id="C1E0AB2C-6CC7-A29F-9283-5BE8B6D187FB">
-<createdBy>diazn</createdBy>
-<createdTime>2017-10-16 17:20:53 UTC</createdTime>
-<commentInRDBMS>Tipo de notificación, ej: notificación de Seguimiento o comentario.</commentInRDBMS>
+<Column name="DESCRIPCION" id="DE66C3A3-C85C-062C-CEB5-AFA4BEC8E00F">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 17:45:43 UTC</createdTime>
+<commentInRDBMS>Descripción o leyenda de la opción de configuración.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
-<dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="747F9E29-2E99-6894-A425-05747F7F864A" name="TBL_TIPO_NOTIFICACION_PK">
-<createdBy>diazn</createdBy>
-<createdTime>2017-10-16 17:20:53 UTC</createdTime>
+<ind_PK_UK id="6FE7DB92-BAA1-18AE-1D8D-C2E762E71FD8" name="TBL_CONFIGURACIONES_PK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 17:45:43 UTC</createdTime>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="DA9C9FD8-71F5-288D-13D5-7F47B6FF3FA1"/>
+<colUsage columnID="AB6F0137-F74A-9009-CEDB-5265255B16BB"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

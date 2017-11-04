@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4A776950-D5E5-25F0-3F9C-CA40879ED6FB" name="TBL_HISTORIAL_ACCESOS">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 20:29:11 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<ordsAlias>table_26</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_USUARIO" id="1359CBBC-C1FD-6396-03D8-9EE73301421A">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 20:29:29 UTC</createdTime>
+<commentInRDBMS>Código del usuario que accesa.</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="95F1D707-373A-894A-EFA2-0D5FAF1BC497" referredColumn="FDD3B9CC-4839-336D-7AB4-A56E98199C40"/>
+</associations>
+</Column>
+<Column name="FECHA_ACCESO" id="46C3E16D-0390-DC75-6A41-49C8C99F5F92">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 20:30:46 UTC</createdTime>
+<commentInRDBMS>Fecha de acceso.</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FF826977-EE90-6FFF-91DF-EB7ECA70F5D6" name="TBL_HI_ACC_TBL_US_FK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 20:29:29 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1359CBBC-C1FD-6396-03D8-9EE73301421A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

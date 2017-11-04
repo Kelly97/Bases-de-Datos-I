@@ -26,6 +26,7 @@
 <Column name="CODIGO_FLIP" id="673DC07B-2990-BE64-BCBB-CA0C9DF0DD6B">
 <createdBy>diazn</createdBy>
 <createdTime>2017-10-19 00:58:14 UTC</createdTime>
+<commentInRDBMS>Código del flip sobre el que se realiza la acción.</commentInRDBMS>
 <ownerDesignName>BD_FLIPBOARD</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>

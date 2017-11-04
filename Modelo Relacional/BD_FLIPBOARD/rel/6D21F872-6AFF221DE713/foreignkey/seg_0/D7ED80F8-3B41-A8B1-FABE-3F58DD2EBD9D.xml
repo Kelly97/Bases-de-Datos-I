@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D7ED80F8-3B41-A8B1-FABE-3F58DD2EBD9D" containerWithKeyObject="509E654F-71A9-85C6-C7A2-5EAEF9FBB8E1" localFKIndex="4B4E5F1D-5C79-A56C-75E2-5E8846A5E6FA" name="TBL_CONF_X_US_TBL_CONFIG_FK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 17:46:39 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<referredTableLongName>TBL_CONFIGURACIONES</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>2622759E-FE41-5DB8-8256-240F899CD27A</referredTableID>
+<keyObject>6FE7DB92-BAA1-18AE-1D8D-C2E762E71FD8</keyObject>
+<referredKeyID>6FE7DB92-BAA1-18AE-1D8D-C2E762E71FD8</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CODIGO_CONFIGURACION</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

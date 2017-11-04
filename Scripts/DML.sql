@@ -51,6 +51,8 @@ INSERT INTO tbl_estado_usuario (estado)
 VALUES ('Cuenta Verificada');
 INSERT INTO tbl_estado_usuario (estado) 
 VALUES ('Cuenta No Verificada');
+INSERT INTO tbl_estado_usuario (estado) 
+VALUES ('Eliminado');
 
 --INSERT Registros Tipos de Usuario
 INSERT INTO tbl_tipos_usuario (tipo_usuario) 
@@ -89,6 +91,12 @@ INSERT INTO tbl_lugares (codigo_tipo_lugar,nombre_lugar,latitud,longitud)
 VALUES (5,'Europa','52°05′00″N','07°23′00″E');
 INSERT INTO tbl_lugares (codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
 VALUES (5,'Asia','36°22′13″N','127°28′26″E');
+INSERT INTO tbl_lugares (codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
+VALUES (5,'África','36°22′13″N','127°28′26″E');
+INSERT INTO tbl_lugares (codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
+VALUES (5,'Oceanía','36°22′13″N','127°28′26″E');
+INSERT INTO tbl_lugares (codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
+VALUES (5,'Antártida','36°22′13″N','127°28′26″E');
 INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
 VALUES (1,1,'Honduras','14°41′00″N','87°25′00″W');
 INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
@@ -97,16 +105,16 @@ INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latit
 VALUES (3,1,'Emiratos Árabes Unidos','24°28′00″N','54°22′00″E');
 
 --INSERT Registros Usuarios
-INSERT INTO tbl_usuarios (codigo_tipo_usuario,codigo_lugar_residencia,codigo_estado_usuario,nombre_usuario,alias_usuario,correo,contrasenia,url_foto_perfil,descripcion) 
-VALUES (1,4,2,'Marco Polo','Marc2345','marco_99@gmail.com','asd.456','images/foto_perfiles/3d-Wallpaper-Hd-3.jpg','Entretenimiento para todos.');
-INSERT INTO tbl_usuarios (codigo_tipo_usuario,codigo_lugar_residencia,codigo_estado_usuario,nombre_usuario,alias_usuario,correo,contrasenia) 
-VALUES (3,4,1,'Administrador','Administrador','web_admin@flipboard.com','asd.456');
-INSERT INTO tbl_usuarios (codigo_tipo_usuario,codigo_lugar_residencia,codigo_estado_usuario,nombre_usuario,alias_usuario,correo,contrasenia,url_foto_perfil,descripcion) 
-VALUES (2,4,1,'National Geographic','NatGeo','NationalGeographic@natgeo.com','asd.456','images/foto_perfiles/National-Geographic-logo.png','Flipboard oficial de la revista National Geographic España. Actualidad, reportajes, fotos espectaculares, exploración, vídeos...');
-INSERT INTO tbl_usuarios (codigo_tipo_usuario,codigo_lugar_residencia,codigo_estado_usuario,nombre_usuario,alias_usuario,correo,contrasenia,url_foto_perfil) 
-VALUES (1,5,2,'Rosa Betancourt','Rosy4521','rosybet@gmail.com','asd.456','images/foto_perfiles/AnimalesVectoriales_Wahyu_Romdhoni.jpg');
-INSERT INTO tbl_usuarios (codigo_tipo_usuario,codigo_lugar_residencia,codigo_estado_usuario,nombre_usuario,alias_usuario,correo,contrasenia,url_foto_perfil) 
-VALUES (1,6,2,'Abdel Hadi','abdelhadi_43','abdel_43@yahoo.com','asd.456','images/foto_perfiles/Mokona.Modoki.full.35354 (1).jpg');
+INSERT INTO tbl_usuarios (codigo_tipo_usuario,codigo_lugar_residencia,codigo_estado_usuario,nombre_usuario,alias_usuario,correo,contrasenia,url_foto_perfil,descripcion,fecha_registro) 
+VALUES (1,4,2,'Marco Polo','Marc2345','marco_99@gmail.com','asd.456','images/foto_perfiles/3d-Wallpaper-Hd-3.jpg','Entretenimiento para todos.',TO_DATE('19/10/2017','DD/MM/YYYY'));
+INSERT INTO tbl_usuarios (codigo_tipo_usuario,codigo_lugar_residencia,codigo_estado_usuario,nombre_usuario,alias_usuario,correo,contrasenia,fecha_registro) 
+VALUES (3,4,1,'Administrador','Administrador','web_admin@flipboard.com','asd.456',TO_DATE('19/10/2017','DD/MM/YYYY'));
+INSERT INTO tbl_usuarios (codigo_tipo_usuario,codigo_lugar_residencia,codigo_estado_usuario,nombre_usuario,alias_usuario,correo,contrasenia,url_foto_perfil,descripcion,fecha_registro) 
+VALUES (2,4,1,'National Geographic','NatGeo','NationalGeographic@natgeo.com','asd.456','images/foto_perfiles/National-Geographic-logo.png','Flipboard oficial de la revista National Geographic España. Actualidad, reportajes, fotos espectaculares, exploración, vídeos...',TO_DATE('19/10/2017','DD/MM/YYYY'));
+INSERT INTO tbl_usuarios (codigo_tipo_usuario,codigo_lugar_residencia,codigo_estado_usuario,nombre_usuario,alias_usuario,correo,contrasenia,url_foto_perfil,fecha_registro) 
+VALUES (1,5,2,'Rosa Betancourt','Rosy4521','rosybet@gmail.com','asd.456','images/foto_perfiles/AnimalesVectoriales_Wahyu_Romdhoni.jpg',TO_DATE('19/10/2017','DD/MM/YYYY'));
+INSERT INTO tbl_usuarios (codigo_tipo_usuario,codigo_lugar_residencia,codigo_estado_usuario,nombre_usuario,alias_usuario,correo,contrasenia,url_foto_perfil,fecha_registro) 
+VALUES (1,6,2,'Abdel Hadi','abdelhadi_43','abdel_43@yahoo.com','asd.456','images/foto_perfiles/Mokona.Modoki.full.35354 (1).jpg',TO_DATE('19/10/2017','DD/MM/YYYY'));
 
 --INSERT Registros Seguidores
 INSERT INTO tbl_seguidores (codigo_usuario_seguidor,codigo_usuario_seguido) 
@@ -288,5 +296,38 @@ VALUES (5,3);
 INSERT INTO tbl_colaboradores (codigo_colaborador,codigo_revista) 
 VALUES (5,1);
 
+--Insert Resgistros Configuraciones
+INSERT INTO tbl_configuraciones (descripcion) 
+VALUES ('Recomendaciones de Contenido');
+INSERT INTO tbl_configuraciones (descripcion) 
+VALUES ('Acerca de tus revistas');
+INSERT INTO tbl_configuraciones (descripcion) 
+VALUES ('Acerca de tus amigos');
+INSERT INTO tbl_configuraciones (descripcion) 
+VALUES ('Actualizaciones de producto y educación');
+INSERT INTO tbl_configuraciones (descripcion) 
+VALUES ('Actualizaciones de la comunidad');
+INSERT INTO tbl_configuraciones (descripcion) 
+VALUES ('Selecciones Diarias (Diez para Hoy, Selecciones de Flipboard, etc.)');
+
+--Insert Resgistros Configuraciones activas por Usuario
+INSERT INTO tbl_config_activa_x_usuario (codigo_configuracion,codigo_usuario) 
+VALUES (1,1);
+
+--INSERT Registros Estado Solicitud
+INSERT INTO tbl_estado_solicitud (estado_solicitud) 
+VALUES ('Aprobada');
+INSERT INTO tbl_estado_solicitud (estado_solicitud) 
+VALUES ('Denegada');
+INSERT INTO tbl_estado_solicitud (estado_solicitud) 
+VALUES ('Solicitud en Proceso');
+
+--Insert Resgistros Solicitudes de Verificación
+INSERT INTO tbl_solicitudes_de_verific (codigo_usuario,codigo_estado_solicitud,fecha_solicitud) 
+VALUES (2,3,TO_DATE('19/10/2017','DD/MM/YYYY'));
+
+--Insert Resgistros Historial de accesos
+INSERT INTO tbl_historial_accesos (codigo_usuario,fecha_acceso) 
+VALUES (1,TO_DATE('19/10/2017','DD/MM/YYYY'));
 
 COMMIT;

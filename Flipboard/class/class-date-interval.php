@@ -37,11 +37,6 @@ include_once("class-conexion.php");
 			else{
 				printf('Hace %d segundos.',$fecha->s);
 			}
-
-
 		}
-
-
-
 	}
 ?>

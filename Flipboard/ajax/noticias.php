@@ -139,7 +139,7 @@ switch ($_POST["codigo"]) {
 		//TITULO DE LA CATEGORÍA
 	?>
 		  <div class="col-lg-12 col-md-12" style="text-align: center;padding-bottom: 40px;padding-top: 40px;">
-	        <h2><?php echo utf8_encode($categoria['CATEGORIA']); ?></h2>
+	        <h2><?php echo ($categoria['CATEGORIA']); ?></h2>
 	        <button onclick="eliminarInteres(<?php echo $_POST["codigo"]; ?>,<?php echo $codigoUsuario; ?>);" class="btn btn-default btn-seguir" role="button" style="border:none;">
 	        	<i class="fa fa-times" aria-hidden="true"></i>
 	        </button>
@@ -200,7 +200,7 @@ switch ($_POST["codigo"]) {
 													<tbody>
 														<tr>
 															<td class="align-middle text-center">
-																<?php echo utf8_encode($rowNoticia['INICIAL_USUARIO_PUBLICA']); ?>
+																<?php echo ($rowNoticia['INICIAL_USUARIO_PUBLICA']); ?>
 															</td>
 														</tr>
 													</tbody>
@@ -217,11 +217,11 @@ switch ($_POST["codigo"]) {
 						      			<tr>
 									      	<td class="align-middle">
 										        <p class="card-text" style="margin-bottom: -8px;">      
-										        	<?php echo utf8_encode($rowNoticia["USUARIO_PUBLICA"]);?>      	
+										        	<?php echo ($rowNoticia["USUARIO_PUBLICA"]);?>      	
 										        </p> 
 										        <p style="padding: 0px;margin:0px;"> 
 										        	<span style="color: #09c;font-size: 12px;cursor: pointer;" onclick="cargarPaginaRevista(<?php echo $rowNoticia["CODIGO_REVISTA"];?>);">
-										        		<?php echo utf8_encode($rowNoticia["NOMBRE_REVISTA"]);?>
+										        		<?php echo ($rowNoticia["NOMBRE_REVISTA"]);?>
 										        	</span> 
 										        	<span style="color: gray;font-size: 12px;">
 										        		<?php echo fechaIntervalo::calcularintervalo($rowNoticia['FECHA_PUBLICACION']);?>
@@ -236,12 +236,12 @@ switch ($_POST["codigo"]) {
 				   </div>  
 				  <img class="card-img-top" src='<?php echo $rowNoticia["URL_PORTADA_NOTI"]; ?>' alt="Card image cap">
 				  <div class="card-body" style="text-align: justify;">
-				    <h5 class="card-title" style="text-align: left;"><?php echo utf8_encode($rowNoticia["TITULO_NOTICIA"]);?></h5>
+				    <h5 class="card-title" style="text-align: left;"><?php echo ($rowNoticia["TITULO_NOTICIA"]);?></h5>
 				    <span class="noti-card-autor">
-				    	<?php echo utf8_encode($rowNoticia["USUARIO_PUBLICA"])." · ".utf8_encode($rowNoticia["AUTOR_NOTICIA"]);?>
+				    	<?php echo ($rowNoticia["USUARIO_PUBLICA"])." · ".($rowNoticia["AUTOR_NOTICIA"]);?>
 				    </span>
 				    <p class="card-text">
-				    	<?php echo utf8_encode($rowNoticia["DESCRIPCION_NOTICIA"]);?>
+				    	<?php echo ($rowNoticia["DESCRIPCION_NOTICIA"]);?>
 				    </p>
 				    <p>
 			        	<?php echo $rowNoticia["CANT_LIKES"];?>

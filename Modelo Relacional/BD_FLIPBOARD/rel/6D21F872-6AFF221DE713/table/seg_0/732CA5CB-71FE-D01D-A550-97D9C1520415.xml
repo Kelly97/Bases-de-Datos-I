@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="732CA5CB-71FE-D01D-A550-97D9C1520415" name="TBL_ESTADO_SOLICITUD">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 18:20:54 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<ordsAlias>table_25</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CODIGO_ESTADO_SOLICITUD" id="02A40BBB-DC1E-F458-DD7A-0C268D692BB9">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 18:25:17 UTC</createdTime>
+<commentInRDBMS>Código del estado de la solicitud de verificación.</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ESTADO_SOLICITUD" id="6D785B37-3002-B558-5F2C-E090ACE65E49">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 18:25:17 UTC</createdTime>
+<commentInRDBMS>Estado de la solicitud del usuario, ej: aprobada, denegada, solicitud en proceso.</commentInRDBMS>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="090F71C0-308B-996D-7529-FDE17218411A" name="TBL_ESTADO_SOLICITUD_PK">
+<createdBy>Kelly Aguilar</createdBy>
+<createdTime>2017-11-04 18:25:17 UTC</createdTime>
+<ownerDesignName>BD_FLIPBOARD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="02A40BBB-DC1E-F458-DD7A-0C268D692BB9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
