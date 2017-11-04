@@ -29,7 +29,8 @@
                     </div>';
             }
             $conexion->liberarResultado($resultadoIntereses);
-            echo $respuesta;         
+            echo $respuesta; 
+            $conexion->cerrarConexion();        
 			break;
 		
 		case '2':
@@ -55,6 +56,7 @@
               <?php echo utf8_encode($row2['CATEGORIA']) ?>
             </a>
 			<?php
+			$conexion->cerrarConexion();
 			break;
 		case '3':
 			/*Eliminar interes*/
@@ -69,19 +71,7 @@
 				        codigo_categoria_interes = ".$codigoInteres;
 			$conexion->ejecutarInstruccion($sql3);
 			$conexion->commit();
-
-
-			/*$sql2 = "SELECT CODIGO_CATEGORIA, 
-							UPPER(CATEGORIA) AS CATEGORIA
-                    FROM TBL_CATEGORIA A
-                    WHERE CODIGO_CATEGORIA = ".$_POST["codigoInteres"];
-            $resultadoInte = $conexion->ejecutarInstruccion($sql2);
-            $row2 = $conexion->obtenerFila($resultadoInte);
-			?>
-			<a onclick="cargarNoticias(<?php echo $row2['CODIGO_CATEGORIA']; ?>);return false;" class="pn-ProductNav_Link">
-              <?php echo utf8_encode($row2['CATEGORIA']) ?>
-            </a>
-			<?php*/
+			$conexion->cerrarConexion();
 			break;
 		case '4'://cargar barra intereses
 			$codigoInteres = $_POST["codigoInteres"];
@@ -108,7 +98,7 @@
 	                $conexion->liberarResultado($resultado);
 	              ?>  
               <?php
-                        
+            $conexion->cerrarConexion();            
 			break;
 	}
 	

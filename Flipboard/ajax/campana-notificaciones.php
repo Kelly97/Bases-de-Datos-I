@@ -9,4 +9,5 @@ $sql =  "
 $resultado = $conexion->ejecutarInstruccion($sql);
 $registro = $conexion->obtenerArregloAsociativo($resultado);
 echo $registro['CANT_NOTIFICACIONES'];
+$conexion->cerrarConexion();
 ?>

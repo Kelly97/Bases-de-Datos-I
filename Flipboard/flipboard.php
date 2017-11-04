@@ -11,20 +11,9 @@ $sql = "  SELECT  CODIGO_TIPO_USUARIO,
                   URL_FOTO_PERFIL,
                   DESCRIPCION
           FROM TBL_USUARIOS
-          WHERE CODIGO_USUARIO =".$codigoUsuario; //Cuando realicemos la consulta, se debe omitir el punto y coma al final de esta
+          WHERE CODIGO_USUARIO =".$codigoUsuario;
 $resultadoUsuario = $conexion->ejecutarInstruccion($sql);
 $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
- //ESTA ASIGNACION ES DE PRUEBA, SE TOMARÁ EL VALOR DE SESIÓN 
-/*$sql = "SELECT B.CATEGORIA
-        FROM TBL_INTERESES_X_USUARIO A
-        LEFT JOIN TBL_CATEGORIA B
-        ON (A.CODIGO_CATEGORIA_INTERES = B.CODIGO_CATEGORIA)
-        WHERE CODIGO_USUARIO = ".$codigoUsuario; //Cuando realicemos la consulta, se debe omitir el punto y coma al final de esta
-$resultadoUsuario = $conexion->ejecutarInstruccion($sql);
-while($row = $conexion->obtenerFila($resultadoUsuario)){
-  echo utf8_encode($row['CATEGORIA']).'<br>'; //Para obtener algún valor del arreglo que hemos generado, utilizar como índice el nombre del campo que necesitamos, obligatorio escribirlo en mayúscula para que funcione
-}
-$conexion->liberarResultado($resultadoUsuario);*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -290,3 +279,6 @@ $conexion->liberarResultado($resultadoUsuario);*/
 
   </body>
 </html>
+<?php
+$conexion->cerrarConexion();
+?>

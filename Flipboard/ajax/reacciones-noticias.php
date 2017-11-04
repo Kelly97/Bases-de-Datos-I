@@ -38,10 +38,39 @@ switch ($_POST["codigo"]) {
 			break;
 		
 		case '2'://Evento flipear
+			$conn = oci_connect('DB_FLIPBOARD', 'oracle', 'localhost/XE');
+			if (!$conn) {
+			    $e = oci_error();
+			    echo "Ups. Algo anda mal con el servidor.";
+			    exit;
+			}
 			$codRevista=$_POST["codRevista"];
-			$codNoticia=$_POST["codNoticia"];
+			$codNoticia=$_POST["codNoticia"];			
+			$sql="
+				BEGIN
+				  P_FLIPEAR(:codNoticia,
+						    :codigoUsuario,
+						    :codRevista,
+				  			:codigoRespuesta,
+				  			:mensajeRespuesta);
+				END;
+					";
+			$procedure = oci_parse($conn, $sql);
+			oci_bind_by_name($procedure, ':codNoticia', $codNoticia);//las variables de entrada, deben de haber sido declaradas previamente (in)
+			oci_bind_by_name($procedure, ':codigoUsuario', $codigoUsuario);
+			oci_bind_by_name($procedure, ':codRevista', $codRevista);
+			oci_bind_by_name($procedure, ':codigoRespuesta', $codigoRespuesta,5);//No se deben declarar previamente las variables de salida (out)
+			oci_bind_by_name($procedure, ':mensajeRespuesta', $mensajeRespuesta,200);
+			oci_execute($procedure);
+			echo $mensajeRespuesta;
+			oci_free_statement($procedure);
+			oci_close($conn);
+
+
+
+
 			//verificar si ya existe la noticia en la revista
-			$sql="SELECT
+			/*$sql="SELECT
 					    A.CODIGO_FLIP,
 					    A.CODIGO_NOTICIA,
 					    A.CODIGO_USUARIO_FLIP,
@@ -78,7 +107,8 @@ switch ($_POST["codigo"]) {
 			}
 			else {
 				echo "La historia ya existe en ".$row2["NOMBRE_REVISTA"];
-			}
+			}*/
 			break;
 }
+$conexion->cerrarConexion();
 ?>

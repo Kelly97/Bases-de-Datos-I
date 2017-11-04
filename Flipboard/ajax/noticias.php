@@ -152,7 +152,7 @@ switch ($_POST["codigo"]) {
 					<div style="text-align: center;">
 						<i class="fa fa-sticky-note-o" aria-hidden="true" style="font-size: 10em;color: #b7b5b5;font-weight: 100;text-align: center;"></i>
 						<p style="color: #b7b5b5;font-size: 1.6em;font-weight: 100;">
-							Lo sentimos, todavía no tenemos historias en esta categoría.
+							Lo sentimos, todavía no existen historias en esta categoría.
 						</p>
 					</div>
 				<?php
@@ -173,9 +173,9 @@ switch ($_POST["codigo"]) {
 				<div class="card noti-card 
 							<?php   
 								if($rowNoticia["CANT_LIKES"]>3)
-									{ echo 'noti-card-width-2 '; }
+									{ echo 'noti-card-width-3 '; }
 								elseif($rowNoticia["CANT_LIKES"]>2)
-									{echo 'noti-card-width-3 ';}    
+									{echo 'noti-card-width-2';}    
 							?>" 
 						style="position: relative;">
 					<div class="botones-noticia-general">

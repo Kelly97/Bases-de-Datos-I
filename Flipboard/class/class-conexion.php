@@ -1,5 +1,4 @@
 <?php
-
 	class Conexion{
 
 		private $usuario="DB_FLIPBOARD";
@@ -17,6 +16,7 @@
 				    $e = oci_error();
 				    trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
 				}*/
+			
 			$this->link = oci_connect($this->usuario, $this->contrasena, $this->host);
 
 			if (!$this->link){
