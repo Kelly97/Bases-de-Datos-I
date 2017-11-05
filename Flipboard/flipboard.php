@@ -37,7 +37,7 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
   <body> 
     <audio id="player" src="audio/notification.mp3"> 
     </audio>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav id="nav_flipboard" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <a class="navbar-brand" href="#">
         <img src="images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
       </a>
@@ -97,8 +97,10 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
           </li>
           <li class="nav-item" data-toggle="popover" data-placement="left" data-content="Notificaciones" data-trigger="hover">
             <a class="nav-item" id="btn-notificaciones">
-              <i class="fa fa-bell fa-lg" aria-hidden="true" style="margin-right: -22px;"></i>
-              <span id="cantidad_notificaciones" class="badge badge-secondary" style="font-size: 9px;">0</span>
+              <i class="fa fa-bell fa-lg" aria-hidden="true" style="">
+                <span id="cantidad_notificaciones" class="badge badge-secondary" style="font-size: 9px;border-radius: 20px;">0</span>
+              </i>
+              
             </a>
           </li>
           <li class="nav-item" data-toggle="popover" data-placement="left" data-content="Redactar Noticia" data-trigger="hover">
@@ -134,7 +136,7 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
     </nav>
     
 
-    <div class="container-fluid">  
+    <div class="container-fluid" style="">  
       <div id="contenido-principal" class="col-lg-12" style="padding: 0px;">
         
       </div>    

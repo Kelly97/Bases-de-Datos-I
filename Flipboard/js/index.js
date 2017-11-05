@@ -3,7 +3,8 @@ $(document).ready(function() {
 	cargarNoticias(0);//El cero será reservado para las noticias de portada, del 1 en adelante hará referencia a los intereses.
 	ajustarContenedorNoticias();
 	actualizarNotificaciones();
-	setInterval('actualizarNotificaciones()',10000);		
+	setInterval('actualizarNotificaciones()',10000);	
+	$("#contenido-principal").css("margin-top",($("#nav_flipboard").height()+20)+"px");	
 	$('.your-class').slick({
 	      dots: false,
 		  infinite: false,
