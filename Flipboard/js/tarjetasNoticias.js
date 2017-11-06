@@ -1,15 +1,15 @@
 //cargarPaginaRevista(2);
-function eliminarInteres(codigoInteres, codigoUsuario){//eliminar interes
+function eliminarInteres(codigoInteres){//eliminar interes
 	data = "codigo="+3+"&"+
-		   "codigoInteres="+codigoInteres+"&"+
-		   "usuario="+codigoUsuario;
+		   "codigoInteres="+codigoInteres;
 	$.ajax({         
         url : "ajax/intereses.php",
         data: data,
         method: "POST",
+        dataType: "json",
         success: function(datos){       
             //alert(datos);
-            $('#alerta_inferior').html('Interés eliminado exitosamente.');
+            $('#alerta_inferior').html(datos.mensajeResp);
             $('#alerta_inferior').show();
             setTimeout(ocultarAlert,3000);
             cargarNoticias(0);
@@ -42,10 +42,27 @@ function darLike(codigoNoticia){//Dar o quitar like de pagina
         url : "ajax/reacciones-noticias.php",
         data: data,
         method: "POST",
+        dataType: "json",
         success: function(datos){       
-            $('#alerta_inferior').html(datos);
+            $('#alerta_inferior').html(datos.mensajeResp);
             $('#alerta_inferior').show();
-            setTimeout(ocultarAlert,3000);            
+            setTimeout(ocultarAlert,3000); 
+
+            var id="#like_" + datos.codigoNoticia; 
+            var idCantLikes="#likeContador_" + datos.codigoNoticia; 
+            var cantLikes = parseInt($(idCantLikes).html());
+            
+            $(id).removeClass("fa-heart-o");
+            $(id).removeClass("fa-heart");
+            if(datos.codigoResp==0){                
+                $(id).css("color","gray");
+                $(id).addClass("fa-heart-o");
+                $(idCantLikes).html(cantLikes-1);
+            }else{
+                $(id).css("color","rgb(200, 35, 51)");
+                $(id).addClass("fa-heart");
+                $(idCantLikes).html(cantLikes+1);
+            }       
         }
     }); 
 }

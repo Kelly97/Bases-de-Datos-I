@@ -60,18 +60,34 @@
 			break;
 		case '3':
 			/*Eliminar interes*/
-			include_once("../class/class-conexion.php");
-			$conexion = new Conexion();
 			$codigoInteres = $_POST["codigoInteres"];
-			$usuario = $_POST["usuario"];
-
-			$sql3 = "DELETE FROM tbl_intereses_x_usuario WHERE
-				        codigo_usuario =".$usuario."
-				    AND
-				        codigo_categoria_interes = ".$codigoInteres;
-			$conexion->ejecutarInstruccion($sql3);
-			$conexion->commit();
-			$conexion->cerrarConexion();
+			$conn = oci_connect('DB_FLIPBOARD', 'oracle', 'localhost/XE','AL32UTF8');
+			if (!$conn) {
+			    $e = oci_error();
+			    echo "Ups. Algo anda mal con el servidor.";
+			    exit;
+			}		
+			$sql="
+				BEGIN
+				    P_ELIMINAR_INTERES(
+						:codigoUsuario,
+						:codigoInteres,
+				        :codigoResultado,
+				        :mensajeResultado
+				    );
+				END;
+					";
+			$procedure = oci_parse($conn, $sql);
+			oci_bind_by_name($procedure, ':codigoUsuario', $codigoUsuario);//las variables de entrada, deben de haber sido declaradas previamente (in)
+			oci_bind_by_name($procedure, ':codigoInteres', $codigoInteres);
+			oci_bind_by_name($procedure, ':codigoResultado', $codigoRespuesta , 5);//No se deben declarar previamente las variables de salida (out)
+			oci_bind_by_name($procedure, ':mensajeResultado', $mensajeRespuesta , 200);
+			oci_execute($procedure);			
+			$resultado['codigoResp'] = $codigoRespuesta;
+			$resultado['mensajeResp'] = $mensajeRespuesta;			
+			oci_free_statement($procedure);
+			oci_close($conn);
+			echo json_encode($resultado);  
 			break;
 		case '4'://cargar barra intereses
 			$codigoInteres = $_POST["codigoInteres"];

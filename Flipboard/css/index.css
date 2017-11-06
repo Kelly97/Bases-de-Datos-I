@@ -285,6 +285,9 @@ input[type=radio]:checked + label div{
 .btn:hover{
 	cursor: pointer;
 }
+.btn:focus{
+	box-shadow: none;
+}
 
 .alerta-inferior{
 	position: fixed;

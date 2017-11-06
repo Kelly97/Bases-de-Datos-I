@@ -46,7 +46,85 @@ BEGIN
   END IF;
 END;
 
+--Procedimiento para dar o quitar like
+CREATE OR REPLACE PROCEDURE P_LIKE
+  (
+    P_CODIGO_NOTICIA IN INTEGER,
+    P_CODIGO_USUARIO IN INTEGER,
+    P_CODIGO_RESPUESTA OUT INTEGER,
+    P_MENSAJE_RESPUESTA OUT VARCHAR2
+  )
+AS
+  V_CODIGO_NOTICIA INTEGER;
+BEGIN
+  SELECT COUNT(CODIGO_NOTICIA)
+  INTO V_CODIGO_NOTICIA
+  FROM TBL_REACCIONES_X_NOTICIAS
+  WHERE CODIGO_USUARIO = P_CODIGO_USUARIO
+  AND CODIGO_NOTICIA = P_CODIGO_NOTICIA;
 
+  IF (V_CODIGO_NOTICIA > 0) THEN
+    DELETE FROM TBL_REACCIONES_X_NOTICIAS 
+            WHERE CODIGO_NOTICIA =P_CODIGO_NOTICIA
+            AND CODIGO_USUARIO =P_CODIGO_USUARIO
+            AND CODIGO_REACCION =1;
+    COMMIT;
+    P_CODIGO_RESPUESTA:='0';
+    P_MENSAJE_RESPUESTA:='Has indicado que ya no te gusta una historia.';
+  ELSE
+    INSERT INTO TBL_REACCIONES_X_NOTICIAS (
+                CODIGO_NOTICIA,
+                CODIGO_USUARIO,
+                CODIGO_REACCION
+            ) VALUES (
+              P_CODIGO_NOTICIA,
+              P_CODIGO_USUARIO,
+              1
+            );
+    COMMIT;
+    P_CODIGO_RESPUESTA:='1';
+    P_MENSAJE_RESPUESTA:='Has indicado que te gusta una historia.';
+  END IF;
+  EXCEPTION
+    WHEN OTHERS THEN
+        P_CODIGO_RESPUESTA := '0';
+        P_MENSAJE_RESPUESTA := 'Ocurrio un error.'||sqlerrm||', '||sqlcode;
+        ROLLBACK;
+END;
+/
+
+--Procedimiento para eliminar interés
+CREATE OR REPLACE PROCEDURE P_ELIMINAR_INTERES
+    (
+        P_CODIGO_USUARIO IN INTEGER,
+        P_CODIGO_INTERES IN INTEGER,
+        P_CODIGO_RESP OUT INTEGER,
+        P_MENSAJE_RESP OUT VARCHAR2
+    )
+AS
+    V_VERIFICADOR INTEGER;
+BEGIN
+    SELECT COUNT(1)
+    INTO V_VERIFICADOR
+    FROM TBL_INTERESES_X_USUARIO
+    WHERE P_CODIGO_INTERES = P_CODIGO_INTERES
+    AND CODIGO_USUARIO = P_CODIGO_USUARIO;
+
+    IF (V_VERIFICADOR>0) THEN
+       DELETE FROM tbl_intereses_x_usuario
+        WHERE codigo_usuario = P_CODIGO_USUARIO
+        AND codigo_categoria_interes = P_CODIGO_INTERES;
+        COMMIT;
+        P_CODIGO_RESP:=1;
+        P_MENSAJE_RESP:= 'Interés eliminado exitosamente.';
+    ELSE
+        P_CODIGO_RESP:=0;
+        P_MENSAJE_RESP:= 'No puedes eliminar un interés que no sigues.';
+    END IF;
+
+
+END;
+/
 
 
 

@@ -56,7 +56,7 @@ switch ($_POST["codigo"]) {
 			      UPPER(C.NOMBRE_REVISTA) AS NOMBRE_REVISTA,
 			      C.CODIGO_REVISTA,
 			      B.CODIGO_NOTICIA,
-			      B.AUTOR_NOTICIA,
+			      INITCAP(B.AUTOR_NOTICIA) AS AUTOR_NOTICIA,
 			      B.TITULO_NOTICIA,
 			      B.DESCRIPCION_NOTICIA,
 			      B.URL_PORTADA_NOTI,
@@ -79,6 +79,7 @@ switch ($_POST["codigo"]) {
 			WHERE D.CODIGO_ESTADO_USUARIO = 1
 			ORDER BY FECHA_PUBLICACION DESC";
 			$resultadoNoticias = $conexion->ejecutarInstruccion($sql);
+			
 		?>
 		  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xl-12" style="text-align: center;padding-bottom: 40px;padding-top: 40px; width: 100%;">
 		     <h2>NOTICIAS DE PORTADA</h2>
@@ -106,7 +107,7 @@ switch ($_POST["codigo"]) {
 			      UPPER(C.NOMBRE_REVISTA) AS NOMBRE_REVISTA,
 			      C.CODIGO_REVISTA,
 			      B.CODIGO_NOTICIA,
-			      B.AUTOR_NOTICIA,
+			      INITCAP(B.AUTOR_NOTICIA) AS AUTOR_NOTICIA,
 			      B.TITULO_NOTICIA,
 			      B.DESCRIPCION_NOTICIA,
 			      B.URL_PORTADA_NOTI,
@@ -140,7 +141,7 @@ switch ($_POST["codigo"]) {
 	?>
 		  <div class="col-lg-12 col-md-12" style="text-align: center;padding-bottom: 40px;padding-top: 40px;">
 	        <h2><?php echo ($categoria['CATEGORIA']); ?></h2>
-	        <button onclick="eliminarInteres(<?php echo $_POST["codigo"]; ?>,<?php echo $codigoUsuario; ?>);" class="btn btn-default btn-seguir" role="button" style="border:none;">
+	        <button onclick="eliminarInteres(<?php echo $_POST["codigo"]; ?>);" class="btn btn-default btn-seguir" role="button" style="border:none;">
 	        	<i class="fa fa-times" aria-hidden="true"></i>
 	        </button>
 		  </div>
@@ -169,6 +170,12 @@ switch ($_POST["codigo"]) {
 
 			<?php
 			while($rowNoticia = $conexion->obtenerFila($resultadoNoticias)){
+				$sqlLikes="SELECT COUNT(1) AS CANT_REGITROS
+						FROM TBL_REACCIONES_X_NOTICIAS
+						WHERE CODIGO_USUARIO=".$codigoUsuario."
+						AND CODIGO_NOTICIA=".$rowNoticia['CODIGO_NOTICIA'];
+				$resultadoCantRegis = $conexion->ejecutarInstruccion($sqlLikes);
+				$resultCantR = $conexion->obtenerFila($resultadoCantRegis);
 				?>		  
 				<div class="card noti-card 
 							<?php   
@@ -183,7 +190,16 @@ switch ($_POST["codigo"]) {
 				      		<i class="fa fa-plus" aria-hidden="true"></i>
 				      	</button><br>
 				      	<button onclick="darLike(<?php echo $rowNoticia['CODIGO_NOTICIA'];?>)" type="button" class="btn btn-default btn-circle" data-container="body" data-toggle="popover" data-placement="left" data-content="Me gusta" data-trigger="hover">
-				      		<i class="fa fa-heart-o" aria-hidden="true"></i>
+				      		<i class="fa <?php 
+				      					if($resultCantR['CANT_REGITROS']==0){
+				      						echo 'fa-heart-o';
+				      					}else{
+				      						echo 'fa-heart';
+				      					} ?>
+				      		" aria-hidden="true" id="<?php echo 'like_'.$rowNoticia['CODIGO_NOTICIA'];?>" style="<?php 
+				      					if($resultCantR['CANT_REGITROS']!=0){
+				      						echo 'color:rgb(200, 35, 51);';
+				      					} ?>"></i>
 				      	</button><br>
 				      	<!--<button type="button" class="btn btn-default btn-circle" data-container="body" data-toggle="popover" data-placement="left" data-content="Compartir" data-trigger="hover">
 				      		<i class="fa fa-envelope-o" aria-hidden="true"></i>
@@ -234,7 +250,7 @@ switch ($_POST["codigo"]) {
 						      </div> 
 						</div>
 				   </div>  
-				  <img class="card-img-top" src='<?php echo $rowNoticia["URL_PORTADA_NOTI"]; ?>' alt="Card image cap">
+				  <img class="card-img-top" src='<?php echo $rowNoticia["URL_PORTADA_NOTI"]; ?>'>
 				  <div class="card-body" style="text-align: justify;">
 				    <h5 class="card-title" style="text-align: left;"><?php echo ($rowNoticia["TITULO_NOTICIA"]);?></h5>
 				    <span class="noti-card-autor">
@@ -244,11 +260,11 @@ switch ($_POST["codigo"]) {
 				    	<?php echo ($rowNoticia["DESCRIPCION_NOTICIA"]);?>
 				    </p>
 				    <p>
-			        	<?php echo $rowNoticia["CANT_LIKES"];?>
+			        	<span id="<?php echo 'likeContador_'.$rowNoticia['CODIGO_NOTICIA'];?>"><?php echo $rowNoticia["CANT_LIKES"];?></span>
 			        	<i class="fa fa-heart" aria-hidden="true" style="font-size: 13px;padding-right: 8px;color: red;">
 				        </i>
-				        <?php echo $rowNoticia["CANT_COMENTARIOS"];?>
-				        <i class="fa fa-comment-o" aria-hidden="true" style="font-size: 13px;padding-right: 8px;"></i>
+				        <span id="<?php echo 'comentariosCont_'.$rowNoticia['CODIGO_NOTICIA'];?>"><?php echo $rowNoticia["CANT_COMENTARIOS"];?></span>
+				        <i class="fa fa-comment-o" aria-hidden="true" style="font-size: 13px;padding-right: 8px;" ></i>
 			        	<a class="btn btn-default" role="button" style="cursor: pointer;">
 				        	<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 13px;padding-right: 8px;">				        		
 				        	</i>

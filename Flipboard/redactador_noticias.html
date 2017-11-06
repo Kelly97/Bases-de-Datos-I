@@ -23,8 +23,10 @@
     FIN SUBIR IMAGEN -->
 
 
-    <!-- EDITOR DE TEXTO -->
+    <!-- EDITOR DE TEXTO --> 
     <link href="css/froala_editor.pkgd.css" rel="stylesheet" type="text/css">
+    <link href="css/froala_style.min.css" rel="stylesheet" type="text/css">
+    <!-- FIN EDITOR DE TEXTO --> 
     
   </head>
   
@@ -100,7 +102,7 @@
 
                 <!-- Inicio editor texto -->
                 <label><strong><h4>Contenido de la Noticia:</h4></strong></label>
-                <div id="edit"></div><br><hr>
+                <div id="froala-editor"></div><br><hr>
                 <!-- FIN Inicio editor texto -->
 
     		    <div style="text-align: right;">
@@ -117,16 +119,20 @@
       <script src="js/bootstrap.min.js"></script>
       <script src="js/redactador.js"></script> 
       <script src="js/slick.min.js"></script>
-      <!--FIN Scripts-->
-        <script src="js/froala_editor.min.js"></script>
-        <script src="js/froala_editor.pkgd.min.js"></script>
-        <script>
+      
+       
+ 
+      <script src="js/froala_editor.pkgd.min.js"></script>
+      <script>
             $(function() {
-                $('#edit').froalaEditor()
+                $('#froala-editor').froalaEditor({
+                      toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '|', 'fontFamily', 'fontSize', 'color', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', '-', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', '|', 'insertHR', 'selectAll', 'clearFormatting', '|', 'print', 'help', 'html', '|', 'undo', 'redo'],
+                      pluginsEnabled: null
+                    })
             });
-        </script>
+      </script>
 
-
+    <!--FIN Scripts-->
 
   </body>
 </html>
