@@ -1,4 +1,21 @@
 
+<?php
+//Buscar los scripts para la base en la carpeta con el mismo nombre
+include_once("class/class-conexion.php");
+$conexion = new Conexion();
+$codigoUsuario = 1;//SESION
+$sql = "  SELECT  CODIGO_TIPO_USUARIO,
+                  CODIGO_ESTADO_USUARIO,
+                  substr(NOMBRE_USUARIO,1,1) AS INICIAL,
+                  NOMBRE_USUARIO,
+                  ALIAS_USUARIO,
+                  URL_FOTO_PERFIL,
+                  DESCRIPCION
+          FROM TBL_USUARIOS
+          WHERE CODIGO_USUARIO =".$codigoUsuario;
+$resultadoUsuario = $conexion->ejecutarInstruccion($sql);
+$rowUsuario = $conexion->obtenerFila($resultadoUsuario);
+?>
 
 
 <!-- menu de cierre de sesion y configuracion -->
@@ -34,11 +51,44 @@
       <div>     
         <table>
           <tr>
-             <td colspan="2">
-               <div class="circle-badge" style="background:#3E3F41">
-                      <strong style="cursor: pointer;" >N</strong>
+
+<center><input type="file"  id="files" onchange="upload_image();" style="display: none;"></center>
+<div class="upload-msg"></div><!--Para mostrar la respuesta del archivo llamado via ajax -->
+
+     <!-- <input type="file" name="files" id="files" style="display: none;">
+       <div id="div-foto"></div>
+           -->
+           
+          <div id="btn-perfil" class="nav-item" data-toggle="popover" data-placement="left" data-content="Foto Perfil" data-trigger="hover">
+            <a class="nav-item"  onclick="cambiarFoto()" >
+              <div style="padding-top: 5px;">
+             
+                <div id="imagen_actual" class="miniatura-usuario" style="margin: auto;background-image: url('<?php echo $rowUsuario["URL_FOTO_PERFIL"]; ?>');width: 120px;height: 120px;padding: 0px; display" >
+
+
+                      <?php
+                      if(is_null($rowUsuario["URL_FOTO_PERFIL"])){
+                        ?>
+                          <table style="height: 100%;width: 100%;font-size: 20px;font-weight: bold;">
+                            <tbody>
+                              <tr>
+                                <td class="align-middle text-center">
+                                  <?php echo ($rowUsuario['INICIAL']); ?>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>   
+                      <?php
+                      }
+                      ?>
                 </div>
-             </td> 
+              </div>
+            </a>
+          </div>
+
+
+
+
           </tr>
            <tr>
               <td >
@@ -217,3 +267,32 @@
     </div>
   </div>
   
+     
+        <script>
+              function archivo(evt) {
+                  var files = evt.target.files; // FileList object
+             
+                  // Obtenemos la imagen del campo "file".
+                  for (var i = 0, f; f = files[i]; i++) {
+                    //Solo admitimos imágenes.
+                    if (!f.type.match('image.*')) {
+                        continue;
+                    }
+             
+                    var reader = new FileReader();
+             
+                    reader.onload = (function(theFile) {
+                        return function(e) {
+                          // Insertamos la imagen
+
+               document.getElementById("imagen_actual").innerHTML = ['<img class="miniatura-usuario" src="', e.target.result,'" style="margin: auto; width: 120px;height: 120px;padding: 0px; object-fit: cover; display"  title="' , escape(theFile.name), '"/>'].join('');
+                        };
+                    })(f);
+             
+                    reader.readAsDataURL(f);
+                  }
+              }
+             
+              document.getElementById('files').addEventListener('change', archivo, false);
+
+      </script>
