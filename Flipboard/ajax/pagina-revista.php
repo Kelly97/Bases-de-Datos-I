@@ -50,7 +50,7 @@ $cantidadColaboradores = $conexion->obtenerArregloAsociativo($resultado3)['NUMBE
 				</tr>
 				<tr>
 					<td>
-				  	<div class="row">
+				  	<div class="row" style="width: <?php echo ($cantidadColaboradores+2)*45; ?>px;height: 100%;">
 				  		<!--Miniatura de la imagen-->
 	                	<div class="miniatura-usuario" style="margin: auto;background-image: url('<?php echo $datosRevista["URL_FOTO_PERFIL"]; ?>');width: 40px;height: 40px;padding: 0px;">
 	                		<?php
@@ -108,6 +108,7 @@ $cantidadColaboradores = $conexion->obtenerArregloAsociativo($resultado3)['NUMBE
 				  			<i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>
 				  		</button>
 				  	</div>
+				  	
 				  	<div>
 				  		<t>Por <?php echo $strAutores; ?></t>
 				  	</div>
