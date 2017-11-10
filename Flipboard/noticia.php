@@ -1,41 +1,42 @@
 <?php
-//Buscar los scripts para la base en la carpeta con el mismo nombre
-include_once("class/class-conexion.php");
-$conexion = new Conexion();
-$codigoUsuario = 1;//SESION
-$sql = "  SELECT  CODIGO_TIPO_USUARIO,
-                  CODIGO_ESTADO_USUARIO,
-                  substr(NOMBRE_USUARIO,1,1) AS INICIAL,
-                  NOMBRE_USUARIO,
-                  ALIAS_USUARIO,
-                  URL_FOTO_PERFIL,
-                  DESCRIPCION
-          FROM TBL_USUARIOS
-          WHERE CODIGO_USUARIO =".$codigoUsuario;
-$resultadoUsuario = $conexion->ejecutarInstruccion($sql);
-$rowUsuario = $conexion->obtenerFila($resultadoUsuario);
+	//Buscar los scripts para la base en la carpeta con el mismo nombre
+	include_once("class/class-conexion.php");
+	$conexion = new Conexion();
+	$codigoUsuario = 1;//SESION
+	$codigoNoticia = $_GET["codigoNoticia"];
+	$sql = "  SELECT  CODIGO_TIPO_USUARIO,
+	                  CODIGO_ESTADO_USUARIO,
+	                  substr(NOMBRE_USUARIO,1,1) AS INICIAL,
+	                  NOMBRE_USUARIO,
+	                  ALIAS_USUARIO,
+	                  URL_FOTO_PERFIL,
+	                  DESCRIPCION
+	          FROM TBL_USUARIOS
+	          WHERE CODIGO_USUARIO =".$codigoUsuario;
+	$resultadoUsuario = $conexion->ejecutarInstruccion($sql);
+	$rowUsuario = $conexion->obtenerFila($resultadoUsuario);
 ?>
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Flipboard</title>
-    <link rel="icon" href="images/favicon.jpg">
-    <link href="css/bootstrap.min.css" rel="stylesheet">    
-    <link href="css/font-awesome.css" rel="stylesheet">    
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/slick-theme.css">
-    <link rel="stylesheet" href="css/jquery.webui-popover.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/perfil.css">
-    <link rel="stylesheet" href="css/text-scrolling.css">
-  </head>
-  
-  <body> 
-    <audio id="player" src="audio/notification.mp3"> 
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>Noticia</title>
+	    <link rel="icon" href="images/favicon.jpg">
+	    <link href="css/bootstrap.min.css" rel="stylesheet">    
+	    <link href="css/font-awesome.css" rel="stylesheet">    
+	    <link rel="stylesheet" href="css/slick.css">
+	    <link rel="stylesheet" href="css/slick-theme.css">
+	    <link rel="stylesheet" href="css/jquery.webui-popover.css">
+	    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	    <link href="css/index.css" rel="stylesheet">
+	    <link rel="stylesheet" href="css/perfil.css">
+	    <link rel="stylesheet" href="css/text-scrolling.css">
+	</head>
+	<body>
+    
+		<audio id="player" src="audio/notification.mp3"> 
     </audio>
     <nav id="nav_flipboard" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <a class="navbar-brand" href="#">
@@ -136,17 +137,30 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
     </nav>
     
 
-    <div class="container-fluid" style="">  
+    <div class="container-fluid" style="">
       <div id="contenido-principal" class="col-lg-12" style="padding: 0px;">
-        
+          <input type="radio" id="codigoNoticia" value="<?php echo $codigoNoticia; ?>" checked>
       </div>    
     </div>
 
     <div id="alerta_inferior" class="alert alerta-inferior" role="alert">      
       
     </div>
+		<!--
+		<div class="botones-noticia-general">
+	      	<button type="button" class="btn btn-danger btn-circle" data-container="body" data-toggle="popover" data-placement="left" data-content="Flipear" data-trigger="hover">
+	      		<i class="fa fa-plus" aria-hidden="true"></i>
+	      	</button><br>
+	      	<button type="button" class="btn btn-default btn-circle" data-container="body" data-toggle="popover" data-placement="left" data-content="Me gusta" data-trigger="hover">
+	      		<i class="fa fa-heart-o" aria-hidden="true"></i>
+	      	</button><br>
+	      	<button type="button" class="btn btn-default btn-circle" data-container="body" data-toggle="popover" data-placement="left" data-content="Compartir" data-trigger="hover">
+	      		<i class="fa fa-envelope-o" aria-hidden="true"></i>
+	      	</button>
+	    </div>
+		-->
 
-    <!--Modals-->
+	<!--Modals-->
 
     <!-- Modal 001: Elige un interés -->
     <div class="modal fade" id="modal-001" tabindex="-1" role="dialog" aria-hidden="true"><!--/.modal001-->
@@ -210,7 +224,7 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
     <!--FIN Modal 002-->
 
     <!--Modal 003: Agregar Revista -->
-    <div class="modal fade" id="modal-003" tabindex="-1" role="dialog" aria-hidden="true"><!--/.modal003-->
+    <div class="modal fade" id="modal-003" tabindex="-1" role="dialog" aria-hidden="true" style="background-color: rgba(0,0,0,0.5);"><!--/.modal003-->
       <div class="modal-dialog" role="document"><!--/.modal-dialog-->
         <div class="modal-content"><!--/.modal-content-->
           <div class="modal-header" style="text-align: center;">
@@ -261,7 +275,7 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
     </div>
     <!--FIN Modals-->
     
-    <!--Scripts-->
+	 <!--Scripts-->
     <script src="js/jquery-3.2.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -272,14 +286,10 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
     <script src="js/imagesloaded.pkgd.js"></script>    
     <script src="js/isotope.pkgd.min.js"></script>
     <script src="js/packery-mode.pkgd.js"></script>
-    <script src="js/index.js"></script>
-    <script src="js/tarjetasNoticias.js"></script>
     <script src="js/intereses.js"></script>
-    <script src="js/agregar-revista.js"></script>    
+    <script src="js/agregar-revista.js"></script> 
+    <script src="js/noticia.js"></script> 
     <!--FIN Scripts-->
 
-  </body>
+	</body>
 </html>
-<?php
-$conexion->cerrarConexion();
-?>
