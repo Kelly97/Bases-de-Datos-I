@@ -19,8 +19,7 @@ function agregarInteres(codigoInteres, codigoUsuario){
         url : "ajax/intereses.php",
         data: data,
         method: "POST",
-        success: function(datos){       
-            //alert(datos);
+        success: function(datos){
             obtenerIntereses(codigoUsuario);
             $('#modal-001').modal('hide');
             actualizarBarraIntereses(codigoInteres);

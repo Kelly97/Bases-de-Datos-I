@@ -12,7 +12,6 @@
 			$nombre_revista = $_POST["nombre_revista"];
 			$descripcion = $_POST["descripcion"];
 			$codigo_tipo_revista = $_POST["codigo_tipo_revista"];
-			$fecha_creacion = $_POST["fecha_creacion"];
 			$resultado = 0;
 
 			$sql="
@@ -21,7 +20,7 @@
 						               :p_NOMBRE_REVISTA,
 						               :p_DESCRIPCION,
 						               :p_CODIGO_TIPO_REVISTA,
-						               TO_DATE(:p_FECHA_CREACION, 'YYYY-MM-DD'),
+						               SYSDATE,
 						               :p_RESULTADO);
 				END;
 			    ";
@@ -31,13 +30,12 @@
 			oci_bind_by_name($procedure, ':p_NOMBRE_REVISTA', $nombre_revista,300);	
 			oci_bind_by_name($procedure, ':p_DESCRIPCION', $descripcion,300);
 			oci_bind_by_name($procedure, ':p_CODIGO_TIPO_REVISTA', $codigo_tipo_revista);
-			oci_bind_by_name($procedure, ':p_FECHA_CREACION', $fecha_creacion);	
 			oci_bind_by_name($procedure, ':p_RESULTADO', $resultado);
 			oci_execute($procedure);
 			if($resultado == 0){
 				echo "Ocurrió un error durante la inserción";
 			}else{
-				echo "Insercion de la revista completada";
+				echo "Inserción de la revista completada";
 			}
 			oci_free_statement($procedure);
 			oci_close($conn);

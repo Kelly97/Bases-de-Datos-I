@@ -3,16 +3,14 @@ function agregarRevista(codigo_usuario){
 			"codigo_usuario="+codigo_usuario+"&"+
 			"nombre_revista="+$("#nombre-revista").val()+"&"+
 			"descripcion="+$("#descripcion").val()+"&"+
-			"codigo_tipo_revista="+$("#privacidad").val()+"&"+
-			"fecha_creacion="+$("#fecha_creacion").val();
+			"codigo_tipo_revista="+$("#privacidad").val();
 
 	$.ajax({
 		url : "ajax/accion-agregar-revista.php",
 		data: data,
 		method: "POST",
 		success: function(datos){
-			alert(datos);
-            $('#alerta_inferior').html('datos');
+            $('#alerta_inferior').html(datos);
             $('#alerta_inferior').show();
             setTimeout(ocultarAlert,3000);
 		}
