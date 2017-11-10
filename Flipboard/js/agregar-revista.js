@@ -12,7 +12,7 @@ function agregarRevista(codigo_usuario){
 		method: "POST",
 		success: function(datos){
 			alert(datos);
-            $('#alerta_inferior').html('Revista creada exitosamente.');
+            $('#alerta_inferior').html('datos');
             $('#alerta_inferior').show();
             setTimeout(ocultarAlert,3000);
 		}

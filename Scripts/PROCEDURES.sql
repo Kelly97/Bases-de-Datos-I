@@ -127,7 +127,41 @@ END;
 /
 
 
-
+--Procedimiento para Insertar Revista
+CREATE OR REPLACE PROCEDURE P_INSERTAR_REVISTA (
+                                                p_CODIGO_USUARIO IN INTEGER,
+                                                p_NOMBRE_REVISTA IN VARCHAR2,
+                                                p_DESCRIPCION IN VARCHAR2,
+                                                p_CODIGO_TIPO_REVISTA IN INTEGER,
+                                                p_FECHA_CREACION IN DATE,
+                                                p_RESULTADO OUT INTEGER)
+AS
+      V_CODIGO_USUARIO INTEGER := p_CODIGO_USUARIO;
+      V_NOMBRE_REVISTA VARCHAR(300) := p_NOMBRE_REVISTA;
+      V_DESCRIPCION VARCHAR2(300) := p_DESCRIPCION;
+      V_CODIGO_TIPO_REVISTA INTEGER := p_CODIGO_TIPO_REVISTA;
+      V_FECHA_CREACION DATE := p_FECHA_CREACION;
+BEGIN
+      INSERT INTO TBL_REVISTAS (CODIGO_USUARIO,
+                              NOMBRE_REVISTA,
+                              DESCRIPCION,
+                              CODIGO_TIPO_REVISTA,
+                              FECHA_DE_CREACION,
+                              URL_PORTADA)
+      VALUES (V_CODIGO_USUARIO,
+              V_NOMBRE_REVISTA,
+              V_DESCRIPCION,
+              V_CODIGO_TIPO_REVISTA,
+              V_FECHA_CREACION,
+              'images/revista.jpg'
+             );
+      COMMIT;
+      p_RESULTADO := 1;
+EXCEPTION
+  WHEN OTHERS THEN
+    p_RESULTADO := 0;
+END P_INSERTAR_REVISTA;
+/
 
 
 

@@ -2,31 +2,45 @@
 	switch($_POST["codigo"]){
 		case '1':
 			/*Agregar una revista*/
-			include_once("../class/class-conexion.php");
-			$conexion = new Conexion();
+			$conn = oci_connect('DB_FLIPBOARD', 'oracle', 'localhost/XE','AL32UTF8');
+			if (!$conn) {
+			    $e = oci_error();
+			    trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+			}
+
 			$codigo_usuario = $_POST["codigo_usuario"];
 			$nombre_revista = $_POST["nombre_revista"];
 			$descripcion = $_POST["descripcion"];
 			$codigo_tipo_revista = $_POST["codigo_tipo_revista"];
 			$fecha_creacion = $_POST["fecha_creacion"];
+			$resultado = 0;
 
-			$sql = "INSERT INTO TBL_REVISTAS (CODIGO_USUARIO,
-											  NOMBRE_REVISTA,
-											  DESCRIPCION,
-											  CODIGO_TIPO_REVISTA,
-											  FECHA_DE_CREACION,
-											  URL_PORTADA)
-					VALUES (".$codigo_usuario.",
-							".$nombre_revista.",
-							".$descripcion.",
-							".$codigo_tipo_revista.",
-							TO_DATE(".$fecha_creacion.", 'YYYY-MM-DD'),
-							'http://static.t13.cl/images/sizes/1200x675/1498132806-96591486gettyimages-503387922.jpg'
-							)";
+			$sql="
+			  	BEGIN
+					P_INSERTAR_REVISTA(:p_CODIGO_USUARIO,
+						               :p_NOMBRE_REVISTA,
+						               :p_DESCRIPCION,
+						               :p_CODIGO_TIPO_REVISTA,
+						               TO_DATE(:p_FECHA_CREACION, 'YYYY-MM-DD'),
+						               :p_RESULTADO);
+				END;
+			    ";
 
-			$resultado = $conexion->ejecutarInstruccion($sql);
-			$conexion->commit();
-			echo $resultado;
+			$procedure = oci_parse($conn, $sql);
+			oci_bind_by_name($procedure, ':p_CODIGO_USUARIO', $codigo_usuario);
+			oci_bind_by_name($procedure, ':p_NOMBRE_REVISTA', $nombre_revista,300);	
+			oci_bind_by_name($procedure, ':p_DESCRIPCION', $descripcion,300);
+			oci_bind_by_name($procedure, ':p_CODIGO_TIPO_REVISTA', $codigo_tipo_revista);
+			oci_bind_by_name($procedure, ':p_FECHA_CREACION', $fecha_creacion);	
+			oci_bind_by_name($procedure, ':p_RESULTADO', $resultado);
+			oci_execute($procedure);
+			if($resultado == 0){
+				echo "Ocurrió un error durante la inserción";
+			}else{
+				echo "Insercion de la revista completada";
+			}
+			oci_free_statement($procedure);
+			oci_close($conn);
 			break;
 
 		case '2':
