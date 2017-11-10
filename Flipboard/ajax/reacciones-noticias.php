@@ -25,9 +25,9 @@ switch ($_POST["codigo"]) {
 					";
 			$procedure = oci_parse($conn, $sql);
 			oci_bind_by_name($procedure, ':codigoNoticia', $codigoNoticia);//las variables de entrada, deben de haber sido declaradas previamente (in)
-			oci_bind_by_name($procedure, ':codigoUsuario', $codigoUsuario);
-			oci_bind_by_name($procedure, ':codigoResultado', $codigoRespuesta , 40);//No se deben declarar previamente las variables de salida (out)
-			oci_bind_by_name($procedure, ':mensajeResultado', $mensajeRespuesta , 200);
+			oci_bind_by_name($procedure, ':codigoUsuario', $codigoUsuario);//(in)
+			oci_bind_by_name($procedure, ':codigoResultado', $codigoRespuesta , 40);//No es necesario declarar previamente las variables de salida (out)
+			oci_bind_by_name($procedure, ':mensajeResultado', $mensajeRespuesta , 200);//(out)
 			oci_execute($procedure);			
 			$resultado['codigoResp'] = $codigoRespuesta;
 			$resultado['mensajeResp'] = $mensajeRespuesta;	
