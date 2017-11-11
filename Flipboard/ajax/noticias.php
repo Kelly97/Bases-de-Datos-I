@@ -208,23 +208,26 @@ switch ($_POST["codigo"]) {
 					<div class="container" style="margin-bottom: 10px;">
 						<div class="row">
 						      <div class="col-lg-1 col-md-2 col-sm-2 col-2 col-xl-1" style="padding:0px;">
-						      	<div class="miniatura-usuario" style="margin: auto;background-image: url('<?php echo $rowNoticia["URL_FOTO_PERFIL"]; ?>');width: 40px;height: 40px;padding: 0px;">
-				                		<?php
-				                		if(is_null($rowNoticia["URL_FOTO_PERFIL"])){
-				                			?>
-				                				<table style="height: 100%;width: 100%;font-size: 20px;font-weight: bold;">
-													<tbody>
-														<tr>
-															<td class="align-middle text-center">
-																<?php echo ($rowNoticia['INICIAL_USUARIO_PUBLICA']); ?>
-															</td>
-														</tr>
-													</tbody>
-												</table>
-				                			<?php
-				                		}
-				                		?>								
-								</div>
+						      	<label>
+						      		
+							      	<div class="miniatura-usuario" style="margin: auto;background-image: url('<?php echo $rowNoticia["URL_FOTO_PERFIL"]; ?>');width: 40px;height: 40px;padding: 0px;">
+					                		<?php
+					                		if(is_null($rowNoticia["URL_FOTO_PERFIL"])){
+					                			?>
+					                				<table style="height: 100%;width: 100%;font-size: 20px;font-weight: bold;">
+														<tbody>
+															<tr>
+																<td class="align-middle text-center">
+																	<?php echo ($rowNoticia['INICIAL_USUARIO_PUBLICA']); ?>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+					                			<?php
+					                		}
+					                		?>								
+									</div>
+								</label>
 						      </div>
 							      
 						      <div class="col-lg-11 col-md-10 col-sm-10 col-10 col-xl-11" >
