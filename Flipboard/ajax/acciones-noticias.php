@@ -38,5 +38,9 @@
 			}
 			echo $resultado;
 			break;
+
+		case 2:
+			
+			break;
 	}
 ?>

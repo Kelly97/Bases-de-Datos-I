@@ -128,8 +128,7 @@ END;
 
 
 --Procedimiento para Insertar Revista
-CREATE OR REPLACE PROCEDURE P_INSERTAR_REVISTA (
-                                                p_CODIGO_USUARIO IN INTEGER,
+CREATE OR REPLACE PROCEDURE P_INSERTAR_REVISTA (p_CODIGO_USUARIO IN INTEGER,
                                                 p_NOMBRE_REVISTA IN VARCHAR2,
                                                 p_DESCRIPCION IN VARCHAR2,
                                                 p_CODIGO_TIPO_REVISTA IN INTEGER,
@@ -163,7 +162,52 @@ EXCEPTION
 END P_INSERTAR_REVISTA;
 /
 
+--Procedimiento para Insertar Noticia
+CREATE OR REPLACE PROCEDURE P_INSERTAR_NOTICIA(p_CODIGO_USUARIO IN INTEGER,
+                                               p_CODIGO_REVISTA IN INTEGER,
+                                               p_CODIGO_CATEGORIA IN INTEGER,
+                                               p_AUTOR_NOTICIA IN VARCHAR2,
+                                               p_TITULO_NOTICIA IN VARCHAR2,
+                                               p_DESCRIPCION_NOTICIA IN VARCHAR2,
+                                               p_CONTENIDO_NOTICIA IN CLOB,
+                                               p_URL_PORTADA IN VARCHAR2,
+                                               p_RESULTADO OUT INTEGER)
+AS
+  V_CODIGO_USUARIO INTEGER := p_CODIGO_USUARIO;
+  V_CODIGO_REVISTA INTEGER := p_CODIGO_REVISTA;
+  V_CODIGO_CATEGORIA INTEGER := p_CODIGO_CATEGORIA;
+  V_AUTOR_NOTICIA VARCHAR2(200) := p_AUTOR_NOTICIA;
+  V_TITULO_NOTICIA VARCHAR2(300) := p_TITULO_NOTICIA;
+  V_DESCRIPCION_NOTICIA VARCHAR2(300) := p_DESCRIPCION_NOTICIA;
+  V_CONTENIDO_NOTICIA CLOB := p_CONTENIDO_NOTICIA;
+  V_URL_PORTADA VARCHAR2(200) := p_URL_PORTADA;
 
+BEGIN
+  INSERT INTO TBL_NOTICIAS(CODIGO_USUARIO,
+                           CODIGO_REVISTA,
+                           CODIGO_CATEGORIA,
+                           AUTOR_NOTICIA,
+                           TITULO_NOTICIA,
+                           DESCRIPCION_NOTICIA,
+                           CONTENIDO_NOTICIA,
+                           FECHA_PUBLICACION,
+                           URL_PORTADA_NOTI)
+      VALUES (V_CODIGO_USUARIO ,
+              V_CODIGO_REVISTA ,
+              V_CODIGO_CATEGORIA ,
+              V_AUTOR_NOTICIA,
+              V_TITULO_NOTICIA,
+              V_DESCRIPCION_NOTICIA,
+              V_CONTENIDO_NOTICIA,
+              SYSDATE,
+              V_URL_PORTADA);
+  COMMIT;
+  p_RESULTADO := 1;
+EXCEPTION 
+  WHEN OTHERS THEN
+  p_RESULTADO := 0;
+END;
+/
 
 
 
