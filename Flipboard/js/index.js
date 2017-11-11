@@ -107,6 +107,7 @@ $(window).resize(function(){
 });
 
 
+
 function buscar(){
 	var buscar = $('#txt-buscar').val();
 	data = "buscar="+buscar;
@@ -155,6 +156,26 @@ function cargarNoticias(codigo){
 			$(window).resize(function(){
 				isotopeNotiCard();
 			});
+        }        
+    });	
+}
+
+function cargarContenidoNoticia(codigo){
+	data = "codigoNoticia="+codigo+"&"+
+		   "codigo="+1;
+	$.ajax({       
+        url : "ajax/acciones-noticias.php",
+        data: data,
+        method: "POST",
+        beforeSend: function() {
+        	$('#contenido-principal').html('<div id="loading"><div id="loading-center-absolute"><div class="object" id="object_one"></div><div class="object" id="object_two"></div><div class="object" id="object_three"></div><div class="object" id="object_four"></div></div>');         
+        },
+        success: function(datos){       
+            $('#contenido-principal').html(datos);
+
+            $(function () {
+			  $('[data-toggle="popover"]').popover();
+			})
         }        
     });	
 }

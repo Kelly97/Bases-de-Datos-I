@@ -253,16 +253,18 @@ switch ($_POST["codigo"]) {
 						      </div> 
 						</div>
 				   </div>  
-				  <img class="card-img-top" src='<?php echo $rowNoticia["URL_PORTADA_NOTI"]; ?>'>
+				  <img class="card-img-top" src='<?php echo $rowNoticia["URL_PORTADA_NOTI"]; ?>' style="cursor: pointer;" onclick="cargarContenidoNoticia(<?php echo ($rowNoticia['CODIGO_NOTICIA']);?>);" >
 				  <div class="card-body" style="text-align: justify;">
-				    <a href="http://localhost:8080/Flipboard/Flipboard/noticia.php?codigoNoticia=<?php echo ($rowNoticia["CODIGO_NOTICIA"]); ?>"><h5 class="card-title" style="text-align: left;"><?php echo ($rowNoticia["TITULO_NOTICIA"]);?></h5></a>
-				    <span class="noti-card-autor">
-				    	<?php echo ($rowNoticia["USUARIO_PUBLICA"])." · ".($rowNoticia["AUTOR_NOTICIA"]);?>
-				    </span>
-				    <p class="card-text">
-				    	<?php echo ($rowNoticia["DESCRIPCION_NOTICIA"]);?>
-				    </p>
-				    <p>
+				  	<div style="cursor: pointer;" onclick="cargarContenidoNoticia(<?php echo ($rowNoticia['CODIGO_NOTICIA']);?>);" >
+				  		<a><h5 class="card-title" style="text-align: left;"><?php echo ($rowNoticia["TITULO_NOTICIA"]);?></h5></a>
+					    <span class="noti-card-autor">
+					    	<?php echo ($rowNoticia["USUARIO_PUBLICA"])." · ".($rowNoticia["AUTOR_NOTICIA"]);?>
+					    </span>
+					    <p class="card-text">
+					    	<?php echo ($rowNoticia["DESCRIPCION_NOTICIA"]);?>
+					    </p>
+				  	</div>	<br>			    
+				    <div>
 			        	<span id="<?php echo 'likeContador_'.$rowNoticia['CODIGO_NOTICIA'];?>"><?php echo $rowNoticia["CANT_LIKES"];?></span>
 			        	<i class="fa fa-heart" aria-hidden="true" style="font-size: 13px;padding-right: 8px;color: red;">
 				        </i>
@@ -273,7 +275,7 @@ switch ($_POST["codigo"]) {
 				        	</i>
 				        	Añadir Comentario
 			        	</a>
-			        </p>
+			        </div>
 				  </div>
 				</div>
 			<?php 
