@@ -255,7 +255,7 @@ switch ($_POST["codigo"]) {
 				   </div>  
 				  <img class="card-img-top" src='<?php echo $rowNoticia["URL_PORTADA_NOTI"]; ?>'>
 				  <div class="card-body" style="text-align: justify;">
-				    <a href="http://localhost:8080/Flipboard/Flipboard/noticia.php?codigoNoticia=<?php echo ($rowNoticia["CODIGO_NOTICIA"]); ?>"><h5 class="card-title" style="text-align: left;"><?php echo ($rowNoticia["TITULO_NOTICIA"]);?></h5></a>
+				    <a href="noticia.php?codigoNoticia=<?php echo ($rowNoticia["CODIGO_NOTICIA"]); ?>"><h5 class="card-title" style="text-align: left;"><?php echo ($rowNoticia["TITULO_NOTICIA"]);?></h5></a>
 				    <span class="noti-card-autor">
 				    	<?php echo ($rowNoticia["USUARIO_PUBLICA"])." · ".($rowNoticia["AUTOR_NOTICIA"]);?>
 				    </span>

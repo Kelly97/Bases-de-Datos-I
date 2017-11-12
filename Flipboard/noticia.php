@@ -105,7 +105,7 @@
             </a>
           </li>
           <li class="nav-item" data-toggle="popover" data-placement="left" data-content="Redactar Noticia" data-trigger="hover">
-            <a class="nav-item" href="redactador_noticias.html" target="blank">
+            <a class="nav-item" href="redactador_noticias.php" target="blank">
               <i class="fa fa-newspaper-o fa-lg" aria-hidden="true"></i>
             </a>
           </li>

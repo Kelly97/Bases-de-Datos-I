@@ -54,62 +54,61 @@ switch ($_GET["accion"]) {
         $autor = $_POST["autor"];
         $titulo = $_POST["titulo"];
         $descripcion = $_POST["descripcion"];
-        $contenido = $_POST["content"];
+        $contenido = $_POST["contenido"];
         
         $resultado = 0;
 
         if(is_null($codigo_usuario)){
-            echo $resultado;
+            echo "Error: codigo_usuario";
             break;
         }
 
         if(is_null($codigo_revista)){
-            echo $resultado;
+            echo "Error: codigo_revista";
             break;
         }
 
         if(is_null($titulo)){
-            echo $resultado;
+            echo "Error: titulo";
             break;
         }
 
         if(is_null($autor)){
-            echo $resultado;
+            echo "Error: autor";
             break;
         }
 
         if(is_null($descripcion)){
-            echo $resultado;
+            echo "Error: descripcion";
             break;
         }
 
         if(is_null($contenido)){
-            echo $resultado;
+            echo "Error: contenido";
             break;
         }
         
-        if(is_null($_POST["file"])){
-           $url_portada = $_POST["fileURL"];
+        if(empty($_POST["file"])){
+            $url_portada = $_POST["fileURL"];
         } 
-        elseif (is_null(_POST["fileURL"])) {
-           $url_portada = $_POST["file"];
+        elseif (empty($_POST["fileURL"])) {
+            $url_portada = $_POST["file"];
         }
         else{
-            echo $resultado;
+            echo "Error: file";
             break;
         }
-        $sql="
-            BEGIN
-                  P_INSERTAR_NOTICIA(:p_CODIGO_USUARIO 
-                                     :p_CODIGO_REVISTA 
-                                     :p_CODIGO_CATEGORIA 
-                                     :p_AUTOR_NOTICIA 
-                                     :p_TITULO_NOTICIA 
-                                     :p_DESCRIPCION_NOTICIA 
-                                     :p_CONTENIDO_NOTICIA 
-                                     :p_URL_PORTADA 
+        $sql="BEGIN
+                  P_INSERTAR_NOTICIA(:p_CODIGO_USUARIO,
+                                     :p_CODIGO_REVISTA,
+                                     :p_CODIGO_CATEGORIA,
+                                     :p_AUTOR_NOTICIA,
+                                     :p_TITULO_NOTICIA,
+                                     :p_DESCRIPCION_NOTICIA,
+                                     :p_CONTENIDO_NOTICIA,
+                                     :p_URL_PORTADA,
                                      :p_RESULTADO);
-            END;";
+             END;";
 
         $procedure = oci_parse($conn, $sql);
         oci_bind_by_name($procedure, ':p_CODIGO_USUARIO', $codigo_usuario);
