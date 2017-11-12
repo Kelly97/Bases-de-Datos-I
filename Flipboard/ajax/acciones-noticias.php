@@ -19,7 +19,7 @@
 			$resultadoNoticia = $conexion->ejecutarInstruccion($sql);
 			$resultado = "";
 			while($row=$conexion->obtenerFila($resultadoNoticia)){
-				$resultado = $resultado . '<div id="tituloNoticia" style="padding-top:100px; padding-left:100px; padding-right:100px">
+				$resultado = '<div id="tituloNoticia" style="padding-top:100px; padding-left:100px; padding-right:100px">
 								<h1><strong>'. $row["TITULO_NOTICIA"] .'</strong></h1>
 								<h3>'. $row["AUTOR_NOTICIA"] .' | '. $row["FECHA"] .'</h3>
 							  </div>

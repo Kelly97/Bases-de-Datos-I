@@ -50,7 +50,6 @@ switch ($_POST["codigo"]) {
 			    )
 			SELECT A.CODIGO_CATEGORIA,
 			      A.CATEGORIA,
-			      D.CODIGO_USUARIO,
 			      D.NOMBRE_USUARIO AS USUARIO_PUBLICA,
 			      D.URL_FOTO_PERFIL,
 			      substr(D.NOMBRE_USUARIO,1,1) AS INICIAL_USUARIO_PUBLICA,
@@ -210,7 +209,7 @@ switch ($_POST["codigo"]) {
 						<div class="row">
 						      <div class="col-lg-1 col-md-2 col-sm-2 col-2 col-xl-1" style="padding:0px;">
 						      	<label>
-						      		<a href="usuario.php?codigoUsuario=<?php echo $rowNoticia["CODIGO_USUARIO"] ?>">
+						      		
 							      	<div class="miniatura-usuario" style="margin: auto;background-image: url('<?php echo $rowNoticia["URL_FOTO_PERFIL"]; ?>');width: 40px;height: 40px;padding: 0px;">
 					                		<?php
 					                		if(is_null($rowNoticia["URL_FOTO_PERFIL"])){
@@ -227,7 +226,7 @@ switch ($_POST["codigo"]) {
 					                			<?php
 					                		}
 					                		?>								
-									</div></a>
+									</div>
 								</label>
 						      </div>
 							      
@@ -236,11 +235,8 @@ switch ($_POST["codigo"]) {
 						      		<tbody>
 						      			<tr>
 									      	<td class="align-middle">
-										        <p class="card-text" style="margin-bottom: -8px;">
-										        	<label>
-										        		<a href="usuario.php?codigoUsuario=<?php echo $rowNoticia["CODIGO_USUARIO"] ?>"><?php echo ($rowNoticia["USUARIO_PUBLICA"]);?></a>
-										        	</label>      
-										        	    	
+										        <p class="card-text" style="margin-bottom: -8px;">      
+										        	<?php echo ($rowNoticia["USUARIO_PUBLICA"]);?>      	
 										        </p> 
 										        <p style="padding: 0px;margin:0px;"> 
 										        	<span style="color: #09c;font-size: 12px;cursor: pointer;" onclick="cargarPaginaRevista(<?php echo $rowNoticia["CODIGO_REVISTA"];?>);">
