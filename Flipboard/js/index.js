@@ -139,6 +139,7 @@ function ajustarContenedorNoticias(){
 
 var codigoCat = 0;
 function cargarNoticias(codigoCategoria){
+	$(document).scrollTop(0);
 	codigoCat=codigoCategoria;
 	data = "codigo="+2+"&"+
            "codigoCategoria="+codigoCategoria;
