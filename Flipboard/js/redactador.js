@@ -35,7 +35,7 @@
     dataForm.append("titulo", $("#titulo").val());
     dataForm.append("descripcion", $("#descripcion").val());
     dataForm.append("contenido", contenido);
-    dataForm.append("file", $("#file").val());
+    dataForm.append("file", $("#fileSRC").val());
     dataForm.append("fileURL", $("#fileURL").val());
 
     $.ajax({

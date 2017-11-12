@@ -107,7 +107,8 @@
                                 <p style="text-align: center;"><h6 class="modal-title" style="margin-top: 10px;padding-left: 20px;padding-right: 20px;">SUBIR Archivo</h6></p>  
                               </div>         
                               <div class="modal-body">
-                                  <input type="file" name="file" id="file">         
+                                  <input type="file" name="file" id="file">
+                                  <input type="text" id="fileSRC" style="display:none">        
                               </div><!-- /.modal-body -->
                             </div><!--/.modal-content-->
                           </div><!--/.modal-dialog-->

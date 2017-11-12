@@ -17,23 +17,12 @@ switch ($_GET["accion"]) {
             {
               echo "Error, el archivo no es una imagen"; 
             }
-            else if ($size > 1024*1024)
-            {
-              echo "Error, el tamaño máximo permitido es un 1MB";
-            }
-            else if ($width > 500 || $height > 500)
-            {
-                echo "Error la anchura y la altura maxima permitida es 500px";
-            }
-            else if($width < 60 || $height < 60)
-            {
-                echo "Error la anchura y la altura mínima permitida es 60px";
-            }
             else
             {
-                $src = $carpeta.$nombre;
+                $src = addslashes($carpeta.$nombre);
                 move_uploaded_file($ruta_provisional, "../".$src);
-                echo "<img src='$src'>";
+                echo '<script>$("#fileSRC").val('.$src.');</script>
+                        <img src='.$src.'>';
             }
         }else{
             echo "No hay archivo";
