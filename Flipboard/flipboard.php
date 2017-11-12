@@ -29,8 +29,8 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
     <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="stylesheet" href="css/jquery.webui-popover.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="css/perfil.css">
+    <link href="css/index.css" rel="stylesheet">    
     <link rel="stylesheet" href="css/text-scrolling.css">
   </head>
   
