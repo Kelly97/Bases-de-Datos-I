@@ -91,3 +91,4 @@ function cargarPaginaRevista(codigoRevista){//Cargar la revista que se elige
         }        
     }); 
 }
+

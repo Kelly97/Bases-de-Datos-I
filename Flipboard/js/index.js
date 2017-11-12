@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	
 	cargarNoticias(0);//El cero será reservado para las noticias de portada, del 1 en adelante hará referencia a los intereses.
 	ajustarContenedorNoticias();
 	actualizarNotificaciones();
@@ -95,6 +94,9 @@ $(document).ready(function() {
 	$("#btn-perfil").click(function () {	 
 		perfilUsuario();
 	});
+
+ 
+	
 });
 
 $(document).scroll(function(e){
@@ -103,8 +105,9 @@ $(document).scroll(function(e){
 });
 
 $(window).resize(function(){
-	ajustarContenedorNoticias();
+	ajustarContenedorNoticias();	
 });
+
 
 
 
@@ -134,10 +137,13 @@ function ajustarContenedorNoticias(){
 	$('#pnProductNav').css("width",($(window).width()-anchoNavbar) +"px");
 }
 
-function cargarNoticias(codigo){
-	data = "codigo="+codigo;
+var codigoCat = 0;
+function cargarNoticias(codigoCategoria){
+	codigoCat=codigoCategoria;
+	data = "codigo="+2+"&"+
+           "codigoCategoria="+codigoCategoria;
 	$.ajax({       
-        url : "ajax/noticias.php",
+        url : "ajax/acciones-noticias.php",
         data: data,
         method: "POST",
         beforeSend: function() {
@@ -148,16 +154,57 @@ function cargarNoticias(codigo){
 
             $(function () {
 			  $('[data-toggle="popover"]').popover();
-			})
+			})     
+			cargarTarjetasPortada(codigoCategoria);			
 
-			// init Isotope
-			isotopeNotiCard();
-
-			$(window).resize(function(){
-				isotopeNotiCard();
-			});
+             
         }        
     });	
+    $(window).resize(function(){
+		isotopeNotiCard();
+	});
+
+	
+
+}
+
+$(document).scroll(function(){
+	//Evento al llegar al final del documento
+	if($(window).scrollTop() + $(window).height() == $(document).height()) {
+		cargarTarjetasPortada(codigoCat);
+		//alert(codigoCat);
+	 }
+});
+
+var inicializarIsotope = false;
+var categoriaSeleccionada=0;
+var scrollVertical = 0;
+function cargarTarjetasPortada(codigoCategoria){
+	if(!(categoriaSeleccionada==codigoCategoria)){
+		inicializarIsotope = false;
+		categoriaSeleccionada=codigoCategoria;
+	}
+    data = "codigoCategoria="+codigoCategoria+"&"+
+           "codigo="+0;
+    $.ajax({       
+        url : "ajax/noticias.php",
+        data: data,
+        method: "POST",
+        success: function(datos){       
+            
+            if(!inicializarIsotope){
+            	$('#grid_Noticias').append(datos);
+            	isotopeNotiCard();
+            	inicializarIsotope = true;
+            }else{
+            	scrollVertical = $(document).scrollTop();
+            	$('#grid_Noticias').isotope("destroy");
+            	$('#grid_Noticias').append(datos);
+            	isotopeNotiCard();
+            	$(document).scrollTop(scrollVertical);
+            }            
+        }        
+    }); 
 }
 
 function cargarContenidoNoticia(codigo){
@@ -195,6 +242,7 @@ function perfilUsuario(){
         }        
     });	
 }
+
 
 function isotopeNotiCard(){
 	var $grid = $('.grid').isotope({
@@ -272,7 +320,7 @@ function cargarRevistas(){
         url : "ajax/tarjetas_revistas.php",
         method: "POST",
         beforeSend: function() {
-        	$('#md-body-flipear').html('<div style="text-align:center;"><span class="loading-sencillo">Loading</span><span class="l-1"></span><span class="l-2"></span><span class="l-3"></span><span class="l-4"></span><span class="l-5"></span><span class="l-6"></span></div>');         
+        	$('#md-body-flipear').html('<div style="text-align:center;"><span class="loading-sencillo">Cargando</span><span class="l-1"></span><span class="l-2"></span><span class="l-3"></span><span class="l-4"></span><span class="l-5"></span><span class="l-6"></span></div>');         
         },
         success: function(datos){       
             $('#md-body-flipear').html(datos);
@@ -289,3 +337,4 @@ function agregarNuevaRevista(){
 	setTimeout(function(){$('#modal-003').modal('show');},500);
 	
 }
+

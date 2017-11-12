@@ -29,8 +29,8 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
     <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="stylesheet" href="css/jquery.webui-popover.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="css/perfil.css">
+    <link href="css/index.css" rel="stylesheet">    
     <link rel="stylesheet" href="css/text-scrolling.css">
   </head>
   
@@ -104,7 +104,7 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
             </a>
           </li>
           <li class="nav-item" data-toggle="popover" data-placement="left" data-content="Redactar Noticia" data-trigger="hover">
-            <a class="nav-item" href="redactador_noticias.html" target="blank">
+            <a class="nav-item" href="redactador_noticias.php" target="blank">
               <i class="fa fa-newspaper-o fa-lg" aria-hidden="true"></i>
             </a>
           </li>
