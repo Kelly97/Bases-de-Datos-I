@@ -1,7 +1,9 @@
 body{
 	font-family: 'Open Sans', sans-serif;
 }
-
+#respuesta img{
+	width: 100%;
+}
 .notisizer{
 	width: 32%;
 }
