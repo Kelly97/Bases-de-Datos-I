@@ -79,10 +79,10 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
                   <span id="pnIndicator" class="pn-ProductNav_Indicator"></span>
               </div>            
           </div>
-          <button id="pnAdvancerLeft" class="pn-Advancer pn-Advancer_Left" type="button">
+          <button id="pnAdvancerLeft" class="pn-Advancer pn-Advancer_Left" type="button" style="height: 100%;cursor: pointer;">
             <i class="fa fa-angle-left" aria-hidden="true" style="font-size: 30px;padding-top: 8px;"></i>
           </button>
-          <button id="pnAdvancerRight" class="pn-Advancer pn-Advancer_Right" type="button">
+          <button id="pnAdvancerRight" class="pn-Advancer pn-Advancer_Right" type="button" style="height: 100%;cursor: pointer;">
             <i class="fa fa-angle-right" aria-hidden="true" style="font-size: 30px;padding-top: 8px;"></i>
           </button>
         </div>
@@ -103,8 +103,8 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
           </li>
           <li class="nav-item" data-toggle="popover" data-placement="left" data-content="Notificaciones" data-trigger="hover">
             <a class="nav-item" id="btn-notificaciones">
-              <i class="fa fa-bell fa-lg" aria-hidden="true" style="">
-                <span id="cantidad_notificaciones" class="badge badge-secondary" style="font-size: 9px;border-radius: 20px;">0</span>
+              <i class="fa fa-bell fa-lg" aria-hidden="true" style="position: relative;">
+                <span id="cantidad_notificaciones" class="badge badge-secondary" style="font-size: 9px;border-radius: 20px;position: absolute;right: 6px;bottom: 8px;">0</span>
               </i>
               
             </a>

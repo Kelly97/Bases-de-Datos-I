@@ -20,9 +20,9 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
-	<a href="flipboard.php" class="btn btn-danger" style="position: absolute;bottom: 20px;right: 20px;max-width: 200px;">
+	<!--<a href="flipboard.php" class="btn btn-danger" style="position: absolute;bottom: 20px;right: 20px;max-width: 200px;">
 		Explora Flipboard
-	</a> 
+	</a> -->
 	<div class="container-fluid fondo">
 		<div class="row col-md-12 col-xs-12 col-sm-12 col-lg-12">
 			<div class="container-fluid">

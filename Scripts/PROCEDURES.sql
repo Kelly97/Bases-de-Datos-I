@@ -44,6 +44,11 @@ BEGIN
     P_CODIGO_RESP:=1;
     P_MENSAJE_RESP:='Flipeado en '||V_NOMBRE_REVISTA||'.';
   END IF;
+EXCEPTION
+    WHEN OTHERS THEN
+        P_CODIGO_RESP := 0;
+        P_MENSAJE_RESP := 'Ocurrio un error.'||sqlerrm||', '||sqlcode;
+        ROLLBACK;
 END;
 
 --Procedimiento para dar o quitar like
@@ -121,8 +126,11 @@ BEGIN
         P_CODIGO_RESP:=0;
         P_MENSAJE_RESP:= 'No puedes eliminar un interés que no sigues.';
     END IF;
-
-
+EXCEPTION
+    WHEN OTHERS THEN
+        P_CODIGO_RESP := 0;
+        P_MENSAJE_RESP := 'Ocurrio un error:'||sqlerrm;
+        ROLLBACK;
 END;
 /
 
@@ -400,7 +408,7 @@ END;
 
 
 
-
+/*
 --EJEMPLO PARA LLAMAR PROCEDIMIENTOS DESDE SQL-DEVELOPER
 --para activar consola utilizar:
 --SET serveroutput ON;
@@ -411,31 +419,4 @@ BEGIN
   P_FLIPEAR(5,3,3,V_CODIGO_RESP,V_MENSAJE_RESP);
   DBMS_OUTPUT.PUT_LINE(V_MENSAJE_RESP);
 END;
-
---EJEMPLO DE COMO UTILIZAR EL PROCEDIMIENTO EN EL CODIGO
-$conn = oci_connect('DB_FLIPBOARD', 'oracle', 'localhost/XE','AL32UTF8');
-if (!$conn) {
-    $e = oci_error();
-    trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
-}
-$codRevista=$_POST["codRevista"];
-$codNoticia=$_POST["codNoticia"];     
-$sql="
-  BEGIN
-    P_FLIPEAR(:codNoticia,
-          :codigoUsuario,
-          :codRevista,
-          :codigoRespuesta,
-          :mensajeRespuesta);
-  END;
-    ";
-$procedure = oci_parse($conn, $sql);
-oci_bind_by_name($procedure, ':codNoticia', $codNoticia);
-oci_bind_by_name($procedure, ':codigoUsuario', $codigoUsuario);
-oci_bind_by_name($procedure, ':codRevista', $codRevista);
-oci_bind_by_name($procedure, ':codigoRespuesta', $codigoRespuesta,5);
-oci_bind_by_name($procedure, ':mensajeRespuesta', $mensajeRespuesta,200);
-oci_execute($procedure);
-echo $mensajeRespuesta;
-oci_free_statement($procedure);
-oci_close($conn);
+*/
