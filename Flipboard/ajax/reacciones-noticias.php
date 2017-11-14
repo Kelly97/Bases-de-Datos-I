@@ -7,6 +7,13 @@ $conexion = new Conexion();
 switch ($_POST["codigo"]) {
 		case '1'://evento Like
 			$codigoNoticia=$_POST["codigoNoticia"];
+			$sqlNoticia = " SELECT
+							    CODIGO_USUARIO,
+							    CODIGO_REVISTA
+							FROM TBL_NOTICIAS
+							WHERE CODIGO_NOTICIA = ".$codigoNoticia;
+			$resultadoNoticia = $conexion->ejecutarInstruccion($sqlNoticia);	
+			$filaNoticia = $conexion->obtenerFila($resultadoNoticia);		
 			
 			$conn = oci_connect('DB_FLIPBOARD', 'oracle', 'localhost/XE','AL32UTF8');
 			if (!$conn) {
@@ -32,7 +39,61 @@ switch ($_POST["codigo"]) {
 			oci_execute($procedure);			
 			$resultado['codigoResp'] = $codigoRespuesta;
 			$resultado['mensajeResp'] = $mensajeRespuesta;	
-			$resultado['codigoNoticia'] = $codigoNoticia;			
+			$resultado['codigoNoticia'] = $codigoNoticia;	
+			//Validando la creación de una nueva notificación al dar like en una noticia
+			$codigoUsuarioReceptor = $filaNoticia["CODIGO_USUARIO"];
+			$codigoRevista = $filaNoticia["CODIGO_REVISTA"];
+			$tipoNotificacion=3;//3->Reacción Noticia (like)
+			$codigoReaccion=1;//1->Like
+			if($codigoRespuesta==1){
+				$sqlNotificacion="BEGIN
+									  P_CREAR_NOTIFICACION(
+									  	:codigo_tipo_notificacion,
+								        :codigo_usuario_receptor,
+								        :codigo_usuario_emisor,
+								        :codigo_revista,
+								        :codigo_noticia,
+								        :codigo_reaccion,
+								        :codigoResultado2,
+				        				:mensajeResultado2				
+									  );
+									END;";
+				$procedureNoti = oci_parse($conn, $sqlNotificacion);
+				oci_bind_by_name($procedureNoti, ':codigo_tipo_notificacion', $tipoNotificacion);
+				oci_bind_by_name($procedureNoti, ':codigo_usuario_receptor', $codigoUsuarioReceptor);
+				oci_bind_by_name($procedureNoti, ':codigo_usuario_emisor', $codigoUsuario);
+				oci_bind_by_name($procedureNoti, ':codigo_revista', $codigoRevista);
+				oci_bind_by_name($procedureNoti, ':codigo_noticia', $codigoNoticia);
+				oci_bind_by_name($procedureNoti, ':codigo_reaccion', $codigoReaccion);
+				oci_bind_by_name($procedureNoti, ':codigoResultado2', $codigoRespuesta2 , 5);
+				oci_bind_by_name($procedureNoti, ':mensajeResultado2', $mensajeRespuesta2 , 200);
+				oci_execute($procedureNoti);
+				oci_free_statement($procedureNoti);	
+			}else{
+				$sqlNotificacion="BEGIN
+									  P_ELIMINAR_NOTIFICACION(
+									  	:codigo_tipo_notificacion,
+								        :codigo_usuario_receptor,
+								        :codigo_usuario_emisor,
+								        :codigo_revista,
+								        :codigo_noticia,
+								        :codigo_reaccion,
+								        :codigoResultado2,
+				        				:mensajeResultado2				
+									  );
+									END;";
+				$procedureNoti = oci_parse($conn, $sqlNotificacion);
+				oci_bind_by_name($procedureNoti, ':codigo_tipo_notificacion', $tipoNotificacion);
+				oci_bind_by_name($procedureNoti, ':codigo_usuario_receptor', $codigoUsuarioReceptor);
+				oci_bind_by_name($procedureNoti, ':codigo_usuario_emisor', $codigoUsuario);
+				oci_bind_by_name($procedureNoti, ':codigo_revista', $codigoRevista);
+				oci_bind_by_name($procedureNoti, ':codigo_noticia', $codigoNoticia);
+				oci_bind_by_name($procedureNoti, ':codigo_reaccion', $codigoReaccion);
+				oci_bind_by_name($procedureNoti, ':codigoResultado2', $codigoRespuesta2 , 5);
+				oci_bind_by_name($procedureNoti, ':mensajeResultado2', $mensajeRespuesta2 , 200);
+				oci_execute($procedureNoti);
+				oci_free_statement($procedureNoti);	
+			}	
 			oci_free_statement($procedure);
 			oci_close($conn);
 			echo json_encode($resultado);

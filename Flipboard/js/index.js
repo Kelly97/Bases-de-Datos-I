@@ -169,7 +169,7 @@ $(window).resize(function(){
 
 $(document).scroll(function(){
 	//Evento al llegar al final del documento
-	if($(window).scrollTop() + $(window).height() == $(document).height()) {
+	if(($(window).scrollTop() + $(window).height()) === $(document).height()) {
 		cargarTarjetasPortada(codigoCat);
 		//alert(codigoCat);
 	 }
