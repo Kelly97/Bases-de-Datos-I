@@ -118,14 +118,75 @@ $cantidadColaboradores = $conexion->obtenerArregloAsociativo($resultado3)['NUMBE
 		</table>
 	</div>
 </div>
-
+<?php
+$sql4 =  "
+	WITH CANTIDAD_LIKES AS(
+        SELECT CODIGO_NOTICIA, 
+        COUNT(DISTINCT CODIGO_USUARIO) AS CANT_LIKES
+        FROM TBL_REACCIONES_X_NOTICIAS
+        WHERE CODIGO_REACCION = 1
+        GROUP BY CODIGO_NOTICIA
+        ),
+    CANTIDAD_LIKES_FLIP AS(
+        SELECT CODIGO_FLIP, 
+        COUNT(DISTINCT CODIGO_USUARIO) AS CANT_LIKES
+        FROM TBL_REACCIONES_X_NOTICIAS
+        WHERE CODIGO_REACCION = 1
+        GROUP BY CODIGO_FLIP
+        ),
+    CANTIDAD_COMENTARIOS AS(
+        SELECT CODIGO_NOTICIA, COUNT(CODIGO_COMENTARIO) AS CANT_COMENTARIOS
+        FROM TBL_COMENTARIOS
+        GROUP BY CODIGO_NOTICIA
+        ),
+    CANTIDAD_COMENTARIOS_FLIP AS(
+        SELECT CODIGO_FLIP, COUNT(CODIGO_COMENTARIO) AS CANT_COMENTARIOS
+        FROM TBL_COMENTARIOS
+        GROUP BY CODIGO_FLIP
+        ),
+    NOTICIAS_FLIPS_REVISTA AS(
+        SELECT A.CODIGO_FLIP, A.CODIGO_REVISTA CODIGO_REVISTA_FLIP, A.FECHA FECHA_FLIP, A.CODIGO_USUARIO_FLIP, B.CODIGO_REVISTA CODIGO_REVISTA_NOTICIA, B.CODIGO_NOTICIA, B.CODIGO_USUARIO CODIGO_USUARIO_NOTICIA,B.AUTOR_NOTICIA, B.TITULO_NOTICIA, B.DESCRIPCION_NOTICIA, B.CONTENIDO_NOTICIA, B.FECHA_PUBLICACION FECHA_NOTICIA, B.URL_PORTADA_NOTI
+        FROM TBL_FLIPS A
+        RIGHT JOIN TBL_NOTICIAS B
+        ON A.CODIGO_NOTICIA = B.CODIGO_NOTICIA
+        WHERE A.CODIGO_REVISTA = $codigoRevista OR B.CODIGO_REVISTA = $codigoRevista
+    )
+	SELECT ROWNUM NUM_FILA,A.*, B.CANT_LIKES CANT_LIKES_NOTICIA, C.CANT_LIKES CANT_LIKES_FLIP, D.CANT_COMENTARIOS CANT_COMENTARIOS_NOTCIA,
+	    E.CANT_COMENTARIOS CANT_COMENTARIOS_FLIP, F.NOMBRE_USUARIO USUARIO_FLIP, G.NOMBRE_USUARIO USUARIO_NOTICIA,
+	    substr(F.NOMBRE_USUARIO,1,1) AS INICIAL_USUARIO_FLIP, substr(G.NOMBRE_USUARIO,1,1) AS INICIAL_USUARIO_NOTICIA,
+	    F.URL_FOTO_PERFIL URL_FOTO_PERFIL_FLIP, G.URL_FOTO_PERFIL URL_FOTO_PERFIL_NOTICIA, F.CODIGO_USUARIO CODIGO_USUARIO_FLIP,
+	    G.CODIGO_USUARIO CODIGO_USUARIO_NOTICIA
+	FROM NOTICIAS_FLIPS_REVISTA A
+	LEFT JOIN CANTIDAD_LIKES B
+	ON A.CODIGO_NOTICIA = B.CODIGO_NOTICIA
+	LEFT JOIN CANTIDAD_LIKES_FLIP C
+	ON A.CODIGO_FLIP = C.CODIGO_FLIP
+	LEFT JOIN CANTIDAD_COMENTARIOS D
+	ON A.CODIGO_NOTICIA = D.CODIGO_NOTICIA
+	LEFT JOIN CANTIDAD_COMENTARIOS_FLIP E
+	ON A.CODIGO_FLIP = E.CODIGO_FLIP
+	LEFT JOIN TBL_USUARIOS F
+	ON A.CODIGO_USUARIO_FLIP = F.CODIGO_USUARIO
+	LEFT JOIN TBL_USUARIOS G
+	ON A.CODIGO_USUARIO_NOTICIA = G.CODIGO_USUARIO
+	";
+$sql5 = "SELECT COUNT(*) AS NUMBER_OF_ROWS FROM ($sql4)";
+$resultado4 = $conexion->ejecutarInstruccion($sql4);
+$resultado5 = $conexion->ejecutarInstruccion($sql5);
+$cantidadNoticias = $conexion->obtenerArregloAsociativo($resultado5)['NUMBER_OF_ROWS'];
+	if ($cantidadNoticias == 0) {
+?>	
 		<div class="col" style="text-align: center; padding: 10px">
 			SIN CONTENIDO
 		</div>
-
+	<?php } else {?>
 		<div class="row" style="padding: 10px">
 		  <div class="col" style="text-align: center; padding-left: 10px">
-		    # Noticias
+		    <?php if ($cantidadNoticias == 1) {
+		    	echo "$cantidadNoticias Noticia";
+		    } else {
+		    	echo "$cantidadNoticias Noticias";
+		    }?>
 		  </div>
 		  <div class="col" style="text-align: center">
 		  	<?php
@@ -142,4 +203,5 @@ $cantidadColaboradores = $conexion->obtenerArregloAsociativo($resultado3)['NUMBE
 		    <button type="button" class="btn btn-default btn-editar-revista" data-content="Editar" data-trigger="hover">Editar</button>
 		  </div>
 		</div>
+	<?php } ?>
 </div>
