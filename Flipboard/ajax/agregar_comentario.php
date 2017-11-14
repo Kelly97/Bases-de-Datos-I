@@ -114,7 +114,7 @@
             </div>
           </div>
             <div class="modal-body">
-            <img class="card-img-top" src='http://mouse.latercera.com/wp-content/uploads/2017/10/fortnite.jpg'>
+            <img class="card-img-top" src='<?php echo ($datosNoticia['URL_PORTADA_NOTI']); ?>'>
             <div class="card-body" style="text-align: justify;">
               <h3 class="card-title" style="text-align: left;"><?php echo ($datosNoticia['TITULO_NOTICIA']); ?></h3>
               <span class="noti-card-autor" style="font-size: 13px;">
@@ -143,12 +143,12 @@
   	                        echo $fa; 
   	                    }
                       ?>
-                    " aria-hidden="true" id="<?php echo 'like_'.$datosNoticia['CODIGO_NOTICIA'];?>" style="<?php 
+                    " aria-hidden="true" id="<?php echo 'likes_'.$datosNoticia['CODIGO_NOTICIA'];?>" style="<?php 
                           if($datosNoticia['CANT_LIKES']!=0){
                             echo 'color:rgb(0, 0, 0);';
                           } ?>"> </i>
                   </button> 
-                  <span id="<?php echo ($datosNoticia['CODIGO_NOTICIA']); ?>" style="font-size: 13px;"><?php echo ($datosNoticia['CANT_LIKES']); ?></span>
+                  <span id="<?php echo 'likesContador_'.$datosNoticia['CODIGO_NOTICIA']; ?>" style="font-size: 13px;"><?php echo ($datosNoticia['CANT_LIKES']); ?></span>
                 </span>
 <!--************************************************************************************************************-->
                   <ul id="div-usuariosLikes" style="margin-left: 30px; list-style-type: none;padding: 0px;">                    
