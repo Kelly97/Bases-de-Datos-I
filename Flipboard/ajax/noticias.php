@@ -1,8 +1,11 @@
 <?php
-//sleep(1);
-//SOLO SE MUESTRAN LAS NOTICIAS DE USUARIOS VERIFICADOS
 session_start();
-$codigoUsuario=1;//sesion
+if (isset($_SESSION['usuario'])) {
+  $codigoUsuario = $_SESSION['usuario']['CODIGO_USUARIO'];
+} else{
+  header('Location: index.php');
+}
+//$codigoUsuario=1;//sesion
 include_once("../class/class-conexion.php");
 include_once("../class/class-date-interval.php");
 $conexion = new Conexion();
@@ -299,8 +302,8 @@ switch ($_POST["codigo"]) {
 		        <span id="<?php echo 'comentariosCont_'.$rowNoticia['CODIGO_NOTICIA'];?>"><?php echo $rowNoticia["CANT_COMENTARIOS"];?></span>
 		        <i class="fa fa-comment-o" aria-hidden="true" style="font-size: 13px;padding-right: 8px;" ></i>
 	        	<a class="btn btn-default" role="button" style="cursor: pointer;">
-		        	<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 13px;padding-right: 8px;">				        		
-		        	</i>
+		        	<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 13px;padding-right: 8px;" data-toggle="modal" data-target="#modal-agregar_comentario" onclick="cargar_modalComentarios(<?php echo $rowNoticia["CODIGO_NOTICIA"];?>);">				        		
+				    </i>
 		        	Añadir Comentario
 	        	</a>
 	        </div>
