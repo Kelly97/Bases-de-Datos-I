@@ -338,3 +338,107 @@ function agregarNuevaRevista(){
 	
 }
 
+/*
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++  Agregar comentario  ++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+function agregarComentario(codigoNoticia, codigoUsuario){
+	data = "codigo_noticia="+codigoNoticia+"&"+
+			"codigoUsuario="+codigoUsuario+"&"+
+			"contenido="+$("#txt_comentario").val();
+			;
+	$.ajax({       
+        url : "ajax/agregar_comentario.php?accion=4",
+        data: data,
+        method: "POST",
+        dataType: "json",
+        success:function(resultado){
+			if (resultado.codigo_resultado==1){
+				$("#txt_comentario").val("");
+				cargarComentarios(codigoNoticia);
+			}else
+				alert(resultado.mensaje);
+		},
+		error:function(){
+			alert("Ups, no se pudo cargar el contenido.");
+		}       
+    });	
+}
+
+
+function cargarComentarios(codigo){
+codigo_noticia = "codigo_noticia="+codigo;
+	$.ajax({
+		url:"ajax/agregar_comentario.php?accion=3",
+		data: codigo_noticia,
+		method: "POST",
+		success:function(resultado){
+			$("#respuestaComentario").html(resultado);
+		},
+		error:function(){
+			alert("Ups, no se pudo cargar el contenido.");
+		}
+	});
+}
+
+
+function cargarLikes(codigo){
+	codigo_noticia = "codigo_noticia="+codigo;
+	$.ajax({
+		url:"ajax/agregar_comentario.php?accion=2",
+		data: codigo_noticia,
+		method: "POST",
+		success:function(resultado){
+			$("#div-usuariosLikes").html(resultado);
+		},
+		error:function(){
+			alert("Ups, no se pudo cargar el contenido.");
+		}
+	});
+}
+
+function cargar_modalComentarios(codigo){
+	codigo_noticia = "codigo_noticia="+codigo;
+	$.ajax({
+		url:"ajax/agregar_comentario.php?accion=1",
+		data: codigo_noticia,
+		method: "POST",
+		success:function(resultado){
+			$("#div-modalComentario").html(resultado);
+
+			cargarLikes(codigo);
+			cargarComentarios(codigo);
+		},
+		error:function(){
+			alert("Ups, no se pudo cargar el contenido.");
+		}
+	});
+}
+
+function eliminarComentario(codigoNoticia, codigoComentario){
+	data = "codigo_noticia="+codigoNoticia+"&"+
+			"codigoComentario="+codigoComentario;
+			;
+	$.ajax({       
+        url : "ajax/agregar_comentario.php?accion=5",
+        data: data,
+        method: "POST",
+        dataType: "json",
+        success:function(resultado){
+			if (resultado.codigo_resultado==1){
+				cargarComentarios(codigoNoticia);
+			}else
+				alert(resultado.mensaje);
+		},
+		error:function(){
+			alert("Ups, no se pudo cargar el contenido.");
+		}       
+    });	
+}
+
+
+/*
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
