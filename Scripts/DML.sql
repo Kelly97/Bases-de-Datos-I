@@ -117,27 +117,27 @@ VALUES (3,1,'Emiratos Árabes Unidos','24°28′00″N','54°22′00″E');
 --INSERT Registros Usuarios
 --ADMINISTRADOR
 INSERT INTO tbl_usuarios (codigo_tipo_usuario,codigo_lugar_residencia,codigo_estado_usuario,nombre_usuario,alias_usuario,correo,contrasenia,fecha_registro) 
-VALUES (3,4,1,'Administrador','Administrador','web_admin@flipboard.com','asd.456',TO_DATE('19/10/2017','DD/MM/YYYY'));
+VALUES (3,4,1,'Administrador','Administrador','web_admin@flipboard.com','bcdcb29ed2aab16d48c11485264df665e906bdd9',TO_DATE('19/10/2017','DD/MM/YYYY'));
 --USUARIOS NORMALES
 INSERT INTO tbl_usuarios (codigo_tipo_usuario,codigo_lugar_residencia,codigo_estado_usuario,nombre_usuario,alias_usuario,correo,contrasenia,url_foto_perfil,descripcion,fecha_registro) 
-VALUES (1,4,2,'Marco Polo','Marc2345','marco_99@gmail.com','asd.456','images/foto_perfiles/3d-Wallpaper-Hd-3.jpg','Entretenimiento para todos.',TO_DATE('19/10/2017','DD/MM/YYYY'));
+VALUES (1,4,2,'Marco Polo','Marc2345','marco_99@gmail.com','bcdcb29ed2aab16d48c11485264df665e906bdd9','images/foto_perfiles/3d-Wallpaper-Hd-3.jpg','Entretenimiento para todos.',TO_DATE('19/10/2017','DD/MM/YYYY'));
 INSERT INTO tbl_usuarios (codigo_tipo_usuario,codigo_lugar_residencia,codigo_estado_usuario,nombre_usuario,alias_usuario,correo,contrasenia,url_foto_perfil,fecha_registro) 
-VALUES (1,5,2,'Rosa Betancourt','Rosy4521','rosybet@gmail.com','asd.456','images/foto_perfiles/AnimalesVectoriales_Wahyu_Romdhoni.jpg',TO_DATE('19/10/2017','DD/MM/YYYY'));
+VALUES (1,5,2,'Rosa Betancourt','Rosy4521','rosybet@gmail.com','bcdcb29ed2aab16d48c11485264df665e906bdd9','images/foto_perfiles/AnimalesVectoriales_Wahyu_Romdhoni.jpg',TO_DATE('19/10/2017','DD/MM/YYYY'));
 INSERT INTO tbl_usuarios (codigo_tipo_usuario,codigo_lugar_residencia,codigo_estado_usuario,nombre_usuario,alias_usuario,correo,contrasenia,url_foto_perfil,fecha_registro) 
-VALUES (1,6,2,'Abdel Hadi','abdelhadi_43','abdel_43@yahoo.com','asd.456','images/foto_perfiles/Mokona.Modoki.full.35354 (1).jpg',TO_DATE('19/10/2017','DD/MM/YYYY'));
+VALUES (1,6,2,'Abdel Hadi','abdelhadi_43','abdel_43@yahoo.com','bcdcb29ed2aab16d48c11485264df665e906bdd9','images/foto_perfiles/Mokona.Modoki.full.35354 (1).jpg',TO_DATE('19/10/2017','DD/MM/YYYY'));
 --USUARIOS CON CUENTAS VERIFICADAS
 INSERT INTO tbl_usuarios (codigo_tipo_usuario,codigo_lugar_residencia,codigo_estado_usuario,nombre_usuario,alias_usuario,correo,contrasenia,url_foto_perfil,descripcion,fecha_registro) 
-VALUES (2,4,1,'National Geographic','NatGeo','NationalGeographic@natgeo.com','asd.456','images/foto_perfiles/National-Geographic-logo.png','Flipboard oficial de la revista National Geographic España. Actualidad, reportajes, fotos espectaculares, exploración, vídeos...',TO_DATE('19/10/2017','DD/MM/YYYY'));
+VALUES (2,4,1,'National Geographic','NatGeo','NationalGeographic@natgeo.com','bcdcb29ed2aab16d48c11485264df665e906bdd9','images/foto_perfiles/National-Geographic-logo.png','Flipboard oficial de la revista National Geographic España. Actualidad, reportajes, fotos espectaculares, exploración, vídeos...',TO_DATE('19/10/2017','DD/MM/YYYY'));
 INSERT INTO tbl_usuarios (codigo_tipo_usuario,codigo_lugar_residencia,codigo_estado_usuario,nombre_usuario,alias_usuario,correo,contrasenia,url_foto_perfil,descripcion,fecha_registro) 
-VALUES (2,4,1,'REVISTA ¡HOLA!','Hola1234','revistahola@hotmail.com','asd.456','http://claudinehandbags.com/wp-content/uploads/2015/08/hola-revista.jpg','Las novedades sobre las estrellas de cine y música, tendencias de moda, belleza, recetas de cocina y las Casas Reales en el portal femenino líder en Internet. ',TO_DATE('05/03/2017','DD/MM/YYYY'));
+VALUES (2,4,1,'REVISTA ¡HOLA!','Hola1234','revistahola@hotmail.com','bcdcb29ed2aab16d48c11485264df665e906bdd9','http://claudinehandbags.com/wp-content/uploads/2015/08/hola-revista.jpg','Las novedades sobre las estrellas de cine y música, tendencias de moda, belleza, recetas de cocina y las Casas Reales en el portal femenino líder en Internet. ',TO_DATE('05/03/2017','DD/MM/YYYY'));
 INSERT INTO tbl_usuarios (codigo_tipo_usuario,codigo_lugar_residencia,codigo_estado_usuario,nombre_usuario,alias_usuario,correo,contrasenia,url_foto_perfil,descripcion,fecha_registro) 
-VALUES (2,4,1,'XATAKA','XATAKA23','xataka@xataka.com','asd.456','images/foto_perfiles/Xataca-Honor.png','Apasionados por la tecnología.',TO_DATE('01/11/2017','DD/MM/YYYY'));
+VALUES (2,4,1,'XATAKA','XATAKA23','xataka@xataka.com','bcdcb29ed2aab16d48c11485264df665e906bdd9','images/foto_perfiles/Xataca-Honor.png','Apasionados por la tecnología.',TO_DATE('01/11/2017','DD/MM/YYYY'));
 INSERT INTO tbl_usuarios (codigo_tipo_usuario,codigo_lugar_residencia,codigo_estado_usuario,nombre_usuario,alias_usuario,correo,contrasenia,url_foto_perfil,descripcion,fecha_registro) 
-VALUES (2,4,1,'HIPERTEXTUAL','hipertextual12','hipertextual12@hipertextual12.com','asd.456','images/foto_perfiles/hipertextual.png','Tecnología, ciencia y cultura digital',TO_DATE('19/10/2015','DD/MM/YYYY'));
+VALUES (2,4,1,'HIPERTEXTUAL','hipertextual12','hipertextual12@hipertextual12.com','bcdcb29ed2aab16d48c11485264df665e906bdd9','images/foto_perfiles/hipertextual.png','Tecnología, ciencia y cultura digital',TO_DATE('19/10/2015','DD/MM/YYYY'));
 INSERT INTO tbl_usuarios (codigo_tipo_usuario,codigo_lugar_residencia,codigo_estado_usuario,nombre_usuario,alias_usuario,correo,contrasenia,url_foto_perfil,descripcion,fecha_registro) 
-VALUES (2,4,1,'MOTORPASIÓN','motorpasion43','motorpasion@motorpasion.com','asd.456','images/foto_perfiles/uEfEeLyc.png','Coches y actualidad del mundo del Motor',TO_DATE('04/05/2013','DD/MM/YYYY'));
+VALUES (2,4,1,'MOTORPASIÓN','motorpasion43','motorpasion@motorpasion.com','bcdcb29ed2aab16d48c11485264df665e906bdd9','images/foto_perfiles/uEfEeLyc.png','Coches y actualidad del mundo del Motor',TO_DATE('04/05/2013','DD/MM/YYYY'));
 INSERT INTO tbl_usuarios (codigo_tipo_usuario,codigo_lugar_residencia,codigo_estado_usuario,nombre_usuario,alias_usuario,correo,contrasenia,url_foto_perfil,descripcion,fecha_registro) 
-VALUES (2,4,1,'DIRECTO AL PALADAR','directopaladar','directoalpaladar@directoalpaladar.com','asd.456','images/foto_perfiles/directopaladar_1489507825_280.jpg','Las mejores recetas, postres, vinos, turismo gastronómico...',TO_DATE('20/11/2012','DD/MM/YYYY'));
+VALUES (2,4,1,'DIRECTO AL PALADAR','directopaladar','directoalpaladar@directoalpaladar.com','bcdcb29ed2aab16d48c11485264df665e906bdd9','images/foto_perfiles/directopaladar_1489507825_280.jpg','Las mejores recetas, postres, vinos, turismo gastronómico...',TO_DATE('20/11/2012','DD/MM/YYYY'));
 
 --INSERT Registros Seguidores
 INSERT INTO tbl_seguidores (codigo_usuario_seguidor,codigo_usuario_seguido) 
