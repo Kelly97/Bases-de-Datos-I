@@ -1,8 +1,14 @@
 <?php
 	//Buscar los scripts para la base en la carpeta con el mismo nombre
-	include_once("class/class-conexion.php");
+	session_start();
+	  if (isset($_SESSION['usuario'])) {
+	    $codigoUsuario = $_SESSION['usuario']['CODIGO_USUARIO'];
+	  } else{
+	    header('Location: index.php');
+	  }
+	  include_once("class/class-conexion.php");
 	$conexion = new Conexion();
-	$codigoUsuario = 1;//SESION
+	//$codigoUsuario = 1;//SESION
 	$codigoNoticia = $_GET["codigoNoticia"];
 	$sql = "  SELECT  CODIGO_TIPO_USUARIO,
 	                  CODIGO_ESTADO_USUARIO,
