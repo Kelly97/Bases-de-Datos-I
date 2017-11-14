@@ -1,3 +1,12 @@
+<?php
+    session_start();
+
+    if (isset($_SESSION['usuario'])) {
+      header('Location:flipboard.php');
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +28,7 @@
 		        </div>
 	        	<div class="collapse navbar-collapse right">
 	        		<h6>¿Ya usas Flipboard?
-	        		<a class="btn btn-default" href="index.html" role="button">Iniciar Sesión</a>
+	        		<a class="btn btn-default" href="index.php" role="button">Iniciar Sesión</a>
 	        		</h6>
 	        	</div>
 			</div>

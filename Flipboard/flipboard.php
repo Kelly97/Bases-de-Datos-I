@@ -1,8 +1,14 @@
 <?php
 //Buscar los scripts para la base en la carpeta con el mismo nombre
+session_start();
+if (isset($_SESSION['usuario'])) {
+  $codigoUsuario = $_SESSION['usuario']['CODIGO_USUARIO'];
+} else{
+  header('Location: index.php');
+}
 include_once("class/class-conexion.php");
 $conexion = new Conexion();
-$codigoUsuario = 1;//SESION
+//$codigoUsuario = 1;//SESION
 $sql = "  SELECT  CODIGO_TIPO_USUARIO,
                   CODIGO_ESTADO_USUARIO,
                   substr(NOMBRE_USUARIO,1,1) AS INICIAL,
@@ -259,6 +265,22 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
         </div>
       </div>
     </div>
+    <!-- Fin Modal Flipear -->
+
+      <!-- Modal agregar comentario -->
+      <div class="modal fade" tabindex="-1" id="modal-agregar_comentario" style="right: 0px; left: auto; top:0px; width: 600px;">
+        <div class="modal-dialog" role="document" style="max-width: 600px; margin: 0px auto;">
+          <div class="modal-content" style="padding: 30px";>
+<!--**************************************************************************************************************-->    
+            <div id="div-modalComentario" class="col-lg-12">
+              
+            </div>
+<!--**************************************************************************************************************-->    
+
+          </div>
+         </div>
+      </div>
+      <!-- Fin Modal agregar comentario -->
     <!--FIN Modals-->
     
     <!--Scripts-->
