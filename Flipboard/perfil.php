@@ -24,7 +24,7 @@
     <li><a style="font-size: 12px; color: black; font-family: inherit" href="#">Conviertete en editor</a></li>
           <li class="divider"></li>
 
-    <li><a style="font-size: 12px; color: black; font-family: inherit" href="#">Cerrar sesión</a></li>
+    <li><a style="font-size: 12px; color: black; font-family: inherit" href="cerrar_sesion.php">Cerrar sesión</a></li>
     </ul>
   </div>
 
