@@ -1,10 +1,11 @@
 <?php
+session_start();
 /*Conexion: PARA QUE ESTA CONEXION FUNCIONE, SE DEBE CREAR UN USUARIO
 LLAMADO DB_FLIPBOARD(mayúsculas) Y SU CONTRASEÑA DEBE SER oracle(en minúsculas).*/
 include_once("../class/class-conexion.php");
 include_once("../class/class-tiempo.php");
 $conexion = new Conexion();
-$codigoUsuario = 1;//sesion
+$codigoUsuario = $_SESSION['usuario']['CODIGO_USUARIO'];//sesion
 $sql =  "
 	SELECT A.CODIGO_NOTIFICACION, A.CODIGO_TIPO_NOTIFICACION, substr(B.NOMBRE_USUARIO,1,1) AS INICIAL ,B.NOMBRE_USUARIO, B.URL_FOTO_PERFIL, C.NOMBRE_REVISTA, D.TITULO_NOTICIA, LOWER(E.TIPO_REACCION) TIPO_REACCION, ((SYSDATE - A.HORA_NOTIFICACION)*1440) TIEMPO
 	FROM TBL_NOTIFICACIONES A

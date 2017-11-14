@@ -1,5 +1,6 @@
 <?php
-$codigoUsuario=1;//sesion
+session_start();
+$codigoUsuario=$_SESSION['usuario']['CODIGO_USUARIO'];//sesion
 include_once("../class/class-conexion.php");
 $conexion = new Conexion();
 

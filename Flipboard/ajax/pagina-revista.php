@@ -1,10 +1,11 @@
 <?php
+session_start();
 include_once("../class/class-conexion.php");
 include_once("../class/class-tiempo.php");
 
 $codigoRevista = $_POST['codigoRevista'];//Obtenemos el código por medio de la variable enviada en data
 $conexion = new Conexion();
-$codigoUsuario = 1;//sesion
+$codigoUsuario = $_SESSION['usuario']['CODIGO_USUARIO'];//sesion
 $sql =  "
 	SELECT UPPER(A.NOMBRE_REVISTA) NOMBRE_REVISTA, A.DESCRIPCION, A.FECHA_DE_CREACION, A.URL_PORTADA, B.NOMBRE_USUARIO, B.URL_FOTO_PERFIL, substr(B.NOMBRE_USUARIO,1,1) AS INICIAL, A.CODIGO_TIPO_REVISTA
 	FROM TBL_REVISTAS A

@@ -1,5 +1,6 @@
 <?php
-$codigo_usuario=1;//SESION
+session_start();
+$codigo_usuario=$_SESSION['usuario']['CODIGO_USUARIO'];//SESION
 include_once("../class/class-conexion.php");
 $conexion = new Conexion();
 $sql =  'SELECT A.CODIGO_REVISTA,

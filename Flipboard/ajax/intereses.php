@@ -1,5 +1,6 @@
 <?php
-	$codigoUsuario=1;//sesion
+	session_start();
+	$codigoUsuario=$_SESSION['usuario']['CODIGO_USUARIO'];//sesion
 	switch ($_POST["codigo"]) {
 		case '1':
 			/* OBTENER LAS CATEGORIAS/INTERESES QUE EL USUARIO NO TIENE AGREGADOS */
