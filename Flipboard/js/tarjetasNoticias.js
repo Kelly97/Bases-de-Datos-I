@@ -62,7 +62,22 @@ function darLike(codigoNoticia){//Dar o quitar like de pagina
                 $(id).css("color","rgb(200, 35, 51)");
                 $(id).addClass("fa-heart");
                 $(idCantLikes).html(cantLikes+1);
-            }       
+            }
+		
+	    cargarLikes(codigoNoticia); 
+            var id="#likes_" + datos.codigoNoticia; 
+            var idCantLikes="#likesContador_" + datos.codigoNoticia; 
+            var cantLikes = parseInt($(idCantLikes).html());
+            
+            $(id).removeClass("fa-heart-o");
+            $(id).removeClass("fa-heart");
+            if(datos.codigoResp==0){       
+                $(id).addClass("fa-heart-o");
+                $(idCantLikes).html(cantLikes-1);
+            }else{
+                $(id).addClass("fa-heart");
+                $(idCantLikes).html(cantLikes+1);
+            }
         }
     }); 
 }
