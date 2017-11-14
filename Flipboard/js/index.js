@@ -155,18 +155,17 @@ function cargarNoticias(codigoCategoria){
             $(function () {
 			  $('[data-toggle="popover"]').popover();
 			})     
+			$(document).scrollTop(0);
 			cargarTarjetasPortada(codigoCategoria);			
 
              
         }        
-    });	
-    $(window).resize(function(){
-		isotopeNotiCard();
-	});
-
-	
-
+    });	 
 }
+
+$(window).resize(function(){
+	isotopeNotiCard();
+});
 
 $(document).scroll(function(){
 	//Evento al llegar al final del documento
