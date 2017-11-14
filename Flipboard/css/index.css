@@ -126,6 +126,17 @@ body{
 	color: white;
 	cursor: pointer;
 }
+.btn-editar-revista{
+	border-radius: 0px;
+	border-color: black;
+	color: black;
+	background-color: transparent;
+}
+.btn-editar-revista:hover{
+	border-color: black;
+	color: white;
+	background-color: black;
+}
 
 /*Loading*/
  #loading{

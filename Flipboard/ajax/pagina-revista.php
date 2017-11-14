@@ -140,7 +140,7 @@ $cantidadColaboradores = $conexion->obtenerArregloAsociativo($resultado3)['NUMBE
 		    <i class="fa fa-chevron-down" aria-hidden="true"></i>
 		  </div>
 		  <div class="col" style="text-align: center; padding: 10px">
-		    Botones
+		    <button type="button" class="btn btn-default btn-editar-revista" data-content="Editar" data-trigger="hover">Editar</button>
 		  </div>
 		</div>
 </div>
