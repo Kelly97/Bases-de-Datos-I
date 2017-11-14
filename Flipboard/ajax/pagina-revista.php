@@ -50,10 +50,10 @@ $cantidadColaboradores = $conexion->obtenerArregloAsociativo($resultado3)['NUMBE
 					</td>
 				</tr>
 				<tr>
-					<td>
-				  	<div class="row" style="width: <?php echo ($cantidadColaboradores+2)*45; ?>px;height: 100%;">
+				  <td class="align-middle text-center">
+					<div class="row" style="margin: auto; width: <?php echo ($cantidadColaboradores+2)*40; ?>px;height: 50%;">
 				  		<!--Miniatura de la imagen-->
-	                	<div class="miniatura-usuario" style="margin: auto;background-image: url('<?php echo $datosRevista["URL_FOTO_PERFIL"]; ?>');width: 40px;height: 40px;padding: 0px;">
+	                	<div class="col miniatura-usuario" style="margin: auto;background-image: url('<?php echo $datosRevista["URL_FOTO_PERFIL"]; ?>');width: 40px;height: 40px;padding: 0px;">
 	                		<?php
 	                		if(is_null($datosRevista["URL_FOTO_PERFIL"])){
 	                			?>
@@ -83,7 +83,7 @@ $cantidadColaboradores = $conexion->obtenerArregloAsociativo($resultado3)['NUMBE
 				  					$strAutores = $strAutores . ' y ' . $colaborador['NOMBRE_USUARIO'];
 				  				?>
 				  				<!--Miniatura de la imagen-->
-			                	<div class="miniatura-usuario" style="margin: auto;background-image: url('<?php echo $colaborador["URL_FOTO_PERFIL"]; ?>');width: 40px;height: 40px;padding: 0px;">
+			                	<div class="col miniatura-usuario" style="margin: auto;background-image: url('<?php echo $colaborador["URL_FOTO_PERFIL"]; ?>');width: 40px;height: 40px;padding: 0px;">
 			                		<?php
 			                		if(is_null($colaborador["URL_FOTO_PERFIL"])){
 			                			?>
@@ -104,13 +104,12 @@ $cantidadColaboradores = $conexion->obtenerArregloAsociativo($resultado3)['NUMBE
 							  <?php
 				  			}
 	            		}
-	            		?>	
-				  		<button type="button" class="btn btn-default btn-circle-revista" >
-				  			<i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>
-				  		</button>
+	            		?>
+	            		<div class="col miniatura-usuario" style="margin: auto;width: 40px;height: 40px;padding: 0px;">
+	                			<i class="fa fa-user-plus" aria-hidden="true"></i>						
+					    </div>
 				  	</div>
-				  	
-				  	<div>
+					<div style="margin: auto;height: 50%;">
 				  		<t>Por <?php echo $strAutores; ?></t>
 				  	</div>
 				  </td>
@@ -124,11 +123,11 @@ $cantidadColaboradores = $conexion->obtenerArregloAsociativo($resultado3)['NUMBE
 			SIN CONTENIDO
 		</div>
 
-		<div class="row">
-		  <div class="col" style="text-align: center; padding: 10px">
+		<div class="row" style="padding: 10px">
+		  <div class="col" style="text-align: center; padding-left: 10px">
 		    # Noticias
 		  </div>
-		  <div class="col" style="text-align: center; padding: 10px">
+		  <div class="col" style="text-align: center">
 		  	<?php
 			if($datosRevista['CODIGO_TIPO_REVISTA'] == 2){
     			?>
@@ -139,8 +138,8 @@ $cantidadColaboradores = $conexion->obtenerArregloAsociativo($resultado3)['NUMBE
 		    BAJA PARA VER MAS
 		    <i class="fa fa-chevron-down" aria-hidden="true"></i>
 		  </div>
-		  <div class="col" style="text-align: center; padding: 10px">
-		    Botones
+		  <div class="col" style="text-align: right">
+		    <button type="button" class="btn btn-default btn-editar-revista" data-content="Editar" data-trigger="hover">Editar</button>
 		  </div>
 		</div>
 </div>

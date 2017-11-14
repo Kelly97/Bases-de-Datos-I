@@ -126,6 +126,16 @@ body{
 	color: white;
 	cursor: pointer;
 }
+.btn-editar-revista{
+	border-color: black;
+	color: black;
+	background-color: transparent;
+}
+.btn-editar-revista:hover{
+	border-color: black;
+	color: white;
+	background-color: black;
+}
 
 /*Loading*/
  #loading{
@@ -226,7 +236,7 @@ body{
 	color: white;
 	background-color: transparent;
     text-align: center;
-    padding: 6px 0;
+    padding: 0px 0;
     font-size: 12px;
     line-height: 1.428571429;
     border-radius: 20px;
