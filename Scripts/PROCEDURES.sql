@@ -1,4 +1,4 @@
-                                --PROCEDIMIENTOS ALMACENADOS
+﻿                                --PROCEDIMIENTOS ALMACENADOS
 
 --Procedimiento para flipear un noticia.
 create or replace PROCEDURE P_FLIPEAR
@@ -208,7 +208,14 @@ EXCEPTION
   p_RESULTADO := 0;
 END;
 /
-
+--Procedimiento para cambiar estado de notificacion a vista
+CREATE OR REPLACE PROCEDURE P_ACTUALIZAR_NOTI (NOTIFICACION IN NUMBER)
+AS
+BEGIN
+    UPDATE TBL_NOTIFICACIONES SET CODGIO_ESTADO_NOTIFICACION = 1
+    WHERE CODIGO_NOTIFICACION = NOTIFICACION;
+END;
+/
 
 
 
