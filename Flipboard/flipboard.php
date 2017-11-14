@@ -152,6 +152,9 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
       
     </div>
 
+
+    <div id="waypointNoticias"></div>
+
     <!--Modals-->
 
     <!-- Modal 001: Elige un interés -->
@@ -294,10 +297,12 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
     <script src="js/imagesloaded.pkgd.js"></script>    
     <script src="js/isotope.pkgd.min.js"></script>
     <script src="js/packery-mode.pkgd.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>  
     <script src="js/index.js"></script>
     <script src="js/tarjetasNoticias.js"></script>
     <script src="js/intereses.js"></script>
     <script src="js/agregar-revista.js"></script>    
+      
     <!--FIN Scripts-->
 
   </body>

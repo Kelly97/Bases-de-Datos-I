@@ -175,6 +175,10 @@ $(document).scroll(function(){
 	 }
 });
 
+
+
+
+
 var inicializarIsotope = false;
 var categoriaSeleccionada=0;
 var scrollVertical = 0;
