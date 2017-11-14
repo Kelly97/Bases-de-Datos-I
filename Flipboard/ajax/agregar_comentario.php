@@ -79,7 +79,7 @@
             </button>                 
               <div class="row">
                 <div class="col-lg-1 col-md-2 col-sm-2 col-2 col-xl-1" style="padding:0px;">
-                  <div class="miniatura-usuario" style="margin: auto;background-image: url(<?php echo ($datosNoticia['URL_FOTO_PERFIL']); ?>);width: 40px;height: 40px;padding: 0px;">
+                  <div class="miniatura-usuario" style="margin: auto;background-image: url('<?php echo ($datosNoticia["URL_FOTO_PERFIL"]); ?>');width: 40px;height: 40px;padding: 0px;">
                     <?php
                       if(is_null($datosNoticia["URL_FOTO_PERFIL"])){
                     ?>  
@@ -122,34 +122,35 @@
               </span>
               <div style="margin: 40px 0px;" class="row">
                 <span>
-                  <button onclick="flipear(<?php echo ($datosNoticia['CODIGO_NOTICIA']); ?>)" type="button" class="btn btn-circle" data-toggle="modal" data-target="#md-flipear" style="background-color: #fff; border-color: #fff; opacity: .5;">
-                    <i class="fa fa-plus" aria-hidden="true"></i>
-                  </button>
-                  <span style="font-size: 13px;">Flipear</span>
-                </span>
-                <span>
-                  <button onclick="darLike(<?php echo ($datosNoticia['CODIGO_NOTICIA']); ?>)" type="button" class="btn btn-default btn-circle" data-container="body" data-toggle="popover" data-placement="left" data-content="Me gusta" data-trigger="hover" style="background-color: #fff; border-color: #fff;">
+                  <button onclick="darLike(<?php echo ($datosNoticia['CODIGO_NOTICIA']); ?>)" type="button" class="btn btn-default btn-circle" data-container="body" data-toggle="popover" data-content="Me gusta" data-trigger="hover" style="background-color: #fff; border-color: #fff;">
+                    <span id="<?php echo 'likesContador_'.$datosNoticia['CODIGO_NOTICIA']; ?>" style="font-size: 13px;"><?php echo ($datosNoticia['CANT_LIKES']); ?></span>
                     <i class="fa 
                       <?php 
-                   		$fa='';
-                      	while($rowLikes = $conexion->obtenerFila($resultadoLikes)){
-                      		if($rowLikes['CODIGO_USUARIO']==$codigoUsuario){
-  	                          $fa = 'fa-heart';
-  	                          echo $fa;
-  	                        }	
-                      	}
+                      $fa='';
+                        while($rowLikes = $conexion->obtenerFila($resultadoLikes)){
+                          if($rowLikes['CODIGO_USUARIO']==$codigoUsuario){
+                              $fa = 'fa-heart';
+                              echo $fa;
+                            } 
+                        }
                           if($fa==''){
-                          	$fa = 'fa-heart-o';
-  	                        echo $fa; 
-  	                    }
+                            $fa = 'fa-heart-o';
+                            echo $fa; 
+                        }
                       ?>
                     " aria-hidden="true" id="<?php echo 'likes_'.$datosNoticia['CODIGO_NOTICIA'];?>" style="<?php 
                           if($datosNoticia['CANT_LIKES']!=0){
                             echo 'color:rgb(0, 0, 0);';
                           } ?>"> </i>
-                  </button> 
-                  <span id="<?php echo 'likesContador_'.$datosNoticia['CODIGO_NOTICIA']; ?>" style="font-size: 13px;"><?php echo ($datosNoticia['CANT_LIKES']); ?></span>
+                  </button>                   
                 </span>
+                <span style="cursor: pointer;" onclick="flipear(<?php echo ($datosNoticia['CODIGO_NOTICIA']); ?>)" data-toggle="modal" data-target="#md-flipear">
+                  <button type="button" class="btn btn-circle" style="background-color: #fff; border-color: #fff; opacity: .5;">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                  </button>
+                  <span style="font-size: 13px;">Flipear</span>
+                </span>
+                
 <!--************************************************************************************************************-->
                   <ul id="div-usuariosLikes" style="margin-left: 30px; list-style-type: none;padding: 0px;">                    
                   </ul>                
@@ -202,7 +203,7 @@
         ?>
         <li style="padding-left: 0;height: 40px;display: inline-block;padding-right: 4px;vertical-align: top;width: 40px;">
             <div class="col-lg-1 col-md-2 col-sm-2 col-2 col-xl-1" style="padding:0px;">
-              <div class="miniatura-usuario" title="<?php echo ($rowLikes['NOMBRE_USUARIO']); ?>" style="margin: auto;background-image: url(<?php echo ($rowLikes['URL_FOTO_PERFIL']); ?>);width: 40px;height: 40px;padding: 0px;">
+              <div class="miniatura-usuario" title="<?php echo ($rowLikes['NOMBRE_USUARIO']); ?>" style="margin: auto;background-image: url('<?php echo ($rowLikes["URL_FOTO_PERFIL"]); ?>');width: 40px;height: 40px;padding: 0px;">
                 <?php
                   if(is_null($rowLikes["URL_FOTO_PERFIL"])){
                 ?>

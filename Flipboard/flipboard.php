@@ -216,7 +216,7 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
     <!--FIN Modal 002-->
 
     <!--Modal 003: Agregar Revista -->
-    <div class="modal fade" id="modal-003" tabindex="-1" role="dialog" aria-hidden="true"><!--/.modal003-->
+    <div class="modal fade" id="modal-003" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 1000000001;"><!--/.modal003-->
       <div class="modal-dialog" role="document"><!--/.modal-dialog-->
         <div class="modal-content"><!--/.modal-content-->
           <div class="modal-header" style="text-align: center;">
@@ -245,7 +245,7 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
     <!--FIN Modals-->
 
     <!--Modal Flipear-->
-    <div class="modal fade" id="md-flipear" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="md-flipear" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 1000000000;">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -268,7 +268,7 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
     <!-- Fin Modal Flipear -->
 
       <!-- Modal agregar comentario -->
-      <div class="modal fade" tabindex="-1" id="modal-agregar_comentario" style="right: 0px; left: auto; top:0px; width: 600px;">
+      <div class="modal fade" id="modal-agregar_comentario" style="right: 0px; left: auto; top:0px; width: 600px;">
         <div class="modal-dialog" role="document" style="max-width: 600px; margin: 0px auto;">
           <div class="modal-content" style="padding: 30px";>
 <!--**************************************************************************************************************-->    

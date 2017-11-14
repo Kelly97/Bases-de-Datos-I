@@ -359,6 +359,10 @@ function agregarComentario(codigoNoticia, codigoUsuario){
 				cargarComentarios(codigoNoticia);
 			}else
 				alert(resultado.mensaje);
+
+			$(function () {
+			  $('[data-toggle="popover"]').popover();
+			})
 		},
 		error:function(){
 			alert("Ups, no se pudo cargar el contenido.");
@@ -375,6 +379,9 @@ codigo_noticia = "codigo_noticia="+codigo;
 		method: "POST",
 		success:function(resultado){
 			$("#respuestaComentario").html(resultado);
+			$(function () {
+			  $('[data-toggle="popover"]').popover();
+			})
 		},
 		error:function(){
 			alert("Ups, no se pudo cargar el contenido.");
@@ -409,6 +416,9 @@ function cargar_modalComentarios(codigo){
 
 			cargarLikes(codigo);
 			cargarComentarios(codigo);
+			$(function () {
+			  $('[data-toggle="popover"]').popover();
+			})
 		},
 		error:function(){
 			alert("Ups, no se pudo cargar el contenido.");
@@ -430,6 +440,9 @@ function eliminarComentario(codigoNoticia, codigoComentario){
 				cargarComentarios(codigoNoticia);
 			}else
 				alert(resultado.mensaje);
+			$(function () {
+			  $('[data-toggle="popover"]').popover();
+			})
 		},
 		error:function(){
 			alert("Ups, no se pudo cargar el contenido.");
