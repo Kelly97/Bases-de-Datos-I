@@ -10,9 +10,10 @@ function agregarRevista(codigo_usuario){
 		data: data,
 		method: "POST",
 		success: function(datos){
+			$('#modal-003').modal('hide');
             $('#alerta_inferior').html(datos);
             $('#alerta_inferior').show();
-            setTimeout(ocultarAlert,3000);
+            setTimeout(ocultarAlert,3000);            
 		}
 	});
 }

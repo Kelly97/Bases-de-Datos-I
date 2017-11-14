@@ -70,6 +70,15 @@ $(document).ready(function() {
 	  $("#btn_aniadir_flip").attr("disabled", true);
 	});
 
+	$('#modal-003').on('hide.bs.modal', function (e) {
+		if($("#codVerificacion").html()=="1"){
+			setTimeout(function(){
+				$('#md-flipear').modal('show');
+			},1000);
+		}
+	  $("#codVerificacion").html("");//Reiniciando el modal.
+	});
+
 	$("#btn_aniadir_flip").click(function () {	 
 		//alert($('input:radio[name=opt_revistas]:checked').val());//Alerta que contiene el codigo de revista
 		codRevista = $('input:radio[name=opt_revistas]:checked').val();
@@ -336,7 +345,10 @@ function habilitarBotonAniadirFlip(){
 
 function agregarNuevaRevista(){
 	$('#md-flipear').modal('hide');	
-	setTimeout(function(){$('#modal-003').modal('show');},500);
+	setTimeout(function(){
+		$('#modal-003').modal('show');
+		$("#codVerificacion").html("1");//Indicando que se abre el modal despues del flip
+	},500);
 	
 }
 

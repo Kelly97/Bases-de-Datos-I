@@ -96,11 +96,11 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
               </div>
             </a>
           </li>
-          <li class="nav-item" data-toggle="popover" data-placement="left" data-content="Mis revistas" data-trigger="hover">
+          <!--<li class="nav-item" data-toggle="popover" data-placement="left" data-content="Mis revistas" data-trigger="hover">
             <a class="nav-item" data-toggle="modal" data-target="#modal-002">
               <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
             </a>
-          </li>
+          </li>-->
           <li class="nav-item" data-toggle="popover" data-placement="left" data-content="Notificaciones" data-trigger="hover">
             <a class="nav-item" id="btn-notificaciones">
               <i class="fa fa-bell fa-lg" aria-hidden="true" style="position: relative;">
@@ -111,7 +111,7 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
           </li>
           <li class="nav-item" data-toggle="popover" data-placement="left" data-content="Redactar Noticia" data-trigger="hover">
             <a class="nav-item" href="redactador_noticias.php" target="blank">
-              <i class="fa fa-newspaper-o fa-lg" aria-hidden="true"></i>
+              <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
             </a>
           </li>
           <li id="btn-perfil" class="nav-item" data-toggle="popover" data-placement="left" data-content="Perfil" data-trigger="hover">
@@ -237,6 +237,7 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
               <span>Privada</span>
             </label><br>
             <button type="button" class="btn" onclick="agregarRevista(<?php echo $codigoUsuario; ?>);">Crear</button>
+            <div id="codVerificacion" style="display: none;"></div>
           </div><!--/.modal-body-->
         </div><!--/.modal-content-->
       </div><!--/.modal-dialog-->
