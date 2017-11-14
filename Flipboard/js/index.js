@@ -158,7 +158,6 @@ function cargarNoticias(codigoCategoria){
 			$(document).scrollTop(0);
 			cargarTarjetasPortada(codigoCategoria);			
 
-             
         }        
     });	 
 }
@@ -174,7 +173,6 @@ $(document).scroll(function(){
 		//alert(codigoCat);
 	 }
 });
-
 
 
 
@@ -205,7 +203,8 @@ function cargarTarjetasPortada(codigoCategoria){
             	$('#grid_Noticias').append(datos);
             	isotopeNotiCard();
             	$(document).scrollTop(scrollVertical);
-            }            
+            }     
+
         }        
     }); 
 }

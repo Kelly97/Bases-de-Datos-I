@@ -107,7 +107,15 @@ switch ($_POST["codigo"]) {
 			    exit;
 			}
 			$codRevista=$_POST["codRevista"];
-			$codNoticia=$_POST["codNoticia"];			
+			$codNoticia=$_POST["codNoticia"];	
+			
+			$sqlNoticia = " SELECT
+							    CODIGO_USUARIO
+							FROM TBL_NOTICIAS
+							WHERE CODIGO_NOTICIA = ".$codNoticia;
+			$resultadoNoticia = $conexion->ejecutarInstruccion($sqlNoticia);	
+			$filaNoticia = $conexion->obtenerFila($resultadoNoticia);	
+
 			$sql="
 				BEGIN
 				  P_FLIPEAR(:codNoticia,
@@ -124,6 +132,34 @@ switch ($_POST["codigo"]) {
 			oci_bind_by_name($procedure, ':codigoRespuesta', $codigoRespuesta,5);//No se deben declarar previamente las variables de salida (out)
 			oci_bind_by_name($procedure, ':mensajeRespuesta', $mensajeRespuesta,200);
 			oci_execute($procedure);
+			$codigoUsuarioReceptor = $filaNoticia["CODIGO_USUARIO"];
+			$tipoNotificacion = 5;//3->Flip
+			$codigoReaccion = NULL;//
+			if($codigoRespuesta == 1){
+				$sqlNotificacion = "BEGIN
+									  P_CREAR_NOTIFICACION(
+									  	:codigo_tipo_notificacion,
+								        :codigo_usuario_receptor,
+								        :codigo_usuario_emisor,
+								        :codigo_revista,
+								        :codigo_noticia,
+								        :codigo_reaccion,
+								        :codigoResultado2,
+				        				:mensajeResultado2				
+									  );
+									END;";
+				$procedureNoti = oci_parse($conn, $sqlNotificacion);
+				oci_bind_by_name($procedureNoti, ':codigo_tipo_notificacion', $tipoNotificacion);
+				oci_bind_by_name($procedureNoti, ':codigo_usuario_receptor', $codigoUsuarioReceptor);
+				oci_bind_by_name($procedureNoti, ':codigo_usuario_emisor', $codigoUsuario);
+				oci_bind_by_name($procedureNoti, ':codigo_revista', $codRevista);
+				oci_bind_by_name($procedureNoti, ':codigo_noticia', $codNoticia);
+				oci_bind_by_name($procedureNoti, ':codigo_reaccion', $codigoReaccion);
+				oci_bind_by_name($procedureNoti, ':codigoResultado2', $codigoRespuesta2 , 5);
+				oci_bind_by_name($procedureNoti, ':mensajeResultado2', $mensajeRespuesta2 , 200);
+				oci_execute($procedureNoti);
+				oci_free_statement($procedureNoti);	
+			}
 			echo $mensajeRespuesta;
 			oci_free_statement($procedure);
 			oci_close($conn);
