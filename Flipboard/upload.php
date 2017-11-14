@@ -1,4 +1,14 @@
 <?php
+include_once("class/class-conexion.php");
+session_start();
+if (isset($_SESSION['usuario'])) {
+  $codigoUsuario = $_SESSION['usuario']['CODIGO_USUARIO'];
+} else{
+  header('Location: index.php');
+}
+
+
+
 //echo count($_FILES["file0"]["name"]);exit;
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES["files"]["type"])){
 $target_dir = "images/foto_perfiles/";
@@ -40,7 +50,10 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["files"]["tmp_name"], $target_file)) {
-       $messages[]= "Foto actualizada correctamente.";
+       $messages[]= "Foto actualizada correctamente. ";
+
+
+      
 	   
 	   
     } else {
@@ -52,7 +65,7 @@ if (isset($errors)){
 	?>
 	<div class="alert alert-danger alert-dismissible" role="alert">
 	  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	  <strong>Error!</strong> 
+	  
 	  <?php
 	  foreach ($errors as $error){
 		  echo"<p>$error</p>";
@@ -66,14 +79,31 @@ if (isset($messages)){
 	?>
 	<div class="alert alert-success alert-dismissible" role="alert">
 	  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	  <strong>Aviso!</strong> 
+
 	  <?php
 	  foreach ($messages as $message){
 		  echo"<p>$message</p>";
 	  }
 	  ?>
 	</div>
+
 	<?php
+$url="'"."images/foto_perfiles/".$_FILES["files"]["name"]."'";
+include_once("class/class-conexion.php");
+	$conexion = new Conexion();
+		$sql = "  
+				call P_ACTUALIZAR_FOTO($url,$codigoUsuario)
+				";
+    $resultadoAct = $conexion->ejecutarInstruccion($sql);
+    $conexion->commit();
+
+
 }
+
+
+	
+
 }
+
+
 ?>

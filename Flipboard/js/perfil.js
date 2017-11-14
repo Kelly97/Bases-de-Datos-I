@@ -100,6 +100,44 @@ function cambiarCorreo(){
 }
 
 
+function cambiarFoto(){
+
+	$( "#files" ).click();
+ 
+}
+
+
+
+
+function upload_image(){//Funcion encargada de enviar el archivo via AJAX
+				$(".upload-msg").text('Cargando...');
+				var inputFileImage = document.getElementById("files");
+				var file = inputFileImage.files[0];
+				var data = new FormData();
+				data.append('files',file);
+				
+				/*jQuery.each($('#fileToUpload')[0].files, function(i, file) {
+					data.append('file'+i, file);
+				});*/
+							
+				$.ajax({
+					url: "upload.php",        // Url to which the request is send
+					type: "POST",             // Type of request to be send, called as method
+					data: data, 			  // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+					contentType: false,       // The content type used when sending data to the server.
+					cache: false,             // To unable request pages to be cached
+					processData:false,        // To send DOMDocument or non processed data file it is set to false
+					success: function(data)   // A function to be called if request succeeds
+					{
+						$(".upload-msg").html(data);
+						window.setTimeout(function() {
+						$(".alert-dismissible").fadeTo(500, 0).slideUp(500, function(){
+						$(this).remove();
+						});	}, 1000);
+					}
+				});
+				
+			}
 
 
 
@@ -107,6 +145,109 @@ function cambiarCorreo(){
 
 
 
+function cambiarDatos(event){
+	var parametros;
+	var x = event.which || event.keyCode;
+		if ((x==13)&&($('#nombre-principal').val().length >= 1)){
+
+		$.ajax({
+			url:"ajax/acciones-perfil.php?accion=7&"+"TIPO=1&"+"NOMBRE="+document.getElementById("nombre-principal").value,
+			dataType:"html",
+			method: "GET",
+			success:function(data){
+				{
+						$(".upload-msg").html(data);
+						window.setTimeout(function() {
+						$(".alert-dismissible").fadeTo(500, 0).slideUp(500, function(){
+						$(this).remove();
+						});	}, 2000);
+					}	
+		    }
+		});
+
+		$.ajax({
+			url:"ajax/acciones-perfil.php?accion=7&"+"TIPO=2&"+"DESCRIPCION="+document.getElementById("descripcion").value,
+			dataType:"html",
+			method: "GET",
+			success:function(data){
+				{
+						$(".upload-msg").html(data);
+						window.setTimeout(function() {
+						$(".alert-dismissible").fadeTo(500, 0).slideUp(500, function(){
+						$(this).remove();
+						});	}, 2000);
+					}	
+		    }
+		});
+
+		
+	
+   } 
+   if ((x==13)&&(document.getElementById("nombre-principal").value)=="") {
+   	var data= "<div class='alert alert-danger alert-dismissible' role='alert'> <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Escriba su nombre</strong> </div>";
+   		$(".upload-msg").html(data);
+		window.setTimeout(function() {
+		$(".alert-dismissible").fadeTo(500, 0).slideUp(500, function(){
+		$(this).remove();
+		});	}, 3000);
+   }
+
+}
 
 
 
+
+function nuevoNombreConf(event){
+	var x = event.which || event.keyCode;
+		if ((x==13)&&($('#nombre-usuario-conf').val().length >= 1)){
+
+		$.ajax({
+			url:"ajax/acciones-perfil.php?accion=7&"+"TIPO=1&"+"NOMBRE="+document.getElementById("nombre-usuario-conf").value,
+			dataType:"html",
+			method: "GET",
+			success:function(data){
+				
+						$(".upload-msg").html(data);
+						window.setTimeout(function() {
+						$(".alert-dismissible").fadeTo(500, 0).slideUp(500, function(){
+						$(this).remove();
+						});	}, 2000);
+					$("#conf-mensajes").html("<div class='alert alert-success' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Nombre Actualizado</strong></div>");
+
+		    }
+		});
+	}
+
+}
+
+
+
+function nuevoCorreo(){
+
+	 if(($("#txt-email").val()!="")&&($("#txt-password").val()!="")&&(validarCorreo($("#txt-email").val())==1)){
+	 
+	 } 
+	 else
+	 	$("#conf-mensajes").html("<div class='alert alert-danger' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Formato del correo incorrecto</strong></div>");
+
+}
+
+
+function validarCorreo(correo){
+	var arroba=0;
+	var punto=0;
+	var resultado=0;
+	var otros=0;
+
+   for (var i = 0 ; i < correo.length; i++) {
+   	 if(correo.charAt(i)=="@")
+   	 	arroba=1;
+   	 if(correo.charAt(i)==".")
+   	 	punto=1;
+   	 if(correo.charAt(i)==",")
+   	 	otros=1;
+   }
+   if((arroba==1)&&(punto==1)&&(otros==0))
+   	 	resultado=1;
+   return resultado;
+}
