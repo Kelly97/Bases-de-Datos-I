@@ -299,7 +299,7 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
     <script src="js/tarjetasNoticias.js"></script>
     <script src="js/intereses.js"></script>
     <script src="js/agregar-revista.js"></script>    
-      
+    <script src="js/usuario.js"></script>
     <!--FIN Scripts-->
 
   </body>

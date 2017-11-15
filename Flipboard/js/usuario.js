@@ -1,9 +1,5 @@
-$(document).ready(function() {
-    cargarUsuario();
-});
-
-function cargarUsuario(){
-    datos = "codigo_usuario="+$("#codigoUsuario").val();
+function cargarUsuario(codigoUsuario){
+    datos = "codigo_usuario="+codigoUsuario;
     $.ajax({
         url : "ajax/accion-usuario.php?accion=1",
         data: datos,

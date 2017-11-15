@@ -235,11 +235,7 @@ switch ($_POST["codigo"]) {
 			<div class="container" style="margin-bottom: 10px;">
 				<div class="row">
 				      <div class="col-lg-1 col-md-2 col-sm-2 col-2 col-xl-1" style="padding:0px;">
-				      	<label>
-				      		
-						      		<a href="usuario.php?codigoUsuario=<?php echo $rowNoticia["CODIGO_USUARIO"]; ?>">
-
-					      	<div class="miniatura-usuario" style="margin: auto;background-image: url('<?php echo $rowNoticia["URL_FOTO_PERFIL"]; ?>');width: 40px;height: 40px;padding: 0px;">
+					      	<div class="miniatura-usuario" onclick="cargarUsuario(<?php echo $rowNoticia["CODIGO_USUARIO"]; ?>)" style="margin: auto;background-image: url('<?php echo $rowNoticia["URL_FOTO_PERFIL"]; ?>');width: 40px;height: 40px;padding: 0px;">
 			                		<?php
 			                		if(is_null($rowNoticia["URL_FOTO_PERFIL"])){
 			                			?>
@@ -256,8 +252,6 @@ switch ($_POST["codigo"]) {
 			                		}
 			                		?>								
 							</div>
-							</a>
-						</label>
 				      </div>
 					      
 				      <div class="col-lg-11 col-md-10 col-sm-10 col-10 col-xl-11" >
@@ -282,32 +276,32 @@ switch ($_POST["codigo"]) {
 				        </table>  
 				      </div> 
 				</div>
-		   </div>  
-		  <img class="card-img-top" src='<?php echo $rowNoticia["URL_PORTADA_NOTI"]; ?>' style="cursor: pointer;" onclick="cargarContenidoNoticia(<?php echo ($rowNoticia['CODIGO_NOTICIA']);?>);" >
-		  <div class="card-body" style="text-align: justify;">
-		  	<div style="cursor: pointer;" onclick="cargarContenidoNoticia(<?php echo ($rowNoticia['CODIGO_NOTICIA']);?>);" >
+		    </div>  
+		    <img class="card-img-top" src='<?php echo $rowNoticia["URL_PORTADA_NOTI"]; ?>' style="cursor: pointer;" onclick="cargarContenidoNoticia(<?php   echo ($rowNoticia['CODIGO_NOTICIA']);?>);" >
+		    <div class="card-body" style="text-align: justify;">
+			  	<div style="cursor: pointer;" onclick="cargarContenidoNoticia(<?php echo ($rowNoticia['CODIGO_NOTICIA']);?>);" >
 
-		  		<a><h5 class="card-title" style="text-align: left;"><?php echo ($rowNoticia["TITULO_NOTICIA"]);?></h5></a>
-			    <span class="noti-card-autor">
-			    	<?php echo ($rowNoticia["USUARIO_PUBLICA"])." · ".($rowNoticia["AUTOR_NOTICIA"]);?>
-			    </span>
-			    <p class="card-text">
-			    	<?php echo ($rowNoticia["DESCRIPCION_NOTICIA"]);?>
-			    </p>
-		  	</div>	<br>			    
-		    <div>
-	        	<span id="<?php echo 'likeContador_'.$rowNoticia['CODIGO_NOTICIA'];?>"><?php echo $rowNoticia["CANT_LIKES"];?></span>
-	        	<i class="fa fa-heart" aria-hidden="true" style="font-size: 13px;padding-right: 8px;color: red;">
-		        </i>
-		        <span id="<?php echo 'comentariosCont_'.$rowNoticia['CODIGO_NOTICIA'];?>"><?php echo $rowNoticia["CANT_COMENTARIOS"];?></span>
-		        <i class="fa fa-comment-o" aria-hidden="true" style="font-size: 13px;padding-right: 8px;" ></i>
-	        	<a class="btn btn-default" role="button" style="cursor: pointer;" data-toggle="modal" data-target="#modal-agregar_comentario" onclick="cargar_modalComentarios(<?php echo $rowNoticia["CODIGO_NOTICIA"];?>);">
-		        	<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 13px;padding-right: 8px;">				        		
-				    </i>
-		        	Añadir Comentario
-	        	</a>
-	        </div>
-		  </div>
+			  		<a><h5 class="card-title" style="text-align: left;"><?php echo ($rowNoticia["TITULO_NOTICIA"]);?></h5></a>
+				    <span class="noti-card-autor">
+				    	<?php echo ($rowNoticia["USUARIO_PUBLICA"])." · ".($rowNoticia["AUTOR_NOTICIA"]);?>
+				    </span>
+				    <p class="card-text">
+				    	<?php echo ($rowNoticia["DESCRIPCION_NOTICIA"]);?>
+				    </p>
+			  	</div><br>			    
+			    <div>
+		        	<span id="<?php echo 'likeContador_'.$rowNoticia['CODIGO_NOTICIA'];?>"><?php echo $rowNoticia["CANT_LIKES"];?></span>
+		        	<i class="fa fa-heart" aria-hidden="true" style="font-size: 13px;padding-right: 8px;color: red;">
+			        </i>
+			        <span id="<?php echo 'comentariosCont_'.$rowNoticia['CODIGO_NOTICIA'];?>"><?php echo $rowNoticia["CANT_COMENTARIOS"];?></span>
+			        <i class="fa fa-comment-o" aria-hidden="true" style="font-size: 13px;padding-right: 8px;" ></i>
+		        	<a class="btn btn-default" role="button" style="cursor: pointer;" data-toggle="modal" data-target="#modal-agregar_comentario" onclick="cargar_modalComentarios(<?php echo $rowNoticia["CODIGO_NOTICIA"];?>);">
+			        	<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 13px;padding-right: 8px;">				        		
+					    </i>
+			        	Añadir Comentario
+		        	</a>
+		        </div>
+		  	</div>
 		</div>
 		<?php
 		}	

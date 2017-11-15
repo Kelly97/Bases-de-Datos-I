@@ -1,10 +1,6 @@
-$(document).ready(function() {
-    cargarNoticia();
-});
-
-function cargarNoticia(){
+function cargarNoticia(codigoNoticia){
     datos = "codigo="+"1"+"&"+
-            "codigoNoticia="+$("#codigoNoticia").val();
+            "codigoNoticia="+codigoNoticia;
 
     $.ajax({
         url : "ajax/acciones-noticias.php",
