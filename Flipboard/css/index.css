@@ -127,6 +127,7 @@ body{
 	cursor: pointer;
 }
 .btn-editar-revista{
+	border-radius: 0px;
 	border-color: black;
 	color: black;
 	background-color: transparent;

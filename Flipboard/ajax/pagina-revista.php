@@ -163,6 +163,7 @@ $cantidadColaboradores = $conexion->obtenerArregloAsociativo($resultado3)['NUMBE
 		</table>
 	</div>
 </div>
+<!-- INICIA BARRA INFERIOR DEL HEADER -->
 <?php
 $resultado4 = $conexion->ejecutarInstruccion($sql4);
 $resultado5 = $conexion->ejecutarInstruccion($sql5);
@@ -198,6 +199,7 @@ $cantidadNoticias = $conexion->obtenerArregloAsociativo($resultado5)['NUMBER_OF_
 		</div>
 	<?php } ?>
 </div>
+<!-- FINALIZA BARRA INFERIOR DEL HEADER -->
 <!-- FINALIZA HEADER DE LA REVISTA -->
 <!-- INICIA IMPRESION DE NOTICIAS DE LA REVISTA -->
 <?php
@@ -208,9 +210,9 @@ while($rowNoticia = $conexion->obtenerArregloAsociativo($resultado4)){
 		$sqlLikes="SELECT COUNT(1) AS CANT_REGISTROS
 				FROM TBL_REACCIONES_X_NOTICIAS
 				WHERE CODIGO_USUARIO=". $codigoUsuario."
-				AND CODIGO_NOTICIA=".$rowNoticia['CODIGO_FLIP'];
-		$resultadoCantRegis = $conexion->ejecutarInstruccion($sqlLikes);
-		$resultCantR = $conexion->obtenerFila($resultadoCantRegis);
+				AND CODIGO_FLIP=".$rowNoticia['CODIGO_FLIP'];
+		$resultadoLikes = $conexion->ejecutarInstruccion($sqlLikes);
+		$resultCantR = $conexion->obtenerFila($resultadoLikes);
 	?>
 		<!-- Inicia impresion de un flip -->
 		<div class="card noti-card 
@@ -248,7 +250,7 @@ while($rowNoticia = $conexion->obtenerArregloAsociativo($resultado4)){
 				      		
 						      		<a href="usuario.php?codigoUsuario=<?php echo $rowNoticia["CODIGO_USUARIO_FLIP"]; ?>">
 
-					      	<div class="miniatura-usuario" style="margin: auto;background-image: url('<?php echo $rowNoticia["URL_FOTO_PERFIL_FLIP"]; ?>');width: 40px;height: 40px;padding: 0px;">
+					      	<div class="miniatura-usuario" onclick="cargarUsuario(<?php $rowNoticia["CODIGO_USUARIO_FLIP"]; ?>)"; style="margin: auto;background-image: url('<?php echo $rowNoticia["URL_FOTO_PERFIL_FLIP"]; ?>');width: 40px;height: 40px;padding: 0px;">
 			                		<?php
 			                		if(is_null($rowNoticia["URL_FOTO_PERFIL_FLIP"])){
 			                			?>
@@ -323,7 +325,7 @@ while($rowNoticia = $conexion->obtenerArregloAsociativo($resultado4)){
 		$sqlLikes="SELECT COUNT(1) AS CANT_REGISTROS
 				FROM TBL_REACCIONES_X_NOTICIAS
 				WHERE CODIGO_USUARIO=". $codigoUsuario."
-				AND CODIGO_NOTICIA=".$rowNoticia['CODIGO_FLIP'];
+				AND CODIGO_NOTICIA=".$rowNoticia['CODIGO_NOTICIA'];
 		$resultadoCantRegis = $conexion->ejecutarInstruccion($sqlLikes);
 		$resultCantR = $conexion->obtenerFila($resultadoCantRegis);
 		?>
@@ -359,11 +361,8 @@ while($rowNoticia = $conexion->obtenerArregloAsociativo($resultado4)){
 			<div class="container" style="margin-bottom: 10px;">
 				<div class="row">
 				      <div class="col-lg-1 col-md-2 col-sm-2 col-2 col-xl-1" style="padding:0px;">
-				      	<label>
-				      		
-						      		<a href="usuario.php?codigoUsuario=<?php echo $rowNoticia["CODIGO_USUARIO_NOTICIA"]; ?>">
 
-					      	<div class="miniatura-usuario" style="margin: auto;background-image: url('<?php echo $rowNoticia["URL_FOTO_PERFIL_NOTICIA"]; ?>');width: 40px;height: 40px;padding: 0px;">
+					      	<div class="miniatura-usuario" onclick="cargarUsuario(<?php $rowNoticia["CODIGO_USUARIO_NOTICIA"]; ?>)"; style="margin: auto;background-image: url('<?php echo $rowNoticia["URL_FOTO_PERFIL_NOTICIA"]; ?>');width: 40px;height: 40px;padding: 0px;">
 			                		<?php
 			                		if(is_null($rowNoticia["URL_FOTO_PERFIL_NOTICIA"])){
 			                			?>
@@ -380,8 +379,6 @@ while($rowNoticia = $conexion->obtenerArregloAsociativo($resultado4)){
 			                		}
 			                		?>								
 							</div>
-							</a>
-						</label>
 				      </div>
 					      
 				      <div class="col-lg-11 col-md-10 col-sm-10 col-10 col-xl-11" >
