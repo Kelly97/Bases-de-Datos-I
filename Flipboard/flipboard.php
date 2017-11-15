@@ -101,6 +101,22 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
               <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
             </a>
           </li>-->
+          <?php 
+          if ($codigoUsuario == 1) {
+      ?>
+                <li class="nav-item" id="btn-usuarios" data-toggle="popover" data-placement="left" data-content="Usuarios" data-trigger="hover">
+                  <a class="nav-item" href="#usuario" >
+                    <i class="fa fa-id-card fa-lg" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li class="nav-item" id="btn-categorias" data-toggle="popover" data-placement="left" data-content="Categoria" data-trigger="hover">
+                  <a class="nav-item" href="#categoria" >
+                    <i class="fa fa-server fa-lg" aria-hidden="true"></i>
+                  </a>
+                </li>
+      <?php
+            }
+      ?>
           <li class="nav-item" data-toggle="popover" data-placement="left" data-content="Notificaciones" data-trigger="hover">
             <a class="nav-item" id="btn-notificaciones">
               <i class="fa fa-bell fa-lg" aria-hidden="true" style="position: relative;">
@@ -144,7 +160,7 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
 
     <div class="container-fluid" style="">  
       <div id="contenido-principal" class="col-lg-12" style="padding: 0px;">
-        
+        <input type="text" id="codigo-usuario" value="<?php echo $codigoUsuario; ?>">
       </div>    
     </div>
 
@@ -294,12 +310,12 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
     <script src="js/text-scrolling.js"></script>    
     <script src="js/imagesloaded.pkgd.js"></script>    
     <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/packery-mode.pkgd.js"></script>
+    <script src="js/packery-mode.pkgd.js"></script>    
+    <script src="js/usuario.js"></script>
     <script src="js/index.js"></script>
     <script src="js/tarjetasNoticias.js"></script>
     <script src="js/intereses.js"></script>
-    <script src="js/agregar-revista.js"></script>    
-    <script src="js/usuario.js"></script>
+    <script src="js/agregar-revista.js"></script>
     <script src="js/notificaciones.js"></script>
     <!--FIN Scripts-->
 

@@ -238,7 +238,7 @@ $contResultPerso=0;
 			$contResultPerso++;
 		?>
 		<div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12" style="position: relative;margin-bottom: 1.5em;">
-			<div class="miniatura-usuario" onclick="cargarUsuario(<?php echo $rowUsuario["CODIGO_USUARIO"]; ?>)" style="cursor: pointer; background-image: url('<?php echo $rowUsuario["URL_FOTO_PERFIL"]; ?>'); margin:auto;margin-bottom: 10px;">
+			<div class="miniatura-usuario" onclick="cargarUsuario(<?php echo $rowUsuario["CODIGO_USUARIO"]; ?>)" style="cursor: pointer; background-image: url('<?php echo $rowUsuario["URL_FOTO_PERFIL"]; ?>'); margin: auto;margin-bottom: 10px;">
 				<?php
                   if(is_null($rowUsuario["URL_FOTO_PERFIL"])){
                     ?>

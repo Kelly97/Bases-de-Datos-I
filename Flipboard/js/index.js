@@ -104,6 +104,15 @@ $(document).ready(function() {
 		perfilUsuario();
 	});
 
+	$("#btn-usuarios").click(function () {	 
+		Usuarios();
+	});
+
+
+	$("#btn-categorias").click(function () {	 
+		Categorias();
+	});
+
  
 	
 });
@@ -354,6 +363,134 @@ function agregarNuevaRevista(){
 	
 }
 
+//***************************************************************************************************************************************
+function Usuarios(){	
+	$.ajax({       
+        url : "ajax/usuarios.php?accion=1",
+        method: "POST",
+        beforeSend: function() {
+        	$('#contenido-principal').html('<div id="loading"><div id="loading-center-absolute"><div class="object" id="object_one"></div><div class="object" id="object_two"></div><div class="object" id="object_three"></div><div class="object" id="object_four"></div></div>');         
+        },
+        success: function(datos){       
+            $('#contenido-principal').html(datos);
+            $(function () {
+			  $('[data-toggle="popover"]').popover();
+			})
+        }        
+    });	
+}
+
+function mostrarUsuario(codigoEstado){
+	if (seleccionado!=null) 
+	document.getElementById(seleccionado).style.color = "#C6C6C6";
+
+	document.getElementById(codigoEstado).style.color = "#000000";	
+	parametro = "parametro="+codigoEstado;
+	$.ajax({       
+        url : "ajax/usuarios.php?accion=2",
+        data : parametro,
+        method: "POST",
+        success: function(datos){       
+            $('#div-contenidoPrincipal').html(datos);
+        }        
+    });	
+    seleccionado=codigoEstado;
+}
+
+
+function cambiarTipo_usuario(codigoUsuario, codTipo_usuario){
+	data="codigoUsuario="+codigoUsuario+"&"+
+		 "codigoTipo_Usuario="+codTipo_usuario;
+	$.ajax({
+	    url: "ajax/usuarios.php?accion=3",
+	    data: data,
+	    method: "POST",
+	    success: function (respuesta) {
+	      	Usuarios();
+	    }
+	}); 
+
+}
+
+function eliminarUsuario(codigoUsuario,nombreUsuario){
+        data="codigoUsuario="+codigoUsuario;
+		$.ajax({
+	        url: "ajax/usuarios.php?accion=4",
+	        data: data,
+	        method: "POST",
+	        success: function (respuesta) {
+	          Usuarios();
+	        }
+	    }); 
+	        	
+}
+
+function agregarUsuario(codigoUsuario, codigoTipo_Usuario){
+	data="codigoUsuario="+codigoUsuario+"&"+
+		 "codigoTipo_Usuario="+codigoTipo_Usuario;
+	$.ajax({
+	    url: "ajax/usuarios.php?accion=5",
+	    data: data,
+	    method: "POST",
+	    success: function (respuesta) {
+	      	Usuarios();
+	    }
+	}); 
+
+}
+
+//********************************************************************************************************************************
+function Categorias(){	
+	$.ajax({       
+        url : "ajax/categorias.php?accion=1",
+        method: "POST",
+        success: function(datos){       
+            $('#contenido-principal').html(datos);
+            $(function () {
+			  $('[data-toggle="popover"]').popover();
+			})
+        }        
+    });	
+}
+
+function eliminarCategoria(codigoCategoria){
+	data="codigoCategoria="+codigoCategoria;
+	$.ajax({
+	    url: "ajax/categorias.php?accion=2",
+	    data: data,
+	    method: "POST",
+	    success: function (respuesta) {
+	    	alert(respuesta);
+	      	Categorias();
+	    }
+	}); 
+
+}
+
+
+function agregarCategoria(){
+	parametro ="categoria="+$("#nombre_categoria").val();
+	$.ajax({
+	    url: "ajax/categorias.php?accion=3",
+	    data: parametro,
+	    method: "POST",
+	    dataType: "json",
+	    success: function (respuesta) {
+	    	if (respuesta.codigo_resultado==0){
+				$("#div_respuesta").html('<div class="alert alert-warning" style="text-align:center;"> '+respuesta.mensaje+"</div>");
+			}
+			if (respuesta.codigo_resultado==1){	
+	        	$('#modal-agregar_categoria').modal('hide'); 
+	        	Categorias();
+	      	}
+	    },
+		error:function(){
+			alert("Ups, no se pudo cargar el contenido.");
+		}
+	}); 
+
+}
+
 /*
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ++++++++++++++++++++++++++++++++++++++++  Agregar comentario  ++++++++++++++++++++++++++++++++++++++++
@@ -471,3 +608,16 @@ function eliminarComentario(codigoNoticia, codigoComentario){
 /*
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 */
+function seguimientoRevista(codigoRevista, tipoOperacion) {
+	data = "codigoRevista="+codigoRevista+"&tipoOperacion="+tipoOperacion;
+			;
+	$.ajax({       
+        url : "ajax/accion-seguimiento-revista.php",
+        data: data,
+        method: "POST",
+        dataType: "json",
+        success:function(){
+			cargarPaginaRevista(codigoRevista);
+		},      
+    });
+}
