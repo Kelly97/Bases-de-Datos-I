@@ -15,7 +15,7 @@ $sql =  "
 	WHERE (A.CODIGO_REVISTA = $codigoRevista)
 	";
 $sql2 = "
-	SELECT B.NOMBRE_USUARIO, B.URL_FOTO_PERFIL,  substr(B.NOMBRE_USUARIO,1,1) AS INICIAL, B.CODIGO_USUARIO
+	SELECT B.NOMBRE_USUARIO, B.URL_FOTO_PERFIL,  substr(B.NOMBRE_USUARIO,1,1) AS INICIAL, B.CODIGO_USUARIO as CODIGO_COLABORADOR
 	FROM TBL_COLABORADORES A
 	LEFT JOIN TBL_USUARIOS B
 	ON (A.CODIGO_COLABORADOR = B.CODIGO_USUARIO)
@@ -65,11 +65,16 @@ $sql4 =  "
 		ON A.CODIGO_USUARIO_NOTICIA = G.CODIGO_USUARIO
 	";
 $sql5 = "SELECT COUNT(*) AS NUMBER_OF_ROWS FROM ($sql4)";
+$sql6 = "SELECT COUNT(1) AS CANT_REGS
+		FROM TBL_REVISTAS_SEGUIDAS A
+		WHERE A.CODIGO_REVISTA =". $codigoRevista ." AND A.CODIGO_SEGUIDOR = ".$codigoUsuario;
 $resultado = $conexion->ejecutarInstruccion($sql);
 $resultado2 = $conexion->ejecutarInstruccion($sql2);
 $resultado3 = $conexion->ejecutarInstruccion($sql3);
+$resultado6 = $conexion->ejecutarInstruccion($sql6);
 $datosRevista = $conexion->obtenerArregloAsociativo($resultado);
 $cantidadColaboradores = $conexion->obtenerArregloAsociativo($resultado3)['NUMBER_OF_ROWS'];
+$seguir = $conexion->obtenerFila($resultado6)['CANT_REGS'];
 ?>
 <!-- INICIA HEADER DE LA REVISTA -->
 <div class="head-revista" style="margin: auto; background-image: url('<?php echo $datosRevista['URL_PORTADA']; ?>');width: 100%;height: 90%;padding: 0px;">
@@ -86,8 +91,25 @@ $cantidadColaboradores = $conexion->obtenerArregloAsociativo($resultado3)['NUMBE
 							<?php
 	            		}
 	            		?>	
-					  	<button type="button" class="btn btn-default btn-seguir-revista" data-content="Seguir" data-trigger="hover">
-					  		Seguir
+					  	<button type="button" class="btn btn-default btn-seguir-revista" data-content="
+					  	<?php
+							if($seguir == 0){
+								echo ("Seguir");
+		            		}else{
+		            			echo "Dejar de Seguir";
+		            		}
+		            	?>
+					  	" data-trigger="hover">
+					  		<?php
+							if($seguir == 0){
+								echo "Seguir";
+		            		}else{
+		            			?>
+		            			<i class="fa fa-check" aria-hidden="true"></i>
+		            			<?php
+		            			echo " Siguiendo";
+		            		}
+		            		?>	
 					  	</button>
 					  	<button type="button" class="btn btn-default btn-seguir-revista" data-content="Añadir/Quitar a/de intereses.">
 					  		<i class="fa fa-ellipsis-h" aria-hidden="true"></i>
@@ -128,7 +150,7 @@ $cantidadColaboradores = $conexion->obtenerArregloAsociativo($resultado3)['NUMBE
 				  					$strAutores = $strAutores . ' y ' . $colaborador['NOMBRE_USUARIO'];
 				  				?>
 				  				<!--Miniatura de la imagen-->
-				                	<div class="col miniatura-usuario"; onclick="cargarUsuario(<?php $colaborador["CODIGO_USUARIO"]; ?>)"; style="margin: auto;background-image: url('<?php echo $colaborador["URL_FOTO_PERFIL"]; ?>');width: 40px;height: 40px;padding: 0px;">
+				                	<div class="col miniatura-usuario"; onclick="cargarUsuario(<?php $colaborador['CODIGO_COLABORADOR']; ?>)"; style="margin: auto;background-image: url('<?php echo $colaborador["URL_FOTO_PERFIL"]; ?>');width: 40px;height: 40px;padding: 0px;">
 				                		<?php
 				                		if(is_null($colaborador["URL_FOTO_PERFIL"])){
 				                			?>
@@ -184,7 +206,7 @@ $cantidadNoticias = $conexion->obtenerArregloAsociativo($resultado5)['NUMBER_OF_
 		  </div>
 		  <div class="col" style="text-align: center">
 		  	<?php
-			if($datosRevista['CODIGO_TIPO_REVISTA'] == 2){
+			if($datosRevista['CODIGO_TIPO_REVISTA'] == 2){//Si la revista es privada
     			?>
 				<i class="fa fa-lock" aria-hidden="true"></i>
 				<?php
