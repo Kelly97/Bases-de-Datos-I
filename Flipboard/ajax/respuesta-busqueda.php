@@ -10,7 +10,9 @@ include_once("../class/class-conexion.php");
 include_once("../class/class-date-interval.php");
 $conexion = new Conexion();
 $texto = $_POST["buscar"];
-$contResult=0;
+$contResultNoti=0;
+$contResultRevis=0;
+$contResultPerso=0;
 //echo $texto;
 ?>
 
@@ -19,7 +21,7 @@ $contResult=0;
 	<h2>
 		Resultados para '<?php echo $texto; ?>'
 	</h2>
-	<h4>Resultados Noticias</h4><br>
+	<h4 id="labelNoticias">Resultados Noticias</h4><br>
 	<div class="grid">
 		<div class="notisizer"></div>
 	<?php
@@ -66,7 +68,7 @@ $contResult=0;
 						ORDER BY FECHA_PUBLICACION DESC";
 		$resultadosNoticias = $conexion->ejecutarInstruccion($sqlNoticias);
 		while($rowNoticias = $conexion->obtenerFila($resultadosNoticias)){
-			$contResult++;
+			$contResultNoti++;
 			$sqlLikes="SELECT COUNT(1) AS CANT_REGITROS
 				FROM TBL_REACCIONES_X_NOTICIAS
 				WHERE CODIGO_USUARIO=".$codigoUsuario."
@@ -179,8 +181,11 @@ $contResult=0;
 		}
 	?>
 	</div>
-	<br><br><br>
-	<br><h4>Revistas</h4><br>
+	<div id="labelRevistas">
+		<br><br><br>
+		<br><h4 >Revistas</h4><br>
+	</div>
+	
 	<div class="row" style="padding: 20px;">
 	<?php
 		$conexion->liberarResultado($resultadosNoticias);
@@ -190,7 +195,7 @@ $contResult=0;
 		
 		$resultadoRevistas = $conexion->ejecutarInstruccion($sqlRevistas);
 		while($rowRevista = $conexion->obtenerFila($resultadoRevistas)){
-			$contResult++;
+			$contResultRevis++;
 		?>
 			<div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12" style="margin-bottom: 1.5em;position: relative;">
 				<div class="miniatura-revista" style="background-image: url('<?php echo $rowRevista["URL_PORTADA"];?>');margin: auto;filter:brightness(0.4);">	
@@ -204,8 +209,10 @@ $contResult=0;
 		}
 	?>
 	</div>
-
-	<br><h4>Personas</h4><br>
+	<div id="labelPersonas">
+		<br><h4>Personas</h4><br>
+	</div>
+	
 	<div class="row">
 		<?php
 		$conexion->liberarResultado($resultadoRevistas);
@@ -228,7 +235,7 @@ $contResult=0;
 		$resultadoUsuarios = $conexion->ejecutarInstruccion($sqlUsuarios);
 
 		while($rowUsuario = $conexion->obtenerFila($resultadoUsuarios)){
-			$contResult++;
+			$contResultPerso++;
 		?>
 		<div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12" style="position: relative;margin-bottom: 1.5em;">
 			<div class="miniatura-usuario" onclick="cargarUsuario(<?php echo $rowUsuario["CODIGO_USUARIO"]; ?>)" style="cursor: pointer; background-image: url('<?php echo $rowUsuario["URL_FOTO_PERFIL"]; ?>'); margin:auto;margin-bottom: 10px;">
@@ -266,28 +273,37 @@ $contResult=0;
 		?>
 	</div>
 </div>
-
+<div id="resultNoti" style="display: none;"><?php echo $contResultNoti; ?></div>
+<div id="resultRevis" style="display: none;"><?php echo $contResultRevis; ?></div>
+<div id="resultPersonas" style="display: none;"><?php echo $contResultPerso; ?></div>
 <?php
-	if($contResult==0){
+	if($contResultNoti==0 && $contResultRevis==0 && $contResultPerso==0){
 		?>
 			<div class="text-center" style="padding: 40px;">
-				<br><br>
-				<h2>
-					Resultados para '<?php echo $texto; ?>'
-				</h2><br><br>
+				
 				<i class="fa fa-frown-o" aria-hidden="true" style="font-size: 10em;color: #b7b5b5;font-weight: 100;"></i>
 				<p style="color: #b7b5b5;font-size: 1.6em;font-weight: 100;">
 					Lo sentimos, no pudimos encontrar la página que estabas buscando. Tal vez hayas escrito mal la dirección o la página haya sido movida.
-				</p>
-				<div id="contResult" style="display: none;"><?php echo $contResult; ?></div>
-			</div>
+				</p>				
+			</div><br><br><br>
 		<?php
 	}
 ?>
 
 <script>
-	if($("#contResult").html()=="0"){
-		$("#contenedorRespuestaBusc").css("display","none");
-	}
+	$(document).ready(function(){
+		
+		if($("#resultNoti").html()=="0"){
+			$("#labelNoticias").css("display","none");
+		}
+		if($("#resultRevis").html()=="0"){
+			$("#labelRevistas").css("display","none");
+		}
+		if($("#resultPersonas").html()=="0"){
+			$("#labelPersonas").css("display","none");
+		}
+			
+	});
+	
 	isotopeNotiCard();
 </script>

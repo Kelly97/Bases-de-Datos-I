@@ -90,37 +90,38 @@ $seguir = $conexion->obtenerFila($resultado6)['CANT_REGS'];
 							<p><?php echo ($datosRevista['DESCRIPCION']); ?></p>
 							<?php
 	            		}
-	            		?>	
-					  	<button type="button" class="btn btn-default btn-seguir-revista" data-content="
-					  	<?php
-							if($seguir == 0){
-								echo ("Seguir");
-		            		}else{
-		            			echo "Dejar de Seguir";
-		            		}
-		            	?>
-					  	" data-trigger="hover">
-					  		<?php
-							if($seguir == 0){
-								echo "Seguir";
-		            		}else{
-		            			?>
-		            			<i class="fa fa-check" aria-hidden="true"></i>
-		            			<?php
-		            			echo " Siguiendo";
-		            		}
-		            		?>	
-					  	</button>
-					  	<button type="button" class="btn btn-default btn-seguir-revista" data-content="Añadir/Quitar a/de intereses.">
-					  		<i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-					  	</button>
+	            		if( $datosRevista["CODIGO_USUARIO"]!=$codigoUsuario){
+	            			?>
+	            				<button type="button" class="btn btn-default btn-seguir-revista" data-content="
+							  	<?php
+									if($seguir == 0){
+										echo ("Seguir");
+				            		}else{
+				            			echo "Dejar de Seguir";
+				            		}
+				            	?>
+							  	" data-trigger="hover">
+							  		<?php
+									if($seguir == 0){
+										echo "Seguir";
+				            		}else{
+				            			?>
+				            			<i class="fa fa-check" aria-hidden="true"></i>
+				            			<?php
+				            			echo " Siguiendo";
+				            		}
+				            		?>	
+							  	</button>
+	            			<?php
+	            		}
+	            		?>						  	
 					</td>
 				</tr>
 				<tr>
-				  <td class="align-middle text-center">
-					<div class="row" style="margin: auto; width: <?php echo ($cantidadColaboradores+2)*40; ?>px;height: 50%;">
+				  <td class="align-middle text-center" style="margin-left: 50%;margin-right: 50%;">
+					<div style="display: table;text-align: center;margin-left: auto;margin-right: auto;">
 				  		<!--Miniatura de la imagen-->
-		                	<div class="col miniatura-usuario"; onclick="cargarUsuario(<?php echo $datosRevista["CODIGO_USUARIO"]; ?>)"; style="margin: auto;background-image: url('<?php echo $datosRevista["URL_FOTO_PERFIL"]; ?>');width: 40px;height: 40px;padding: 0px;">
+		                	<div class="col miniatura-usuario" onclick="cargarUsuario(<?php echo $datosRevista["CODIGO_USUARIO"]; ?>)"; style="margin: auto;background-image: url('<?php echo $datosRevista["URL_FOTO_PERFIL"]; ?>');width: 40px;height: 40px;padding: 0px;float: left;margin-right: 10px;">
 		                		<?php
 		                		if(is_null($datosRevista["URL_FOTO_PERFIL"])){
 		                			?>
@@ -150,7 +151,7 @@ $seguir = $conexion->obtenerFila($resultado6)['CANT_REGS'];
 				  					$strAutores = $strAutores . ' y ' . $colaborador['NOMBRE_USUARIO'];
 				  				?>
 				  				<!--Miniatura de la imagen-->
-				                	<div class="col miniatura-usuario"; onclick="cargarUsuario(<?php $colaborador['CODIGO_COLABORADOR']; ?>)"; style="margin: auto;background-image: url('<?php echo $colaborador["URL_FOTO_PERFIL"]; ?>');width: 40px;height: 40px;padding: 0px;">
+				                	<div class="col miniatura-usuario" onclick="cargarUsuario(<?php $colaborador['CODIGO_COLABORADOR']; ?>)"; style="margin: auto;background-image: url('<?php echo $colaborador["URL_FOTO_PERFIL"]; ?>');width: 40px;height: 40px;padding: 0px;float: left;margin-right: 10px;">
 				                		<?php
 				                		if(is_null($colaborador["URL_FOTO_PERFIL"])){
 				                			?>
@@ -171,14 +172,31 @@ $seguir = $conexion->obtenerFila($resultado6)['CANT_REGS'];
 							  <?php
 				  			}
 	            		}
+	            			if($datosRevista["CODIGO_USUARIO"]==$codigoUsuario){
+	            				?>
+	            					<div class="col miniatura-usuario" style="margin: auto;width: 40px;height: 40px;padding: 0px;float: left;font-size: 1em;">
+	            							<table style="height: 100%;width: 100%;font-size: 20px;font-weight: bold;">
+												<tbody>
+													<tr>
+														<td class="align-middle text-center">
+															<i class="fa fa-user-plus" aria-hidden="true"></i>	
+														</td>
+													</tr>
+												</tbody>
+											</table>	
+								    </div>
+	            				<?php
+	            			}
+
 	            		?>
-		            		<div class="col miniatura-usuario" style="margin: auto;width: 40px;height: 40px;padding: 0px;">
-		                			<i class="fa fa-user-plus" aria-hidden="true"></i>						
-						    </div>
-				  	</div>
-					<div style="margin: auto;height: 50%;">
-				  		<t>Por <?php echo $strAutores; ?></t>
-				  	</div>
+				  	</div>					
+				  </td>
+				</tr>
+				<tr>
+				  <td class="text-center" style="padding-top: 0px;">
+				  		<div style="text-align: center;width: 100%;">
+					  		<t>Por <?php echo $strAutores; ?></t>
+					  	</div>
 				  </td>
 				</tr>
 			</tbody>
@@ -224,6 +242,8 @@ $cantidadNoticias = $conexion->obtenerArregloAsociativo($resultado5)['NUMBER_OF_
 <!-- FINALIZA BARRA INFERIOR DEL HEADER -->
 <!-- FINALIZA HEADER DE LA REVISTA -->
 <!-- INICIA IMPRESION DE NOTICIAS DE LA REVISTA -->
+	<div class="grid">
+		<div class="notisizer"></div>
 <?php
 
 while($rowNoticia = $conexion->obtenerArregloAsociativo($resultado4)){
@@ -346,7 +366,7 @@ while($rowNoticia = $conexion->obtenerArregloAsociativo($resultado4)){
 	else{ 
 		$sqlLikes="SELECT COUNT(1) AS CANT_REGISTROS
 				FROM TBL_REACCIONES_X_NOTICIAS
-				WHERE CODIGO_USUARIO=". $codigoUsuario."
+				WHERE CODIGO_USUARIO=".$codigoUsuario."
 				AND CODIGO_NOTICIA=".$rowNoticia['CODIGO_NOTICIA'];
 		$resultadoCantRegis = $conexion->ejecutarInstruccion($sqlLikes);
 		$resultCantR = $conexion->obtenerFila($resultadoCantRegis);
@@ -366,13 +386,13 @@ while($rowNoticia = $conexion->obtenerArregloAsociativo($resultado4)){
 		      	</button><br>
 		      	<button onclick="darLike(<?php echo $rowNoticia['CODIGO_NOTICIA'];?>)" type="button" class="btn btn-default btn-circle" data-container="body" data-toggle="popover" data-placement="left" data-content="Me gusta" data-trigger="hover">
 		      		<i class="fa <?php 
-		      					if($resultCantR['CANT_REGITROS']==0){
+		      					if($resultCantR['CANT_REGISTROS']==0){
 		      						echo 'fa-heart-o';
 		      					}else{
 		      						echo 'fa-heart';
-		      					} ?>
-		      		" aria-hidden="true" id="<?php echo 'like_'.$rowNoticia['CODIGO_NOTICIA'];?>" style="<?php 
-		      					if($resultCantR['CANT_REGITROS']!=0){
+		      					} ?>" 
+		      			aria-hidden="true" id="<?php echo 'like_'.$rowNoticia['CODIGO_NOTICIA'];?>" style="<?php 
+		      					if($resultCantR['CANT_REGISTROS']!=0){
 		      						echo 'color:rgb(200, 35, 51);';
 		      					} ?>"></i>
 		      	</button><br>
@@ -453,6 +473,9 @@ while($rowNoticia = $conexion->obtenerArregloAsociativo($resultado4)){
 	<?php 
 	}//fin else
 }//fin while
+?>
+</div>
+<?php
 $conexion->liberarResultado($resultado);
 $conexion->liberarResultado($resultado2);
 $conexion->liberarResultado($resultado3);
@@ -461,3 +484,6 @@ $conexion->liberarResultado($resultado5);
 $conexion->cerrarConexion();
 ?>
 <!-- FINALIZA IMPRESION DE NOTICIAS DE LA REVISTA -->
+<script>
+	isotopeNotiCard();
+</script>
