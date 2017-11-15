@@ -72,7 +72,7 @@
 				<?php
 			}
 			?>
-			<div id="grid_Noticias" class="grid">
+			<div id="grid_Noticias" class="grid waypointCargaNoticias">
 				<div class="notisizer"></div>
 			</div>
 			

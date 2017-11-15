@@ -178,8 +178,10 @@ $(window).resize(function(){
 $(document).scroll(function(){
 	//Evento al llegar al final del documento
 	if(($(window).scrollTop() + $(window).height()) === $(document).height()) {
-		cargarTarjetasPortada(codigoCat);
-		//alert(codigoCat);
+		if($(".waypointCargaNoticias").css("display")=="block"){
+			cargarTarjetasPortada(codigoCat);
+			//alert(codigoCat);
+		}		
 	 }
 });
 
