@@ -160,7 +160,7 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
 
     <div class="container-fluid" style="">  
       <div id="contenido-principal" class="col-lg-12" style="padding: 0px;">
-        
+        <input type="text" id="codigo-usuario" value="<?php echo $codigoUsuario; ?>">
       </div>    
     </div>
 
@@ -310,12 +310,12 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
     <script src="js/text-scrolling.js"></script>    
     <script src="js/imagesloaded.pkgd.js"></script>    
     <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/packery-mode.pkgd.js"></script>
+    <script src="js/packery-mode.pkgd.js"></script>    
+    <script src="js/usuario.js"></script>
     <script src="js/index.js"></script>
     <script src="js/tarjetasNoticias.js"></script>
     <script src="js/intereses.js"></script>
-    <script src="js/agregar-revista.js"></script>    
-    <script src="js/usuario.js"></script>
+    <script src="js/agregar-revista.js"></script>
     <script src="js/notificaciones.js"></script>
     <!--FIN Scripts-->
 
