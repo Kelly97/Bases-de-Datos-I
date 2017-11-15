@@ -2,6 +2,7 @@
 session_start();
 include_once("../class/class-conexion.php");
 include_once("../class/class-tiempo.php");
+include_once("../class/class-date-interval.php");
 
 $codigoRevista = $_POST['codigoRevista'];//Obtenemos el código por medio de la variable enviada en data
 $conexion = new Conexion();
@@ -120,9 +121,6 @@ $cantidadColaboradores = $conexion->obtenerArregloAsociativo($resultado3)['NUMBE
 	</div>
 </div>
 <?php
-$conexion->liberarResultado($resultado);
-$conexion->liberarResultado($resultado2);
-$conexion->liberarResultado($resultado3);
 $sql4 =  "
 WITH CANTIDAD_LIKES AS(
         SELECT CODIGO_NOTICIA, 
@@ -153,10 +151,10 @@ WITH CANTIDAD_LIKES AS(
         FROM TBL_FLIPS A
         RIGHT JOIN TBL_NOTICIAS B
         ON A.CODIGO_NOTICIA = B.CODIGO_NOTICIA
-        WHERE A.CODIGO_REVISTA = 1 OR B.CODIGO_REVISTA = 1
+        WHERE A.CODIGO_REVISTA = ".$codigoRevista." OR B.CODIGO_REVISTA = ".$codigoRevista."
     )
-	SELECT ROWNUM NUM_FILA,A.*, B.CANT_LIKES CANT_LIKES_NOTICIA, C.CANT_LIKES CANT_LIKES_FLIP, D.CANT_COMENTARIOS CANT_COMENTARIOS_NOTCIA,
-	    E.CANT_COMENTARIOS CANT_COMENTARIOS_FLIP, F.NOMBRE_USUARIO USUARIO_FLIP, G.NOMBRE_USUARIO USUARIO_NOTICIA,
+	SELECT ROWNUM NUM_FILA,A.*, NVL(B.CANT_LIKES, 0) CANT_LIKES_NOTICIA, NVL(C.CANT_LIKES, 0) CANT_LIKES_FLIP, NVL(D.CANT_COMENTARIOS, 0) CANT_COMENTARIOS_NOTCIA,
+	    NVL(E.CANT_COMENTARIOS,0) CANT_COMENTARIOS_FLIP, F.NOMBRE_USUARIO USUARIO_FLIP, G.NOMBRE_USUARIO USUARIO_NOTICIA,
 	    substr(F.NOMBRE_USUARIO,1,1) AS INICIAL_USUARIO_FLIP, substr(G.NOMBRE_USUARIO,1,1) AS INICIAL_USUARIO_NOTICIA,
 	    F.URL_FOTO_PERFIL URL_FOTO_PERFIL_FLIP, G.URL_FOTO_PERFIL URL_FOTO_PERFIL_NOTICIA
 	FROM NOTICIAS_FLIPS_REVISTA A
@@ -213,9 +211,10 @@ $cantidadNoticias = $conexion->obtenerArregloAsociativo($resultado5)['NUMBER_OF_
 <?php
 while($rowNoticia = $conexion->obtenerFila($resultado4)){
 	if (!is_null($rowNoticia["CODIGO_REVISTA_FLIP"]) && $rowNoticia["CODIGO_REVISTA_FLIP"] == $codigoRevista) {
+		//if indica si es un flip que pertenece a la revista
 		$sqlLikes="SELECT COUNT(1) AS CANT_REGISTROS
 				FROM TBL_REACCIONES_X_NOTICIAS
-				WHERE CODIGO_USUARIO=".$codigoUsuario."
+				WHERE CODIGO_USUARIO=". $codigoUsuario."
 				AND CODIGO_NOTICIA=".$rowNoticia['CODIGO_FLIP'];
 		$resultadoCantRegis = $conexion->ejecutarInstruccion($sqlLikes);
 		$resultCantR = $conexion->obtenerFila($resultadoCantRegis);
@@ -297,7 +296,7 @@ while($rowNoticia = $conexion->obtenerFila($resultado4)){
 				      </div> 
 				</div>
 		   </div>  
-		  <img class="card-img-top" src='<?php echo $rowNoticia["URL_PORTADA_NOTI"]; ?>' style="cursor: pointer;" onclick="cargarContenidoNoticia(<?php echo ($rowNoticia['CODIGO_FLIP']);?>);" >
+		  <img class="card-img-top" src='<?php echo $rowNoticia["URL_PORTADA_NOTI"]; ?>' style="cursor: pointer;" onclick="cargarContenidoNoticia(<?php echo ($rowNoticia['CODIGO_NOTICIA']);?>);" >
 		  <div class="card-body" style="text-align: justify;">
 		  	<div style="cursor: pointer;" onclick="cargarContenidoNoticia(<?php echo ($rowNoticia['CODIGO_FLIP']);?>);" >
 
@@ -324,13 +323,23 @@ while($rowNoticia = $conexion->obtenerFila($resultado4)){
 		  </div>
 		</div>
 		<!-- Finaliza impresion de un flip -->
-	<?php } elseif(false){ ?>
+	<?php
+	$conexion->liberarResultado($resultadoCantRegis);
+	}//fin if
+	else{ 
+		$sqlLikes="SELECT COUNT(1) AS CANT_REGISTROS
+				FROM TBL_REACCIONES_X_NOTICIAS
+				WHERE CODIGO_USUARIO=". $codigoUsuario."
+				AND CODIGO_NOTICIA=".$rowNoticia['CODIGO_FLIP'];
+		$resultadoCantRegis = $conexion->ejecutarInstruccion($sqlLikes);
+		$resultCantR = $conexion->obtenerFila($resultadoCantRegis);
+		?>
 		<!-- Inicia impresion de una noticia -->
 		<div class="card noti-card 
 				<?php   
-					if($rowNoticia["CANT_LIKES"]>3)
+					if($rowNoticia["CANT_LIKES_NOTICIA"]>3)
 						{ echo 'noti-card-width-3 '; }
-					elseif($rowNoticia["CANT_LIKES"]>2)
+					elseif($rowNoticia["CANT_LIKES_NOTICIA"]>2)
 						{echo 'noti-card-width-2';}    
 				?>" 
 			style="position: relative;">
@@ -361,15 +370,15 @@ while($rowNoticia = $conexion->obtenerFila($resultado4)){
 				      		
 						      		<a href="usuario.php?codigoUsuario=<?php echo $rowNoticia["CODIGO_USUARIO"]; ?>">
 
-					      	<div class="miniatura-usuario" style="margin: auto;background-image: url('<?php echo $rowNoticia["URL_FOTO_PERFIL"]; ?>');width: 40px;height: 40px;padding: 0px;">
+					      	<div class="miniatura-usuario" style="margin: auto;background-image: url('<?php echo $rowNoticia["URL_FOTO_PERFIL_NOTICIA"]; ?>');width: 40px;height: 40px;padding: 0px;">
 			                		<?php
-			                		if(is_null($rowNoticia["URL_FOTO_PERFIL"])){
+			                		if(is_null($rowNoticia["URL_FOTO_PERFIL_NOTICIA"])){
 			                			?>
 			                				<table style="height: 100%;width: 100%;font-size: 20px;font-weight: bold;">
 												<tbody>
 													<tr>
 														<td class="align-middle text-center">
-															<?php echo ($rowNoticia['INICIAL_USUARIO_PUBLICA']); ?>
+															<?php echo ($rowNoticia['INICIAL_USUARIO_NOTICIA']); ?>
 														</td>
 													</tr>
 												</tbody>
@@ -388,14 +397,11 @@ while($rowNoticia = $conexion->obtenerFila($resultado4)){
 				      			<tr>
 							      	<td class="align-middle">
 								        <p class="card-text" style="margin-bottom: -8px;">      
-								        	<?php echo ($rowNoticia["USUARIO_PUBLICA"]);?>      	
+								        	<?php echo ($rowNoticia["USUARIO_NOTICIA"]);?>      	
 								        </p> 
 								        <p style="padding: 0px;margin:0px;"> 
-								        	<span style="color: #09c;font-size: 12px;cursor: pointer;" onclick="cargarPaginaRevista(<?php echo $rowNoticia["CODIGO_REVISTA"];?>);">
-								        		<?php echo ($rowNoticia["NOMBRE_REVISTA"]);?>
-								        	</span> 
 								        	<span style="color: gray;font-size: 12px;">
-								        		<?php echo fechaIntervalo::calcularintervalo($rowNoticia['FECHA_PUBLICACION']);?>
+								        		<?php echo fechaIntervalo::calcularintervalo($rowNoticia['FECHA_NOTICIA']);?>
 								        	</span> 								        	
 								        </p> 
 							        </td> 
@@ -411,17 +417,17 @@ while($rowNoticia = $conexion->obtenerFila($resultado4)){
 
 		  		<a><h5 class="card-title" style="text-align: left;"><?php echo ($rowNoticia["TITULO_NOTICIA"]);?></h5></a>
 			    <span class="noti-card-autor">
-			    	<?php echo ($rowNoticia["USUARIO_PUBLICA"])." · ".($rowNoticia["AUTOR_NOTICIA"]);?>
+			    	<?php echo ($rowNoticia["USUARIO_NOTICIA"])." · ".($rowNoticia["AUTOR_NOTICIA"]);?>
 			    </span>
 			    <p class="card-text">
 			    	<?php echo ($rowNoticia["DESCRIPCION_NOTICIA"]);?>
 			    </p>
 		  	</div>	<br>			    
 		    <div>
-	        	<span id="<?php echo 'likeContador_'.$rowNoticia['CODIGO_NOTICIA'];?>"><?php echo $rowNoticia["CANT_LIKES"];?></span>
+	        	<span id="<?php echo 'likeContador_'.$rowNoticia['CODIGO_NOTICIA'];?>"><?php echo $rowNoticia["CANT_LIKES_NOTICIA"];?></span>
 	        	<i class="fa fa-heart" aria-hidden="true" style="font-size: 13px;padding-right: 8px;color: red;">
 		        </i>
-		        <span id="<?php echo 'comentariosCont_'.$rowNoticia['CODIGO_NOTICIA'];?>"><?php echo $rowNoticia["CANT_COMENTARIOS"];?></span>
+		        <span id="<?php echo 'comentariosCont_'.$rowNoticia['CODIGO_NOTICIA'];?>"><?php echo $rowNoticia["CANT_COMENTARIOS_NOTCIA"];?></span>
 		        <i class="fa fa-comment-o" aria-hidden="true" style="font-size: 13px;padding-right: 8px;" ></i>
 	        	<a class="btn btn-default" role="button" style="cursor: pointer;" data-toggle="modal" data-target="#modal-agregar_comentario" onclick="cargar_modalComentarios(<?php echo $rowNoticia["CODIGO_NOTICIA"];?>);">
 		        	<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 13px;padding-right: 8px;">				        		
@@ -432,8 +438,16 @@ while($rowNoticia = $conexion->obtenerFila($resultado4)){
 		  </div>
 		</div>
 		<!-- Finaliza impresion de una noticia -->
-	<?php} ?>
-<?php
-}
+	<?php 
+	$conexion->liberarResultado($resultadoCantRegis);
+	}//fin else
+}//fin while
+$conexion->liberarResultado($resultado);
+$conexion->liberarResultado($resultado2);
+$conexion->liberarResultado($resultado3);
+$conexion->liberarResultado($resultado4);
+$conexion->liberarResultado($resultado5);
+$conexion->cerrarConexion();
 ?>
 <!-- FINALIZA IMPRESION DE NOTICIAS DE LA REVISTA -->
+<script src="js/tarjetasNoticias.js"></script>
