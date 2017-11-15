@@ -18,7 +18,7 @@
 	$nombre_usuario=$_POST["nombre"];
 	$codigo_tipo_usuario=1;
 	$codigo_lugar_residencia=4;
-	$codigo_estado_usuario=1;
+	$codigo_estado_usuario=2;
 	$correo=$_POST["correo"];
 	$contrasena=sha1($_POST["contrasena"]);
 	$url_foto_perfil=NULL;
