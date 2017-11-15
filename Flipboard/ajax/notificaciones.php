@@ -43,7 +43,7 @@ else{
 	  		switch ($registro['CODIGO_TIPO_NOTIFICACION']) {
 	    		case 1://seguimiento
 	    			?>
-			        <div class="card border-info mb-3" style="max-width: 20rem;text-align: left;cursor: pointer;">  
+			        <div class="card border-info mb-3" onclick="notiSeguimiento(<?php echo $registro['CODIGO_NOTIFICACION'];?>)" style="max-width: 20rem;text-align: left;cursor: pointer;">  
 			          <div class="card-body text-info container">
 			            <div class="row">
 			              <div class="col-lg-3" style="padding-right: 0px;">
@@ -84,7 +84,7 @@ else{
 	      		break;
 			    case 2://comentario
 			    	?>
-			        <div class="card border-info mb-3" style="max-width: 20rem;text-align: left;cursor: pointer;">  
+			        <div class="card border-info mb-3" onclick="notiComentarioYReacciones(<?php echo $registro['CODIGO_NOTIFICACION'];?>)" style="max-width: 20rem;text-align: left;cursor: pointer;">  
 			          <div class="card-body text-info container">
 			            <div class="row">
 			              <div class="col-lg-3" style="padding-right: 0px;">
@@ -126,7 +126,7 @@ else{
 			      break;
 			    case 3://reaccion noticia
 			      	?>
-			        <div class="card border-info mb-3" style="max-width: 20rem;text-align: left;cursor: pointer;">  
+			        <div class="card border-info mb-3" onclick="notiComentarioYReacciones(<?php echo $registro['CODIGO_NOTIFICACION'];?>)" style="max-width: 20rem;text-align: left;cursor: pointer;">  
 			          <div class="card-body text-info container">
 			            <div class="row">
 			              <div class="col-lg-3" style="padding-right: 0px;">
@@ -169,7 +169,7 @@ else{
 			      break;
 			    case 4://reaccion comentario
 			    	?>
-			        <div class="card border-info mb-3" style="max-width: 20rem;text-align: left;cursor: pointer;">  
+			        <div class="card border-info mb-3" onclick="notiComentarioYReacciones(<?php echo $registro['CODIGO_NOTIFICACION'];?>)" style="max-width: 20rem;text-align: left;cursor: pointer;">  
 			          <div class="card-body text-info container">
 			            <div class="row">
 			              <div class="col-lg-3" style="padding-right: 0px;">
@@ -212,7 +212,7 @@ else{
 			      break;
 			    case 5://flip
 			    	?>
-			        <div class="card border-info mb-3" style="max-width: 20rem;text-align: left;cursor: pointer;">  
+			        <div class="card border-info mb-3" onclick="notiFlip(<?php echo $registro['CODIGO_NOTIFICACION'];?>)" style="max-width: 20rem;text-align: left;cursor: pointer;">  
 			          <div class="card-body text-info container">
 			            <div class="row">
 			              <div class="col-lg-3" style="padding-right: 0px;">

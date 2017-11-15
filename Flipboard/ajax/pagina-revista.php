@@ -8,20 +8,63 @@ $codigoRevista = $_POST['codigoRevista'];//Obtenemos el código por medio de la 
 $conexion = new Conexion();
 $codigoUsuario = $_SESSION['usuario']['CODIGO_USUARIO'];//sesion
 $sql =  "
-	SELECT UPPER(A.NOMBRE_REVISTA) NOMBRE_REVISTA, A.DESCRIPCION, A.FECHA_DE_CREACION, A.URL_PORTADA, B.NOMBRE_USUARIO, B.URL_FOTO_PERFIL, substr(B.NOMBRE_USUARIO,1,1) AS INICIAL, A.CODIGO_TIPO_REVISTA
+	SELECT UPPER(A.NOMBRE_REVISTA) NOMBRE_REVISTA, A.DESCRIPCION, A.FECHA_DE_CREACION, A.URL_PORTADA, B.NOMBRE_USUARIO, B.URL_FOTO_PERFIL, substr(B.NOMBRE_USUARIO,1,1) AS INICIAL, A.CODIGO_TIPO_REVISTA, A.CODIGO_USUARIO
 	FROM TBL_REVISTAS A
 	LEFT JOIN TBL_USUARIOS B
 	ON (A.CODIGO_USUARIO = B.CODIGO_USUARIO)
 	WHERE (A.CODIGO_REVISTA = $codigoRevista)
 	";
 $sql2 = "
-	SELECT B.NOMBRE_USUARIO, B.URL_FOTO_PERFIL,  substr(B.NOMBRE_USUARIO,1,1) AS INICIAL
+	SELECT B.NOMBRE_USUARIO, B.URL_FOTO_PERFIL,  substr(B.NOMBRE_USUARIO,1,1) AS INICIAL, B.CODIGO_USUARIO
 	FROM TBL_COLABORADORES A
 	LEFT JOIN TBL_USUARIOS B
 	ON (A.CODIGO_COLABORADOR = B.CODIGO_USUARIO)
 	WHERE (A.CODIGO_REVISTA = $codigoRevista)
 	";
 $sql3 = "SELECT COUNT(*) AS NUMBER_OF_ROWS FROM ($sql2)";
+$sql4 =  "
+		SELECT ROWNUM AS NUM_FILA,A.CODIGO_FLIP, A.CODIGO_REVISTA_FLIP,A.FECHA_FLIP, A.CODIGO_USUARIO_FLIP, A.CODIGO_REVISTA_NOTICIA, A.CODIGO_NOTICIA, A.CODIGO_USUARIO_NOTICIA, A.AUTOR_NOTICIA, A.TITULO_NOTICIA, A.DESCRIPCION_NOTICIA, A.CONTENIDO_NOTICIA,A.FECHA_NOTICIA, A.URL_PORTADA_NOTI, NVL(B.CANT_LIKES, 0) CANT_LIKES_NOTICIA, NVL(C.CANT_LIKES, 0) CANT_LIKES_FLIP, NVL(D.CANT_COMENTARIOS, 0) CANT_COMENTARIOS_NOTCIA, NVL(E.CANT_COMENTARIOS,0) CANT_COMENTARIOS_FLIP, F.NOMBRE_USUARIO USUARIO_FLIP, G.NOMBRE_USUARIO USUARIO_NOTICIA, substr(F.NOMBRE_USUARIO,1,1) AS INICIAL_USUARIO_FLIP, substr(G.NOMBRE_USUARIO,1,1) AS INICIAL_USUARIO_NOTICIA, F.URL_FOTO_PERFIL URL_FOTO_PERFIL_FLIP, G.URL_FOTO_PERFIL URL_FOTO_PERFIL_NOTICIA
+		FROM (
+	        SELECT A.CODIGO_FLIP, A.CODIGO_REVISTA CODIGO_REVISTA_FLIP,TO_CHAR(A.FECHA,'YYYY-MM-DD HH24:MI:SS')  FECHA_FLIP, A.CODIGO_USUARIO_FLIP, B.CODIGO_REVISTA CODIGO_REVISTA_NOTICIA, B.CODIGO_NOTICIA, B.CODIGO_USUARIO CODIGO_USUARIO_NOTICIA,B.AUTOR_NOTICIA, B.TITULO_NOTICIA, B.DESCRIPCION_NOTICIA, B.CONTENIDO_NOTICIA,TO_CHAR(B.FECHA_PUBLICACION,'YYYY-MM-DD HH24:MI:SS')  FECHA_NOTICIA, B.URL_PORTADA_NOTI
+	        FROM TBL_FLIPS A
+	        RIGHT JOIN TBL_NOTICIAS B
+	        ON A.CODIGO_NOTICIA = B.CODIGO_NOTICIA
+	        WHERE A.CODIGO_REVISTA = $codigoRevista OR B.CODIGO_REVISTA = $codigoRevista
+	        ) A
+		LEFT JOIN (
+	        SELECT CODIGO_NOTICIA, 
+	        COUNT(DISTINCT CODIGO_USUARIO) AS CANT_LIKES
+	        FROM TBL_REACCIONES_X_NOTICIAS
+	        WHERE CODIGO_REACCION = 1
+	        GROUP BY CODIGO_NOTICIA
+	        ) B
+		ON A.CODIGO_NOTICIA = B.CODIGO_NOTICIA
+		LEFT JOIN(
+	        SELECT CODIGO_FLIP, 
+	        COUNT(DISTINCT CODIGO_USUARIO) AS CANT_LIKES
+	        FROM TBL_REACCIONES_X_NOTICIAS
+	        WHERE CODIGO_REACCION = 1
+	        GROUP BY CODIGO_FLIP
+	        ) C
+		ON A.CODIGO_FLIP = C.CODIGO_FLIP
+		LEFT JOIN (
+	        SELECT CODIGO_NOTICIA, COUNT(CODIGO_COMENTARIO) AS CANT_COMENTARIOS
+	        FROM TBL_COMENTARIOS
+	        GROUP BY CODIGO_NOTICIA
+	        ) D
+		ON A.CODIGO_NOTICIA = D.CODIGO_NOTICIA
+		LEFT JOIN (
+	        SELECT CODIGO_FLIP, COUNT(CODIGO_COMENTARIO) AS CANT_COMENTARIOS
+	        FROM TBL_COMENTARIOS
+	        GROUP BY CODIGO_FLIP
+	        ) E
+		ON A.CODIGO_FLIP = E.CODIGO_FLIP
+		LEFT JOIN TBL_USUARIOS F
+		ON A.CODIGO_USUARIO_FLIP = F.CODIGO_USUARIO
+		LEFT JOIN TBL_USUARIOS G
+		ON A.CODIGO_USUARIO_NOTICIA = G.CODIGO_USUARIO
+	";
+$sql5 = "SELECT COUNT(*) AS NUMBER_OF_ROWS FROM ($sql4)";
 $resultado = $conexion->ejecutarInstruccion($sql);
 $resultado2 = $conexion->ejecutarInstruccion($sql2);
 $resultado3 = $conexion->ejecutarInstruccion($sql3);
@@ -55,23 +98,23 @@ $cantidadColaboradores = $conexion->obtenerArregloAsociativo($resultado3)['NUMBE
 				  <td class="align-middle text-center">
 					<div class="row" style="margin: auto; width: <?php echo ($cantidadColaboradores+2)*40; ?>px;height: 50%;">
 				  		<!--Miniatura de la imagen-->
-	                	<div class="col miniatura-usuario" style="margin: auto;background-image: url('<?php echo $datosRevista["URL_FOTO_PERFIL"]; ?>');width: 40px;height: 40px;padding: 0px;">
-	                		<?php
-	                		if(is_null($datosRevista["URL_FOTO_PERFIL"])){
-	                			?>
-	                				<table style="height: 100%;width: 100%;font-size: 20px;font-weight: bold;">
-										<tbody>
-											<tr>
-												<td class="align-middle text-center">
-													<?php echo ($datosRevista['INICIAL']); ?>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-	                			<?php
-	                		}
-	                		?>								
-					    </div>
+		                	<div class="col miniatura-usuario"; onclick="cargarUsuario(<?php echo $datosRevista["CODIGO_USUARIO"]; ?>)"; style="margin: auto;background-image: url('<?php echo $datosRevista["URL_FOTO_PERFIL"]; ?>');width: 40px;height: 40px;padding: 0px;">
+		                		<?php
+		                		if(is_null($datosRevista["URL_FOTO_PERFIL"])){
+		                			?>
+		                				<table style="height: 100%;width: 100%;font-size: 20px;font-weight: bold;">
+											<tbody>
+												<tr>
+													<td class="align-middle text-center">
+														<?php echo ($datosRevista['INICIAL']); ?>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+		                			<?php
+		                		}
+		                		?>								
+						    </div>
 					    <!--FIN Miniatura de la imagen-->
 				  		<?php
 				  		$strAutores = $datosRevista['NOMBRE_USUARIO'];
@@ -85,31 +128,31 @@ $cantidadColaboradores = $conexion->obtenerArregloAsociativo($resultado3)['NUMBE
 				  					$strAutores = $strAutores . ' y ' . $colaborador['NOMBRE_USUARIO'];
 				  				?>
 				  				<!--Miniatura de la imagen-->
-			                	<div class="col miniatura-usuario" style="margin: auto;background-image: url('<?php echo $colaborador["URL_FOTO_PERFIL"]; ?>');width: 40px;height: 40px;padding: 0px;">
-			                		<?php
-			                		if(is_null($colaborador["URL_FOTO_PERFIL"])){
-			                			?>
-			                				<table style="height: 100%;width: 100%;font-size: 20px;font-weight: bold;">
-												<tbody>
-													<tr>
-														<td class="align-middle text-center">
-															<?php echo ($colaborador['INICIAL']); ?>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-			                			<?php
-			                		}
-			                		?>								
-							  </div>
+				                	<div class="col miniatura-usuario"; onclick="cargarUsuario(<?php $colaborador["CODIGO_USUARIO"]; ?>)"; style="margin: auto;background-image: url('<?php echo $colaborador["URL_FOTO_PERFIL"]; ?>');width: 40px;height: 40px;padding: 0px;">
+				                		<?php
+				                		if(is_null($colaborador["URL_FOTO_PERFIL"])){
+				                			?>
+				                				<table style="height: 100%;width: 100%;font-size: 20px;font-weight: bold;">
+													<tbody>
+														<tr>
+															<td class="align-middle text-center">
+																<?php echo ($colaborador['INICIAL']); ?>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+				                			<?php
+				                		}
+				                		?>								
+								  </div>
 							  <!--FIN Miniatura de la imagen-->
 							  <?php
 				  			}
 	            		}
 	            		?>
-	            		<div class="col miniatura-usuario" style="margin: auto;width: 40px;height: 40px;padding: 0px;">
-	                			<i class="fa fa-user-plus" aria-hidden="true"></i>						
-					    </div>
+		            		<div class="col miniatura-usuario" style="margin: auto;width: 40px;height: 40px;padding: 0px;">
+		                			<i class="fa fa-user-plus" aria-hidden="true"></i>						
+						    </div>
 				  	</div>
 					<div style="margin: auto;height: 50%;">
 				  		<t>Por <?php echo $strAutores; ?></t>
@@ -121,62 +164,11 @@ $cantidadColaboradores = $conexion->obtenerArregloAsociativo($resultado3)['NUMBE
 	</div>
 </div>
 <?php
-$sql4 =  "
-WITH CANTIDAD_LIKES AS(
-        SELECT CODIGO_NOTICIA, 
-        COUNT(DISTINCT CODIGO_USUARIO) AS CANT_LIKES
-        FROM TBL_REACCIONES_X_NOTICIAS
-        WHERE CODIGO_REACCION = 1
-        GROUP BY CODIGO_NOTICIA
-        ),
-    CANTIDAD_LIKES_FLIP AS(
-        SELECT CODIGO_FLIP, 
-        COUNT(DISTINCT CODIGO_USUARIO) AS CANT_LIKES
-        FROM TBL_REACCIONES_X_NOTICIAS
-        WHERE CODIGO_REACCION = 1
-        GROUP BY CODIGO_FLIP
-        ),
-    CANTIDAD_COMENTARIOS AS(
-        SELECT CODIGO_NOTICIA, COUNT(CODIGO_COMENTARIO) AS CANT_COMENTARIOS
-        FROM TBL_COMENTARIOS
-        GROUP BY CODIGO_NOTICIA
-        ),
-    CANTIDAD_COMENTARIOS_FLIP AS(
-        SELECT CODIGO_FLIP, COUNT(CODIGO_COMENTARIO) AS CANT_COMENTARIOS
-        FROM TBL_COMENTARIOS
-        GROUP BY CODIGO_FLIP
-        ),
-    NOTICIAS_FLIPS_REVISTA AS(
-        SELECT A.CODIGO_FLIP, A.CODIGO_REVISTA CODIGO_REVISTA_FLIP,TO_CHAR(A.FECHA,'YYYY-MM-DD HH24:MI:SS')  FECHA_FLIP, A.CODIGO_USUARIO_FLIP, B.CODIGO_REVISTA CODIGO_REVISTA_NOTICIA, B.CODIGO_NOTICIA, B.CODIGO_USUARIO CODIGO_USUARIO_NOTICIA,B.AUTOR_NOTICIA, B.TITULO_NOTICIA, B.DESCRIPCION_NOTICIA, B.CONTENIDO_NOTICIA,TO_CHAR(B.FECHA_PUBLICACION,'YYYY-MM-DD HH24:MI:SS')  FECHA_NOTICIA, B.URL_PORTADA_NOTI
-        FROM TBL_FLIPS A
-        RIGHT JOIN TBL_NOTICIAS B
-        ON A.CODIGO_NOTICIA = B.CODIGO_NOTICIA
-        WHERE A.CODIGO_REVISTA = ".$codigoRevista." OR B.CODIGO_REVISTA = ".$codigoRevista."
-    )
-	SELECT ROWNUM NUM_FILA,A.*, NVL(B.CANT_LIKES, 0) CANT_LIKES_NOTICIA, NVL(C.CANT_LIKES, 0) CANT_LIKES_FLIP, NVL(D.CANT_COMENTARIOS, 0) CANT_COMENTARIOS_NOTCIA,
-	    NVL(E.CANT_COMENTARIOS,0) CANT_COMENTARIOS_FLIP, F.NOMBRE_USUARIO USUARIO_FLIP, G.NOMBRE_USUARIO USUARIO_NOTICIA,
-	    substr(F.NOMBRE_USUARIO,1,1) AS INICIAL_USUARIO_FLIP, substr(G.NOMBRE_USUARIO,1,1) AS INICIAL_USUARIO_NOTICIA,
-	    F.URL_FOTO_PERFIL URL_FOTO_PERFIL_FLIP, G.URL_FOTO_PERFIL URL_FOTO_PERFIL_NOTICIA
-	FROM NOTICIAS_FLIPS_REVISTA A
-	LEFT JOIN CANTIDAD_LIKES B
-	ON A.CODIGO_NOTICIA = B.CODIGO_NOTICIA
-	LEFT JOIN CANTIDAD_LIKES_FLIP C
-	ON A.CODIGO_FLIP = C.CODIGO_FLIP
-	LEFT JOIN CANTIDAD_COMENTARIOS D
-	ON A.CODIGO_NOTICIA = D.CODIGO_NOTICIA
-	LEFT JOIN CANTIDAD_COMENTARIOS_FLIP E
-	ON A.CODIGO_FLIP = E.CODIGO_FLIP
-	LEFT JOIN TBL_USUARIOS F
-	ON A.CODIGO_USUARIO_FLIP = F.CODIGO_USUARIO
-	LEFT JOIN TBL_USUARIOS G
-	ON A.CODIGO_USUARIO_NOTICIA = G.CODIGO_USUARIO
-	";
-$sql5 = "SELECT COUNT(*) AS NUMBER_OF_ROWS FROM ($sql4)";
 $resultado4 = $conexion->ejecutarInstruccion($sql4);
 $resultado5 = $conexion->ejecutarInstruccion($sql5);
 $cantidadNoticias = $conexion->obtenerArregloAsociativo($resultado5)['NUMBER_OF_ROWS'];
 	if ($cantidadNoticias == 0) {
-?>	
+	?>	
 		<div class="col" style="text-align: center; padding: 10px">
 			SIN CONTENIDO
 		</div>
@@ -184,9 +176,9 @@ $cantidadNoticias = $conexion->obtenerArregloAsociativo($resultado5)['NUMBER_OF_
 		<div class="row" style="padding: 10px">
 		  <div class="col" style="text-align: center; padding-left: 10px">
 		    <?php if ($cantidadNoticias == 1) {
-		    	echo "$cantidadNoticias Noticia";
+		    	echo $cantidadNoticias." Noticia";
 		    } else {
-		    	echo "$cantidadNoticias Noticias";
+		    	echo $cantidadNoticias." Noticias";
 		    }?>
 		  </div>
 		  <div class="col" style="text-align: center">
@@ -209,7 +201,8 @@ $cantidadNoticias = $conexion->obtenerArregloAsociativo($resultado5)['NUMBER_OF_
 <!-- FINALIZA HEADER DE LA REVISTA -->
 <!-- INICIA IMPRESION DE NOTICIAS DE LA REVISTA -->
 <?php
-while($rowNoticia = $conexion->obtenerFila($resultado4)){
+
+while($rowNoticia = $conexion->obtenerArregloAsociativo($resultado4)){
 	if (!is_null($rowNoticia["CODIGO_REVISTA_FLIP"]) && $rowNoticia["CODIGO_REVISTA_FLIP"] == $codigoRevista) {
 		//if indica si es un flip que pertenece a la revista
 		$sqlLikes="SELECT COUNT(1) AS CANT_REGISTROS
@@ -368,7 +361,7 @@ while($rowNoticia = $conexion->obtenerFila($resultado4)){
 				      <div class="col-lg-1 col-md-2 col-sm-2 col-2 col-xl-1" style="padding:0px;">
 				      	<label>
 				      		
-						      		<a href="usuario.php?codigoUsuario=<?php echo $rowNoticia["CODIGO_USUARIO"]; ?>">
+						      		<a href="usuario.php?codigoUsuario=<?php echo $rowNoticia["CODIGO_USUARIO_NOTICIA"]; ?>">
 
 					      	<div class="miniatura-usuario" style="margin: auto;background-image: url('<?php echo $rowNoticia["URL_FOTO_PERFIL_NOTICIA"]; ?>');width: 40px;height: 40px;padding: 0px;">
 			                		<?php
@@ -439,7 +432,6 @@ while($rowNoticia = $conexion->obtenerFila($resultado4)){
 		</div>
 		<!-- Finaliza impresion de una noticia -->
 	<?php 
-	$conexion->liberarResultado($resultadoCantRegis);
 	}//fin else
 }//fin while
 $conexion->liberarResultado($resultado);
@@ -450,4 +442,3 @@ $conexion->liberarResultado($resultado5);
 $conexion->cerrarConexion();
 ?>
 <!-- FINALIZA IMPRESION DE NOTICIAS DE LA REVISTA -->
-<script src="js/tarjetasNoticias.js"></script>

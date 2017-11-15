@@ -300,6 +300,7 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
     <script src="js/intereses.js"></script>
     <script src="js/agregar-revista.js"></script>    
     <script src="js/usuario.js"></script>
+    <script src="js/notificaciones.js"></script>
     <!--FIN Scripts-->
 
   </body>
