@@ -225,6 +225,44 @@ BEGIN
     COMMIT;
 END;
 /
+--Procedimiento para seguir o dejar de seguir revista
+CREATE OR REPLACE PROCEDURE P_SEGUIMIENTO_REVISTA
+    (
+        P_CODIGO_USUARIO IN INTEGER,
+        P_CODIGO_REVISTA IN INTEGER,
+        P_OPERACION IN INTEGER,
+        P_CODIGO_RESP OUT INTEGER
+    )
+AS
+    V_VERIFICADOR INTEGER;
+BEGIN
+    IF (P_OPERACION = 0) THEN --Insertar revista seguida
+        INSERT INTO TBL_REVISTAS_SEGUIDAS (CODIGO_SEGUIDOR, CODIGO_REVISTA)
+        VALUES (P_CODIGO_USUARIO, P_CODIGO_REVISTA);
+        COMMIT;
+        P_CODIGO_RESP:=1;
+        --Revista seguida exitosamente.
+    ELSE --Dejar de seguir revista
+        SELECT COUNT(1)
+        INTO V_VERIFICADOR
+        FROM TBL_REVISTAS_SEGUIDAS
+        WHERE CODIGO_REVISTA = P_CODIGO_REVISTA
+        AND CODIGO_SEGUIDOR = P_CODIGO_USUARIO;
+    
+        IF (V_VERIFICADOR>0) THEN
+            DELETE FROM TBL_REVISTAS_SEGUIDAS
+            WHERE CODIGO_SEGUIDOR = P_CODIGO_USUARIO
+            AND CODIGO_REVISTA = P_CODIGO_REVISTA;
+            COMMIT;
+            P_CODIGO_RESP:=1;
+            --Dejar revista exitosamente.
+        ELSE
+            P_CODIGO_RESP:=0;
+            --No puedes dejar una revista que no sigues.
+        END IF;
+    END IF;
+END;
+/
 
 --Procedimiento para eliminar notificación
 CREATE OR REPLACE PROCEDURE P_ELIMINAR_NOTIFICACION
