@@ -91,7 +91,7 @@ $seguir = $conexion->obtenerFila($resultado6)['CANT_REGS'];
 							<?php
 	            		}
 	            		?>	
-					  	<button type="button" class="btn btn-default btn-seguir-revista" data-content="
+					  	<button type="button" onclick="seguimientoRevista(<?php echo ($codigoRevista.", ".$seguir); ?>)" class="btn btn-default btn-seguir-revista" data-content="
 					  	<?php
 							if($seguir == 0){
 								echo ("Seguir");
@@ -366,13 +366,13 @@ while($rowNoticia = $conexion->obtenerArregloAsociativo($resultado4)){
 		      	</button><br>
 		      	<button onclick="darLike(<?php echo $rowNoticia['CODIGO_NOTICIA'];?>)" type="button" class="btn btn-default btn-circle" data-container="body" data-toggle="popover" data-placement="left" data-content="Me gusta" data-trigger="hover">
 		      		<i class="fa <?php 
-		      					if($resultCantR['CANT_REGITROS']==0){
+		      					if($resultCantR['CANT_REGISTROS']==0){
 		      						echo 'fa-heart-o';
 		      					}else{
 		      						echo 'fa-heart';
 		      					} ?>
 		      		" aria-hidden="true" id="<?php echo 'like_'.$rowNoticia['CODIGO_NOTICIA'];?>" style="<?php 
-		      					if($resultCantR['CANT_REGITROS']!=0){
+		      					if($resultCantR['CANT_REGISTROS']!=0){
 		      						echo 'color:rgb(200, 35, 51);';
 		      					} ?>"></i>
 		      	</button><br>

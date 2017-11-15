@@ -471,3 +471,16 @@ function eliminarComentario(codigoNoticia, codigoComentario){
 /*
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 */
+function seguimientoRevista(codigoRevista, tipoOperacion) {
+	data = "codigoRevista="+codigoRevista+"&tipoOperacion="+tipoOperacion;
+			;
+	$.ajax({       
+        url : "ajax/accion-seguimiento-revista.php",
+        data: data,
+        method: "POST",
+        dataType: "json",
+        success:function(){
+			cargarPaginaRevista(codigoRevista);
+		},      
+    });
+}
