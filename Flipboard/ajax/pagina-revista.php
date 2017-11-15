@@ -124,7 +124,7 @@ $conexion->liberarResultado($resultado);
 $conexion->liberarResultado($resultado2);
 $conexion->liberarResultado($resultado3);
 $sql4 =  "
-	WITH CANTIDAD_LIKES AS(
+WITH CANTIDAD_LIKES AS(
         SELECT CODIGO_NOTICIA, 
         COUNT(DISTINCT CODIGO_USUARIO) AS CANT_LIKES
         FROM TBL_REACCIONES_X_NOTICIAS
@@ -149,11 +149,11 @@ $sql4 =  "
         GROUP BY CODIGO_FLIP
         ),
     NOTICIAS_FLIPS_REVISTA AS(
-        SELECT A.CODIGO_FLIP, A.CODIGO_REVISTA CODIGO_REVISTA_FLIP, A.FECHA FECHA_FLIP, A.CODIGO_USUARIO_FLIP, B.CODIGO_REVISTA CODIGO_REVISTA_NOTICIA, B.CODIGO_NOTICIA, B.CODIGO_USUARIO CODIGO_USUARIO_NOTICIA,B.AUTOR_NOTICIA, B.TITULO_NOTICIA, B.DESCRIPCION_NOTICIA, B.CONTENIDO_NOTICIA, B.FECHA_PUBLICACION FECHA_NOTICIA, B.URL_PORTADA_NOTI
+        SELECT A.CODIGO_FLIP, A.CODIGO_REVISTA CODIGO_REVISTA_FLIP,TO_CHAR(A.FECHA,'YYYY-MM-DD HH24:MI:SS')  FECHA_FLIP, A.CODIGO_USUARIO_FLIP, B.CODIGO_REVISTA CODIGO_REVISTA_NOTICIA, B.CODIGO_NOTICIA, B.CODIGO_USUARIO CODIGO_USUARIO_NOTICIA,B.AUTOR_NOTICIA, B.TITULO_NOTICIA, B.DESCRIPCION_NOTICIA, B.CONTENIDO_NOTICIA,TO_CHAR(B.FECHA_PUBLICACION,'YYYY-MM-DD HH24:MI:SS')  FECHA_NOTICIA, B.URL_PORTADA_NOTI
         FROM TBL_FLIPS A
         RIGHT JOIN TBL_NOTICIAS B
         ON A.CODIGO_NOTICIA = B.CODIGO_NOTICIA
-        WHERE A.CODIGO_REVISTA = $codigoRevista OR B.CODIGO_REVISTA = $codigoRevista
+        WHERE A.CODIGO_REVISTA = 1 OR B.CODIGO_REVISTA = 1
     )
 	SELECT ROWNUM NUM_FILA,A.*, B.CANT_LIKES CANT_LIKES_NOTICIA, C.CANT_LIKES CANT_LIKES_FLIP, D.CANT_COMENTARIOS CANT_COMENTARIOS_NOTCIA,
 	    E.CANT_COMENTARIOS CANT_COMENTARIOS_FLIP, F.NOMBRE_USUARIO USUARIO_FLIP, G.NOMBRE_USUARIO USUARIO_NOTICIA,
@@ -213,8 +213,119 @@ $cantidadNoticias = $conexion->obtenerArregloAsociativo($resultado5)['NUMBER_OF_
 <?php
 while($rowNoticia = $conexion->obtenerFila($resultado4)){
 	if (!is_null($rowNoticia["CODIGO_REVISTA_FLIP"]) && $rowNoticia["CODIGO_REVISTA_FLIP"] == $codigoRevista) {
+		$sqlLikes="SELECT COUNT(1) AS CANT_REGISTROS
+				FROM TBL_REACCIONES_X_NOTICIAS
+				WHERE CODIGO_USUARIO=".$codigoUsuario."
+				AND CODIGO_NOTICIA=".$rowNoticia['CODIGO_FLIP'];
+		$resultadoCantRegis = $conexion->ejecutarInstruccion($sqlLikes);
+		$resultCantR = $conexion->obtenerFila($resultadoCantRegis);
 	?>
 		<!-- Inicia impresion de un flip -->
+		<div class="card noti-card 
+				<?php   
+					if($rowNoticia["CANT_LIKES_FLIP"]>3)
+						{ echo 'noti-card-width-3 '; }
+					elseif($rowNoticia["CANT_LIKES_FLIP"]>2)
+						{echo 'noti-card-width-2';}    
+				?>" 
+			style="position: relative;">
+			<div class="botones-noticia-general">
+		      	<button onclick="flipear(<?php echo $rowNoticia['CODIGO_NOTICIA'];?>)" type="button" class="btn btn-danger btn-circle" data-toggle="modal" data-target="#md-flipear">
+		      		<i class="fa fa-plus" aria-hidden="true"></i>
+		      	</button><br>
+		      	<button onclick="darLike(<?php echo $rowNoticia['CODIGO_FLIP'];?>)" type="button" class="btn btn-default btn-circle" data-container="body" data-toggle="popover" data-placement="left" data-content="Me gusta" data-trigger="hover">
+		      		<i class="fa <?php 
+		      					if($resultCantR['CANT_REGISTROS']==0){
+		      						echo 'fa-heart-o';
+		      					}else{
+		      						echo 'fa-heart';
+		      					} ?>
+		      		" aria-hidden="true" id="<?php echo 'like_'.$rowNoticia['CODIGO_FLIP'];?>" style="<?php 
+		      					if($resultCantR['CANT_REGITROS']!=0){
+		      						echo 'color:rgb(200, 35, 51);';
+		      					} ?>"></i>
+		      	</button><br>
+		      	<!--<button type="button" class="btn btn-default btn-circle" data-container="body" data-toggle="popover" data-placement="left" data-content="Compartir" data-trigger="hover">
+		      		<i class="fa fa-envelope-o" aria-hidden="true"></i>
+		      	</button>-->
+		    </div>
+			<div class="container" style="margin-bottom: 10px;">
+				<div class="row">
+				      <div class="col-lg-1 col-md-2 col-sm-2 col-2 col-xl-1" style="padding:0px;">
+				      	<label>
+				      		
+						      		<a href="usuario.php?codigoUsuario=<?php echo $rowNoticia["CODIGO_USUARIO_FLIP"]; ?>">
+
+					      	<div class="miniatura-usuario" style="margin: auto;background-image: url('<?php echo $rowNoticia["URL_FOTO_PERFIL_FLIP"]; ?>');width: 40px;height: 40px;padding: 0px;">
+			                		<?php
+			                		if(is_null($rowNoticia["URL_FOTO_PERFIL_FLIP"])){
+			                			?>
+			                				<table style="height: 100%;width: 100%;font-size: 20px;font-weight: bold;">
+												<tbody>
+													<tr>
+														<td class="align-middle text-center">
+															<?php echo ($rowNoticia['INICIAL_USUARIO_FLIP']); ?>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+			                			<?php
+			                		}
+			                		?>								
+							</div>
+							</a>
+						</label>
+				      </div>
+					      
+				      <div class="col-lg-11 col-md-10 col-sm-10 col-10 col-xl-11" >
+				      	<table style="height: 100%;">
+				      		<tbody>
+				      			<tr>
+							      	<td class="align-middle">
+								        <p class="card-text" style="margin-bottom: -8px;">      
+								        	<?php echo ($rowNoticia["USUARIO_FLIP"]);?>      	
+								        </p> 
+								        <p style="padding: 0px;margin:0px;"> 
+								        	<span style="color: gray;font-size: 12px;">
+								        		<?php echo fechaIntervalo::calcularintervalo($rowNoticia['FECHA_FLIP']);?>
+								        	</span> 								        	
+								        </p> 
+							        </td> 
+						    	</tr>
+					        </tbody>
+				        </table>  
+				      </div> 
+				</div>
+		   </div>  
+		  <img class="card-img-top" src='<?php echo $rowNoticia["URL_PORTADA_NOTI"]; ?>' style="cursor: pointer;" onclick="cargarContenidoNoticia(<?php echo ($rowNoticia['CODIGO_FLIP']);?>);" >
+		  <div class="card-body" style="text-align: justify;">
+		  	<div style="cursor: pointer;" onclick="cargarContenidoNoticia(<?php echo ($rowNoticia['CODIGO_FLIP']);?>);" >
+
+		  		<a><h5 class="card-title" style="text-align: left;"><?php echo ($rowNoticia["TITULO_NOTICIA"]);?></h5></a>
+			    <span class="noti-card-autor">
+			    	<?php echo ($rowNoticia["USUARIO_FLIP"])." · ".($rowNoticia["AUTOR_NOTICIA"]);?>
+			    </span>
+			    <p class="card-text">
+			    	<?php echo ($rowNoticia["DESCRIPCION_NOTICIA"]);?>
+			    </p>
+		  	</div>	<br>			    
+		    <div>
+	        	<span id="<?php echo 'likeContador_'.$rowNoticia['CODIGO_FLIP'];?>"><?php echo $rowNoticia["CANT_LIKES_FLIP"];?></span>
+	        	<i class="fa fa-heart" aria-hidden="true" style="font-size: 13px;padding-right: 8px;color: red;">
+		        </i>
+		        <span id="<?php echo 'comentariosCont_'.$rowNoticia['CODIGO_FLIP'];?>"><?php echo $rowNoticia["CANT_COMENTARIOS_FLIP"];?></span>
+		        <i class="fa fa-comment-o" aria-hidden="true" style="font-size: 13px;padding-right: 8px;" ></i>
+	        	<a class="btn btn-default" role="button" style="cursor: pointer;" data-toggle="modal" data-target="#modal-agregar_comentario" onclick="cargar_modalComentarios(<?php echo $rowNoticia["CODIGO_FLIP"];?>);">
+		        	<i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 13px;padding-right: 8px;">				        		
+				    </i>
+		        	Añadir Comentario
+	        	</a>
+	        </div>
+		  </div>
+		</div>
+		<!-- Finaliza impresion de un flip -->
+	<?php } elseif(false){ ?>
+		<!-- Inicia impresion de una noticia -->
 		<div class="card noti-card 
 				<?php   
 					if($rowNoticia["CANT_LIKES"]>3)
@@ -320,9 +431,6 @@ while($rowNoticia = $conexion->obtenerFila($resultado4)){
 	        </div>
 		  </div>
 		</div>
-		<!-- Finaliza impresion de un flip -->
-	<?php } else{ ?>
-		<!-- Inicia impresion de una noticia -->
 		<!-- Finaliza impresion de una noticia -->
 	<?php} ?>
 <?php
