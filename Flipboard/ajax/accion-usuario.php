@@ -76,12 +76,14 @@
 
 			$codigo_usuario = $_POST["codigo_usuario"];
 			$codigo_seguidor = $_POST["codigo_seguidor"];
+			$operacion = 1;
 			$resultado = 0;
 
 			$sql="
 			  	BEGIN
 					P_SEGUIR_USUARIO(:p_USUARIO_SEGUIDOR,
 					                 :p_USUARIO_SEGUIDO,
+					                 :p_OPERACION,
 					             	 :p_RESULTADO);
 				END;
 			    ";
@@ -89,6 +91,7 @@
 			$procedure = oci_parse($conn, $sql);
 			oci_bind_by_name($procedure, ':p_USUARIO_SEGUIDOR', $codigo_usuario);
 			oci_bind_by_name($procedure, ':p_USUARIO_SEGUIDO', $codigo_seguidor);
+			oci_bind_by_name($procedure, ':p_OPERACION', $operacion);
 			oci_bind_by_name($procedure, ':p_RESULTADO', $resultado);
 			oci_execute($procedure);
 			echo $resultado;
