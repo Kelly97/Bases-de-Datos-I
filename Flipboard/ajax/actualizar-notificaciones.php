@@ -21,12 +21,14 @@ switch ($_POST["codigo"]) {
 			}		
 			$sql="
 				BEGIN
-				    P_ACTUALIZAR_NOTI(:codigoNotificacion);
+				    P_ACTUALIZAR_NOTI(
+				    	:codigoNotificacion
+				    );
 				END;
 					";
 			$procedure = oci_parse($conn, $sql);
 			oci_bind_by_name($procedure, ':codigoNotificacion', $codigoNotificacion);
-
+			oci_execute($procedure);
 
 			oci_free_statement($procedure);
 			oci_close($conn);
@@ -49,12 +51,14 @@ switch ($_POST["codigo"]) {
 			}		
 			$sql="
 				BEGIN
-				    P_ACTUALIZAR_NOTI(:codigoNotificacion);
+				    P_ACTUALIZAR_NOTI(
+				    	:codigoNotificacion
+				    );
 				END;
 					";
 			$procedure = oci_parse($conn, $sql);
 			oci_bind_by_name($procedure, ':codigoNotificacion', $codigoNotificacion);
-
+			oci_execute($procedure);	
 
 			oci_free_statement($procedure);
 			oci_close($conn);
@@ -75,12 +79,14 @@ switch ($_POST["codigo"]) {
 			}		
 			$sql="
 				BEGIN
-				    P_ACTUALIZAR_NOTI(:codigoNotificacion);
+				    P_ACTUALIZAR_NOTI(
+				    	:codigoNotificacion
+				    );
 				END;
 					";
 			$procedure = oci_parse($conn, $sql);
 			oci_bind_by_name($procedure, ':codigoNotificacion', $codigoNotificacion);
-
+			oci_execute($procedure);	
 
 			oci_free_statement($procedure);
 			oci_close($conn);

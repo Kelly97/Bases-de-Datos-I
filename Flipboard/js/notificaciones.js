@@ -6,6 +6,7 @@ function notiSeguimiento(codigoNotificacion){
         method: "POST",
         dataType: "json",
         success: function(datos){  
+            actualizarNotificaciones();
             cargarUsuario(datos.codigoUsuarioEmisor);     
         }
     });
@@ -17,7 +18,8 @@ function notiComentarioYReacciones(codigoNotificacion){
         data: data,
         method: "POST",
         dataType: "json",
-        success: function(datos){       
+        success: function(datos){  
+            actualizarNotificaciones();     
             cargarContenidoNoticia(datos.codigoNoticia);
         }
     });
@@ -29,7 +31,8 @@ function notiFlip(codigoNotificacion){
         data: data,
         method: "POST",
         dataType: "json",
-        success: function(datos){       
+        success: function(datos){    
+            actualizarNotificaciones();   
             cargarPaginaRevista(datos.codigoRevista);
         }
     });
