@@ -101,6 +101,22 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
               <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
             </a>
           </li>-->
+          <?php 
+          if ($codigoUsuario == 1) {
+      ?>
+                <li class="nav-item" id="btn-usuarios" data-toggle="popover" data-placement="left" data-content="Usuarios" data-trigger="hover">
+                  <a class="nav-item" href="#usuario" >
+                    <i class="fa fa-id-card fa-lg" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li class="nav-item" id="btn-categorias" data-toggle="popover" data-placement="left" data-content="Categoria" data-trigger="hover">
+                  <a class="nav-item" href="#categoria" >
+                    <i class="fa fa-server fa-lg" aria-hidden="true"></i>
+                  </a>
+                </li>
+      <?php
+            }
+      ?>
           <li class="nav-item" data-toggle="popover" data-placement="left" data-content="Notificaciones" data-trigger="hover">
             <a class="nav-item" id="btn-notificaciones">
               <i class="fa fa-bell fa-lg" aria-hidden="true" style="position: relative;">
