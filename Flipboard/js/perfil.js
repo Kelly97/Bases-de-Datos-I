@@ -76,6 +76,11 @@ function enter(e,id) {
 
 
 function cambiarContrasena(){
+$("#txt-contrasenia-actual").val("");
+$("#txt-nueva-contrasenia").val("");
+$("#txt-confirmar-contrasenia").val("");
+
+
 	if ($("#edt-contrasena").text()=="Editar") {
 		$("#edt-contrasena").text("Cancelar");
 		$("#menu-cambiar-contrasena").show();
@@ -225,8 +230,29 @@ function nuevoNombreConf(event){
 function nuevoCorreo(){
 
 	 if(($("#txt-email").val()!="")&&($("#txt-password").val()!="")&&(validarCorreo($("#txt-email").val())==1)){
-	 
-	 } 
+	 		
+	 		$.ajax({
+			url:"ajax/acciones-perfil.php?accion=8&NUEVO_CORREO="+$("#txt-email").val()+"&CONTRASENIA="+$("#txt-password").val(),
+			dataType:"html",
+			method: "GET",
+			success:function(data){
+				if (data==1){
+				  $("#conf-mensajes").html("<div class='alert alert-success' role='alert'><button type='button'  data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Datos Actualizados</strong></div>");
+				  $("#correo").val($("#txt-email").val());
+				  cambiarCorreo();
+
+				}
+				else
+				  $("#conf-mensajes").html("<div class='alert alert-danger' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>La contraseña no coincide</strong></div>");
+
+		    }
+		});
+
+
+
+	 } else if(($("#txt-password").val()=="")||($("#txt-email").val()==""))
+	  	 	$("#conf-mensajes").html("<div class='alert alert-danger' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Debe llenar todos los campos</strong></div>");
+
 	 else
 	 	$("#conf-mensajes").html("<div class='alert alert-danger' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Formato del correo incorrecto</strong></div>");
 
@@ -250,4 +276,45 @@ function validarCorreo(correo){
    if((arroba==1)&&(punto==1)&&(otros==0))
    	 	resultado=1;
    return resultado;
+}
+
+
+
+function nuevaContrasenia(){
+var contraseniaActual=$("#txt-contrasenia-actual").val();
+var contraseniaNueva=$("#txt-nueva-contrasenia").val();
+var confirmarContrasenia=$("#txt-confirmar-contrasenia").val();
+var datos= "ajax/acciones-perfil.php?accion=9&CONTRASENIA_ACTUAL="+contraseniaActual+"&CONTRASENIA="+$("#txt-nueva-contrasenia").val();
+	if(contraseniaNueva!=confirmarContrasenia)
+	    $("#conf-mensajes").html("<div class='alert alert-danger' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Las nuevas contraseñas no coinciden</strong></div>");
+	else if((contraseniaActual=="")||(contraseniaNueva="")||(confirmarContrasenia==""))
+        $("#conf-mensajes").html("<div class='alert alert-danger' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Debe llenar todos los espacios</strong></div>");
+    else {
+    	$.ajax({
+			url: datos,
+			dataType:"html",
+			method: "GET",
+			success:function(data){
+				
+				if (data==1){
+				  $("#conf-mensajes").html("<div class='alert alert-success' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Datos Actualizados</strong></div>");
+				  cambiarContrasena();
+
+				}
+				else
+				  $("#conf-mensajes").html("<div class='alert alert-danger' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>La contraseña actual no coincide</strong></div>");
+
+		    }
+		});
+
+    }
+
+
+}
+
+
+
+
+function llenarConfi(){
+	
 }

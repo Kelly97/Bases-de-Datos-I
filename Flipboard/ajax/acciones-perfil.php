@@ -363,9 +363,87 @@ $resultadoIntereses = $conexion->ejecutarInstruccion($sql);
 	 <?php
 	break;
 
+case "8":
+
+
+	include_once("../class/class-conexion.php");
+	$conexion = new Conexion();
+	$sql = "SELECT
+    CONTRASENIA
+        FROM
+    tbl_usuarios
+    where CODIGO_USUARIO=".$codigoUsuario;
+	$resultadoContrasenia = $conexion->ejecutarInstruccion($sql);
+	$rowContrasenia = $conexion->obtenerFila($resultadoContrasenia);
+	$contrasenia=$rowContrasenia["CONTRASENIA"];
+	     
+   if($contrasenia==sha1($_GET["CONTRASENIA"])){
+
+	     $sql = "
+			UPDATE tbl_usuarios
+		    SET
+		        CORREO = '".$_GET["NUEVO_CORREO"]."'
+		    WHERE
+		        codigo_usuario =".$codigoUsuario;
+		     $resultadoNuevoCorreo = $conexion->ejecutarInstruccion($sql);
+		     $conexion->commit();
+		     $respuesta=1;
+			 echo $respuesta;
+		
+		      
+
+	     } else {
+	     	
+      	 	 $respuesta=0;
+			 echo $respuesta;
+			 }
+	     	
+
+		
+		      
+	break;
+
+	case "9":
+
+
+	include_once("../class/class-conexion.php");
+	$conexion = new Conexion();
+	$sql = "SELECT
+    CONTRASENIA
+        FROM
+    tbl_usuarios
+    where CODIGO_USUARIO=".$codigoUsuario;
+	$resultadoContrasenia = $conexion->ejecutarInstruccion($sql);
+	$rowContrasenia = $conexion->obtenerFila($resultadoContrasenia);
+	$contrasenia=$rowContrasenia["CONTRASENIA"];
+   if($contrasenia==sha1($_GET["CONTRASENIA_ACTUAL"])){
+
+	     $sql = "
+			UPDATE tbl_usuarios
+		    SET
+		        CONTRASENIA = '".sha1($_GET["CONTRASENIA"])."'
+		    WHERE
+		        codigo_usuario =".$codigoUsuario;
+		     $resultadoNuevoCorreo = $conexion->ejecutarInstruccion($sql);
+		     $conexion->commit();
+		     $respuesta=1;
+			 echo $respuesta;
+		
+		      
+	     } else {
+	     	
+      	 	 $respuesta=0;
+			 echo $respuesta;
+			 }
+	     	
+
+		
+		      
+	break;
 
 
 
-}?><div> <?php
+
+}?>   <?php
  
 ?>

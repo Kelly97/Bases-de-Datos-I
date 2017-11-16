@@ -108,7 +108,7 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
     <li><a style="font-size: 12px; color: black; font-family: inherit" href="#">Estadisticas</a></li>
           <li class="divider"></li>
 
-    <li><a   style="font-size: 12px; color: black; font-family: inherit"  href=" javascript:$('#myModal').modal('show');">Configuración</a></li>
+    <li><a onclick="llenarConfi()"  style="font-size: 12px; color: black; font-family: inherit"  href=" javascript:$('#myModal').modal('show');">Configuración</a></li>
           <li class="divider"></li>
 
     <li><a style="font-size: 12px; color: black; font-family: inherit" href="#">Ayuda y Sugerencias</a></li>
@@ -266,7 +266,7 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
     
       <!-- Modal content-->
       <div class="modal-content" >
-          <button class="top-right close" type="button"   data-dismiss="modal">&times;</button><br>
+          <button  class="top-right close" type="button"   data-dismiss="modal">&times;</button><br>
           <h1 align="center" style="font-size: 16px; font-weight: bold; ">Configuración</h1>
     <div class="modal-body">
     <div id="conf-mensajes"></div>
@@ -292,16 +292,16 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
      </td>
    </tr>
   <tr>
-    <td><input  class="texto-no-editable" type="text" id="contrasena" size="40" maxlength="256" value="CONTRASEÑA" ></td>
+    <td><input  class="texto-no-editable" type="text" id="contrasena" size="40" maxlength="256" value="Contraseña" ></td>
     <td class="edt" id="edt-contrasena" onclick="cambiarContrasena()">Editar</td>
   </tr>
   <tr  id="menu-cambiar-contrasena" style="display:none;" >
      <td colspan="2">
         <div>
-          <input class="form-control" type="text" placeholder="Contraseña actual"><br>
-          <input class="form-control" type="text" placeholder="Nueva Contraseña"><br>
-          <input class="form-control" type="text" placeholder="Confirmar Contraseña"><br>
-          <input class="form-control" type="button" value="CAMBIAR CONTRASEÑA" name="">
+          <input class="form-control" id="txt-contrasenia-actual" type="text" placeholder="Contraseña actual"><br>
+          <input class="form-control" id="txt-nueva-contrasenia" type="text" placeholder="Nueva Contraseña"><br>
+          <input class="form-control" id="txt-confirmar-contrasenia" type="text" placeholder="Confirmar Contraseña"><br>
+          <input class="form-control" onclick="nuevaContrasenia()" type="button" value="CAMBIAR CONTRASEÑA" name="">
         </div>
      </td>
    </tr>
@@ -313,8 +313,8 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
 </table>
 <br><br>
 <h1 style="font-size: 14px; font-weight: bold;"> Configuración de correos electronicos</h1>
-<table  class="table" style="font-size: 14px;">
-   <tr>
+<table id="tabla-configuraciones" class="table" style="font-size: 14px;">
+  <tr>
       <td>Recomendaciones de contenido</td>
        <td> <input type="checkbox" name=""  checked> </td>
    </tr>
@@ -324,11 +324,11 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
    </tr>
   <tr>
       <td>Acerca de tus amigos</td>
-       <td><input type="checkbox" name=""  checked> </td>
+       <td><input type="checkbox" name=""  > </td>
    </tr>
 <tr>
       <td>Actualizaciones del producto y educación</td>
-       <td><input type="checkbox" name="" checked> </td>
+       <td><input type="checkbox" name="" > </td>
    </tr>
 <tr>
       <td>Actualizaciones de la comunidad</td>
@@ -336,7 +336,7 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
    </tr>
 <tr>
       <td>Resumen diario (Diez para hoy, Selecciones de Flipboard, etc.)</td>
-       <td><input type="checkbox" name=""  checked> </td>
+       <td><input type="checkbox" name="" > </td>
    </tr>
 </table>
 
