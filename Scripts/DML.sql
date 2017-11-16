@@ -233,6 +233,13 @@ INSERT INTO TBL_REVISTAS (CODIGO_TIPO_REVISTA, CODIGO_USUARIO, NOMBRE_REVISTA, D
 VALUES (1, 9, 'MOTORPASIÓN', 'Coches y actualidad del mundo del Motor', TO_DATE('01/11/2017', 'DD/MM/YYYY'),'https://i.blogs.es/97adc8/tesla-model-x-motorpasion-prueba-31/450_1000.jpg');
 INSERT INTO TBL_REVISTAS (CODIGO_TIPO_REVISTA, CODIGO_USUARIO, NOMBRE_REVISTA, DESCRIPCION, FECHA_DE_CREACION,URL_PORTADA)
 VALUES (1, 6, 'REVISTA ¡HOLA!', 'Las novedades sobre las estrellas de cine y música, tendencias de moda, belleza, recetas de cocina y las Casas Reales en el portal femenino líder en Internet. ', TO_DATE('17/10/2017', 'DD/MM/YYYY'),'https://www.himgs.com/imagenes/hola/comunes/svg/holacom-pos-16.svg');
+--Revistas "Leer mas tarde" no tiene descripcion, tampoco imagen
+INSERT INTO TBL_REVISTAS (CODIGO_TIPO_REVISTA, CODIGO_USUARIO, NOMBRE_REVISTA, FECHA_DE_CREACION)
+VALUES (2, 2, 'Leer mas tarde', TO_DATE('29/10/2017', 'DD/MM/YYYY'));
+INSERT INTO TBL_REVISTAS (CODIGO_TIPO_REVISTA, CODIGO_USUARIO, NOMBRE_REVISTA, FECHA_DE_CREACION)
+VALUES (2, 3, 'Leer mas tarde', TO_DATE('29/10/2017', 'DD/MM/YYYY'));
+INSERT INTO TBL_REVISTAS (CODIGO_TIPO_REVISTA, CODIGO_USUARIO, NOMBRE_REVISTA, FECHA_DE_CREACION)
+VALUES (2, 4, 'Leer mas tarde', TO_DATE('29/10/2017', 'DD/MM/YYYY'));
 
 --INSERT Registros Revistas Seguidas
 INSERT INTO TBL_REVISTAS_SEGUIDAS (CODIGO_SEGUIDOR, CODIGO_REVISTA)
