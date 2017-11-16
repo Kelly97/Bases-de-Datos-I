@@ -58,7 +58,7 @@
 								  	<p>'. $rowUsuario["DESCRIPCION"] .'</p>
 								  </div>
 
-								  <button id="btn-seguir-usuario" type="button" class="btn" style="border-color: rgb(0,0,0); background-color: rgba(255,255,255,0.5);" onclick("seguirUsuario('.$rowUsuario["CODIGO_USUARIO"].','.$rowUsuario["ALIAS_USUARIO"].');")>SEGUIR</button>
+								  <input id="btn-seguir-usuario" type="button" class="btn" style="border-color: rgb(0,0,0); background-color: rgba(255,255,255,0.5);" onclick="seguirUsuario('.$rowUsuario["CODIGO_USUARIO"].',\''.$rowUsuario["ALIAS_USUARIO"].'\');" value="SEGUIR")>
 							  </div>';
 				}
 			}
@@ -79,18 +79,16 @@
 			$operacion = 1;
 			$resultado = 0;
 
-			$sql="
-			  	BEGIN
-					P_SEGUIR_USUARIO(:p_USUARIO_SEGUIDOR,
-					                 :p_USUARIO_SEGUIDO,
-					                 :p_OPERACION,
-					             	 :p_RESULTADO);
-				END;
-			    ";
+			$sql = "BEGIN
+						P_SEGUIR_USUARIO(:p_USUARIO_SEGUIDOR,
+						                 :p_USUARIO_SEGUIDO,
+						                 :p_OPERACION,
+						             	 :p_RESULTADO);
+					END;";
 
 			$procedure = oci_parse($conn, $sql);
-			oci_bind_by_name($procedure, ':p_USUARIO_SEGUIDOR', $codigo_usuario);
-			oci_bind_by_name($procedure, ':p_USUARIO_SEGUIDO', $codigo_seguidor);
+			oci_bind_by_name($procedure, ':p_USUARIO_SEGUIDOR', $codigo_seguidor);
+			oci_bind_by_name($procedure, ':p_USUARIO_SEGUIDO', $codigo_usuario);
 			oci_bind_by_name($procedure, ':p_OPERACION', $operacion);
 			oci_bind_by_name($procedure, ':p_RESULTADO', $resultado);
 			oci_execute($procedure);
