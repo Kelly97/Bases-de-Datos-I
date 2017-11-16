@@ -101,8 +101,8 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
               <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
             </a>
           </li>-->
-          <?php 
-          if ($codigoUsuario == 1) {
+      <?php
+          if ($_SESSION['usuario']['ALIAS_USUARIO'] == 'Administrador'){
       ?>
                 <li class="nav-item" id="btn-usuarios" data-toggle="popover" data-placement="left" data-content="Usuarios" data-trigger="hover">
                   <a class="nav-item" href="#usuario" >
@@ -283,6 +283,29 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
       </div>
     </div>
     <!-- Fin Modal Flipear -->
+
+    <!--Modal colaboradores-->
+    <div class="modal fade" id="md-aniadir-colaborador" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 1000000000;text-align: center;">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header" style="text-align: center;">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute;top: 5px;left: 10px;font-size: 35px;">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <p class="modal-title" style="text-align: center;margin-top: 20px;padding-left: 20px;padding-right: 20px;width: 100%;font-size: 20px;">Añade Colaboradores</p>            
+          </div>
+          <div id="md-body-colaboradores" class="modal-body">
+            
+          </div>
+
+          <div class="modal-footer">
+            <button id="btn_aniadir_colaborador" type="button" class="btn " disabled="TRUE">AÑADIR</button>
+            <div id="noticia" style="display: none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Fin Modal colaboradores -->
 
       <!-- Modal agregar comentario -->
       <div class="modal fade" id="modal-agregar_comentario" style="right: 0px; left: auto; top:0px; width: 600px;">
