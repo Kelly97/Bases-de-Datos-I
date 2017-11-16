@@ -559,7 +559,7 @@ END;
 /
 
 --Procedimiento Seguir Usuario
-CREATE OR REPLACE PROCEDURE P_SEGUIR_USUARIO(p_USUARIO_SEGUIDOR IN INTEGER,
+/*CREATE OR REPLACE PROCEDURE P_SEGUIR_USUARIO(p_USUARIO_SEGUIDOR IN INTEGER,
                                              p_OPERACION IN INTEGER,
                                              p_RESULTADO OUT INTEGER)
 AS
@@ -616,7 +616,7 @@ BEGIN
     WHEN OTHERS THEN
       p_RESULTADO := 0;
 END;
-/
+/*/
 --Procedimiento para añadir o eliminar colaboradores
 CREATE OR REPLACE PROCEDURE P_ANIADIR_COLABORADOR
     (
