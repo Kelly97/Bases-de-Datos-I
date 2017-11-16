@@ -1,0 +1,62 @@
+;;; 
+Export: Release 11.2.0.2.0 - Production on Wed Nov 15 23:38:05 2017
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+;;; 
+Connected to: Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+Starting "DB_FLIPBOARD"."SYS_EXPORT_SCHEMA_01":  DB_FLIPBOARD/********@xe schemas=DB_FLIPBOARD DIRECTORY=orcl_full DUMPFILE=esquemaDB_FLIPBOARD.dmp LOGFILE=esquemaDB_FLIPBOARD.log 
+Estimate in progress using BLOCKS method...
+Processing object type SCHEMA_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 1.937 MB
+Processing object type SCHEMA_EXPORT/USER
+Processing object type SCHEMA_EXPORT/SYSTEM_GRANT
+Processing object type SCHEMA_EXPORT/ROLE_GRANT
+Processing object type SCHEMA_EXPORT/DEFAULT_ROLE
+Processing object type SCHEMA_EXPORT/TABLESPACE_QUOTA
+Processing object type SCHEMA_EXPORT/PRE_SCHEMA/PROCACT_SCHEMA
+Processing object type SCHEMA_EXPORT/SEQUENCE/SEQUENCE
+Processing object type SCHEMA_EXPORT/TABLE/TABLE
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/INDEX
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Processing object type SCHEMA_EXPORT/TABLE/COMMENT
+Processing object type SCHEMA_EXPORT/PROCEDURE/PROCEDURE
+Processing object type SCHEMA_EXPORT/PROCEDURE/ALTER_PROCEDURE
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/TRIGGER
+Processing object type SCHEMA_EXPORT/MATERIALIZED_VIEW
+. . exported "DB_FLIPBOARD"."TBL_NOTICIAS"               38.19 KB      16 rows
+. . exported "DB_FLIPBOARD"."MVW_ANALISIS_CATEGORIAS"        7 KB      14 rows
+. . exported "DB_FLIPBOARD"."MVW_ANALISIS_REVISTAS"      7.476 KB      12 rows
+. . exported "DB_FLIPBOARD"."MVW_ANALISIS_USUARIOS"      10.07 KB       9 rows
+. . exported "DB_FLIPBOARD"."MVW_ESTADOS_DE_CUENTA_USUARIOS"  5.507 KB       3 rows
+. . exported "DB_FLIPBOARD"."TBL_CATEGORIA"              5.687 KB      14 rows
+. . exported "DB_FLIPBOARD"."TBL_COLABORADORES"          5.539 KB       7 rows
+. . exported "DB_FLIPBOARD"."TBL_COMENTARIOS"            7.773 KB       4 rows
+. . exported "DB_FLIPBOARD"."TBL_CONFIGURACIONES"        5.703 KB       6 rows
+. . exported "DB_FLIPBOARD"."TBL_CONFIG_ACTIVA_X_USUARIO"  5.492 KB       1 rows
+. . exported "DB_FLIPBOARD"."TBL_ESTADO_NOTIFICACION"    5.507 KB       2 rows
+. . exported "DB_FLIPBOARD"."TBL_ESTADO_SOLICITUD"       5.523 KB       3 rows
+. . exported "DB_FLIPBOARD"."TBL_ESTADO_USUARIO"         5.515 KB       3 rows
+. . exported "DB_FLIPBOARD"."TBL_FLIPS"                  6.828 KB       6 rows
+. . exported "DB_FLIPBOARD"."TBL_HISTORIAL_ACCESOS"      5.460 KB       1 rows
+. . exported "DB_FLIPBOARD"."TBL_INTERESES_X_USUARIO"    5.671 KB      20 rows
+. . exported "DB_FLIPBOARD"."TBL_LUGARES"                8.226 KB      22 rows
+. . exported "DB_FLIPBOARD"."TBL_NOTIFICACIONES"         8.593 KB       5 rows
+. . exported "DB_FLIPBOARD"."TBL_REACCIONES"             5.460 KB       1 rows
+. . exported "DB_FLIPBOARD"."TBL_REACCIONES_X_COMENTARIOS"  5.968 KB       5 rows
+. . exported "DB_FLIPBOARD"."TBL_REACCIONES_X_NOTICIAS"  6.460 KB      11 rows
+. . exported "DB_FLIPBOARD"."TBL_REVISTAS"               9.414 KB      12 rows
+. . exported "DB_FLIPBOARD"."TBL_REVISTAS_SEGUIDAS"      5.601 KB      13 rows
+. . exported "DB_FLIPBOARD"."TBL_SEGUIDORES"             5.546 KB       7 rows
+. . exported "DB_FLIPBOARD"."TBL_SOLICITUDES_DE_VERIFIC"  6.328 KB       1 rows
+. . exported "DB_FLIPBOARD"."TBL_TIPOS_USUARIO"          5.515 KB       3 rows
+. . exported "DB_FLIPBOARD"."TBL_TIPO_LUGAR"             5.531 KB       5 rows
+. . exported "DB_FLIPBOARD"."TBL_TIPO_NOTIFICACION"      5.570 KB       5 rows
+. . exported "DB_FLIPBOARD"."TBL_TIPO_REVISTAS"          5.484 KB       2 rows
+. . exported "DB_FLIPBOARD"."TBL_USUARIOS"               11.21 KB      10 rows
+Master table "DB_FLIPBOARD"."SYS_EXPORT_SCHEMA_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for DB_FLIPBOARD.SYS_EXPORT_SCHEMA_01 is:
+  E:\EXPORTDB\FULL_EXPORT\ESQUEMADB_FLIPBOARD.DMP
+Job "DB_FLIPBOARD"."SYS_EXPORT_SCHEMA_01" successfully completed at 23:38:21
