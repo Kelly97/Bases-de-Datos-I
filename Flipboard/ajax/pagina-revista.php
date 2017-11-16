@@ -92,7 +92,7 @@ $seguir = $conexion->obtenerFila($resultado6)['CANT_REGS'];
 	            		}
 	            		if( $datosRevista["CODIGO_USUARIO"]!=$codigoUsuario){
 	            			?>
-	            				<button type="button" class="btn btn-default btn-seguir-revista" data-content="
+	            				<button id="btn-seguimiento" onclick="seguimientoRevista(<?php echo ($codigoRevista.", ".$seguir); ?>)" type="button" class="btn btn-default btn-seguir-revista" data-content="
 							  	<?php
 									if($seguir == 0){
 										echo ("Seguir");

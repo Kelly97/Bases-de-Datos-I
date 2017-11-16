@@ -615,9 +615,13 @@ function seguimientoRevista(codigoRevista, tipoOperacion) {
         url : "ajax/accion-seguimiento-revista.php",
         data: data,
         method: "POST",
-        dataType: "json",
-        success:function(){
+        success:function(datos){
 			cargarPaginaRevista(codigoRevista);
+			$('#alerta_inferior').html(datos);
+            $('#alerta_inferior').show();
+            setTimeout(ocultarAlert,3000);
 		},      
     });
 }
+
+
