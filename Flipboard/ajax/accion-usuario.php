@@ -68,7 +68,7 @@
 
 		case '2':
 			//Seguir Usuario
-			$conn = oci_connect('DB_FLIPBOARD', 'oracle', 'localhost/XE','AL32UTF8');
+			/*$conn = oci_connect('DB_FLIPBOARD', 'oracle', 'localhost/XE','AL32UTF8');
 			if (!$conn) {
 			    $e = oci_error();
 			    trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
@@ -95,7 +95,7 @@
 			echo $resultado;
 			oci_free_statement($procedure);
 			oci_close($conn);
-			break;
+			break;*/
 		
 		default:
 			# code...
