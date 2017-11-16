@@ -19,21 +19,23 @@
 			$resultadoNoticia = $conexion->ejecutarInstruccion($sql);
 			$resultado = "";
 			while($row=$conexion->obtenerFila($resultadoNoticia)){
-				$resultado = '<div id="tituloNoticia" style="padding-top:100px; padding-left:100px; padding-right:100px">
-								<h1><strong>'. $row["TITULO_NOTICIA"] .'</strong></h1>
-								<h3>'. $row["AUTOR_NOTICIA"] .' | '. $row["FECHA"] .'</h3>
-							  </div>
+				$resultado = '<div id="noticia" style="text-align: center">
+								  <div id="tituloNoticia" style="padding-top:100px; padding-left:100px; padding-right:100px">
+									<h1><strong>'. $row["TITULO_NOTICIA"] .'</strong></h1>
+									<h2>'. $row["AUTOR_NOTICIA"] .' | '. $row["FECHA"] .'</h2>
+								  </div>
 
-							  <div id="imgPortada" style="padding-left:100px; padding-right:100px">
-							  	<img src="'. $row["URL_PORTADA_NOTI"] .'">
-							  </div>
+								  <div id="imgPortada" style="padding-left:100px; padding-right:100px">
+								  	<img src="'. $row["URL_PORTADA_NOTI"] .'">
+								  </div><br>
 
-							  <div id="descripcionNoticia" style="padding-left:100px; padding-right:100px">
-							  	<p>'. $row["DESCRIPCION_NOTICIA"] .'</p>
-							  </div>
+								  <div id="descripcionNoticia" style="padding-left:100px; padding-right:100px">
+								  	<h3>'. $row["DESCRIPCION_NOTICIA"] .'</h3>
+								  </div><br><br>
 
-							  <div id="contenidoNoticia" style="padding-left:100px; padding-right:100px">
-							  	<p>'. $row["CONTENIDO"] .'</p>
+								  <div id="contenidoNoticia" style="padding-left:100px; padding-right:100px; padding-bottom:100px">
+								  	<h4>'. $row["CONTENIDO"] .'</h4>
+								  </div>
 							  </div>';
 			}
 			echo $resultado;
