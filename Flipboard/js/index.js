@@ -69,6 +69,10 @@ $(document).ready(function() {
 	  cargarRevistas();
 	  $("#btn_aniadir_flip").attr("disabled", true);
 	});
+	$('#md-aniadir-colaborador').on('show.bs.modal', function (e) {
+	  cargarColaboradores();
+	  $("#btn_aniadir_colaborador").attr("disabled", true);
+	});
 
 	$('#modal-003').on('hide.bs.modal', function (e) {
 		if($("#codVerificacion").html()=="1"){
@@ -96,6 +100,28 @@ $(document).ready(function() {
 	            $('#alerta_inferior').html(datos);
 	            $('#alerta_inferior').show();
 	            setTimeout(ocultarAlert,3000);
+	        }
+	    });	
+	});
+
+	$("#btn_aniadir_colaborador").click(function () {	 
+		//alert($('input:radio[name=opt_revistas]:checked').val());//Alerta que contiene el codigo de revista
+		codColaborador = $('input:radio[name=opt_colaboradores]:checked').val();
+		codRevista = $("#codRevista").html();
+		//alert(codColaborador+" "+codRevista);
+		data = "codigo="+1+"&"+
+		   "codColaborador="+codColaborador+"&"+
+		   "codRevista="+codRevista;
+		$.ajax({         
+	        url : "ajax/aniadir-colaborador.php",
+	        data: data,
+	        method: "POST",
+	        success: function(datos){  
+	        	$('#md-aniadir-colaborador').modal('hide');    
+	            $('#alerta_inferior').html(datos);
+	            $('#alerta_inferior').show();
+	            setTimeout(ocultarAlert,3000);
+	            cargarPaginaRevista(codRevista);
 	        }
 	    });	
 	});
@@ -349,9 +375,27 @@ function cargarRevistas(){
         }
     });	
 }
+function cargarColaboradores(){
+	data="codigoRevista="+$("#codRevista").html();
+	$.ajax({       
+        url : "ajax/cargar-colaboradores.php",
+        data: data,
+        method: "POST",
+        beforeSend: function() {
+        	$('#md-body-colaboradores').html('<div style="text-align:center;"><span class="loading-sencillo">Cargando</span><span class="l-1"></span><span class="l-2"></span><span class="l-3"></span><span class="l-4"></span><span class="l-5"></span><span class="l-6"></span></div>');         
+        },
+        success: function(datos){       
+            $('#md-body-colaboradores').html(datos);
+        }
+    });	
+}
 
 function habilitarBotonAniadirFlip(){
 	$("#btn_aniadir_flip").attr("disabled", false);
+}
+
+function habilitarBotonAniadirColaborador(){
+	$("#btn_aniadir_colaborador").attr("disabled", false);
 }
 
 function agregarNuevaRevista(){

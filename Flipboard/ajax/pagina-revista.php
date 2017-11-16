@@ -174,7 +174,7 @@ $seguir = $conexion->obtenerFila($resultado6)['CANT_REGS'];
 	            		}
 	            			if($datosRevista["CODIGO_USUARIO"]==$codigoUsuario){
 	            				?>
-	            					<div class="col miniatura-usuario" style="margin: auto;width: 40px;height: 40px;padding: 0px;float: left;font-size: 1em;">
+	            					<div data-toggle="modal" data-target="#md-aniadir-colaborador" class="col miniatura-usuario" style="margin: auto;width: 40px;height: 40px;padding: 0px;float: left;font-size: 1em;">
 	            							<table style="height: 100%;width: 100%;font-size: 20px;font-weight: bold;">
 												<tbody>
 													<tr>
@@ -277,7 +277,7 @@ while($rowNoticia = $conexion->obtenerArregloAsociativo($resultado4)){
 		      						echo 'fa-heart';
 		      					} ?>
 		      		" aria-hidden="true" id="<?php echo 'like_'.$rowNoticia['CODIGO_FLIP'];?>" style="<?php 
-		      					if($resultCantR['CANT_REGITROS']!=0){
+		      					if($resultCantR['CANT_REGISTROS']!=0){
 		      						echo 'color:rgb(200, 35, 51);';
 		      					} ?>"></i>
 		      	</button><br>
@@ -361,7 +361,7 @@ while($rowNoticia = $conexion->obtenerArregloAsociativo($resultado4)){
 		</div>
 		<!-- Finaliza impresion de un flip -->
 	<?php
-	$conexion->liberarResultado($resultadoCantRegis);
+	//$conexion->liberarResultado($resultadoCantRegis);
 	}//fin if
 	else{ 
 		$sqlLikes="SELECT COUNT(1) AS CANT_REGISTROS
@@ -475,6 +475,7 @@ while($rowNoticia = $conexion->obtenerArregloAsociativo($resultado4)){
 }//fin while
 ?>
 </div>
+<div id="codRevista"><?php echo $codigoRevista; ?></div>
 <?php
 $conexion->liberarResultado($resultado);
 $conexion->liberarResultado($resultado2);
