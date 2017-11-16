@@ -560,18 +560,21 @@ END;
 
 --Procedimiento Seguir Usuario
 CREATE OR REPLACE PROCEDURE P_SEGUIR_USUARIO(p_USUARIO_SEGUIDOR IN INTEGER,
-                                             p_USUARIO_SEGUIDO IN INTEGER,
                                              p_OPERACION IN INTEGER,
                                              p_RESULTADO OUT INTEGER)
 AS
   V_USUARIO_SEGUIDOR INTEGER := p_USUARIO_SEGUIDOR;
   V_USUARIO_SEGUIDO INTEGER := p_USUARIO_SEGUIDO;
   V_OPERACION INTEGER := p_OPERACION;
+      V_VERIFICADOR INTEGER;
 BEGIN
     IF V_OPERACION = 1 THEN
       INSERT INTO TBL_SEGUIDORES(CODIGO_USUARIO_SEGUIDOR, CODIGO_USUARIO_SEGUIDO)
         VALUES (V_USUARIO_SEGUIDOR, V_USUARIO_SEGUIDO);
       
+    IF (p_OPERACION = 0) THEN --Insertar usuario seguido
+        INSERT INTO TBL_SEGUIDORES (CODIGO_USUARIO_SEGUIDOR, CODIGO_USUARIO_SEGUIDO)
+        VALUES (p_USUARIO_SEGUIDOR, p_USUARIO_SEGUIDO);
         COMMIT;
         p_RESULTADO := 1;
       
@@ -586,13 +589,33 @@ BEGIN
       ELSE
         p_RESULTADO := 0;
       END IF;
+        p_RESULTADO:=1;
+        --Usuario seguido exitosamente.
+    ELSE --Dejar de seguir usuario
+        SELECT COUNT(1)
+        INTO V_VERIFICADOR
+        FROM TBL_SEGUIDORES
+        WHERE CODIGO_USUARIO_SEGUIDO = p_USUARIO_SEGUIDO
+        AND CODIGO_USUARIO_SEGUIDOR = p_USUARIO_SEGUIDOR;
+
+        IF (V_VERIFICADOR>0) THEN
+            DELETE FROM TBL_SEGUIDORES
+            WHERE CODIGO_USUARIO_SEGUIDO = p_USUARIO_SEGUIDO
+            AND CODIGO_USUARIO_SEGUIDOR = p_USUARIO_SEGUIDOR;
+            COMMIT;
+            p_RESULTADO:=1;
+            --Dejar usuario exitosamente.
+        ELSE
+            p_RESULTADO:=0;
+            --No puedes dejar un usuario que no sigues.
+        END IF;
     END IF;
 
   EXCEPTION 
+  EXCEPTION
     WHEN OTHERS THEN
       p_RESULTADO := 0;
 END;
-/
 
 --Procedimiento para añadir o eliminar colaboradores
 CREATE OR REPLACE PROCEDURE P_ANIADIR_COLABORADOR
