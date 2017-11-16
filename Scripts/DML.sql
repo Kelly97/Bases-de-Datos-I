@@ -113,6 +113,23 @@ INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latit
 VALUES (2,1,'España','43°10′49″N','06°59′08″W');
 INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
 VALUES (3,1,'Emiratos Árabes Unidos','24°28′00″N','54°22′00″E');
+INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
+VALUES (4,1,'Sudáfrica','29°0′0″S','24°0′0″E');
+INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
+VALUES (4,1,'Argelia','3°0′0″N','28°0′0″E');
+INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
+VALUES (4,1,'Sudán','15°0′0″N','30°0′0″E');
+INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
+VALUES (4,1,'Nigeria','10°0′0″N','8°0′0″E');
+INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
+VALUES (4,1,'Angola','12°30′0″S','8°30′0″E');
+INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
+VALUES (5,1,'Nueva Zelanda','41°0′0″S','174°0′0″E');
+INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
+VALUES (5,1,'Australia','27°0′0″S','133°0′0″E');
+INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
+VALUES (5,1,'Fiyi','18°0′0″S','175°0′0″E');
+
 
 --INSERT Registros Usuarios
 --ADMINISTRADOR
@@ -216,6 +233,13 @@ INSERT INTO TBL_REVISTAS (CODIGO_TIPO_REVISTA, CODIGO_USUARIO, NOMBRE_REVISTA, D
 VALUES (1, 9, 'MOTORPASIÓN', 'Coches y actualidad del mundo del Motor', TO_DATE('01/11/2017', 'DD/MM/YYYY'),'https://i.blogs.es/97adc8/tesla-model-x-motorpasion-prueba-31/450_1000.jpg');
 INSERT INTO TBL_REVISTAS (CODIGO_TIPO_REVISTA, CODIGO_USUARIO, NOMBRE_REVISTA, DESCRIPCION, FECHA_DE_CREACION,URL_PORTADA)
 VALUES (1, 6, 'REVISTA ¡HOLA!', 'Las novedades sobre las estrellas de cine y música, tendencias de moda, belleza, recetas de cocina y las Casas Reales en el portal femenino líder en Internet. ', TO_DATE('17/10/2017', 'DD/MM/YYYY'),'https://www.himgs.com/imagenes/hola/comunes/svg/holacom-pos-16.svg');
+--Revistas "Leer mas tarde" no tiene descripcion, tampoco imagen
+INSERT INTO TBL_REVISTAS (CODIGO_TIPO_REVISTA, CODIGO_USUARIO, NOMBRE_REVISTA, FECHA_DE_CREACION)
+VALUES (2, 2, 'Leer mas tarde', TO_DATE('29/10/2017', 'DD/MM/YYYY'));
+INSERT INTO TBL_REVISTAS (CODIGO_TIPO_REVISTA, CODIGO_USUARIO, NOMBRE_REVISTA, FECHA_DE_CREACION)
+VALUES (2, 3, 'Leer mas tarde', TO_DATE('29/10/2017', 'DD/MM/YYYY'));
+INSERT INTO TBL_REVISTAS (CODIGO_TIPO_REVISTA, CODIGO_USUARIO, NOMBRE_REVISTA, FECHA_DE_CREACION)
+VALUES (2, 4, 'Leer mas tarde', TO_DATE('29/10/2017', 'DD/MM/YYYY'));
 
 --INSERT Registros Revistas Seguidas
 INSERT INTO TBL_REVISTAS_SEGUIDAS (CODIGO_SEGUIDOR, CODIGO_REVISTA)
@@ -272,6 +296,16 @@ VALUES(6, 9, 4, 'HOLA.COM', 'Antonio Banderas agradece las muestras de cariño y
 --INSERT Registros Flips
 INSERT INTO TBL_FLIPS (CODIGO_NOTICIA, CODIGO_REVISTA, CODIGO_USUARIO_FLIP, FECHA)
 VALUES (5, 3, 4, TO_DATE('20/10/2017','DD/MM/YYYY'));
+INSERT INTO TBL_FLIPS (CODIGO_NOTICIA, CODIGO_REVISTA, CODIGO_USUARIO_FLIP, FECHA)
+VALUES (7, 10, 2, TO_DATE('31/10/2017','DD/MM/YYYY'));
+INSERT INTO TBL_FLIPS (CODIGO_NOTICIA, CODIGO_REVISTA, CODIGO_USUARIO_FLIP, FECHA)
+VALUES (8, 11, 3, TO_DATE('31/10/2017','DD/MM/YYYY'));
+INSERT INTO TBL_FLIPS (CODIGO_NOTICIA, CODIGO_REVISTA, CODIGO_USUARIO_FLIP, FECHA)
+VALUES (9, 12, 4, TO_DATE('31/10/2017','DD/MM/YYYY'));
+INSERT INTO TBL_FLIPS (CODIGO_NOTICIA, CODIGO_REVISTA, CODIGO_USUARIO_FLIP, FECHA)
+VALUES (10, 10, 2, TO_DATE('31/10/2017','DD/MM/YYYY'));
+INSERT INTO TBL_FLIPS (CODIGO_NOTICIA, CODIGO_REVISTA, CODIGO_USUARIO_FLIP, FECHA)
+VALUES (7, 11, 3, TO_DATE('31/10/2017','DD/MM/YYYY'));
 
 --INSERT Registros Reacciones por Noticia
 INSERT INTO TBL_REACCIONES_X_NOTICIAS (CODIGO_NOTICIA, CODIGO_FLIP, CODIGO_USUARIO, CODIGO_REACCION)
@@ -296,6 +330,17 @@ INSERT INTO TBL_REACCIONES_X_NOTICIAS (CODIGO_NOTICIA, CODIGO_FLIP, CODIGO_USUAR
 VALUES (5,null,4,1);
 INSERT INTO TBL_REACCIONES_X_NOTICIAS (CODIGO_NOTICIA, CODIGO_FLIP, CODIGO_USUARIO, CODIGO_REACCION)
 VALUES (5,null,5,1);
+--Reacciones a los flips
+INSERT INTO TBL_REACCIONES_X_NOTICIAS (CODIGO_NOTICIA, CODIGO_FLIP, CODIGO_USUARIO, CODIGO_REACCION)
+VALUES (null,11,1,1);
+INSERT INTO TBL_REACCIONES_X_NOTICIAS (CODIGO_NOTICIA, CODIGO_FLIP, CODIGO_USUARIO, CODIGO_REACCION)
+VALUES (null,11,2,1);
+INSERT INTO TBL_REACCIONES_X_NOTICIAS (CODIGO_NOTICIA, CODIGO_FLIP, CODIGO_USUARIO, CODIGO_REACCION)
+VALUES (null,11,3,1);
+INSERT INTO TBL_REACCIONES_X_NOTICIAS (CODIGO_NOTICIA, CODIGO_FLIP, CODIGO_USUARIO, CODIGO_REACCION)
+VALUES (null,11,5,1);
+INSERT INTO TBL_REACCIONES_X_NOTICIAS (CODIGO_NOTICIA, CODIGO_FLIP, CODIGO_USUARIO, CODIGO_REACCION)
+VALUES (null,11,6,1);
 
 --INSERT Registros Comentarios
 INSERT INTO TBL_COMENTARIOS (CODIGO_USUARIO, CODIGO_NOTICIA, CODIGO_FLIP, CONTENIDO, FECHA)
