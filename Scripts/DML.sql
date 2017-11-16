@@ -113,6 +113,23 @@ INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latit
 VALUES (2,1,'España','43°10′49″N','06°59′08″W');
 INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
 VALUES (3,1,'Emiratos Árabes Unidos','24°28′00″N','54°22′00″E');
+INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
+VALUES (4,1,'Sudáfrica','29°0′0″S','24°0′0″E');
+INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
+VALUES (4,1,'Argelia','3°0′0″N','28°0′0″E');
+INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
+VALUES (4,1,'Sudán','15°0′0″N','30°0′0″E');
+INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
+VALUES (4,1,'Nigeria','10°0′0″N','8°0′0″E');
+INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
+VALUES (4,1,'Angola','12°30′0″S','8°30′0″E');
+INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
+VALUES (5,1,'Nueva Zelanda','41°0′0″S','174°0′0″E');
+INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
+VALUES (5,1,'Australia','27°0′0″S','133°0′0″E');
+INSERT INTO tbl_lugares (codigo_lugar_padre,codigo_tipo_lugar,nombre_lugar,latitud,longitud) 
+VALUES (5,1,'Fiyi','18°0′0″S','175°0′0″E');
+
 
 --INSERT Registros Usuarios
 --ADMINISTRADOR
