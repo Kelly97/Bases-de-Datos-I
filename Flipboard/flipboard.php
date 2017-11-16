@@ -101,8 +101,8 @@ $rowUsuario = $conexion->obtenerFila($resultadoUsuario);
               <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
             </a>
           </li>-->
-          <?php 
-          if ($codigoUsuario == 1) {
+      <?php
+          if ($_SESSION['usuario']['ALIAS_USUARIO'] == 'Administrador'){
       ?>
                 <li class="nav-item" id="btn-usuarios" data-toggle="popover" data-placement="left" data-content="Usuarios" data-trigger="hover">
                   <a class="nav-item" href="#usuario" >
